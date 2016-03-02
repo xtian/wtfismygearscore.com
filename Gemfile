@@ -18,6 +18,8 @@ group :development, :test do
   gem 'byebug' # Speeds up development by keeping your application running in the background
   gem 'coderay' # Syntax highlighting for RSpec failures
   gem 'rspec-rails' # Test framework
+  gem 'rubocop', require: false # Ensures consistent Ruby style
+  gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
 end
 
 group :development do
