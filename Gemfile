@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 group :development, :test do
   gem 'byebug' # Speeds up development by keeping your application running in the background
+  gem 'coderay' # Syntax highlighting for RSpec failures
+  gem 'rspec-rails' # Test framework
 end
 
 group :development do
