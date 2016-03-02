@@ -1,24 +1,31 @@
-## README
+# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+First, make sure you have Postgres version 9.5 and Ruby version 2.3.0 installed.
 
-* Ruby version
+Then:
 
-* System dependencies
+```
+bin/bundle
+bin/rails db:setup db:migrate
+```
 
-* Configuration
+## Starting the app
 
-* Database creation
+First, make sure Postgres is running.
 
-* Database initialization
+Then:
 
-* How to run the test suite
+```
+bin/rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+and visit `http://127.0.0.1:3000`
 
-* Deployment instructions
+## Running the tests
 
-* ...
+```
+bin/rspec
+bin/rake rubocop
+```
