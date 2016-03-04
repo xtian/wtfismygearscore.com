@@ -1,5 +1,4 @@
 require "warning_filter"
-$VERBOSE = true
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -59,4 +58,7 @@ Rails.application.configure do
     g.assets false
     g.helper false
   end
+
+  $VERBOSE = true
+  $stderr = WarningFilter.new($stderr)
 end
