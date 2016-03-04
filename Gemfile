@@ -23,13 +23,16 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 3.0'
-  gem 'listen', '~> 3.0.5'
-
-  # Spring speeds up development by keeping your application running in the background
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard', require: false # Tool to perform actions on file modification
+  gem 'guard-livereload', require: false # Reloads page when view-related files are changed
+  gem 'guard-rails', require: false # Starts Rails server with Guard
+  gem 'guard-rspec', require: false # Runs specs on file modification
+  gem 'guard-rubocop', require: false # Runs rubocop on file modification
+  gem 'listen', '~> 3.0.5' # Watches file system for changes
+  gem 'rack-livereload' # Injects livereload snippet
+  gem 'spring' # Keeps application running in the background
+  gem 'spring-watcher-listen', '~> 2.0.0' # Uses Listen to watch for changes instead of polling
+  gem 'web-console', '~> 3.0' # Access an IRB console on exception pages or by using <%= console %> in views
 end
 
 group :test do

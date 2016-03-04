@@ -18,7 +18,7 @@ First, make sure Postgres is running.
 Then:
 
 ```
-bin/rails s
+bin/guard
 ```
 
 and visit `http://127.0.0.1:3000`
