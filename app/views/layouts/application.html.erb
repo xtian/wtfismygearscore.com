@@ -14,6 +14,7 @@
 
   <body>
     <%= yield %>
+    <%= render 'analytics' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload', async: true, defer: true %>
   </body>
 </html>
