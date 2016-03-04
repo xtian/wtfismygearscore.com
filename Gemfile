@@ -36,6 +36,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara' # Allows simulation of user interaction in feature specs
   gem 'fuubar' # RSpec progress bar formatter
   gem 'shoulda-matchers' # Rails RSpec helpers
   gem 'webmock' # Mocks external requests
