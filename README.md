@@ -1,4 +1,4 @@
-# README
+# WTF is My Gearscore?
 
 ## Setup
 
@@ -29,3 +29,7 @@ and visit `http://127.0.0.1:3000`
 bin/rspec
 bin/rake rubocop
 ```
+
+## Development
+
+See [CONTRIBUTING.md](https://gitlab.com/closedloops/wtfismygs-rails/blob/master/CONTRIBUTING.md)
