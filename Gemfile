@@ -5,6 +5,7 @@ gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'flutie' # Helper for generating page titles
+gem 'normalize-rails' # Base CSS reset
 gem 'pg', '~> 0.18' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'rack-timeout' # Abort requests that are taking too long

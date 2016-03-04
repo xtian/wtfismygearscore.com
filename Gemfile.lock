@@ -118,6 +118,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    normalize-rails (3.0.3)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   listen (~> 3.0.5)
+  normalize-rails
   pg (~> 0.18)
   puma
   rack-livereload
