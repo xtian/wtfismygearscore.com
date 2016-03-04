@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'byebug' # Speeds up development by keeping your application running in the background
+  gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'coderay' # Syntax highlighting for RSpec failures
   gem 'rspec-rails' # Test framework
   gem 'rubocop', require: false # Ensures consistent Ruby style
