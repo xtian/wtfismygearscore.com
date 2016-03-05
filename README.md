@@ -1,4 +1,4 @@
-# WTF is My Gearscore?
+# WTF is My Gear Score?
 
 ## Setup
 

@@ -3,7 +3,9 @@ ruby '2.3.0'
 
 gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 
-gem 'jquery-rails' # Use jquery as the JavaScript library
+gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
+gem 'flutie' # Helper for generating page titles
+gem 'normalize-rails' # Base CSS reset
 gem 'pg', '~> 0.18' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'rack-timeout' # Abort requests that are taking too long
@@ -36,6 +38,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara' # Allows simulation of user interaction in feature specs
   gem 'fuubar' # RSpec progress bar formatter
   gem 'shoulda-matchers' # Rails RSpec helpers
   gem 'webmock' # Mocks external requests
