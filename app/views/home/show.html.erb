@@ -1,0 +1,18 @@
+<%= form_for :redirect, url: redirect_path, method: :get do |f| %>
+  <label>
+    Character
+    <%= f.text_field :name, placeholder: 'Character', tabindex: 1 %>
+  </label>
+
+  <label>
+    Region
+    <%= f.select :region, regions.map { |r| [r.upcase, r] }, {}, tabindex: 2 %>
+  </label>
+
+  <label>
+    Realm
+    <%= f.text_field :realm, placeholder: 'Realm', tabindex: 3 %>
+  </label>
+
+  <button>Score Me!</button>
+<% end %>
