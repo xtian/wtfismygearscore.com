@@ -133,6 +133,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (3.4.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (2.0.0.rc1)
       json
     rack-livereload (0.3.16)
@@ -267,6 +269,7 @@ DEPENDENCIES
   normalize-rails
   pg (~> 0.18)
   puma
+  quiet_assets
   rack-livereload
   rack-timeout
   rails (>= 5.0.0.beta3, < 5.1)

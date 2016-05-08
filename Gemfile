@@ -31,6 +31,7 @@ group :development do
   gem 'guard-rspec', require: false # Runs specs on file modification
   gem 'guard-rubocop', require: false # Runs rubocop on file modification
   gem 'listen', '~> 3.0.5' # Watches file system for changes
+  gem 'quiet_assets' # Strips noisy asset requests from the log
   gem 'rack-livereload' # Injects livereload snippet
   gem 'spring' # Keeps application running in the background
   gem 'spring-watcher-listen', '~> 2.0.0' # Uses Listen to watch for changes instead of polling
