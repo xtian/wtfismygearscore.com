@@ -34,6 +34,7 @@ group :development do
   gem 'quiet_assets' # Strips noisy asset requests from the log
   gem 'rack-livereload' # Injects livereload snippet
   gem 'spring' # Keeps application running in the background
+  gem 'spring-commands-rspec' # Implements the rspec command for Spring
   gem 'spring-watcher-listen', '~> 2.0.0' # Uses Listen to watch for changes instead of polling
   gem 'web-console', '~> 3.0' # Access an IRB console on exception pages or by using <%= console %> in views
 end
