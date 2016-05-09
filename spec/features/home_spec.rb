@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/armory_helpers'
 require 'support/page_objects/homepage_form'
 
 RSpec.feature 'Homepage' do
@@ -7,6 +8,7 @@ RSpec.feature 'Homepage' do
   end
 
   before do
+    stub_character_request
     visit '/'
   end
 
