@@ -1,10 +1,11 @@
 class Armory
   class Character
-    attr_reader :region
+    attr_reader :average_ilvl, :region
 
     def initialize(region, response_body)
       @region = region.upcase
       @body = response_body
+      process_items
     end
 
     %w(name realm level).each do |method_name|
@@ -21,9 +22,21 @@ class Armory
       body["guild"]["name"]
     end
 
+    def items
+      body["items"]
+    end
+
+    def maximum_ilvl
+      @_max_ilvl ||= ilvls.max
+    end
+
+    def minimum_ilvl
+      @_min_ilvl ||= ilvls.min
+    end
+
     private
 
-    attr_reader :body
+    attr_reader :body, :ilvls
 
     CLASSES = [
       "Warrior",
@@ -38,5 +51,14 @@ class Armory
       "Monk",
       "Druid"
     ].freeze
+
+    def process_items
+      body["items"].delete "averageItemLevelEquipped"
+      @average_ilvl = body["items"].delete("averageItemLevel")
+
+      @ilvls = body["items"]
+        .reject { |k| %w(shirt tabard).include? k }
+        .map { |_k, hash| hash["itemLevel"] }
+    end
   end
 end

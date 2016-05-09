@@ -8,7 +8,7 @@ class Armory
   end
 
   def fetch_character(region, realm, name)
-    url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}?apiKey=#{api_key}&fields=guild"
+    url = build_url(region, realm, name)
     response = make_request(url)
     body = JSON.parse(response.body)
 
@@ -20,6 +20,10 @@ class Armory
   private
 
   attr_reader :api_key
+
+  def build_url(region, realm, name)
+    "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}?apikey=#{api_key}&fields=guild,items"
+  end
 
   def make_request(url)
     Faraday.get do |req|

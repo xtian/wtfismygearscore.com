@@ -1,10 +1,10 @@
 require 'rails_helper'
 require 'support/armory_helpers'
-require 'support/page_objects/homepage_form'
+require 'support/pages/home_page'
 
 RSpec.feature 'Homepage' do
-  def form
-    HomepageForm.new
+  def home_page
+    HomePage.new
   end
 
   before do
@@ -18,23 +18,23 @@ RSpec.feature 'Homepage' do
   end
 
   scenario 'User submits character info' do
-    form.fill_name 'Dargonaut'
-    form.fill_realm 'Shadowmoon'
-    form.submit
+    home_page.fill_name 'Dargonaut'
+    home_page.fill_realm 'Shadowmoon'
+    home_page.submit
 
     expect(current_path).to eq(character_path('us', 'Shadowmoon', 'Dargonaut'))
   end
 
   scenario 'User submits realm info' do
-    form.fill_realm 'Shadowmoon'
-    form.submit
+    home_page.fill_realm 'Shadowmoon'
+    home_page.submit
 
     expect(current_path).to eq(characters_path('us', 'Shadowmoon'))
   end
 
   scenario 'User submits region info' do
-    form.fill_region 'EU'
-    form.submit
+    home_page.fill_region 'EU'
+    home_page.submit
 
     expect(current_path).to eq(characters_path('eu'))
   end

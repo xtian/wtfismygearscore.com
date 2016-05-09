@@ -1,4 +1,4 @@
-class HomepageForm
+class HomePage
   include Capybara::DSL
 
   def fill_region(value)
