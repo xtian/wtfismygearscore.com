@@ -21,7 +21,7 @@ RSpec.describe Armory do
 
       expect {
         subject.fetch_character('us', 'Shadowmoon', 'Dargonaut')
-      }.to raise_error
+      }.to raise_error(/403 Account Inactive/)
     end
   end
 end
