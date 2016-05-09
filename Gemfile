@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'coderay' # Syntax highlighting for RSpec failures
-  gem 'rspec-rails' # Test framework
+  gem 'rspec-rails', '>= 3.5.0.beta3' # Test framework
   gem 'rubocop', require: false # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
 end
@@ -39,7 +39,7 @@ end
 
 group :test do
   gem 'capybara' # Allows simulation of user interaction in feature specs
-  gem 'fuubar' # RSpec progress bar formatter
+  gem 'fuubar', '>= 2.1.0.beta2' # RSpec progress bar formatter
   gem 'shoulda-matchers' # Rails RSpec helpers
   gem 'webmock' # Mocks external requests
 end
