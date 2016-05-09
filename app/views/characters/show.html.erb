@@ -1,1 +1,14 @@
 <% content_for(:page_title) { "#{@character.name}, #{@character.level} #{@character.class_name}" } %>
+
+<output data-t-score><%= @score %></output>
+
+<dl>
+  <dt>Average iLvl</dt>
+  <dd data-t-avg-ilvl><%= @character.average_ilvl %></dd>
+
+  <dt>Lowest iLvl</dt>
+  <dd data-t-min-ilvl><%= @character.minimum_ilvl %></dd>
+
+  <dt>Highest iLvl</dt>
+  <dd data-t-max-ilvl><%= @character.maximum_ilvl %></dd>
+</dl>
