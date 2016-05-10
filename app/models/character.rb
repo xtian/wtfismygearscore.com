@@ -16,4 +16,16 @@ class Character < ApplicationRecord
       (SELECT *, rank() OVER (#{partition} ORDER BY score DESC) FROM characters) AS characters
     SQL
   end
+
+  def self.update_from_armory(character, score)
+    find_or_initialize_by(
+      region: character.region,
+      realm: character.realm,
+      name: character.name
+    ).update_attributes!(
+      character_class: character.class_name,
+      level: character.level,
+      score: score
+    )
+  end
 end

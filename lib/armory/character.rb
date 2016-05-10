@@ -3,7 +3,7 @@ class Armory
     attr_reader :average_ilvl, :region
 
     def initialize(region, response_body)
-      @region = region.upcase
+      @region = region.downcase
       @body = response_body
       process_items
     end

@@ -7,8 +7,11 @@ class CharactersController < ApplicationController
 
   def show
     character_params = params.values_at(:region, :realm, :name)
+
     @character = ARMORY.fetch_character(*character_params)
     @score = GearscoreCalculator.calculate(@character.items)
+
+    Character.update_from_armory(@character, @score)
   end
 
   private
