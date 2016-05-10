@@ -9,7 +9,7 @@ RSpec.feature 'Homepage' do
 
   before do
     stub_character_request
-    visit '/'
+    visit root_path
   end
 
   scenario 'User visits homepage' do
