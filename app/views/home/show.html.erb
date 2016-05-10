@@ -16,3 +16,11 @@
 
   <button>Score Me!</button>
 <% end %>
+
+<ul>
+  <li><%= link_to 'World', characters_path('world') %></li>
+
+  <% VALID_REGIONS_WITH_REALM.each do |region| %>
+    <li><%= link_to region.upcase, characters_path(region) %></li>
+  <% end %>
+</ul>
