@@ -6,7 +6,7 @@
 
   <label>
     Region
-    <%= f.select :region, regions.map { |r| [r.upcase, r] }, {}, tabindex: 2 %>
+    <%= f.select :region, region_options, {}, tabindex: 2 %>
   </label>
 
   <label>

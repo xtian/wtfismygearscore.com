@@ -9,9 +9,4 @@ class ApplicationController < ActionController::Base
     Rails.application.secrets
   end
   helper_method :secrets
-
-  def regions
-    %i(us eu kr tw cn).freeze
-  end
-  helper_method :regions
 end
