@@ -1,11 +1,14 @@
 class RegionConstraint
+  REGIONS_SET = Set.new(VALID_REGIONS).freeze
+  REALM_REGIONS_SET = Set.new(VALID_REGIONS_WITH_REALM).freeze
+
   def matches?(request)
     region = request.params[:region]
 
     if request.params[:realm]
-      region.in?(VALID_REGIONS_WITH_REALM)
+      REALM_REGIONS_SET.include? region
     else
-      region.in?(VALID_REGIONS)
+      REGIONS_SET.include? region
     end
   end
 end
