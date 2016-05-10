@@ -38,20 +38,6 @@ class Armory
 
     attr_reader :body, :ilvls
 
-    CLASSES = [
-      "Warrior",
-      "Paladin",
-      "Hunter",
-      "Rogue",
-      "Priest",
-      "Death Knight",
-      "Shaman",
-      "Mage",
-      "Warlock",
-      "Monk",
-      "Druid"
-    ].freeze
-
     def process_items
       body["items"].delete "averageItemLevelEquipped"
       @average_ilvl = body["items"].delete("averageItemLevel")
