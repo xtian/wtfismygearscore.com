@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def not_found
+    raise ActionController::RoutingError, 'Not Found'
+  end
+
   def secrets
     Rails.application.secrets
   end
