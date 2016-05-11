@@ -10,6 +10,7 @@ gem 'pg', '~> 0.18' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'rack-timeout' # Abort requests that are taking too long
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
+gem 'sidekiq' # Background job queue built on Redis
 gem 'turbolinks', '~> 5.x' # Makes navigating your web application faster
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 

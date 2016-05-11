@@ -24,5 +24,7 @@ module WtfIsMyGearscore
 
     # Only automatically include helper module whose name matches controller's
     config.action_controller.include_all_helpers = false
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

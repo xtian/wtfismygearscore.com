@@ -2,7 +2,7 @@
 
 ## Setup
 
-First, make sure you have Postgres version 9.5 and Ruby version 2.3.0 installed.
+First, make sure you have Redis, Postgres version 9.5, and Ruby version 2.3.0 installed.
 
 Then:
 
