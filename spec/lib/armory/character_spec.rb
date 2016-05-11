@@ -23,7 +23,7 @@ RSpec.describe Armory::Character do
 
   describe '#region' do
     it 'returns character region' do
-      expect(subject.region).to eq('US')
+      expect(subject.region).to eq('us')
     end
   end
 

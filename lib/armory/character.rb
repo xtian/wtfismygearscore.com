@@ -3,7 +3,7 @@ class Armory
     attr_reader :average_ilvl, :region
 
     def initialize(region, response_body)
-      @region = region.upcase
+      @region = region.downcase
       @body = response_body
       process_items
     end
@@ -37,20 +37,6 @@ class Armory
     private
 
     attr_reader :body, :ilvls
-
-    CLASSES = [
-      "Warrior",
-      "Paladin",
-      "Hunter",
-      "Rogue",
-      "Priest",
-      "Death Knight",
-      "Shaman",
-      "Mage",
-      "Warlock",
-      "Monk",
-      "Druid"
-    ].freeze
 
     def process_items
       body["items"].delete "averageItemLevelEquipped"
