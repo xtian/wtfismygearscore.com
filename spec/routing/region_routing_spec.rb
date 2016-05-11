@@ -33,6 +33,11 @@ RSpec.describe 'region routing' do
     end
   end
 
+  it 'handles uppercased regions' do
+    expect(get: '/WORLD').to be_routable
+    expect(get: '/eU').to be_routable
+  end
+
   it 'does not route invalid regions' do
     expect(get: '/foo').not_to be_routable
     expect(get: '/world/shadowmoon').not_to be_routable
