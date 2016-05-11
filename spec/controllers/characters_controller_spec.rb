@@ -2,33 +2,36 @@ require 'rails_helper'
 require 'support/armory_helpers'
 
 RSpec.describe CharactersController do
-  before do
-    stub_character_request
-  end
+  let(:character_info) { { region: 'us', realm: 'shadowmoon', name: 'dargonaut' } }
+  let!(:character_request) { stub_character_request }
 
   describe '#show' do
-    it 'stores newly requested characters in the database' do
-      expect(Character.count).to eq(0)
+    context 'with an existing character' do
+      let!(:character) { Fabricate(:character, character_info) }
 
-      get :show, params: { region: 'us', realm: 'shadowmoon', name: 'dargonaut' }
+      it 'loads the character from the DB' do
+        get :show, params: character_info
+        expect(character_request).not_to have_been_requested
+      end
 
-      expect(Character.count).to eq(1)
+      it 'starts a job to refresh the character' do
+        expect {
+          get :show, params: character_info
+        }.to have_enqueued_job(UpdateCharacterFromArmoryJob).with(character)
+      end
     end
 
-    it 'updates existing characters in the database' do
-      character = Fabricate(
-        :character,
-        region: 'us',
-        realm: 'shadowmoon',
-        name: 'dargonaut',
-        score: 1,
-        level: 1
-      )
+    it 'loads newly requested characters from the Armory' do
+      get :show, params: character_info
+      expect(character_request).to have_been_requested
+    end
 
-      get :show, params: { region: 'us', realm: 'shadowmoon', name: 'dargonaut' }
+    it 'stores newly requested characters in the DB' do
+      expect(Character.count).to eq(0)
 
-      expect(character.reload.score).to eq(19_717)
-      expect(character.level).to eq(100)
+      get :show, params: character_info
+
+      expect(Character.count).to eq(1)
     end
   end
 end

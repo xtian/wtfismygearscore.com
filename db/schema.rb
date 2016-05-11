@@ -11,21 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509224357) do
+ActiveRecord::Schema.define(version: 20160511042535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "citext"
 
   create_table "characters", force: :cascade do |t|
-    t.integer  "region",          null: false
-    t.citext   "realm",           null: false
-    t.citext   "name",            null: false
-    t.integer  "character_class", null: false
-    t.integer  "level",           null: false
-    t.integer  "score",           null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "region",     null: false
+    t.citext   "realm",      null: false
+    t.citext   "name",       null: false
+    t.integer  "class_name", null: false
+    t.integer  "level",      null: false
+    t.integer  "score",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "avg_ilvl",   null: false
+    t.integer  "max_ilvl",   null: false
+    t.integer  "min_ilvl",   null: false
     t.index ["name", "realm", "region"], name: "index_characters_on_name_and_realm_and_region", unique: true, using: :btree
     t.index ["realm", "region", "score"], name: "index_characters_on_realm_and_region_and_score", order: {"score"=>:desc}, using: :btree
     t.index ["region", "score"], name: "index_characters_on_region_and_score", order: {"score"=>:desc}, using: :btree

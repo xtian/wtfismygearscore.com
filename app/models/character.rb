@@ -1,9 +1,11 @@
 class Character < ApplicationRecord
-  enum character_class: CLASSES
+  enum class_name: CLASSES
   enum region: VALID_REGIONS_WITH_REALM
 
-  validates :character_class, :level, :name, :realm, :region, :score, presence: true
-  validates :level, :score, numericality: { only_integer: true, greater_than: 0 }
+  validates :class_name, :name, :realm, :region, presence: true
+
+  validates :avg_ilvl, :level, :max_ilvl, :min_ilvl, :score,
+            numericality: { only_integer: true, greater_than: 0 }, presence: true
 
   def self.ranked(by: nil)
     partition = if by == :region
@@ -17,14 +19,13 @@ class Character < ApplicationRecord
     SQL
   end
 
-  def self.update_from_armory(character, score)
-    find_or_initialize_by(
-      region: character.region,
-      realm: character.realm,
-      name: character.name
-    ).update_attributes!(
-      character_class: character.class_name,
+  def update_from_armory(character, score)
+    update_attributes!(
+      avg_ilvl: character.average_ilvl,
+      class_name: character.class_name,
       level: character.level,
+      max_ilvl: character.maximum_ilvl,
+      min_ilvl: character.minimum_ilvl,
       score: score
     )
   end
