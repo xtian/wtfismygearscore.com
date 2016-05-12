@@ -6,12 +6,10 @@ class CharactersController < ApplicationController
   end
 
   def show
-    character_params = params.values_at(:region, :realm, :name)
+    @character = Character.find_or_initialize_by(params.permit(:region, :realm, :name))
 
-    @character = ARMORY.fetch_character(*character_params)
-    @score = GearscoreCalculator.calculate(@character.items)
-
-    Character.update_from_armory(@character, @score)
+    method_name = @character.new_record? ? :perform_now : :perform_later
+    UpdateCharacterFromArmoryJob.public_send(method_name, @character)
   end
 
   private

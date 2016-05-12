@@ -1,14 +1,14 @@
-<% content_for(:page_title) { "#{@character.name}, #{@character.level} #{@character.class_name}" } %>
+<% content_for(:page_title) { "#{@character.name.humanize}, #{@character.level} #{@character.class_name}" } %>
 
-<output data-t-score><%= @score %></output>
+<output data-t-score><%= @character.score %></output>
 
 <dl>
   <dt>Average iLvl</dt>
-  <dd data-t-avg-ilvl><%= @character.average_ilvl %></dd>
+  <dd data-t-avg-ilvl><%= @character.avg_ilvl %></dd>
 
   <dt>Lowest iLvl</dt>
-  <dd data-t-min-ilvl><%= @character.minimum_ilvl %></dd>
+  <dd data-t-min-ilvl><%= @character.min_ilvl %></dd>
 
   <dt>Highest iLvl</dt>
-  <dd data-t-max-ilvl><%= @character.maximum_ilvl %></dd>
+  <dd data-t-max-ilvl><%= @character.max_ilvl %></dd>
 </dl>
