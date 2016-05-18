@@ -12,6 +12,7 @@ gem 'rack-timeout' # Abort requests that are taking too long
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 gem 'sidekiq' # Background job queue built on Redis
 gem 'turbolinks', '~> 5.x' # Makes navigating your web application faster
+gem 'typhoeus' # HTTP client backend for Faraday
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 # Use Capistrano for deployment

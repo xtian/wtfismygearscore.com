@@ -1,6 +1,7 @@
 require 'armory/character'
 require 'faraday'
 require 'json'
+require 'typhoeus/adapters/faraday'
 
 class Armory
   def initialize(api_key)
@@ -25,8 +26,14 @@ class Armory
     "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}?apikey=#{api_key}&fields=guild,items"
   end
 
+  def faraday
+    @_faraday ||= Faraday.new do |faraday|
+      faraday.adapter :typhoeus
+    end
+  end
+
   def make_request(url)
-    Faraday.get do |req|
+    faraday.get do |req|
       req.headers['Accept'] = 'application/json'
       req.url url
     end
