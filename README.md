@@ -2,13 +2,19 @@
 
 ## Setup
 
+First, install [Homebrew](http://brew.sh) or [Linuxbrew](http://linuxbrew.sh).
+
+Then:
+
 ```
 bin/setup
 ```
 
+If you are using Windows this will not work and you are on your own. Good luck!
+
 ## Starting the app
 
-First, make sure Postgres is running.
+First, make sure Postgres and Redis are running.
 
 Then:
 
