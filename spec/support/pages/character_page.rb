@@ -1,6 +1,10 @@
 class CharacterPage
   include Capybara::DSL
 
+  def guild_name
+    find('[data-t-guild-name]').text
+  end
+
   def score
     find('[data-t-score]').text.to_i
   end

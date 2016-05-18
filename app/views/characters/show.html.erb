@@ -2,6 +2,11 @@
 
 <output data-t-score><%= @character.score %></output>
 
+<header>
+  <h1><%= "#{@character.name.humanize}, #{@character.level} #{@character.class_name}" %></h1>
+  <b data-t-guild-name><%= @character.guild_name %></b>
+</header>
+
 <dl>
   <dt>Average iLvl</dt>
   <dd data-t-avg-ilvl><%= @character.avg_ilvl %></dd>
