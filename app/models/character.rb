@@ -23,6 +23,7 @@ class Character < ApplicationRecord
     update_attributes!(
       avg_ilvl: character.average_ilvl,
       class_name: character.class_name,
+      guild_name: character.guild_name,
       level: character.level,
       max_ilvl: character.maximum_ilvl,
       min_ilvl: character.minimum_ilvl,
