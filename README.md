@@ -8,7 +8,7 @@ bin/setup
 
 ## Starting the app
 
-First, make sure Postgres is running.
+First, make sure Postgres and Redis are running.
 
 Then:
 
