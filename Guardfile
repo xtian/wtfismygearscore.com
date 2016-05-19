@@ -4,6 +4,7 @@ guard :livereload do
     scss: :css,
     sass: :css,
     js: :js,
+    es6: :es6,
     html: :html,
     png: :png,
     gif: :gif,

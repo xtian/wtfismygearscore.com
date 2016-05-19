@@ -1,4 +1,11 @@
 module ApplicationHelper
+  def async_javascript_include_tag(name, options = {})
+    javascript_include_tag name, options.reverse_merge(
+      'data-turbolinks-track' => 'reload',
+      defer: true
+    )
+  end
+
   def page_title(options = {})
     app_name = options[:app_name]
 
