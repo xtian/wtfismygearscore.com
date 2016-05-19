@@ -10,12 +10,13 @@
     <meta name="author" content="Alex Baumhoer, Christian Wesselhoeft">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= stylesheet_link_tag 'normalize-rails', media: 'all', 'data-turbolinks-track' => 'reload' %>
   </head>
 
   <body>
     <%= yield %>
     <%= render 'analytics' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload', async: true, defer: true %>
+
+    <%= javascript_include_tag 'turbolinks', 'data-turbolinks-track' => 'reload', async: true, defer: true %>
   </body>
 </html>
