@@ -8,4 +8,12 @@ module ApplicationHelper
       app_name
     end
   end
+
+  if Rails.env.test?
+    def tid(id)
+      "data-t-#{id}"
+    end
+  else
+    def tid(*); end
+  end
 end
