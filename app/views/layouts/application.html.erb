@@ -11,6 +11,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'normalize-rails', media: 'all', 'data-turbolinks-track' => 'reload' %>
+
+    <link rel="prefetch" href="<%= javascript_path('action_cable') %>">
   </head>
 
   <body>
