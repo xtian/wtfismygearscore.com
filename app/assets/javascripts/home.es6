@@ -1,7 +1,6 @@
 (() => {
   if (!Turbolinks.supported) { return; }
 
-  let $ = (selector, context = document) => context.querySelector(selector);
   let form = $('.js-redirectForm');
 
   form.addEventListener('submit', (ev) => {
