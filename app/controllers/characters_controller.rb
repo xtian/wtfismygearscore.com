@@ -8,8 +8,11 @@ class CharactersController < ApplicationController
   def show
     @character = Character.find_or_initialize_by(params.permit(:region, :realm, :name))
 
-    method_name = @character.new_record? ? :perform_now : :perform_later
-    UpdateCharacterFromArmoryJob.public_send(method_name, @character)
+    if @character.new_record?
+      CharacterUpdater.call(@character)
+    else
+      CharacterUpdaterJob.perform_later(@character)
+    end
   end
 
   private

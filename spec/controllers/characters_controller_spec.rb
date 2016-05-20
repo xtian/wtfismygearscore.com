@@ -17,7 +17,7 @@ RSpec.describe CharactersController do
       it 'starts a job to refresh the character' do
         expect {
           get :show, params: character_info
-        }.to have_enqueued_job(UpdateCharacterFromArmoryJob).with(character)
+        }.to have_enqueued_job(CharacterUpdaterJob).with(character)
       end
     end
 

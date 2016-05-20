@@ -20,7 +20,7 @@ class Character < ApplicationRecord
   end
 
   def update_from_armory(character, score)
-    update_attributes!(
+    update!(
       avg_ilvl: character.average_ilvl,
       class_name: character.class_name,
       guild_name: character.guild_name,
