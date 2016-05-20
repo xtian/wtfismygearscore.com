@@ -7,5 +7,5 @@
     <th>Score</th>
   </thead>
 
-  <tbody><%= render @characters %></tbody>
+  <tbody><%= render partial: 'character_row', collection: @characters, as: :character %></tbody>
 </table>
