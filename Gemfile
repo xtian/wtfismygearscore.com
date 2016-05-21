@@ -12,6 +12,7 @@ gem 'puma' # Use Puma as the app server
 gem 'rack-timeout' # Abort requests that are taking too long
 gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
 gem 'sidekiq' # Background job queue built on Redis
+gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
 gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and images
 gem 'turbolinks', '~> 5.x' # Makes navigating your web application faster
 gem 'typhoeus' # HTTP client backend for Faraday

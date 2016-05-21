@@ -224,6 +224,9 @@ GEM
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
+    sidekiq-unique-jobs (4.0.13)
+      sidekiq (>= 2.6)
+      thor
     slop (3.6.0)
     spring (1.7.1)
     spring-commands-rspec (1.0.4)
@@ -294,6 +297,7 @@ DEPENDENCIES
   sass-rails (>= 6.0.0.beta1)
   shoulda-matchers
   sidekiq
+  sidekiq-unique-jobs
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)

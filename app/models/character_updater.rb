@@ -1,6 +1,14 @@
-class UpdateCharacterFromArmoryJob < ApplicationJob
-  def perform(character)
-    return if recently_updated?(character)
+class CharacterUpdater
+  def initialize(character)
+    @character = character
+  end
+
+  def self.call(character)
+    new(character).call
+  end
+
+  def call
+    return character if recently_updated?
 
     armory_response = ARMORY.fetch_character(
       character.region,
@@ -9,13 +17,16 @@ class UpdateCharacterFromArmoryJob < ApplicationJob
     )
 
     score = GearscoreCalculator.calculate(armory_response.items)
-
     character.update_from_armory(armory_response, score)
+
+    character
   end
 
   private
 
-  def recently_updated?(character)
+  attr_reader :character
+
+  def recently_updated?
     # Don't update cache if it was updated less than fifteen minutes ago
     !character.new_record? && character.updated_at + 15.minutes > Time.current
   end

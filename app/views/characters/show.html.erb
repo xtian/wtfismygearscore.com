@@ -1,19 +1,14 @@
 <% content_for(:page_title) { "#{@character.name.humanize}, #{@character.level} #{@character.class_name}" } %>
 
-<output <%= tid :score %>><%= @character.score %></output>
+<% content_for(:head) do %>
+  <meta name="js-characterData" id="<%= @character.to_param %>" timestamp="<%= @character.updated_at %>">
+<% end %>
 
-<header>
-  <h1><%= "#{@character.name.humanize}, #{@character.level} #{@character.class_name}" %></h1>
-  <b <%= tid :guild_name %>><%= @character.guild_name %></b>
-</header>
+<% content_for(:javascripts) do %>
+  <%= async_javascript_include_tag 'action_cable' %>
+  <%= async_javascript_include_tag 'character' %>
+<% end %>
 
-<dl>
-  <dt>Average iLvl</dt>
-  <dd <%= tid :avg_ilvl %>><%= @character.avg_ilvl %></dd>
-
-  <dt>Lowest iLvl</dt>
-  <dd <%= tid :min_ilvl %>><%= @character.min_ilvl %></dd>
-
-  <dt>Highest iLvl</dt>
-  <dd <%= tid :max_ilvl %>><%= @character.max_ilvl %></dd>
-</dl>
+<div class="js-characterContainer">
+  <%= render @character %>
+</div>

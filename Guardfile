@@ -39,7 +39,3 @@ guard :rails do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
 end
-
-guard :sidekiq, verbose: false do
-  watch(%r{^app/jobs/(.+)\.rb$})
-end

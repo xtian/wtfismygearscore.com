@@ -1,12 +1,12 @@
 require 'rails_helper'
 require 'support/armory_helpers'
 
-RSpec.describe UpdateCharacterFromArmoryJob do
+RSpec.describe CharacterUpdater do
   before do
     stub_character_request
   end
 
-  describe '#perform' do
+  describe '.call' do
     it 'updates DB from the Armory' do
       character = Fabricate(
         :character,
@@ -15,9 +15,9 @@ RSpec.describe UpdateCharacterFromArmoryJob do
         updated_at: 1.week.ago
       )
 
-      subject.perform(character)
+      character = described_class.call(character)
 
-      expect(character.reload.score).to eq(19_717)
+      expect(character.score).to eq(19_717)
       expect(character.level).to eq(100)
     end
 
@@ -28,9 +28,9 @@ RSpec.describe UpdateCharacterFromArmoryJob do
         level: 1
       )
 
-      subject.perform(character)
+      character = described_class.call(character)
 
-      expect(character.reload.score).to eq(1)
+      expect(character.score).to eq(1)
     end
   end
 end

@@ -1,7 +1,17 @@
-<tr <%= tid :character %>>
-  <td <%= tid :rank %>><%= character.rank %></td>
+<output <%= tid :score %>><%= character.score %></output>
 
-  <td <%= tid :name %>><%= character.name %></td>
+<header>
+  <h1><%= "#{character.name.humanize}, #{character.level} #{character.class_name}" %></h1>
+  <b <%= tid :guild_name %>><%= character.guild_name %></b>
+</header>
 
-  <td <%= tid :score %>><%= character.score %></td>
-</tr>
+<dl>
+  <dt>Average iLvl</dt>
+  <dd <%= tid :avg_ilvl %>><%= character.avg_ilvl %></dd>
+
+  <dt>Lowest iLvl</dt>
+  <dd <%= tid :min_ilvl %>><%= character.min_ilvl %></dd>
+
+  <dt>Highest iLvl</dt>
+  <dd <%= tid :max_ilvl %>><%= character.max_ilvl %></dd>
+</dl>
