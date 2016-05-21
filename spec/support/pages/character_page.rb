@@ -1,23 +1,23 @@
-class CharacterPage
-  include Capybara::DSL
+require_relative './page'
 
+class CharacterPage < Page
   def guild_name
-    find('[data-t-guild-name]').text
+    find_tid(:guild_name).text
   end
 
   def score
-    find('[data-t-score]').text.to_i
+    find_tid(:score).text.to_i
   end
 
   def avg_ilvl
-    find('[data-t-avg-ilvl]').text.to_i
+    find_tid(:avg_ilvl).text.to_i
   end
 
   def max_ilvl
-    find('[data-t-max-ilvl]').text.to_i
+    find_tid(:max_ilvl).text.to_i
   end
 
   def min_ilvl
-    find('[data-t-min-ilvl]').text.to_i
+    find_tid(:min_ilvl).text.to_i
   end
 end

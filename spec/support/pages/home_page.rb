@@ -1,6 +1,6 @@
-class HomePage
-  include Capybara::DSL
+require_relative './page'
 
+class HomePage < Page
   def fill_region(value)
     select value, from: 'Region'
   end

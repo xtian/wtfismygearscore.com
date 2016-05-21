@@ -1,19 +1,19 @@
 <% content_for(:page_title) { "#{@character.name.humanize}, #{@character.level} #{@character.class_name}" } %>
 
-<output data-t-score><%= @character.score %></output>
+<output <%= tid :score %>><%= @character.score %></output>
 
 <header>
   <h1><%= "#{@character.name.humanize}, #{@character.level} #{@character.class_name}" %></h1>
-  <b data-t-guild-name><%= @character.guild_name %></b>
+  <b <%= tid :guild_name %>><%= @character.guild_name %></b>
 </header>
 
 <dl>
   <dt>Average iLvl</dt>
-  <dd data-t-avg-ilvl><%= @character.avg_ilvl %></dd>
+  <dd <%= tid :avg_ilvl %>><%= @character.avg_ilvl %></dd>
 
   <dt>Lowest iLvl</dt>
-  <dd data-t-min-ilvl><%= @character.min_ilvl %></dd>
+  <dd <%= tid :min_ilvl %>><%= @character.min_ilvl %></dd>
 
   <dt>Highest iLvl</dt>
-  <dd data-t-max-ilvl><%= @character.max_ilvl %></dd>
+  <dd <%= tid :max_ilvl %>><%= @character.max_ilvl %></dd>
 </dl>
