@@ -12,6 +12,9 @@ Rails:
 Metrics/LineLength:
   Max: 120
 
+RSpec/ExampleLength:
+  Max: 10
+
 Style/BlockDelimiters:
   EnforcedStyle: braces_for_chaining
 
