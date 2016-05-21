@@ -1,17 +1,21 @@
-<%= form_for :redirect, url: redirect_path, method: :get do |f| %>
+<% content_for(:javascripts) do %>
+  <%= async_javascript_include_tag 'home' %>
+<% end %>
+
+<%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'js-redirectForm' } do |f| %>
   <label>
     Character
-    <%= f.text_field :name, placeholder: 'Character', tabindex: 1 %>
+    <%= f.text_field :name, placeholder: 'Character', tabindex: 1, class: 'js-redirectForm-name' %>
   </label>
 
   <label>
     Region
-    <%= f.select :region, region_options, {}, tabindex: 2 %>
+    <%= f.select :region, region_options, {}, tabindex: 2, class: 'js-redirectForm-region' %>
   </label>
 
   <label>
     Realm
-    <%= f.text_field :realm, placeholder: 'Realm', tabindex: 3 %>
+    <%= f.text_field :realm, placeholder: 'Realm', tabindex: 3, class: 'js-redirectForm-realm' %>
   </label>
 
   <button>Score Me!</button>

@@ -4,13 +4,15 @@ ruby '2.3.0'
 gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
+gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code
 gem 'faraday' # HTTP client
 gem 'normalize-rails' # Base CSS reset
 gem 'pg', '~> 0.18' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'rack-timeout' # Abort requests that are taking too long
-gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
+gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
 gem 'sidekiq' # Background job queue built on Redis
+gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and images
 gem 'turbolinks', '~> 5.x' # Makes navigating your web application faster
 gem 'typhoeus' # HTTP client backend for Faraday
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
