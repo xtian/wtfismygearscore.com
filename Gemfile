@@ -32,8 +32,6 @@ end
 group :development do
   gem 'guard', require: false # Tool to perform actions on file modification
   gem 'guard-livereload', require: false # Reloads page when view-related files are changed
-  gem 'guard-rails', require: false # Starts Rails server with Guard
-  gem 'guard-sidekiq', require: false # Starts Sidekiq daemon with Guard
   gem 'listen', '~> 3.0.5' # Watches file system for changes
   gem 'quiet_assets' # Strips noisy asset requests from the log
   gem 'rack-livereload' # Injects livereload snippet

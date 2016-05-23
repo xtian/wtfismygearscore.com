@@ -19,7 +19,7 @@ First, make sure Postgres and Redis are running.
 Then:
 
 ```
-bin/guard
+foreman start
 ```
 
 and visit `http://127.0.0.1:3000`
