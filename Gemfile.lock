@@ -96,12 +96,6 @@ GEM
       guard (~> 2.8)
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
-    guard-rails (0.7.2)
-      guard (~> 2.11)
-      guard-compat (~> 1.0)
-    guard-sidekiq (0.1.0)
-      guard (>= 2)
-      sidekiq
     hashdiff (0.3.0)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
@@ -281,8 +275,6 @@ DEPENDENCIES
   fuubar (>= 2.1.0.beta2)
   guard
   guard-livereload
-  guard-rails
-  guard-sidekiq
   listen (~> 3.0.5)
   normalize-rails
   pg (~> 0.18)
