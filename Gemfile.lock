@@ -48,7 +48,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     builder (3.2.2)
-    byebug (9.0.4)
+    byebug (9.0.5)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -109,9 +109,9 @@ GEM
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
-    mime-types (3.0)
+    mime-types (3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0221)
+    mime-types-data (3.2016.0521)
     mini_portile2 (2.0.0)
     minitest (5.9.0)
     multi_json (1.12.1)
@@ -218,7 +218,7 @@ GEM
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
-    sidekiq-unique-jobs (4.0.13)
+    sidekiq-unique-jobs (4.0.17)
       sidekiq (>= 2.6)
       thor
     slop (3.6.0)
@@ -239,7 +239,7 @@ GEM
     thread_safe (0.3.5)
     turbolinks (5.0.0.beta2)
       turbolinks-source
-    turbolinks-source (5.0.0.beta4)
+    turbolinks-source (5.0.0.beta5)
     typhoeus (1.0.2)
       ethon (>= 0.9.0)
     tzinfo (1.2.2)
