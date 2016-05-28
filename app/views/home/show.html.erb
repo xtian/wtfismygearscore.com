@@ -6,43 +6,55 @@
   <%= async_javascript_include_tag 'home' %>
 <% end %>
 
-<aside class="Burst Burst--fail">
-  <h1 class="Burst-text">Huh?</h1>
-</aside>
+<a href="#" class="js-toggleContent">
+  <aside class="Burst Burst--fail">
+    <h1 class="Burst-text">Huh?</h1>
+  </aside>
+</a>
 
 <div class="SubHeader">
   A tool to determine how fail you are.
 </div>
 
-<%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'js-redirectForm' } do |f| %>
+<%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'RedirectForm js-redirectForm' } do |f| %>
   <label>
-    Character
-    <%= f.text_field :name, placeholder: 'Character', tabindex: 1, class: 'js-redirectForm-name' %>
+    <span class="u-visuallyHidden">Character Name</span>
+    <%= f.text_field :name, placeholder: 'Character Name', tabindex: 1, class: 'js-redirectForm-name' %>
   </label>
 
-  <label>
-    Region
-    <%= f.select :region, region_options, {}, tabindex: 2, class: 'js-redirectForm-region' %>
-  </label>
+  <div class="RedirectForm-row">
+    <label class="RedirectForm-region">
+      <span class="u-visuallyHidden">Region</span>
+      <%= f.select :region, region_options, {}, tabindex: 2, class: 'js-redirectForm-region' %>
+    </label>
 
-  <label>
-    Realm
-    <%= f.text_field :realm, placeholder: 'Realm', tabindex: 3, class: 'js-redirectForm-realm' %>
-  </label>
+    <label class="RedirectForm-realm">
+      <span class="u-visuallyHidden">Realm</span>
+      <%= f.text_field :realm, placeholder: 'Realm', tabindex: 3, class: 'js-redirectForm-realm' %>
+    </label>
+  </div>
 
-  <button>Score Me!</button>
+  <div class="RedirectForm-row">
+    <ul class="RedirectForm-regionList">
+      <li><%= link_to 'World', characters_path('world') %></li>
+
+      <% VALID_REGIONS_WITH_REALM.each do |region| %>
+        <li><%= link_to region.upcase, characters_path(region) %></li>
+      <% end %>
+    </ul>
+
+    <button class="RedirectForm-submit" tabindex="4">Score Me!</button>
+  </div>
 <% end %>
 
-<ul>
-  <li><%= link_to 'World', characters_path('world') %></li>
-
-  <% VALID_REGIONS_WITH_REALM.each do |region| %>
-    <li><%= link_to region.upcase, characters_path(region) %></li>
-  <% end %>
-</ul>
+<%= async_stylesheet_link_tag 'home' %>
 
 <% content_for(:secondary_content) do %>
-  <section class="SecondaryContent">
+  <section class="SecondaryContent-panel js-toggleable">
+    <h1 class="SecondaryContent-header">Recent Comments</h1>
+  </section>
+
+  <section class="SecondaryContent-panel js-toggleable is-collapsed">
     <h1 class="SecondaryContent-header">About all this</h1>
 
     <ul>

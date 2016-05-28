@@ -10,7 +10,7 @@ class HomePage < Page
   end
 
   def fill_name(value)
-    fill_in 'Character', with: value
+    fill_in 'Character Name', with: value
   end
 
   def submit

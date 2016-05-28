@@ -42,6 +42,19 @@ a {
   background-color: $tan;
 }
 
+// Hide only visually, but have it available for screen readers:
+// See: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+.u-visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 @import 'components/burst';
 @import 'components/footer';
 @import 'components/header';

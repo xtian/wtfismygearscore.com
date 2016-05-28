@@ -5,6 +5,7 @@
 //= link normalize-rails.css
 
 //= link base.css
+//= link home.css
 
 
 //= link action_cable.js
