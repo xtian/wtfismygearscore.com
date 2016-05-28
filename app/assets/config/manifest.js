@@ -1,4 +1,11 @@
+//= link burst-fail.svg
+//= link logo.svg
+
+
 //= link normalize-rails.css
+
+//= link base.css
+
 
 //= link action_cable.js
 //= link turbolinks.js

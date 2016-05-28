@@ -1,0 +1,14 @@
+.MainContent {
+  background: $brown;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 0 darken($brown, 50%), 0 5px 2px rgba($black, 0.4);
+  padding: 0 10px 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.MainContent-inner {
+  background: darken(desaturate($tan, 62%), 25%);
+  border-bottom: 1px solid $brown;
+  box-shadow: 0 1px 0 lighten($brown, 7%);
+}

@@ -1,0 +1,51 @@
+@import 'variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: $tan linear-gradient(to bottom, darken(desaturate($tan, 40%), 20%), $tan 262px) no-repeat;
+  color: $navy;
+  font-family: sans-serif;
+  word-wrap: break-word;
+}
+
+a {
+  &:link {
+    color: $blue;
+  }
+
+  &:visited {
+    color: $purple;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $blue-light;
+  }
+}
+
+.turbolinks-progress-bar {
+  background-color: $tan;
+}
+
+@import 'components/burst';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/main-container';
+@import 'components/main-content';
+@import 'components/secondary-content';
+@import 'components/sub-header';

@@ -1,6 +1,18 @@
+<% content_for(:head) do %>
+  <%= preload_link_tag image_path('burst-fail') %>
+<% end %>
+
 <% content_for(:javascripts) do %>
   <%= async_javascript_include_tag 'home' %>
 <% end %>
+
+<aside class="Burst Burst--fail">
+  <h1 class="Burst-text">Huh?</h1>
+</aside>
+
+<div class="SubHeader">
+  A tool to determine how fail you are.
+</div>
 
 <%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'js-redirectForm' } do |f| %>
   <label>
@@ -28,3 +40,43 @@
     <li><%= link_to region.upcase, characters_path(region) %></li>
   <% end %>
 </ul>
+
+<% content_for(:secondary_content) do %>
+  <section class="SecondaryContent">
+    <h1 class="SecondaryContent-header">About all this</h1>
+
+    <ul>
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">What?</h2>
+        <p>
+          <b><%= SITE_NAME %></b> is an online implementation of the formula from the popular yet oft-maligned GearScore addon for World of Warcraft, which quantifies the quality of a character's gear. We use the scores calculated to rank the top characters by region and realm.
+        </p>
+      </li>
+
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">How?</h2>
+        <p>
+          Alex built the first version of the site using PHP and MySQL, and Christian designed and implemented the front-end. That was in 2010. It has since been rebuilt many times in several different languages. It is currently running on Ruby on Rails and PostgreSQL.
+        </p>
+      </li>
+
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">Who?</h2>
+        <p>
+          <a href="http://baumage.com">Alex Baumhoer</a> is a gentleman, programmer, and teetotaler who majored in Computer Science at the University of Akron.
+        </p>
+        <p>
+          <a href="http://xtian.us">Christian Wesselhoeft</a> is a designer, witticist, and all-around layabout who majored in Electronic Media Arts Design and Digital Media Studies with a minor in Computer Science at the University of Denver.
+        </p>
+        <p>
+          They met in high school and have been wasting time ever since. And also before.
+        </p>
+      </li>
+
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">Why?</h2>
+        <p>^</p>
+      </li>
+    </ul>
+  </section>
+<% end %>

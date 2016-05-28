@@ -10,17 +10,36 @@
     <meta name="author" content="Alex Baumhoer, Christian Wesselhoeft">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag 'normalize-rails', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= stylesheet_link_tag 'normalize-rails', 'data-turbolinks-track' => 'reload' %>
+    <%= stylesheet_link_tag 'base', 'data-turbolinks-track' => 'reload' %>
 
+    <%= preload_link_tag image_path('logo') %>
     <link rel="prefetch" href="<%= javascript_path('action_cable') %>">
 
     <%= yield :head %>
   </head>
 
   <body>
-    <h1 role="banner"><%= SITE_NAME %></h1>
+    <div class="MainContainer">
+      <header class="Header" role="banner">
+        <%= link_to root_path do %>
+          <h1 class="Header-logo"><%= SITE_NAME %></h1>
+        <% end %>
+      </header>
 
-    <%= yield %>
+      <main class="MainContent">
+        <div class="MainContent-inner">
+          <%= yield %>
+        </div>
+      </main>
+
+      <%= yield :secondary_content %>
+    </div>
+
+    <footer class="Footer">
+      <p>A project by Alex Baumhoer and Christian Wesselhoeft</p>
+      <p>Something broken or just want to chat? Email us: support@wtfismygs.com</p>
+    </footer>
 
     <%= render 'analytics' %>
 
