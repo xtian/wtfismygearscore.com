@@ -29,6 +29,7 @@ and visit `http://127.0.0.1:3000`
 ```
 bin/rspec
 bin/rake rubocop
+bin/rake scss_lint
 ```
 
 ## Development

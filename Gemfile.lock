@@ -213,6 +213,9 @@ GEM
       sass (~> 3.4)
       sprockets (~> 4.x)
       sprockets-rails (< 4.0)
+    scss_lint (0.48.0)
+      rake (>= 0.9, < 12)
+      sass (~> 3.4.15)
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
@@ -289,6 +292,7 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   sass-rails (>= 6.0.0.beta1)
+  scss_lint
   shoulda-matchers
   sidekiq
   sidekiq-unique-jobs

@@ -27,6 +27,7 @@ group :development, :test do
   gem 'rspec-rails', '>= 3.5.0.beta3' # Test framework
   gem 'rubocop', require: false # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
+  gem 'scss_lint', require: false # Ensures consistent SCSS style
 end
 
 group :development do
