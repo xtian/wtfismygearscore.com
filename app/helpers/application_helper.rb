@@ -6,14 +6,8 @@ module ApplicationHelper
     )
   end
 
-  def page_title(options = {})
-    app_name = options[:app_name]
-
-    if content_for?(:page_title)
-      [content_for(:page_title), app_name].join(' — ')
-    else
-      app_name
-    end
+  def page_title(site_name: nil)
+    [content_for(:page_title), site_name].compact.join(' — ')
   end
 
   if Rails.env.test?
