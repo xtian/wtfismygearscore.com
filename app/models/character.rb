@@ -20,15 +20,10 @@ class Character < ApplicationRecord
   end
 
   def update_from_armory(character, score)
-    fields = %i(guild_name class_name level name realm).each_with_object({}) do |key, hash|
-      hash[key] = character.public_send(key)
-    end
+    fields = %i(avg_ilvl class_name guild_name level max_ilvl min_ilvl name realm)
+      .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
 
-    fields[:avg_ilvl] = character.average_ilvl
-    fields[:max_ilvl] = character.maximum_ilvl
-    fields[:min_ilvl] = character.minimum_ilvl
     fields[:score] = score
-
     update!(fields)
   end
 end

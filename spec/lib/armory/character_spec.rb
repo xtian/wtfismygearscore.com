@@ -41,19 +41,19 @@ RSpec.describe Armory::Character do
 
   describe '#average_ilvl' do
     it 'returns the character’s average item level' do
-      expect(subject.average_ilvl).to eq(681)
+      expect(subject.avg_ilvl).to eq(681)
     end
   end
 
   describe '#maximum_ilvl' do
     it 'returns the character’s highest item level' do
-      expect(subject.maximum_ilvl).to eq(695)
+      expect(subject.max_ilvl).to eq(695)
     end
   end
 
   describe '#minimum_ilvl' do
     it 'returns the character’s lowest item level' do
-      expect(subject.minimum_ilvl).to eq(655)
+      expect(subject.min_ilvl).to eq(655)
     end
   end
 

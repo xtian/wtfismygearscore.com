@@ -1,6 +1,6 @@
 class Armory
   class Character
-    attr_reader :average_ilvl, :region
+    attr_reader :avg_ilvl, :region
 
     def initialize(region, response_body)
       @region = region.downcase
@@ -26,11 +26,11 @@ class Armory
       body["items"]
     end
 
-    def maximum_ilvl
+    def max_ilvl
       @_max_ilvl ||= ilvls.max
     end
 
-    def minimum_ilvl
+    def min_ilvl
       @_min_ilvl ||= ilvls.min
     end
 
@@ -40,7 +40,7 @@ class Armory
 
     def process_items
       body["items"].delete "averageItemLevelEquipped"
-      @average_ilvl = body["items"].delete("averageItemLevel")
+      @avg_ilvl = body["items"].delete("averageItemLevel")
 
       @ilvls = body["items"]
         .reject { |k| %w(shirt tabard).include? k }
