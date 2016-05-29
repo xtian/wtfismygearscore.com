@@ -35,7 +35,7 @@ RSpec.describe Armory::Character do
 
   describe '#class_name' do
     it 'returns character class' do
-      expect(subject.class_name).to eq('Hunter')
+      expect(subject.class_name).to eq('hunter')
     end
   end
 

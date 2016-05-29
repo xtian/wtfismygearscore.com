@@ -1,15 +1,15 @@
 CLASSES = [
-  "Warrior",
-  "Paladin",
-  "Hunter",
-  "Rogue",
-  "Priest",
-  "Death Knight",
-  "Shaman",
-  "Mage",
-  "Warlock",
-  "Monk",
-  "Druid"
+  'warrior',
+  'paladin',
+  'hunter',
+  'rogue',
+  'priest',
+  'death knight',
+  'shaman',
+  'mage',
+  'warlock',
+  'monk',
+  'druid'
 ].freeze
 
 VALID_REGIONS = %w(world us eu kr tw cn).freeze
