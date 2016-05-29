@@ -13,7 +13,8 @@
   position: absolute;
   top: 0;
   transform-origin: top;
-  transition: transform 0.75s ease-in-out;
+  transition: 0.75s ease-in-out;
+  transition-property: top, transform;
   width: 100%;
 
   ul {
@@ -28,6 +29,7 @@
 }
 
 .is-collapsed {
+  top: -250px;
   transform: scaleY(0);
   z-index: -1;
 }
