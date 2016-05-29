@@ -7,30 +7,39 @@ RSpec.describe CharacterUpdater do
   end
 
   describe '.call' do
-    it 'updates DB from the Armory' do
-      character = Fabricate(
-        :character,
-        score: 1,
-        level: 1,
-        updated_at: 1.week.ago
-      )
+    let(:character) do
+      instance_double('Character', region: 'us', realm: 'shadowmoon', name: 'dargonaut')
+    end
 
-      character = described_class.call(character)
+    it 'saves a new record with data from the Armory' do
+      allow(character).to receive(:new_record?).and_return(true)
 
-      expect(character.score).to eq(19_717)
-      expect(character.level).to eq(100)
+      expect(character).to receive(:update_from_armory)
+        .with(duck_type(:level, :class_name, :guild_name), 19_717)
+
+      return_value = described_class.call(character)
+
+      expect(return_value).to eq(character)
+    end
+
+    it 'updates an outdated record with data from the Armory' do
+      allow(character).to receive(:new_record?).and_return(false)
+      allow(character).to receive(:updated_at).and_return(1.week.ago)
+
+      expect(character).to receive(:update_from_armory)
+
+      described_class.call(character)
     end
 
     it 'does nothing if character was recently updated' do
-      character = Fabricate(
-        :character,
-        score: 1,
-        level: 1
-      )
+      allow(character).to receive(:new_record?).and_return(false)
+      allow(character).to receive(:updated_at).and_return(Time.current)
 
-      character = described_class.call(character)
+      expect(character).not_to receive(:update_from_armory)
 
-      expect(character.score).to eq(1)
+      return_value = described_class.call(character)
+
+      expect(return_value).to eq(character)
     end
   end
 end
