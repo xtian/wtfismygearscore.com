@@ -1,4 +1,4 @@
-<% content_for(:page_title) { "#{@character.name.humanize}, #{@character.level} #{@character.class_name}" } %>
+<% content_for(:page_title, "#{@character.name.humanize}, #{@character.level} #{@character.class_name.titleize}") %>
 
 <% content_for(:head) do %>
   <meta name="js-characterData" id="<%= @character.to_param %>" timestamp="<%= @character.updated_at %>">
