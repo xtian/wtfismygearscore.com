@@ -3,6 +3,10 @@ class HomeController < ApplicationController
     redirect_to destination_url(redirect_params), status: :moved_permanently
   end
 
+  def show
+    @comments = Comment.order(created_at: :desc).limit(5)
+  end
+
   private
 
   def destination_url(params)

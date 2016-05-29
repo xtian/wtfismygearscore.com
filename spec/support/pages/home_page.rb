@@ -16,4 +16,16 @@ class HomePage < Page
   def submit
     click_on 'Score Me!'
   end
+
+  def comments
+    @_comments ||= all_tid(:comment).map do |node|
+      name = node.find_tid(:name).text
+      body = node.find_tid(:character_name).text
+      posted_at = node.find_tid(:posted_at)[:datetime]
+
+      Comment.new(name, body, posted_at)
+    end
+  end
+
+  Comment = Struct.new(:name, :character_name, :posted_at)
 end

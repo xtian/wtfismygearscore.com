@@ -26,7 +26,7 @@ RSpec.feature 'Character page' do
 
   scenario 'User posts a comment' do
     character = Fabricate(:character)
-    Fabricate(:comment, body: 'cool', character: character, created_at: 1.week.ago)
+    comment = Fabricate(:comment, body: 'cool', character: character, created_at: 1.week.ago)
 
     visit character_path(character)
 
@@ -41,6 +41,6 @@ RSpec.feature 'Character page' do
 
     expect(character_page.comments[1].body).to eq('cool')
     expect(character_page.comments[1].name).to eq('Anonymous')
-    expect(character_page.comments[1].posted_at).to eq(1.week.ago.iso8601)
+    expect(character_page.comments[1].posted_at).to eq(comment.created_at.iso8601)
   end
 end

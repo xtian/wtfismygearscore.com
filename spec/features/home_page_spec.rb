@@ -7,35 +7,47 @@ RSpec.feature 'Homepage' do
     HomePage.new
   end
 
-  before do
-    stub_character_request
-    visit root_path
-  end
-
   scenario 'User visits homepage' do
+    comments = Array.new(6).map { Fabricate(:comment) }
+    visit root_path
+
     expect(page).to have_title('WTF is My Gear Score?')
     expect(page).to have_css('script[src="https://www.google-analytics.com/analytics.js"]', visible: false, count: 1)
+
+    expect(home_page.comments.length).to eq(5)
+
+    first_comment = home_page.comments[0]
+    expect(first_comment.name).to eq('Anonymous')
+    expect(first_comment.posted_at).to eq(comments[0].created_at.iso8601)
+    expect(first_comment.character_name).not_to be_nil
   end
 
-  scenario 'User submits character info' do
-    home_page.fill_name 'Dargonaut'
-    home_page.fill_realm 'Shadowmoon'
-    home_page.submit
+  context 'submitting redirect form' do
+    before do
+      stub_character_request
+      visit root_path
+    end
 
-    expect(current_path).to eq(character_path('us', 'Shadowmoon', 'Dargonaut'))
-  end
+    scenario 'User submits character info' do
+      home_page.fill_name 'Dargonaut'
+      home_page.fill_realm 'Shadowmoon'
+      home_page.submit
 
-  scenario 'User submits realm info' do
-    home_page.fill_realm 'Shadowmoon'
-    home_page.submit
+      expect(current_path).to eq(character_path('us', 'Shadowmoon', 'Dargonaut'))
+    end
 
-    expect(current_path).to eq(characters_path('us', 'Shadowmoon'))
-  end
+    scenario 'User submits realm info' do
+      home_page.fill_realm 'Shadowmoon'
+      home_page.submit
 
-  scenario 'User submits region info' do
-    home_page.fill_region 'EU'
-    home_page.submit
+      expect(current_path).to eq(characters_path('us', 'Shadowmoon'))
+    end
 
-    expect(current_path).to eq(characters_path('eu'))
+    scenario 'User submits region info' do
+      home_page.fill_region 'EU'
+      home_page.submit
+
+      expect(current_path).to eq(characters_path('eu'))
+    end
   end
 end

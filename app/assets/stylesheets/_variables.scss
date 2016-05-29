@@ -12,3 +12,18 @@ $purple: #4d599b;
 $red: #ba2000;
 $red-dark: darken($red, 50%);
 $tan: #fce7b8;
+
+// scss-lint:disable ColorVariable
+$class-colors: (
+  ('deathKnight', #c41f3b),
+  ('demonHunter', #4dd827),
+  ('druid', #ff7d0a),
+  ('hunter', #abd473),
+  ('mage', #69ccf0),
+  ('paladin', #f58cba),
+  ('priest', #fff),
+  ('rogue', #fff569),
+  ('shaman', #2459ff),
+  ('warlock', #9482c9),
+  ('warrior', #c79c6e)
+);

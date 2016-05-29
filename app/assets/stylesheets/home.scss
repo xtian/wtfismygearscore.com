@@ -17,6 +17,7 @@
   transition-property: top, transform;
   width: 100%;
 
+  ol,
   ul {
     list-style: none;
     margin: 0;
@@ -34,4 +35,5 @@
   z-index: -1;
 }
 
+@import 'components/recent-comments';
 @import 'components/redirect-form';

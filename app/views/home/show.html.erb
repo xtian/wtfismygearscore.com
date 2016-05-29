@@ -50,6 +50,9 @@
 <% content_for(:secondary_content) do %>
   <section class="SecondaryContent-panel js-toggleable">
     <h1 class="SecondaryContent-header">Recent Comments</h1>
+    <ol>
+      <%= render partial: 'comment', collection: @comments %>
+    </ol>
   </section>
 
   <section class="SecondaryContent-panel js-toggleable is-collapsed">

@@ -1,0 +1,15 @@
+<li class="RecentComments-row SecondaryContent-item" <%= tid :comment %>>
+  <div>
+    <span <%= tid :name %>>
+      <%= comment.poster_name || 'Anonymous' %>
+    </span>
+    on
+    <span <%= tid :character_name %>>
+      <%= link_to_character comment.character %>
+    </span>
+  </div>
+
+  <time datetime="<%= comment.created_at.iso8601 %>" <%= tid :posted_at %>>
+    <%= comment.created_at.to_date.to_s(:long) %>
+  </time>
+</li>
