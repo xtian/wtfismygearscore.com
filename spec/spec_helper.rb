@@ -19,6 +19,8 @@ WebMock.disable_net_connect!(allow_localhost: true)
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  # Shortens backtraces for spec failures
+  # Run RSpec with `--backtrace` to print unfiltered backtraces
   config.backtrace_exclusion_patterns = [
     %r{/lib\d*/ruby/},
     %r{bin/},
