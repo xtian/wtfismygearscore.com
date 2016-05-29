@@ -1,0 +1,27 @@
+.Burst {
+  align-items: center;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 84px;
+  justify-content: space-around;
+  position: absolute;
+  right: -30px;
+  top: -95px;
+  width: 85px;
+}
+
+.Burst--fail {
+  background-image: asset-url('burst-fail.svg');
+
+  .Burst-text {
+    text-shadow: 0 -1px 0 $red-dark;
+  }
+}
+
+.Burst-text {
+  color: $tan;
+  font-size: 14px;
+  text-transform: uppercase;
+  transform: rotate(17deg);
+  user-select: none;
+}

@@ -1,0 +1,64 @@
+@import 'variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: $tan linear-gradient(to bottom, darken(desaturate($tan, 40%), 20%), $tan 262px) no-repeat;
+  color: $navy;
+  font-family: sans-serif;
+  word-wrap: break-word;
+}
+
+a {
+  &:link {
+    color: $blue;
+  }
+
+  &:visited {
+    color: $purple;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $blue-light;
+  }
+}
+
+.turbolinks-progress-bar {
+  background-color: $tan;
+}
+
+// Hide only visually, but have it available for screen readers:
+// See: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+.u-visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@import 'components/burst';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/main-container';
+@import 'components/main-content';
+@import 'components/secondary-content';
+@import 'components/sub-header';

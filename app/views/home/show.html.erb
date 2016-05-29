@@ -1,30 +1,94 @@
+<% content_for(:head) do %>
+  <%= preload_link_tag image_path('burst-fail') %>
+<% end %>
+
 <% content_for(:javascripts) do %>
   <%= async_javascript_include_tag 'home' %>
 <% end %>
 
-<%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'js-redirectForm' } do |f| %>
+<a href="#" class="js-toggleContent">
+  <aside class="Burst Burst--fail">
+    <h1 class="Burst-text">Huh?</h1>
+  </aside>
+</a>
+
+<div class="SubHeader">
+  A tool to determine how fail you are.
+</div>
+
+<%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'RedirectForm js-redirectForm' } do |f| %>
   <label>
-    Character
-    <%= f.text_field :name, placeholder: 'Character', tabindex: 1, class: 'js-redirectForm-name' %>
+    <span class="u-visuallyHidden">Character Name</span>
+    <%= f.text_field :name, placeholder: 'Character Name', tabindex: 1, class: 'js-redirectForm-name' %>
   </label>
 
-  <label>
-    Region
-    <%= f.select :region, region_options, {}, tabindex: 2, class: 'js-redirectForm-region' %>
-  </label>
+  <div class="RedirectForm-row">
+    <label class="RedirectForm-region">
+      <span class="u-visuallyHidden">Region</span>
+      <%= f.select :region, region_options, {}, tabindex: 2, class: 'js-redirectForm-region' %>
+    </label>
 
-  <label>
-    Realm
-    <%= f.text_field :realm, placeholder: 'Realm', tabindex: 3, class: 'js-redirectForm-realm' %>
-  </label>
+    <label class="RedirectForm-realm">
+      <span class="u-visuallyHidden">Realm</span>
+      <%= f.text_field :realm, placeholder: 'Realm', tabindex: 3, class: 'js-redirectForm-realm' %>
+    </label>
+  </div>
 
-  <button>Score Me!</button>
+  <div class="RedirectForm-row">
+    <ul class="RedirectForm-regionList">
+      <li><%= link_to 'World', characters_path('world') %></li>
+
+      <% VALID_REGIONS_WITH_REALM.each do |region| %>
+        <li><%= link_to region.upcase, characters_path(region) %></li>
+      <% end %>
+    </ul>
+
+    <button class="RedirectForm-submit" tabindex="4">Score Me!</button>
+  </div>
 <% end %>
 
-<ul>
-  <li><%= link_to 'World', characters_path('world') %></li>
+<%= async_stylesheet_link_tag 'home' %>
 
-  <% VALID_REGIONS_WITH_REALM.each do |region| %>
-    <li><%= link_to region.upcase, characters_path(region) %></li>
-  <% end %>
-</ul>
+<% content_for(:secondary_content) do %>
+  <section class="SecondaryContent-panel js-toggleable">
+    <h1 class="SecondaryContent-header">Recent Comments</h1>
+  </section>
+
+  <section class="SecondaryContent-panel js-toggleable is-collapsed">
+    <h1 class="SecondaryContent-header">About all this</h1>
+
+    <ul>
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">What?</h2>
+        <p>
+          <b><%= SITE_NAME %></b> is an online implementation of the formula from the popular yet oft-maligned GearScore addon for World of Warcraft, which quantifies the quality of a character's gear. We use the scores calculated to rank the top characters by region and realm.
+        </p>
+      </li>
+
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">How?</h2>
+        <p>
+          Alex built the first version of the site using PHP and MySQL, and Christian designed and implemented the front-end. That was in 2010. It has since been rebuilt many times in several different languages. It is currently running on Ruby on Rails and PostgreSQL.
+        </p>
+      </li>
+
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">Who?</h2>
+        <p>
+          <a href="http://baumage.com">Alex Baumhoer</a> is a gentleman, programmer, and teetotaler who majored in Computer Science at the University of Akron.
+        </p>
+        <p>
+          <a href="http://xtian.us">Christian Wesselhoeft</a> is a designer, witticist, and all-around layabout who majored in Electronic Media Arts Design and Digital Media Studies with a minor in Computer Science at the University of Denver.
+        </p>
+        <p>
+          They met in high school and have been wasting time ever since. And also before.
+        </p>
+      </li>
+
+      <li class="SecondaryContent-item">
+        <h2 class="SecondaryContent-itemHeading">Why?</h2>
+        <p>^</p>
+      </li>
+    </ul>
+  </section>
+<% end %>

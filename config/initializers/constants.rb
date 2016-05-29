@@ -1,3 +1,5 @@
+SITE_NAME = 'WTF is My Gear Score?'.freeze
+
 CLASSES = [
   'warrior',
   'paladin',

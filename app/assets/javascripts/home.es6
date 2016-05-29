@@ -1,17 +1,31 @@
 (() => {
-  if (!Turbolinks.supported) { return; }
+  function initContentToggle() {
+    let toggleable = $$('.js-toggleable');
 
-  let form = $('.js-redirectForm');
+    $('.js-toggleContent').addEventListener('click', (ev) => {
+      ev.preventDefault();
+      toggleable.forEach((el) => el.classList.toggle('is-collapsed'));
+    });
+  }
 
-  form.addEventListener('submit', (ev) => {
-    ev.preventDefault();
+  function initForm() {
+    if (!Turbolinks.supported) { return; }
 
-    let url = '/' + ['region', 'realm', 'name']
-      .map((key) => $(`.js-redirectForm-${key}`, form))
-      .map((el) => el && el.value)
-      .filter(Boolean)
-      .join('/');
+    let form = $('.js-redirectForm');
 
-    Turbolinks.visit(url);
-  });
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+
+      let url = '/' + ['region', 'realm', 'name']
+        .map((key) => $(`.js-redirectForm-${key}`, form))
+        .map((el) => el && el.value)
+        .filter(Boolean)
+        .join('/');
+
+      Turbolinks.visit(url);
+    });
+  }
+
+  initContentToggle();
+  initForm();
 }());

@@ -1,0 +1,39 @@
+.SecondaryContent {
+  background-color: $navy;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 2px 4px rgba($black, 0.4);
+  color: $gray;
+  margin: 0 15px;
+}
+
+.SecondaryContent-header {
+  border-bottom: 1px solid lighten(desaturate($navy, 100%), 15%);
+  color: lighten($gray, 35%);
+  font-size: inherit;
+  margin: 0;
+  padding: 1.5em 1em 0.5em;
+}
+
+.SecondaryContent-item {
+  border-bottom-color: darken($navy, 60%);
+  border-style: solid;
+  border-top-color: lighten($navy, 5%);
+  border-width: 1px 0;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 1em;
+
+  &:nth-child(2n+1) {
+    background-color: lighten($navy, 1%);
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    border-radius: 0 0 2px 2px;
+  }
+}
+
+.SecondaryContent-itemHeading {
+  font-size: inherit;
+  margin: 0;
+}

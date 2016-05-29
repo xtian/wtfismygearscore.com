@@ -1,0 +1,61 @@
+.RedirectForm {
+  padding: 1.5em 15px 0.5em;
+
+  input,
+  select {
+    border: 1px $brown-dark solid;
+    border-radius: 3px;
+    color: $navy;
+    font-family: inherit;
+    font-size: 18px;
+  }
+
+  input {
+    padding: 8px;
+    width: 100%;
+  }
+}
+
+.RedirectForm-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+.RedirectForm-region select {
+  height: 39px;
+}
+
+.RedirectForm-realm {
+  flex: 1;
+  padding-left: 0.5em;
+}
+
+.RedirectForm-regionList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-right: 0.25em;
+  }
+}
+
+.RedirectForm-submit {
+  $button-red: #dc1900;
+  $button-red-dark: #911900;
+
+  background: $button-red linear-gradient(to bottom, $button-red, $button-red-dark);
+  border: 0;
+  border-radius: 2px;
+  color: $tan;
+  padding: 0.5em 0.75em;
+  text-shadow: 0 -1px 0 $red-dark;
+
+  &:active,
+  &:focus {
+    background: $button-red linear-gradient(to top, $button-red, $button-red-dark);
+  }
+}

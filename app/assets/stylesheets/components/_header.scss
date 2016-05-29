@@ -1,0 +1,20 @@
+.Header {
+  $highlight: #583501;
+  $highlight-end: #341e00;
+
+  background: $brown linear-gradient(to bottom, $highlight, $highlight-end 68%, $brown 68%);
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 -1px 0 lighten(desaturate($highlight, 24%), 12%), 0 -2px 0 $highlight;
+  height: 74px;
+}
+
+.Header-logo {
+  background: asset-url('logo.svg') no-repeat;
+  height: 102px;
+  left: 15px;
+  margin: 0;
+  position: relative;
+  text-indent: -9999px;
+  top: -43px;
+  width: 357px;
+}

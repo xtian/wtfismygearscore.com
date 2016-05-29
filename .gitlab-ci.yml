@@ -19,6 +19,7 @@ rspec:
   script:
     - bin/rspec
 
-rubocop:
+lint:
   script:
     - bin/rake rubocop
+    - bin/rake scss_lint
