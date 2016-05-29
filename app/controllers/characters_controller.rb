@@ -9,7 +9,7 @@ class CharactersController < ApplicationController
     @character = Character.find_or_initialize_by(params.permit(:region, :realm, :name))
 
     if @character.new_record?
-      CharacterUpdater.call(@character)
+      @character = CharacterUpdater.call(@character)
     else
       CharacterUpdaterJob.perform_later(@character)
     end
