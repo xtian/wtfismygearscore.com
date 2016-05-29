@@ -18,9 +18,8 @@ class CharactersController < ApplicationController
   private
 
   def index_criteria
-    @_criteria ||= {}.tap do |hash|
-      hash[:region] = params[:region] if params[:region].casecmp('world') != 0
-      hash[:realm] = params[:realm] if params[:realm]
+    @_criteria ||= params.permit(:region, :realm).tap do |params|
+      params.delete(:region) if params[:region].casecmp('world') == 0
     end
   end
 
