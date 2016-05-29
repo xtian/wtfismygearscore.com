@@ -1,0 +1,22 @@
+.FlashMessage {
+  border-bottom: 1px $tan solid;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.FlashMessage--alert {
+  background: $red;
+}
+
+.FlashMessage--notice {
+  background-color: $green;
+}
+
+.FlashMessage-text {
+  color: $tan;
+  margin: 0 auto;
+  padding: 8px 2px;
+  width: $main-width;
+}

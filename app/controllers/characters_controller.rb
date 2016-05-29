@@ -6,13 +6,8 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find_or_initialize_by(params.permit(:region, :realm, :name))
-
-    if @character.new_record?
-      @character = CharacterUpdater.call(@character)
-    else
-      CharacterUpdaterJob.perform_later(@character)
-    end
+    @character = fetch_character(params.permit(:region, :realm, :name))
+    @comments = @character.comments.order(created_at: :desc)
   end
 
   private
@@ -27,5 +22,14 @@ class CharactersController < ApplicationController
     return { by: :realm } if index_criteria[:realm]
     return { by: :region } if index_criteria[:region]
     {}
+  end
+
+  def fetch_character(params)
+    character = Character.find_or_initialize_by(params)
+
+    return CharacterUpdater.call(character) if character.new_record?
+
+    CharacterUpdaterJob.perform_later(character)
+    character
   end
 end

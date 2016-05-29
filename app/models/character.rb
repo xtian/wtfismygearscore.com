@@ -2,6 +2,8 @@ class Character < ApplicationRecord
   enum class_name: CLASSES
   enum region: VALID_REGIONS_WITH_REALM
 
+  has_many :comments
+
   validates :class_name, :name, :realm, :region, presence: true
 
   validates :avg_ilvl, :level, :max_ilvl, :min_ilvl, :score,
@@ -17,6 +19,10 @@ class Character < ApplicationRecord
     from <<-SQL.strip_heredoc
       (SELECT *, rank() OVER (#{partition} ORDER BY score DESC) FROM characters) AS characters
     SQL
+  end
+
+  def create_comment(params)
+    comments.create(params)
   end
 
   def update_from_armory(character, score)

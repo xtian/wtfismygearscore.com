@@ -1,3 +1,17 @@
 en:
   site_name: WTF is My Gear Score?
   slogan: A tool to determine how fail you are.
+
+  comment:
+    posted_successfully: Your comment was posted successfully!
+
+  activerecord:
+    errors:
+      models:
+        comment:
+          attributes:
+            body:
+              blank: You cannot post a blank comment.
+              too_long: 'Your comment cannot be more than %{count} characters long.'
+            poster_name:
+              too_long: 'Your name cannot be more than %{count} characters long.'

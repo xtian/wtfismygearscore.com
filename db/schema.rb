@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518004316) do
+ActiveRecord::Schema.define(version: 20160528232428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,4 +36,15 @@ ActiveRecord::Schema.define(version: 20160518004316) do
     t.index ["score"], name: "index_characters_on_score", order: {"score"=>:desc}, using: :btree
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "body",              null: false
+    t.inet     "poster_ip_address", null: false
+    t.string   "poster_name"
+    t.integer  "character_id",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["character_id", "created_at"], name: "index_comments_on_character_id_and_created_at", order: {"created_at"=>:desc}, using: :btree
+  end
+
+  add_foreign_key "comments", "characters", on_delete: :cascade
 end
