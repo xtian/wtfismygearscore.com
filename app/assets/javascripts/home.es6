@@ -18,7 +18,7 @@
 
       let url = '/' + ['region', 'realm', 'name']
         .map((key) => $(`.js-redirectForm-${key}`, form))
-        .map((el) => el && el.value)
+        .map((el) => el && el.value.trim())
         .filter(Boolean)
         .join('/');
 
