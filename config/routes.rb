@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     get ':region(/:realm)', to: 'characters#index', as: :characters
   end
 
-  root to: 'home#show'
+  root 'home#show'
 end
