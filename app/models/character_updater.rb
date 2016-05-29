@@ -10,7 +10,6 @@ class CharacterUpdater
   def call
     return character if recently_updated?
 
-    params = character.slice(:region, :realm, :name).symbolize_keys
     armory_response = ARMORY.fetch_character(params)
 
     score = GearscoreCalculator.calculate(armory_response.items)
@@ -22,6 +21,14 @@ class CharacterUpdater
   private
 
   attr_reader :character
+
+  def params
+    {
+      region: character.region,
+      realm: character.realm,
+      name: character.name
+    }
+  end
 
   def recently_updated?
     # Don't update cache if it was updated less than fifteen minutes ago
