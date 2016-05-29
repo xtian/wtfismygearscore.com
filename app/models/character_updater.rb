@@ -10,11 +10,8 @@ class CharacterUpdater
   def call
     return character if recently_updated?
 
-    armory_response = ARMORY.fetch_character(
-      character.region,
-      character.realm,
-      character.name
-    )
+    params = character.slice(:region, :realm, :name).symbolize_keys
+    armory_response = ARMORY.fetch_character(params)
 
     score = GearscoreCalculator.calculate(armory_response.items)
     character.update_from_armory(armory_response, score)

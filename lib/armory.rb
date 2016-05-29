@@ -8,7 +8,7 @@ class Armory
     @api_key = api_key
   end
 
-  def fetch_character(region, realm, name)
+  def fetch_character(region:, realm:, name:)
     url = build_url(region, realm, name)
     response = make_request(url)
     body = JSON.parse(response.body)

@@ -10,8 +10,12 @@ RSpec.describe Armory do
       stub_character_request
     end
 
+    let(:args) do
+      { region: 'us', realm: 'Shadowmoon', name: 'Dargonaut' }
+    end
+
     it 'fetches a character from the armory' do
-      character = subject.fetch_character('us', 'Shadowmoon', 'Dargonaut')
+      character = subject.fetch_character(args)
       expect(character.name).to eq('Dargonaut')
     end
 
@@ -19,9 +23,7 @@ RSpec.describe Armory do
       stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
         .to_return(status: 403, body: '{"code":"403", "detail": "Account Inactive"}')
 
-      expect {
-        subject.fetch_character('us', 'Shadowmoon', 'Dargonaut')
-      }.to raise_error(/403 Account Inactive/)
+      expect { subject.fetch_character(args) }.to raise_error(/403 Account Inactive/)
     end
   end
 end
