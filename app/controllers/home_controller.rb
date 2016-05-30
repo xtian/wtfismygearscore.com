@@ -4,7 +4,8 @@ class HomeController < ApplicationController
   end
 
   def show
-    @comments = Comment.order(created_at: :desc).limit(5)
+    comments = Comment.order(created_at: :desc).limit(5)
+    @comments = CommentPresenter.present_collection(comments)
   end
 
   private
