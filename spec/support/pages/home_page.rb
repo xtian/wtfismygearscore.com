@@ -21,7 +21,7 @@ class HomePage < Page
     @_comments ||= all_tid(:comment).map do |node|
       name = node.find_tid(:name).text
       body = node.find_tid(:character_name).text
-      posted_at = node.find_tid(:posted_at)[:datetime]
+      posted_at = Time.zone.parse(node.find_tid(:posted_at)[:datetime])
 
       Comment.new(name, body, posted_at)
     end

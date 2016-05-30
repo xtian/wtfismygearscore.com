@@ -18,7 +18,7 @@ RSpec.feature 'Homepage' do
 
     first_comment = home_page.comments[0]
     expect(first_comment.name).to eq('Anonymous')
-    expect(first_comment.posted_at).to eq(comments[0].created_at.iso8601)
+    expect(first_comment.posted_at).to be_within(1.second).of(comments[0].created_at)
     expect(first_comment.character_name).not_to be_nil
   end
 
