@@ -11,7 +11,8 @@ CLASSES = [
   'mage',
   'warlock',
   'monk',
-  'druid'
+  'druid',
+  'demon hunter'
 ].freeze
 
 VALID_REGIONS = %w(world us eu kr tw cn).freeze
