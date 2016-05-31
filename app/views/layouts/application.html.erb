@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <title>
-      <%= page_title(page_title: content_for(:page_title), site_name: SITE_NAME, subtitle: SLOGAN) %>
+      <%= page_title(page_title: content_for(:page_title), site_name: t(:site_name), subtitle: t(:slogan)) %>
     </title>
 
     <meta name="author" content="Alex Baumhoer, Christian Wesselhoeft">
@@ -23,7 +23,7 @@
     <div class="MainContainer">
       <header class="Header" role="banner">
         <%= link_to :root do %>
-          <h1 class="Header-logo"><%= SITE_NAME %></h1>
+          <h1 class="Header-logo"><%= t(:site_name) %></h1>
         <% end %>
       </header>
 
