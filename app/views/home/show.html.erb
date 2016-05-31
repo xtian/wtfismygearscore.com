@@ -12,7 +12,7 @@
   </aside>
 </a>
 
-<div class="SubHeader"><%= SLOGAN %></div>
+<div class="SubHeader"><%= t(:slogan) %></div>
 
 <%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'RedirectForm js-redirectForm' } do |f| %>
   <label>
@@ -59,7 +59,7 @@
       <li class="SecondaryContent-item">
         <h2 class="SecondaryContent-itemHeading">What?</h2>
         <p>
-          <b><%= SITE_NAME %></b> is an online implementation of the formula from the popular yet oft-maligned GearScore addon for World of Warcraft, which quantifies the quality of a character's gear. We use the scores calculated to rank the top characters by region and realm.
+          <b><%= t(:site_name) %></b> is an online implementation of the formula from the popular yet oft-maligned GearScore addon for World of Warcraft, which quantifies the quality of a character's gear. We use the scores calculated to rank the top characters by region and realm.
         </p>
       </li>
 
