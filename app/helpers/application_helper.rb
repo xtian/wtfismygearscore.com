@@ -13,8 +13,8 @@ module ApplicationHelper
     content_tag :script, ' '
   end
 
-  def page_title(site_name: nil)
-    [content_for(:page_title), site_name].compact.join(' — ')
+  def page_title(page_title: nil, site_name: nil, subtitle: nil)
+    [page_title, site_name, (subtitle unless page_title)].compact.join(' — ')
   end
 
   # `rel=subresource` and `rel=preload` both indicate that a resource is required for the current page.

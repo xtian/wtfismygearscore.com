@@ -1,4 +1,5 @@
 SITE_NAME = 'WTF is My Gear Score?'.freeze
+SLOGAN = 'A tool to determine how fail you are.'.freeze
 
 CLASSES = [
   'warrior',
