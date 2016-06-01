@@ -9,20 +9,29 @@ RSpec.feature 'Ranking page' do
   before do
     Fabricate(:character, name: 'a', region: 'eu', realm: 'shadowmoon', score: 200)
     Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 200)
-    Fabricate(:character, region: 'us', realm: 'shadowmoon', score: 300, guild_name: 'The Gentlemens Club')
     Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
+
+    Fabricate(
+      :character,
+      region: 'us',
+      realm: 'shadowmoon',
+      score: 300,
+      class_name: 'hunter',
+      guild_name: 'The Gentlemens Club'
+    )
   end
 
   scenario 'User visits realm ranking page' do
     visit characters_path('us', 'shadowmoon')
 
-    expect(page).to have_title('US–Shadowmoon WoW Character Ranking — WTF is My Gear Score?')
+    expect(page).to have_title('US-Shadowmoon WoW Character Ranking — WTF is My Gear Score?')
 
     expect(ranking_page.extra_column_name).to eq('Guild')
 
     expect(ranking_page.characters.length).to eq(1)
     expect(ranking_page.characters[0].rank).to eq(1)
     expect(ranking_page.characters[0].score).to eq(300)
+    expect(ranking_page.characters[0].class_name).to eq('hunter')
     expect(ranking_page.characters[0].extra_column).to eq('The Gentlemens Club')
   end
 

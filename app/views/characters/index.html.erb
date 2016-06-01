@@ -1,12 +1,55 @@
-<% content_for(:page_title) { ranking_title(params[:region], params[:realm]) } %>
+<% content_for(:page_title, ranking_title(region, realm)) %>
 
-<table>
+<aside class="Burst Burst--fail">
+  <h1 class="Burst-text">Sup?</h1>
+</aside>
+
+<nav class="SubHeader">
+  <ul class="SubNav">
+    <li class="SubNav-item">
+      <%= link_to 'World', characters_url('world'), rel: 'index' %>
+    </li>
+
+    <% unless world_page? %>
+      <li class="SubNav-item">
+        <%= link_to region, characters_url(*server_parts.first), rel: ('up' if realm) %>
+      </li>
+    <% end %>
+
+    <% if realm %>
+      <li class="SubNav-item">
+        <%= link_to realm, characters_url(*server_parts) %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+<table class="Leaderboard">
+  <colgroup>
+    <col span="1" class="Leaderboard-column">
+    <col span="1" class="Leaderboard-column">
+    <col span="1" class="Leaderboard-column">
+    <col span="1" class="Leaderboard-column">
+    <col span="1" class="Leaderboard-column">
+  </colgroup>
+
   <thead>
-    <th>#</th>
-    <th>Name</th>
-    <th <%= tid :extra_column_name %>><%= extra_column_name %></th>
-    <th>Score</th>
+    <th class="Leaderboard-cell">#</th>
+
+    <th class="Leaderboard-cell">
+      <span class="u-visuallyHidden">Class</span>
+    </th>
+
+    <th class="Leaderboard-cell">Name</th>
+
+    <th class="Leaderboard-cell" <%= tid :extra_column_name %>>
+      <%= extra_column_name %>
+    </th>
+
+    <th class="Leaderboard-cell">Score</th>
   </thead>
 
   <tbody><%= render partial: 'character_row', collection: @characters, as: :character %></tbody>
 </table>
+
+<%= async_stylesheet_link_tag 'ranking' %>

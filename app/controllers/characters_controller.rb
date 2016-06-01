@@ -1,9 +1,11 @@
 class CharactersController < ApplicationController
   def index
-    @characters = Character.ranked(rank_scope)
+    characters = Character.ranked(rank_scope)
       .select(*index_fields)
       .where(index_criteria)
       .order(score: :desc, name: :asc)
+
+    @characters = CharacterPresenter.present_collection(characters)
   end
 
   def show
@@ -29,15 +31,10 @@ class CharactersController < ApplicationController
     end
   end
 
-
   def rank_scope
     return { by: :realm } if index_criteria[:realm]
     return { by: :region } if index_criteria[:region]
     {}
-  end
-
-  def world_page?
-    params[:region].casecmp('world') == 0
   end
 
   def fetch_character(params)
@@ -48,4 +45,9 @@ class CharactersController < ApplicationController
     CharacterUpdaterJob.perform_later(character)
     character
   end
+
+  def world_page?
+    params[:region].casecmp('world') == 0
+  end
+  helper_method :world_page?
 end

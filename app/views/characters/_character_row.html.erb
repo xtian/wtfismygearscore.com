@@ -1,9 +1,22 @@
-<tr <%= tid :character %>>
-  <td <%= tid :rank %>><%= character.rank %></td>
+<tr class="Leaderboard-row" <%= tid :character %>>
+  <td class="Leaderboard-cell" <%= tid :rank %>>
+    <%= character.rank %>
+  </td>
 
-  <td <%= tid :name %>><%= character.name %></td>
+  <td class="Leaderboard-cell" <%= tid :class_name %>>
+    <span class="u-visuallyHidden"><%= character.class_name %></span>
+    <%= image_tag character.css_class_name, alt: "#{character.class_name} icon", class: 'ClassIcon' %>
+  </td>
 
-  <td <%= tid :extra_column %>><%= extra_column(character) %></td>
+  <td class="Leaderboard-cell" <%= tid :name %>>
+    <%= link_to character.name, character %>
+  </td>
 
-  <td <%= tid :score %>><%= character.score %></td>
+  <td class="Leaderboard-cell" <%= tid :extra_column %>>
+    <%= extra_column(character) %>
+  </td>
+
+  <td class="Leaderboard-cell" <%= tid :score %>>
+    <%= character.score %>
+  </td>
 </tr>
