@@ -1,19 +1,20 @@
+// scss-lint:disable ColorVariable
+
 $main-width: 440px;
 
 $black: #000;
 $blue: #3f879d;
-$blue-light: lighten(saturate($blue, 100%), 10%);
+$blue-light: lighten(saturate($blue, 100%), 3%);
 $brown: #281600;
 $brown-dark: #61573f;
 $gray: #9f9f9f;
 $green: #00a17b;
 $navy: #0e1517;
-$purple: #4d599b;
+$purple: lighten(#4d599b, 5%);
 $red: #ba2000;
 $red-dark: darken($red, 50%);
 $tan: #fce7b8;
 
-// scss-lint:disable ColorVariable
 $class-colors: (
   ('deathKnight', #c41f3b),
   ('demonHunter', #4dd827),
