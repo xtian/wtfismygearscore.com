@@ -20,4 +20,28 @@ class CharacterPage < Page
   def min_ilvl
     find_tid(:min_ilvl).text.to_i
   end
+
+  def fill_comment_body(value)
+    fill_in 'Comment', with: value
+  end
+
+  def fill_comment_name(value)
+    fill_in 'Name', with: value
+  end
+
+  def submit_comment
+    click_on 'Post Comment'
+  end
+
+  def comments
+    @_comments ||= all_tid(:comment).map do |node|
+      name = node.find_tid(:name).text
+      body = node.find_tid(:body).text
+      posted_at = Date.parse(node.find_tid(:posted_at)[:datetime])
+
+      Comment.new(name, body, posted_at)
+    end
+  end
+
+  Comment = Struct.new(:name, :body, :posted_at)
 end

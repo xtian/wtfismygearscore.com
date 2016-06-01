@@ -1,0 +1,10 @@
+<article <%= tid :comment %>>
+  <div <%= tid :body %>><%= comment.body %></div>
+  <footer>
+    <span <%= tid :name %>><%= comment.poster_name %></span>
+
+    <time datetime="<%= comment.timestamp %>" <%= tid :posted_at %>>
+      <%= comment.posted_at %>
+    </time>
+  </footer>
+</article>

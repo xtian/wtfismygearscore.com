@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'rankings.php', to: 'legacy#index'
 
   constraints RegionConstraint.new do
-    get ':region/:realm/:name', to: 'characters#show', as: :character
+    scope ':region/:realm/:name' do
+      resources :comments, only: :create
+      root 'characters#show', as: :character
+    end
+
     get ':region(/:realm)', to: 'characters#index', as: :characters
   end
 

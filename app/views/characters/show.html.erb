@@ -12,3 +12,18 @@
 <div class="js-characterContainer">
   <%= render @character %>
 </div>
+
+<% content_for(:secondary_content) do %>
+  <h1>Comments</h1>
+  <%= render partial: 'comment', collection: @comments %>
+
+  <%= form_for :comment, url: comments_path(@character) do |f| %>
+    <%= f.label :body, 'Comment'%>
+    <%= f.text_area :body, required: true, maxlength: 1000  %>
+
+    <%= f.label :poster_name, 'Name (optional)' %>
+    <%= f.text_field :poster_name, maxlength: 15 %>
+
+    <button>Post Comment</button>
+  <% end %>
+<% end %>
