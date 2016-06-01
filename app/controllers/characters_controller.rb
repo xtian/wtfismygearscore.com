@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
   def index
     @characters = Character.ranked(rank_scope)
+      .select(*index_fields)
       .where(index_criteria)
       .order(score: :desc, name: :asc)
   end
@@ -16,14 +17,27 @@ class CharactersController < ApplicationController
 
   def index_criteria
     @_criteria ||= params.permit(:region, :realm).tap do |params|
-      params.delete(:region) if params[:region].casecmp('world') == 0
+      params.delete(:region) if world_page?
     end
   end
+
+  def index_fields
+    %i(name class_name rank score).tap do |fields|
+      fields << :guild_name if params[:realm]
+      fields << :realm unless params[:realm]
+      fields << :region if world_page?
+    end
+  end
+
 
   def rank_scope
     return { by: :realm } if index_criteria[:realm]
     return { by: :region } if index_criteria[:region]
     {}
+  end
+
+  def world_page?
+    params[:region].casecmp('world') == 0
   end
 
   def fetch_character(params)
