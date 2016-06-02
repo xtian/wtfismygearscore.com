@@ -22,4 +22,5 @@ rspec:
 lint:
   script:
     - bin/rake rubocop
+    - bin/rake eslint:run
     - bin/rake scss_lint
