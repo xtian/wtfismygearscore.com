@@ -2,7 +2,7 @@
 
 ## Setup
 
-First, install [Homebrew](http://brew.sh) or [Linuxbrew](http://linuxbrew.sh).
+First, install [Homebrew](http://brew.sh).
 
 Then:
 
