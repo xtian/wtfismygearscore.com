@@ -1,8 +1,11 @@
 class CharactersController < ApplicationController
   def index
-    @characters = Character.ranked(rank_scope)
+    characters = Character.ranked(rank_scope)
+      .select(*index_fields)
       .where(index_criteria)
       .order(score: :desc, name: :asc)
+
+    @characters = CharacterPresenter.present_collection(characters)
   end
 
   def show
@@ -16,7 +19,15 @@ class CharactersController < ApplicationController
 
   def index_criteria
     @_criteria ||= params.permit(:region, :realm).tap do |params|
-      params.delete(:region) if params[:region].casecmp('world') == 0
+      params.delete(:region) if world_page?
+    end
+  end
+
+  def index_fields
+    %i(name class_name rank score).tap do |fields|
+      fields << :guild_name if params[:realm]
+      fields << :realm unless params[:realm]
+      fields << :region if world_page?
     end
   end
 
@@ -34,4 +45,9 @@ class CharactersController < ApplicationController
     CharacterUpdaterJob.perform_later(character)
     character
   end
+
+  def world_page?
+    params[:region].casecmp('world') == 0
+  end
+  helper_method :world_page?
 end
