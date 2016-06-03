@@ -41,7 +41,7 @@ GEM
     addressable (2.4.0)
     arel (7.0.0)
     ast (2.2.0)
-    autoprefixer-rails (6.3.6.1)
+    autoprefixer-rails (6.3.6.2)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -132,7 +132,7 @@ GEM
     notiffany (0.1.0)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    parser (2.3.1.0)
+    parser (2.3.1.2)
       ast (~> 2.2)
     pg (0.18.4)
     powerpack (0.1.1)
@@ -267,7 +267,7 @@ GEM
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
-    webmock (2.0.3)
+    webmock (2.1.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
