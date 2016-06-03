@@ -8,7 +8,7 @@ class CommentPresenter < ApplicationPresenter
   end
 
   def poster_name
-    object.poster_name || 'Anonymous'
+    super || 'Anonymous'
   end
 
   def timestamp
