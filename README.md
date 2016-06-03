@@ -33,6 +33,14 @@ bin/rake eslint:run
 bin/rake scss_lint
 ```
 
+### Mutation tests
+
+To ensure complete test coverage for a class, you can run mutation tests with mutant:
+
+```
+RAILS_ENV=test bin/mutant -r ./config/environment --use rspec ClassName
+```
+
 ## Development
 
 See [CONTRIBUTING.md](https://gitlab.com/closedloops/wtfismygs-rails/blob/master/CONTRIBUTING.md)
