@@ -10,7 +10,7 @@ class Armory
 
     %w(name realm level).each do |method_name|
       define_method method_name do
-        body[method_name]
+        body[method_name].freeze
       end
     end
 
@@ -19,7 +19,7 @@ class Armory
     end
 
     def guild_name
-      body["guild"]["name"]
+      body["guild"]["name"].freeze
     end
 
     def items
@@ -42,7 +42,7 @@ class Armory
       body["items"].delete "averageItemLevelEquipped"
       @avg_ilvl = body["items"].delete("averageItemLevel")
 
-      @ilvls = body["items"]
+      @ilvls = body["items"].freeze
         .reject { |k| %w(shirt tabard).include? k }
         .map { |_k, hash| hash["itemLevel"] }
     end
