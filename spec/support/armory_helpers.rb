@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/ModuleLength
 module ArmoryHelpers
   def stub_character_request
-    stub_request(:get, %r{https://.+\.api\.battle\.net/wow/character/.+})
+    stub_request(:get, %r{https://us\.api\.battle\.net/wow/character/shadowmoon/dargonaut.+}i)
       .to_return(body: character_response_body.to_json)
   end
 

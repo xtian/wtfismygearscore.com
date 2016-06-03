@@ -32,6 +32,6 @@ class CharacterUpdater
 
   def recently_updated?
     # Don't update cache if it was updated less than fifteen minutes ago
-    !character.new_record? && character.updated_at + 15.minutes > Time.current
+    !character.new_record? && character.updated_at > 15.minutes.ago
   end
 end

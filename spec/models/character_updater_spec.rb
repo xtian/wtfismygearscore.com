@@ -23,22 +23,24 @@ RSpec.describe CharacterUpdater do
     end
 
     it 'updates an outdated record with data from the Armory' do
-      allow(character).to receive(:new_record?).and_return(false)
-      allow(character).to receive(:updated_at).and_return(1.week.ago)
+      # Freeze time to prevent microsecond differences
+      travel_to Time.current do
+        allow(character).to receive(:new_record?).and_return(false)
+        allow(character).to receive(:updated_at).and_return(15.minutes.ago)
 
-      expect(character).to receive(:update_from_armory)
+        expect(character).to receive(:update_from_armory)
 
-      described_class.call(character)
+        described_class.call(character)
+      end
     end
 
     it 'does nothing if character was recently updated' do
       allow(character).to receive(:new_record?).and_return(false)
-      allow(character).to receive(:updated_at).and_return(Time.current)
+      allow(character).to receive(:updated_at).and_return(14.minutes.ago)
 
       expect(character).not_to receive(:update_from_armory)
 
       return_value = described_class.call(character)
-
       expect(return_value).to eq(character)
     end
   end
