@@ -23,8 +23,7 @@ RSpec.describe CharacterUpdater do
     end
 
     it 'updates an outdated record with data from the Armory' do
-      # Freeze time to prevent microsecond differences
-      travel_to Time.current do
+      freeze_time do
         allow(character).to receive(:new_record?).and_return(false)
         allow(character).to receive(:updated_at).and_return(15.minutes.ago)
 
