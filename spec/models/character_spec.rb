@@ -19,6 +19,46 @@ RSpec.describe Character do
   it { should have_db_index([:region, :score]) }
   it { should have_db_index(:score) }
 
+  describe '.ranked' do
+    before do
+      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200)
+      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200)
+      Fabricate(:character, region: 'us', realm: 'shadowmoon', score: 300)
+      Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
+    end
+
+    it 'returns ranked characters' do
+      characters = described_class.ranked.all
+
+      expect(characters.size).to eq(4)
+
+      expect(characters[0].rank).to eq(1)
+      expect(characters[0].score).to eq(500)
+
+      expect(characters[1].rank).to eq(2)
+      expect(characters[2].rank).to eq(3)
+      expect(characters[3].rank).to eq(3)
+    end
+
+    it 'returns characters ranked by region' do
+      characters = described_class.ranked(by: :region).where(region: 'eu')
+
+      expect(characters.size).to eq(2)
+
+      expect(characters[0].rank).to eq(1)
+      expect(characters[1].rank).to eq(1)
+    end
+
+    it 'returns characters ranked by realm' do
+      characters = described_class.ranked(by: :realm).where(region: 'eu', realm: 'shadowmoon')
+
+      expect(characters.size).to eq(2)
+
+      expect(characters[0].rank).to eq(1)
+      expect(characters[1].rank).to eq(1)
+    end
+  end
+
   describe '#create_comment' do
     it 'creates a comment' do
       subject.save!
@@ -47,17 +87,33 @@ RSpec.describe Character do
   end
 
   describe '#update_from_armory' do
+    let(:character) do
+      instance_double(
+        'Armory::Character',
+        avg_ilvl: subject.avg_ilvl + 1,
+        class_name: (CLASSES - [subject.class_name]).sample,
+        guild_name: 'Green Street Elite',
+        level: subject.level + 1,
+        max_ilvl: subject.max_ilvl + 1,
+        min_ilvl: subject.min_ilvl + 1,
+        name: 'Dargonaut',
+        realm: 'Shadowmoon'
+      )
+    end
+
     it 'stores score and information from Armory::Character' do
-      fields = %i(avg_ilvl class_name level max_ilvl min_ilvl name realm)
-
-      armory_character = instance_double('Armory::Character', subject.slice(*fields))
-      allow(armory_character).to receive(:guild_name).and_return('Green Street Elite')
-
-      subject.update_from_armory(armory_character, 100)
+      subject.update_from_armory(character, 100)
 
       expect(subject.new_record?).to eq(false)
-      expect(subject.score).to eq(100)
+
       expect(subject.guild_name).to eq('Green Street Elite')
+      expect(subject.name).to eq('Dargonaut')
+      expect(subject.realm).to eq('Shadowmoon')
+      expect(subject.score).to eq(100)
+
+      %i(avg_ilvl class_name level max_ilvl min_ilvl).each do |field|
+        expect(subject.public_send(field)).to eq(character.public_send(field))
+      end
     end
   end
 end

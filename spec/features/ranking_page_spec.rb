@@ -43,13 +43,12 @@ RSpec.feature 'Ranking page' do
     expect(ranking_page.extra_column_name).to eq('Realm')
     expect(ranking_page.characters.length).to eq(2)
 
-    expect(ranking_page.characters[0].name).to eq('a')
     expect(ranking_page.characters[0].rank).to eq(1)
-    expect(ranking_page.characters[0].score).to eq(200)
+    expect(ranking_page.characters[0].name).to eq('a')
     expect(ranking_page.characters[0].extra_column).to eq('Shadowmoon')
 
-    expect(ranking_page.characters[1].name).to eq('b')
     expect(ranking_page.characters[1].rank).to eq(1)
+    expect(ranking_page.characters[1].name).to eq('b')
   end
 
   scenario 'User visits world ranking page' do
@@ -59,7 +58,6 @@ RSpec.feature 'Ranking page' do
 
     expect(ranking_page.characters.length).to eq(4)
 
-    expect(ranking_page.characters[0].rank).to eq(1)
     expect(ranking_page.characters[0].extra_column).to eq('US-Illidan')
 
     expect(ranking_page.characters[1].rank).to eq(2)
