@@ -1,4 +1,6 @@
 .ClassIcon {
-  height: 24px;
-  width: 24px;
+  $icon-size: 22px;
+
+  height: $icon-size;
+  width: $icon-size;
 }
