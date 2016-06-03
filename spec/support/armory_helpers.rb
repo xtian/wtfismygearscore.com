@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/ModuleLength
 module ArmoryHelpers
   def stub_character_request
-    stub_request(:get, %r{https://.+\.api\.battle\.net/wow/character/.+})
+    stub_request(:get, %r{https://us\.api\.battle\.net/wow/character/shadowmoon/dargonaut.+}i)
       .to_return(body: character_response_body.to_json)
   end
 
@@ -149,6 +149,155 @@ module ArmoryHelpers
           "icon" => "inv_bow_1h_draenorquest_b_01",
           "quality" => 4,
           "itemLevel" => 655
+        }
+      }
+    }
+  end
+
+  # This response has dual-wielding for GearscoreCalculatorSpec
+  def alternate_character_response_body
+    {
+      "lastModified" => 1410641389000,
+      "name" => "Hunghuaylo",
+      "realm" => "Shadowmoon",
+      "battlegroup" => "Shadowburn",
+      "class" => 1,
+      "race" => 1,
+      "gender" => 0,
+      "level" => 90,
+      "achievementPoints" => 7395,
+      "thumbnail" => "detheroc/98/129048930-avatar.jpg",
+      "calcClass" => "Z",
+      "faction" => 0,
+      "totalHonorableKills" => 6369,
+      "guild" => {
+        "name" => "The Gentlemens Club",
+        "realm" => "Shadowmoon",
+        "battlegroup" => "Shadowburn",
+        "members" => 82,
+        "achievementPoints" => 890,
+        "emblem" => {
+          "icon" => 50,
+          "iconColor" => "ffdfa55a",
+          "border" => 0,
+          "borderColor" => "ff672300",
+          "backgroundColor" => "ffb1002e"
+        }
+      },
+      "items" => {
+        "averageItemLevel" => 539,
+        "averageItemLevelEquipped" => 539,
+        "head" => {
+          "id" => 104959,
+          "name" => "Rage-Blind Greathelm",
+          "icon" => "inv_helmet_plate_raiddeathknight_n_01",
+          "quality" => 4,
+          "itemLevel" => 528
+        },
+        "neck" => {
+          "id" => 104733,
+          "name" => "Choker of the Final Word",
+          "icon" => "inv_misc_necklace_mop1",
+          "quality" => 4,
+          "itemLevel" => 548
+        },
+        "shoulder" => {
+          "id" => 99030,
+          "name" => "Shoulderguards of the Prehistoric Marauder",
+          "icon" => "inv_shoulder_plate_raidwarrior_n_01",
+          "quality" => 4,
+          "itemLevel" => 536
+        },
+        "back" => {
+          "id" => 101939,
+          "name" => "Elder Tortoiseshell Drape of the Savant",
+          "icon" => "inv_cape_pandaria_c_04",
+          "quality" => 4,
+          "itemLevel" => 543
+        },
+        "chest" => {
+          "id" => 101938,
+          "name" => "Elder Tortoiseshell Breastplate of the Bladewall",
+          "icon" => "inv_chest_plate_reputation_c_01",
+          "quality" => 4,
+          "itemLevel" => 543
+        },
+        "wrist" => {
+          "id" => 104991,
+          "name" => "Arcsmasher Bracers",
+          "icon" => "inv_plate_raidpaladin_n_01bracer",
+          "quality" => 4,
+          "itemLevel" => 528
+        },
+        "hands" => {
+          "id" => 104937,
+          "name" => "Shockstriker Gauntlets",
+          "icon" => "inv_gauntlet_plate_raidwarrior_n_01",
+          "quality" => 4,
+          "itemLevel" => 536
+        },
+        "waist" => {
+          "id" => 98615,
+          "name" => "Protector's Trillium Waistguard",
+          "icon" => "inv_belt_93",
+          "quality" => 4,
+          "itemLevel" => 553
+        },
+        "legs" => {
+          "id" => 98606,
+          "name" => "Protector's Trillium Legguards",
+          "icon" => "inv_pants_plate_40",
+          "quality" => 4,
+          "itemLevel" => 561
+        },
+        "feet" => {
+          "id" => 104667,
+          "name" => "Treads of Unchained Hate",
+          "icon" => "inv_boots_plate_raiddeathknight_n_01",
+          "quality" => 4,
+          "itemLevel" => 548
+        },
+        "finger1" => {
+          "id" => 101947,
+          "name" => "Elder Tortoiseshell Seal of the Mountainbed",
+          "icon" => "inv_jewelry_ring_154",
+          "quality" => 4,
+          "itemLevel" => 535
+        },
+        "finger2" => {
+          "id" => 95141,
+          "name" => "Loop of the Shado-Pan Assault",
+          "icon" => "inv_jewelry_ring_165",
+          "quality" => 4,
+          "itemLevel" => 522
+        },
+        "trinket1" => {
+          "id" => 105016,
+          "name" => "Juggernaut's Focusing Crystal",
+          "icon" => "inv_jewelry_orgrimmarraid_trinket_19",
+          "quality" => 4,
+          "itemLevel" => 536
+        },
+        "trinket2" => {
+          "id" => 103990,
+          "name" => "Resolve of Niuzao",
+          "icon" => "inv_pet_yakgod",
+          "quality" => 4,
+          "itemLevel" => 543
+        },
+        "mainHand" => {
+          "id" => 104962,
+          "name" => "Xifeng, Longblade of the Titanic Guardian",
+          "icon" => "inv_sword_1h_orgrimmarraid_d_01",
+          "quality" => 4,
+          "itemLevel" => 536
+        },
+        "offHand" => {
+          "id" => 104983,
+          "name" => "Shield of Mockery",
+          "icon" => "inv_shield_orgrimmarraid_d_01",
+          "quality" => 4,
+          "itemLevel" => 536
         }
       }
     }

@@ -9,7 +9,7 @@ class GearscoreCalculator
 
   def calculate
     @_score ||= items.reduce(0) do |sum, (slot, hash)|
-      slot = 'twoHand' if slot == 'mainHand' && !items.key?('offHand')
+      slot = 'twoHand' if slot.eql?('mainHand') && !items.key?('offHand')
       sum + Item.new(slot, hash).score
     end
   end

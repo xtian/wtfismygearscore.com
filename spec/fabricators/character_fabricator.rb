@@ -4,7 +4,6 @@ Fabricator(:character) do
   level { rand(100) + 1 }
   max_ilvl { rand(700) + 1 }
   min_ilvl { rand(700) + 1 }
-  realm 'Shadowmoon'
   region { VALID_REGIONS_WITH_REALM.sample }
   score { rand(30_000) + 1 }
 
@@ -14,5 +13,9 @@ Fabricator(:character) do
 
   guild_name do
     sequence(:guild_name) { |i| "Guild#{i}" }
+  end
+
+  realm do
+    sequence(:realm) { |i| "Realm#{i}" }
   end
 end

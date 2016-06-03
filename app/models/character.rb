@@ -10,10 +10,9 @@ class Character < ApplicationRecord
             numericality: { only_integer: true, greater_than: 0 }, presence: true
 
   def self.ranked(by: nil)
-    partition = if by == :region
-                  'PARTITION BY region'
-                elsif by == :realm
-                  'PARTITION BY realm, region'
+    partition = case by
+                when :region then 'PARTITION BY region'
+                when :realm then 'PARTITION BY realm, region'
                 end
 
     from <<-SQL.strip_heredoc

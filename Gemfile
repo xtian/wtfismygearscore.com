@@ -25,6 +25,7 @@ group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'coderay' # Syntax highlighting for RSpec failures
   gem 'eslint-rails' # Ensures consistent JavaScript style
+  gem 'mutant-rspec', require: false # Mutation testing tool
   gem 'rspec-rails', '>= 3.5.0.beta3' # Test framework
   gem 'rubocop', require: false # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
