@@ -193,6 +193,8 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-throttle (0.4.0)
+      rack (>= 1.0.0)
     rack-timeout (0.4.2)
     rails (5.0.0.rc1)
       actioncable (= 5.0.0.rc1)
@@ -351,8 +353,10 @@ DEPENDENCIES
   puma
   quiet_assets
   rack-livereload
+  rack-throttle
   rack-timeout
   rails (>= 5.0.0.beta3, < 5.1)
+  redis
   rspec-rails (>= 3.5.0.beta3)
   rubocop
   rubocop-rspec
