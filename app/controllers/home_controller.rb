@@ -20,5 +20,6 @@ class HomeController < ApplicationController
       .permit(:region, :realm, :name)
       .values_at(:region, :realm, :name)
       .select(&:present?)
+      .map(&:downcase)
   end
 end
