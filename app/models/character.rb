@@ -2,7 +2,7 @@ class Character < ApplicationRecord
   enum class_name: CLASSES
   enum region: VALID_REGIONS_WITH_REALM
 
-  has_many :comments
+  has_many :comments, -> { order(created_at: :desc) }
 
   validates :class_name, :name, :realm, :region, presence: true
 

@@ -1,10 +1,13 @@
-<article <%= tid :comment %>>
-  <div <%= tid :body %>><%= comment.body %></div>
-  <footer>
+<article class="SecondaryContent-item" <%= tid :comment %>>
+  <footer class="Comment-meta">
     <span <%= tid :name %>><%= comment.poster_name %></span>
 
     <time datetime="<%= comment.timestamp %>" <%= tid :posted_at %>>
       <%= comment.posted_at %>
     </time>
   </footer>
+
+  <div <%= tid :body %>>
+    <%= simple_format comment.body %>
+  </div>
 </article>

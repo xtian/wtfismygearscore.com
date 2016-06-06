@@ -1,17 +1,44 @@
-<output <%= tid :score %>><%= character.score %></output>
 
-<header>
-  <h1><%= "#{character.name.humanize}, #{character.level} #{character.class_name}" %></h1>
-  <b <%= tid :guild_name %>><%= character.guild_name %></b>
+<header class="CharacterInfo-header CharacterInfo-header--<%= character.css_class_name %>">
+  <h1 class="CharacterInfo-heading">
+    <%= link_to character.info, character.armory_url %>
+  </h1>
+
+  <b class="CharacterInfo-guildName" <%= tid :guild_name %>>
+    <%= character.guild_name %>
+  </b>
 </header>
 
-<dl>
-  <dt>Average iLvl</dt>
-  <dd <%= tid :avg_ilvl %>><%= character.avg_ilvl %></dd>
+<output class="CharacterInfo-score" <%= tid :score %>>
+  <%= character.score %>
+</output>
 
-  <dt>Lowest iLvl</dt>
-  <dd <%= tid :min_ilvl %>><%= character.min_ilvl %></dd>
+<table class="Ilvls">
+  <thead>
+    <tr>
+      <th>
+        <abbr class="Ilvls-heading" title="Lowest Item Level">Min iLvl</abbr>
+      </th>
+      <th>
+        <abbr class="Ilvls-heading" title="Average Item Level">Avg iLvl</abbr>
+      </th>
+      <th>
+        <abbr class="Ilvls-heading" title="Highest Item Level">Max iLvl</abbr>
+      </th>
+    </tr>
+  </thead>
 
-  <dt>Highest iLvl</dt>
-  <dd <%= tid :max_ilvl %>><%= character.max_ilvl %></dd>
-</dl>
+  <tbody>
+    <tr>
+      <td class="Ilvls-cell" <%= tid :min_ilvl %>>
+        <%= character.min_ilvl %>
+      </td>
+      <td class="Ilvls-cell" <%= tid :avg_ilvl %>>
+        <%= character.avg_ilvl %>
+      </td>
+      <td class="Ilvls-cell" <%= tid :max_ilvl %>>
+        <%= character.max_ilvl %>
+      </td>
+    </tr>
+  </tbody>
+</table>

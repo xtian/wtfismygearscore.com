@@ -9,10 +9,8 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = fetch_character(params.permit(:region, :realm, :name))
-
-    comments = @character.comments.order(created_at: :desc)
-    @comments = CommentPresenter.present_collection(comments)
+    character = fetch_character(params.permit(:region, :realm, :name))
+    @character = CharacterPresenter.new(character)
   end
 
   private

@@ -4,4 +4,35 @@
   color: $tan;
   font-size: 14px;
   padding: 1em;
+
+  a {
+    &:link,
+    &:visited {
+      color: $tan;
+    }
+
+    &:hover,
+    &:active {
+      color: $white;
+    }
+  }
+}
+
+.SubHeader-navList {
+  align-items: center;
+  display: flex;
+}
+
+.SubHeader-navItem {
+  + .SubHeader-navItem {
+    padding-left: 0.3em;
+  }
+
+  &::after {
+    content: ' – ';
+  }
+
+  &:last-child::after {
+    content: '';
+  }
 }

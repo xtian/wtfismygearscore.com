@@ -1,0 +1,18 @@
+.Ilvls {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Ilvls-heading {
+  font-weight: normal;
+  padding: 0 0.5em;
+}
+
+// Override Normalize styles
+.Ilvls-heading[title] {
+  text-decoration: none;
+}
+
+.Ilvls-cell {
+  padding: 0.25em 0 1.5em;
+}
