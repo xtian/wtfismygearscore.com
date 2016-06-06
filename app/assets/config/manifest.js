@@ -16,9 +16,9 @@
 //= link normalize-rails.css
 
 //= link base.css
+//= link character.css
 //= link home.css
 //= link ranking.css
-
 
 //= link action_cable.js
 //= link turbolinks.js

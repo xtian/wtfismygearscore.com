@@ -4,15 +4,12 @@
   input,
   select {
     border: 1px $brown-dark solid;
-    border-radius: 3px;
-    color: $navy;
-    font-family: inherit;
     font-size: 18px;
+    width: 100%;
   }
 
   input {
     padding: 8px;
-    width: 100%;
   }
 }
 
@@ -46,7 +43,6 @@
 
   background: $button-red linear-gradient(to bottom, $button-red, $button-red-dark);
   border: 0;
-  border-radius: 2px;
   color: $tan;
   padding: 0.5em 0.75em;
   text-shadow: 0 -1px 0 $red-dark;

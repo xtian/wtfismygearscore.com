@@ -1,4 +1,4 @@
-<% content_for(:page_title, "#{@character.name.humanize}, #{@character.level} #{@character.class_name.titleize}") %>
+<% content_for(:page_title, @character.info) %>
 
 <% content_for(:head) do %>
   <meta name="js-characterData" id="<%= @character.to_param %>" timestamp="<%= @character.updated_at %>">
@@ -9,21 +9,37 @@
   <%= async_javascript_include_tag 'character' %>
 <% end %>
 
+<nav class="SubHeader">
+  <ul class="SubHeader-navList">
+    <li class="SubHeader-navItem">
+      <%= link_to region, characters_path(*server_parts.first), rel: 'up up' %>
+    </li>
+
+    <li class="SubHeader-navItem">
+      <%= link_to realm, characters_path(*server_parts), rel: 'up' %>
+    </li>
+  </ul>
+</nav>
+
 <div class="js-characterContainer">
   <%= render @character %>
 </div>
 
+<%= async_stylesheet_link_tag 'character' %>
+
 <% content_for(:secondary_content) do %>
-  <h1>Comments</h1>
-  <%= render partial: 'comment', collection: @comments %>
+  <h1 class="SecondaryContent-heading">Comments</h1>
+  <%= render partial: 'comment', collection: @character.comments %>
 
-  <%= form_for :comment, url: comments_path(@character) do |f| %>
-    <%= f.label :body, 'Comment'%>
-    <%= f.text_area :body, required: true, maxlength: 1000  %>
+  <%= form_for :comment, url: comments_path(@character), html: { class: %w(SecondaryContent-item CommentForm) } do |f| %>
+    <%= f.label :body, 'Comment', class: 'u-visuallyHidden' %>
+    <%= f.text_area :body, required: true, maxlength: 1000, rows: 5, placeholder: 'Comment', class: 'CommentForm-body'  %>
 
-    <%= f.label :poster_name, 'Name (optional)' %>
-    <%= f.text_field :poster_name, maxlength: 15 %>
+    <div class="CommentForm-row">
+      <%= f.label :poster_name, 'Name (optional)', class: 'u-visuallyHidden' %>
+      <%= f.text_field :poster_name, maxlength: 15, placeholder: 'Name (optional)', class: 'CommentForm-name' %>
 
-    <button>Post Comment</button>
+      <button class="CommentForm-submit">Post</button>
+    </div>
   <% end %>
 <% end %>

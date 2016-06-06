@@ -5,19 +5,19 @@
 </aside>
 
 <nav class="SubHeader">
-  <ul class="SubNav">
-    <li class="SubNav-item">
+  <ul class="SubHeader-navList">
+    <li class="SubHeader-navItem">
       <%= link_to 'World', characters_url('world'), rel: 'index' %>
     </li>
 
     <% unless world_page? %>
-      <li class="SubNav-item">
+      <li class="SubHeader-navItem">
         <%= link_to region, characters_url(*server_parts.first), rel: ('up' if realm) %>
       </li>
     <% end %>
 
     <% if realm %>
-      <li class="SubNav-item">
+      <li class="SubHeader-navItem">
         <%= link_to realm, characters_url(*server_parts) %>
       </li>
     <% end %>

@@ -1,0 +1,30 @@
+.CharacterInfo-header {
+  padding: 1em;
+  text-align: center;
+}
+
+@each $name, $color in $class-colors {
+  .CharacterInfo-header--#{$name} {
+    background: $color linear-gradient(to bottom, $color, darken(desaturate($color, 20%), 10%) 100%);
+    border-top: 1px solid lighten($color, 5%);
+    text-shadow: 0 1px 0 rgba(lighten($color, 15%), 0.5);
+  }
+}
+
+.CharacterInfo-heading {
+  font-size: inherit;
+  margin: 0 0 0.5em;
+
+  a {
+    color: inherit;
+  }
+}
+
+.CharacterInfo-score {
+  display: block;
+  font-size: 84px;
+  font-weight: bold;
+  padding: 18px 0 12px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,26 @@
+.CommentForm {
+  padding: 1em;
+}
+
+.CommentForm-body {
+  max-width: 100%;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.CommentForm-row {
+  display: flex;
+  margin-top: 1em;
+}
+
+.CommentForm-name {
+  flex: 1;
+  margin-right: 1em;
+  padding: 0.5em;
+}
+
+.CommentForm-submit {
+  background: linear-gradient(to bottom, lighten($blue, 10%), $blue);
+  color: $white;
+  padding: 0.5em 1em;
+}

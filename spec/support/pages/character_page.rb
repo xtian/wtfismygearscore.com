@@ -30,7 +30,7 @@ class CharacterPage < Page
   end
 
   def submit_comment
-    click_on 'Post Comment'
+    click_on 'Post'
   end
 
   def comments
