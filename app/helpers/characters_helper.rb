@@ -3,7 +3,7 @@ module CharactersHelper
 
   def character_path(character)
     parts = server_parts(character)
-    parts << character.name.downcase
+    parts << character.name
     super(*parts)
   end
 
@@ -39,7 +39,7 @@ module CharactersHelper
 
   def server_parts(character = nil)
     %i(region realm).map do |field|
-      character&.respond_to?(field) ? character.public_send(field).downcase : params[field]
+      character&.respond_to?(field) ? character.public_send(field) : params[field]
     end
   end
 end
