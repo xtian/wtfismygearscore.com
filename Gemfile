@@ -50,6 +50,7 @@ end
 group :test do
   gem 'capybara' # Allows simulation of user interaction in feature specs
   gem 'fabrication' # Allows creation of model objects with default data
+  gem 'fakeredis', require: 'fakeredis/rspec' # Fake implementation of redis-rb
   gem 'fuubar', '>= 2.1.0.beta2' # RSpec progress bar formatter
   gem 'shoulda-matchers' # Rails RSpec helpers
   gem 'webmock' # Mocks external requests
