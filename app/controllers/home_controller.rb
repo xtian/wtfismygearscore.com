@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class HomeController < ApplicationController
   def redirect
     redirect_to destination_url(redirect_params), status: :moved_permanently

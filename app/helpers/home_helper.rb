@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module HomeHelper
   def character_link(character)
     link_to(character.name, character, class: "CharacterLink--#{character.css_class_name}")

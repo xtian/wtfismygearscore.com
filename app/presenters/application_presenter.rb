@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ApplicationPresenter < SimpleDelegator
   def self.present_collection(collection)
     CollectionProxy.new(collection, self)

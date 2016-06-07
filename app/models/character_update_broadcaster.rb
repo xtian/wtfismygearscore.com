@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CharacterUpdateBroadcaster
   def initialize(character, updated_at)
     @caller_updated_at = updated_at

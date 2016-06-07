@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CommentPresenter < ApplicationPresenter
   def character
     CharacterPresenter.new(object.character)

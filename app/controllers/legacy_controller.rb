@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class LegacyController < ApplicationController
   def index
     redirect_to characters_path(*legacy_params), status: :moved_permanently

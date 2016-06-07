@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 module CharactersHelper
-  REGION_REALM_SEPARATOR = '-'.freeze
+  REGION_REALM_SEPARATOR = '-'
 
   def character_path(character)
     parts = server_parts(character)

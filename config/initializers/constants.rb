@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 CLASSES = [
   'warrior',
   'paladin',
@@ -11,7 +13,7 @@ CLASSES = [
   'monk',
   'druid',
   'demon hunter'
-].map(&:freeze).freeze
+].freeze
 
-VALID_REGIONS = %w(world us eu kr tw cn).map(&:freeze).freeze
+VALID_REGIONS = %w(world us eu kr tw cn).freeze
 VALID_REGIONS_WITH_REALM = (VALID_REGIONS - ['world']).freeze

@@ -21,9 +21,6 @@ Style/BlockDelimiters:
 Style/Documentation:
   Enabled: false
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 Style/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 

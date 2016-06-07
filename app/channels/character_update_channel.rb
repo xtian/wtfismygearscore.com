@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CharacterUpdateChannel < ApplicationCable::Channel
   def follow(data)
     raise "Invalid data: #{data}" unless valid_data?(data)

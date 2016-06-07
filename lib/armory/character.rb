@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Armory
   class Character
     attr_reader :avg_ilvl, :region
