@@ -1,10 +1,9 @@
 (() => {
   let container = $('.js-characterContainer');
-  let meta = $('meta[name="js-characterData"]');
 
   let characterData = {
-    id: meta.id,
-    timestamp: meta.getAttribute('timestamp')
+    id: container.dataset.id,
+    timestamp: container.dataset.timestamp
   };
 
   let cable = ActionCable.createConsumer();

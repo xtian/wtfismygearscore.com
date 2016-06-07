@@ -1,4 +1,6 @@
 //= link burst-fail.svg
+//= link burst-win.svg
+//= link favicon-win.ico
 //= link logo.svg
 //= link deathKnight.png
 //= link demonHunter.png
