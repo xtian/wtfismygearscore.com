@@ -48,7 +48,7 @@ GEM
       adamantium (~> 0.2)
       equalizer (~> 0.0.11)
     arel (7.0.0)
-    ast (2.2.0)
+    ast (2.3.0)
     autoprefixer-rails (6.3.6.2)
       execjs
     babel-source (5.8.35)
@@ -137,7 +137,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     minitest (5.9.0)
     morpher (0.2.6)
       abstract_type (~> 0.0.7)
@@ -170,8 +170,9 @@ GEM
       rspec-core (>= 3.2.0, < 3.5.0)
     nenv (0.3.0)
     nio4r (1.2.1)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     normalize-rails (4.1.1)
     notiffany (0.1.0)
       nenv (~> 0.1)
@@ -180,6 +181,7 @@ GEM
     parser (2.3.1.2)
       ast (~> 2.2)
     pg (0.18.4)
+    pkg-config (1.1.7)
     powerpack (0.1.1)
     procto (0.0.3)
     pry (0.10.3)
@@ -319,7 +321,7 @@ GEM
       equalizer (~> 0.0.9)
       parser (~> 2.3.0)
       procto (~> 0.0.2)
-    web-console (3.1.1)
+    web-console (3.2.0)
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
@@ -379,5 +381,8 @@ DEPENDENCIES
   web-console
   webmock
 
+RUBY VERSION
+   ruby 2.3.1p112
+
 BUNDLED WITH
-   1.11.2
+   1.12.4
