@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CharacterUpdaterJob < ApplicationJob
   def perform(character)
     broadcast(update(character), character.updated_at)

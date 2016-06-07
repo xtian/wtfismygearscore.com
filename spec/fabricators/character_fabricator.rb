@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Fabricator(:character) do
   avg_ilvl { rand(700) + 1 }
   class_name { CLASSES.sample }

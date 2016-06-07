@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Character < ApplicationRecord
   enum class_name: CLASSES
   enum region: VALID_REGIONS_WITH_REALM

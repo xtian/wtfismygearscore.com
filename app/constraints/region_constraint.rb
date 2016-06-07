@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class RegionConstraint
   REGIONS_SET = Set.new(VALID_REGIONS).freeze
   REALM_REGIONS_SET = Set.new(VALID_REGIONS_WITH_REALM).freeze

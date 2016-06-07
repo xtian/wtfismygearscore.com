@@ -1,3 +1,4 @@
+<%# frozen_string_literal: true %>
 <% flash.each do |type, value| %>
   <div class="FlashMessage FlashMessage--<%= type %>" <%= tid type %>>
     <% [*value].each do |message| %>

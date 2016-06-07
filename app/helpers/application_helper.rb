@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ApplicationHelper
   def async_javascript_include_tag(name, options = {})
     javascript_include_tag name, options.reverse_merge(

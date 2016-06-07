@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module TimeHelpers
   include ActiveSupport::Testing::TimeHelpers
 

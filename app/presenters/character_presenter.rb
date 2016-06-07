@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CharacterPresenter < ApplicationPresenter
   def armory_url
     "https://#{region}.battle.net/wow/en/character/#{realm}/#{name}/"
