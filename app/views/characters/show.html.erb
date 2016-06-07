@@ -1,8 +1,12 @@
 <%# frozen_string_literal: true %>
-<% content_for(:page_title, @character.info) %>
+<% content_for(:page_title, "(#{@character.rating.upcase}) #{@character.info}") %>
 
 <% content_for(:head) do %>
   <%= preload_link_tag image_path("burst-#{@character.rating}") %>
+
+  <% if @character.rating == 'win' %>
+    <link rel="shortcut icon" href="<%= image_path('favicon-win') %>">
+  <% end %>
 <% end %>
 
 <% content_for(:javascripts) do %>
