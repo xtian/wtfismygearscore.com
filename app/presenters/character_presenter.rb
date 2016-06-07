@@ -5,7 +5,7 @@ class CharacterPresenter < ApplicationPresenter
   end
 
   def css_class_name
-    object.class_name.parameterize.underscore.camelize(:lower)
+    class_name.parameterize.underscore.camelize(:lower)
   end
 
   def comments
