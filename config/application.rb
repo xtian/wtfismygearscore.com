@@ -23,8 +23,6 @@ module WtfIsMyGearscore
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.middleware.use Rack::Throttle::Minute, cache: Redis.current, key_prefix: :throttle
-
     # Only automatically include helper module whose name matches controller's
     config.action_controller.include_all_helpers = false
 

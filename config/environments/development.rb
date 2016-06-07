@@ -59,6 +59,4 @@ Rails.application.configure do
 
   $VERBOSE = true
   $stderr = WarningFilter.new($stderr)
-
-  Rack::Timeout::Logger.disable
 end
