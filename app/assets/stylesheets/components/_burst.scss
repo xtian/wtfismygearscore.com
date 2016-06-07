@@ -18,6 +18,14 @@
   }
 }
 
+.Burst--win {
+  background-image: asset-url('burst-win.svg');
+
+  .Burst-text {
+    text-shadow: 0 -1px 0 darken($green, 50%);
+  }
+}
+
 .Burst-text {
   color: $tan;
   font-size: 14px;

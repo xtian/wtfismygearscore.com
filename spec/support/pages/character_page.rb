@@ -22,6 +22,10 @@ class CharacterPage < Page
     find_tid(:min_ilvl).text.to_i
   end
 
+  def rating
+    find_tid(:rating).text
+  end
+
   def fill_comment_body(value)
     fill_in 'Comment', with: value
   end

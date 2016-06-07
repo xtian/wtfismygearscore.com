@@ -15,4 +15,8 @@ class CharacterPresenter < ApplicationPresenter
   def info
     "#{name.humanize}, #{level} #{class_name.titleize}"
   end
+
+  def rating
+    median_difference >= 0 ? 'win' : 'fail'
+  end
 end

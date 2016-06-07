@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528232428) do
+ActiveRecord::Schema.define(version: 20160607142331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 20160528232428) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.index ["character_id", "created_at"], name: "index_comments_on_character_id_and_created_at", order: {"created_at"=>:desc}, using: :btree
+  end
+
+  create_table "median_gearscores", primary_key: "level", id: :integer, force: :cascade do |t|
+    t.float "median_score", null: false
   end
 
   add_foreign_key "comments", "characters", on_delete: :cascade
