@@ -25,6 +25,13 @@ class Character < ApplicationRecord
     comments.create(params)
   end
 
+  def median_difference
+    @_median_difference ||= begin
+      median_score = MedianGearscore.find_or_initialize_by(level: level).median_score
+      score - median_score
+    end
+  end
+
   def update_from_armory(character, score)
     fields = %i(avg_ilvl class_name guild_name level max_ilvl min_ilvl name realm)
       .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }

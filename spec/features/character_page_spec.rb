@@ -23,6 +23,7 @@ RSpec.feature 'Character page' do
     expect(character_page.min_ilvl).to eq(655)
     expect(character_page.avg_ilvl).to eq(681)
     expect(character_page.max_ilvl).to eq(695)
+    expect(character_page.rating).to eq('win')
   end
 
   scenario 'User posts a comment' do

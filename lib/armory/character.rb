@@ -40,8 +40,8 @@ class Armory
     attr_reader :body, :ilvls
 
     def process_items
-      body["items"].delete "averageItemLevelEquipped"
-      @avg_ilvl = body["items"].delete("averageItemLevel")
+      body["items"].delete "averageItemLevel"
+      @avg_ilvl = body["items"].delete("averageItemLevelEquipped")
 
       @ilvls = body["items"].freeze
         .reject { |k| %w(shirt tabard).include? k }

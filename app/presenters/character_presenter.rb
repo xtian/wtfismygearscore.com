@@ -5,7 +5,7 @@ class CharacterPresenter < ApplicationPresenter
   end
 
   def css_class_name
-    object.class_name.parameterize.underscore.camelize(:lower)
+    class_name.parameterize.underscore.camelize(:lower)
   end
 
   def comments
@@ -14,5 +14,9 @@ class CharacterPresenter < ApplicationPresenter
 
   def info
     "#{name.humanize}, #{level} #{class_name.titleize}"
+  end
+
+  def rating
+    median_difference >= 0 ? 'win' : 'fail'
   end
 end

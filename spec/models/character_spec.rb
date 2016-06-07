@@ -87,6 +87,24 @@ RSpec.describe Character do
     end
   end
 
+  describe '#median_difference' do
+    it 'returns difference between character score and median score for level' do
+      3.times do |i|
+        median = instance_double('MedianGearscore', median_score: i + 1)
+        allow(MedianGearscore).to receive(:find_or_initialize_by).with(level: i + 1).and_return(median)
+      end
+
+      subject = Fabricate.build(:character, level: 1, score: 2)
+      expect(subject.median_difference).to eq(1)
+
+      subject = Fabricate.build(:character, level: 2, score: 2)
+      expect(subject.median_difference).to eq(0)
+
+      subject = Fabricate.build(:character, level: 3, score: 2)
+      expect(subject.median_difference).to eq(-1)
+    end
+  end
+
   describe '#update_from_armory' do
     let(:character) do
       instance_double(
