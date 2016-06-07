@@ -2,7 +2,6 @@
 <% content_for(:page_title, @character.info) %>
 
 <% content_for(:head) do %>
-  <meta name="js-characterData" id="<%= @character.to_param %>" timestamp="<%= @character.updated_at %>">
 <% end %>
 
 <% content_for(:javascripts) do %>
@@ -22,7 +21,7 @@
   </ul>
 </nav>
 
-<div class="js-characterContainer">
+<div class="js-characterContainer" data-id="<%= @character.to_param %>" data-timestamp="<%= @character.updated_at %>">
   <%= render @character %>
 </div>
 
