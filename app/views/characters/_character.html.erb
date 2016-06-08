@@ -8,7 +8,7 @@
     <%= link_to character.info, character.armory_url %>
   </h1>
 
-  <% if @character.guild_name %>
+  <% if character.guild_name %>
     <b class="CharacterInfo-guildName" <%= tid :guild_name %>>
       <%= character.guild_name %>
     </b>
