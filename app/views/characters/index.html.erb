@@ -1,6 +1,10 @@
 <%# frozen_string_literal: true %>
 <% content_for(:page_title, ranking_title(region, realm)) %>
 
+<% content_for(:head) do %>
+  <%= preload_link_tag image_path('burst-fail') %>
+<% end %>
+
 <aside class="Burst Burst--fail">
   <h1 class="Burst-text">Sup?</h1>
 </aside>
