@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'addressable'
 require 'armory/character'
 require 'faraday'
 require 'json'
@@ -28,7 +29,8 @@ class Armory
   class NotFoundError < StandardError; end
 
   def build_url(region, realm, name)
-    "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}?apikey=#{api_key}&fields=guild,items"
+    url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}?apikey=#{api_key}&fields=guild,items"
+    Addressable::URI.encode(url)
   end
 
   def faraday

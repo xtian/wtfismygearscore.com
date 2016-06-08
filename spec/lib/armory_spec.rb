@@ -20,6 +20,14 @@ RSpec.describe Armory do
       expect(character.name).to eq('Dargonaut')
     end
 
+    it 'handles utf-8 URLs' do
+      stub_character_request('N%C3%A5jd')
+
+      expect {
+        subject.fetch_character(region: 'us', realm: 'shadowmoon', name: 'Nåjd')
+      }.not_to raise_error
+    end
+
     it 'raises an error for failed requests' do
       stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
         .to_return(status: 403, body: '{"code":"403", "detail": "Account Inactive"}')

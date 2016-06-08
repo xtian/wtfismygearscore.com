@@ -346,6 +346,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   autoprefixer-rails
   babel-transpiler
   byebug
