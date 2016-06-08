@@ -24,7 +24,7 @@ class Armory
     end
 
     def guild_name
-      body["guild"]["name"].freeze
+      body.dig("guild", "name")&.freeze
     end
 
     def items
