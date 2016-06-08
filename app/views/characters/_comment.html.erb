@@ -1,7 +1,10 @@
 <%# frozen_string_literal: true %>
 <article class="SecondaryContent-item" <%= tid :comment %>>
   <footer class="Comment-meta">
-    <span <%= tid :name %>><%= comment.poster_name %></span>
+    <div class="Comment-author" <%= tid :name %>>
+      <img src="data:image/png;base64,<%= comment.avatar %>" class="Comment-avatar">
+      <%= comment.poster_name %>
+    </div>
 
     <time datetime="<%= comment.timestamp %>" <%= tid :posted_at %>>
       <%= comment.posted_at %>

@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 class CommentPresenter < ApplicationPresenter
+  def avatar
+    RubyIdenticon.create_base64(
+      poster_ip_address.to_s,
+      border_size: 0,
+      grid_size: 9,
+      square_size: 2,
+      key: Rails.application.secrets.identicon_key
+    )
+  end
+
   def character
     CharacterPresenter.new(object.character)
   end
