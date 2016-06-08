@@ -4,23 +4,23 @@ ruby '2.3.1'
 
 gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 
-gem 'addressable' # Replacement for URI implementation
+gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code
-gem 'faraday' # HTTP client
+gem 'faraday', require: false # HTTP client
 gem 'fast_blank' # Provides a fast implementation of Active Support's String#blank? method
 gem 'normalize-rails' # Base CSS reset
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
-gem 'ruby_identicon' # Avatar generator
+gem 'ruby_identicon', require: false # Avatar generator
 gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
 gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and images
 gem 'turbolinks', '>= 5.0.0.beta2' # Makes navigating your web application faster
-gem 'typhoeus' # HTTP client backend for Faraday
+gem 'typhoeus', require: false # HTTP client backend for Faraday
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 # Use Capistrano for deployment
