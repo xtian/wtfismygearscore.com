@@ -14,14 +14,18 @@ class Armory
     response = make_request(url)
     body = JSON.parse(response.body)
 
-    raise StandardError, "#{url}\n#{body['code']} #{body['detail']}" if response.status != 200
-
-    Character.new(region, body)
+    case response.status
+    when 404 then raise NotFoundError, url
+    when 200 then Character.new(region, body)
+    else raise StandardError, "#{url}\n#{body['code']} #{body['detail']}"
+    end
   end
 
   private
 
   attr_reader :api_key
+
+  class NotFoundError < StandardError; end
 
   def build_url(region, realm, name)
     "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}?apikey=#{api_key}&fields=guild,items"
