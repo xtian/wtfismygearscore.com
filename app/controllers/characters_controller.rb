@@ -25,7 +25,7 @@ class CharactersController < ApplicationController
   end
 
   def index_fields
-    %i(name class_name rank score).tap do |fields|
+    %i(name class_name faction rank score).tap do |fields|
       fields << :guild_name if params[:realm]
       fields << :realm unless params[:realm]
       fields << :region if world_page?

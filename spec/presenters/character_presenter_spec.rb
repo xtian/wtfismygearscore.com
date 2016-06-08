@@ -2,22 +2,6 @@
 require 'rails_helper'
 
 RSpec.describe CharacterPresenter do
-  describe '#css_faction' do
-    it 'returns "is-alliance" for alliance characters' do
-      character = instance_double('Character', faction: 'alliance')
-      subject = described_class.new(character)
-
-      expect(subject.css_faction).to eq('is-alliance')
-    end
-
-    it 'returns "is-horde" for horde characters' do
-      character = instance_double('Character', faction: 'horde')
-      subject = described_class.new(character)
-
-      expect(subject.css_faction).to eq('is-horde')
-    end
-  end
-
   describe '#rating' do
     it 'returns "win" for characters whose scores are at or above the median' do
       character = instance_double('Character', median_difference: 0)

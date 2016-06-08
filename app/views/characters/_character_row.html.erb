@@ -10,7 +10,7 @@
   </td>
 
   <td class="Leaderboard-cell" <%= tid :name %>>
-    <%= link_to character.name, character %>
+    <%= link_to character.name, character, class: "FactionLink--#{character.faction}" %>
   </td>
 
   <td class="Leaderboard-cell" <%= tid :extra_column %>>
