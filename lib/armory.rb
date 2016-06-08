@@ -15,8 +15,8 @@ class Armory
     body = JSON.parse(response.body)
 
     case response.status
-    when 404 then raise NotFoundError, url
     when 200 then Character.new(region, body)
+    when 404 then raise NotFoundError, url
     else raise StandardError, "#{url}\n#{body['code']} #{body['detail']}"
     end
   end
