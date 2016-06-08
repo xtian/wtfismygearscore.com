@@ -16,6 +16,7 @@ gem 'ruby_identicon' # Avatar generator
 gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
+gem 'scenic' # Create and manage database views in Rails
 gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and images
 gem 'turbolinks', '>= 5.0.0.beta2' # Makes navigating your web application faster
 gem 'typhoeus' # HTTP client backend for Faraday
