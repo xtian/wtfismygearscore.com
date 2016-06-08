@@ -5,6 +5,7 @@ RSpec.describe Character do
   subject { Fabricate.build(:character) }
 
   it { should define_enum_for(:class_name).with(CLASSES) }
+  it { should define_enum_for(:faction).with(FACTIONS) }
   it { should define_enum_for(:region).with(VALID_REGIONS_WITH_REALM) }
 
   %i(avg_ilvl class_name level max_ilvl min_ilvl name realm region score).each do |field|
@@ -111,6 +112,7 @@ RSpec.describe Character do
         'Armory::Character',
         avg_ilvl: subject.avg_ilvl + 1,
         class_name: (CLASSES - [subject.class_name]).sample,
+        faction: subject.faction,
         guild_name: 'Green Street Elite',
         level: subject.level + 1,
         max_ilvl: subject.max_ilvl + 1,
@@ -130,7 +132,7 @@ RSpec.describe Character do
       expect(subject.realm).to eq('Shadowmoon')
       expect(subject.score).to eq(100)
 
-      %i(avg_ilvl class_name level max_ilvl min_ilvl).each do |field|
+      %i(avg_ilvl class_name faction level max_ilvl min_ilvl).each do |field|
         expect(subject.public_send(field)).to eq(character.public_send(field))
       end
     end

@@ -10,6 +10,12 @@ RSpec.describe Armory::Character do
 
   subject { described_class.new('us', body) }
 
+  describe '#faction' do
+    it 'returns character faction' do
+      expect(subject.faction).to eq('alliance')
+    end
+  end
+
   describe '#name' do
     it 'returns character name' do
       expect(subject.name).to eq('Dargonaut')

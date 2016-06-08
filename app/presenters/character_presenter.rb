@@ -12,6 +12,10 @@ class CharacterPresenter < ApplicationPresenter
     CommentPresenter.present_collection(super)
   end
 
+  def css_faction
+    "is-#{faction}"
+  end
+
   def info
     "#{name.humanize}, #{level} #{class_name.titleize}"
   end
