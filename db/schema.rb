@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608180004) do
+ActiveRecord::Schema.define(version: 20160608192000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160608180004) do
     t.integer  "avg_ilvl",   null: false
     t.integer  "max_ilvl",   null: false
     t.integer  "min_ilvl",   null: false
-    t.string   "guild_name", null: false
+    t.string   "guild_name"
     t.integer  "faction",    null: false
     t.index ["name", "realm", "region"], name: "index_characters_on_name_and_realm_and_region", unique: true, using: :btree
     t.index ["realm", "region", "score"], name: "index_characters_on_realm_and_region_and_score", order: {"score"=>:desc}, using: :btree

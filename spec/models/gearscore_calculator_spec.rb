@@ -10,7 +10,7 @@ RSpec.describe GearscoreCalculator do
 
     it 'returns the correct gearscore for a dual-wielder' do
       character = Armory::Character.new('us', alternate_character_response_body)
-      expect(described_class.calculate(character.items)).to eq(15_059)
+      expect(described_class.calculate(character.items)).to eq(13_145)
     end
   end
 end

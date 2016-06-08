@@ -4,15 +4,27 @@ require 'armory/character'
 require 'support/armory_helpers'
 
 RSpec.describe Armory::Character do
-  let(:body) do
-    character_response_body
-  end
-
-  subject { described_class.new('us', body) }
+  subject { described_class.new('us', character_response_body) }
 
   describe '#faction' do
     it 'returns character faction' do
       expect(subject.faction).to eq('alliance')
+    end
+
+    it 'handles neutral faction' do
+      subject = described_class.new('us', alternate_character_response_body)
+      expect(subject.faction).to eq('neutral')
+    end
+  end
+
+  describe '#guild' do
+    it 'returns character guild' do
+      expect(subject.guild_name).to eq('The Gentlemens Club')
+    end
+
+    it 'handles guildless' do
+      subject = described_class.new('us', alternate_character_response_body)
+      expect(subject.guild_name).to eq(nil)
     end
   end
 
