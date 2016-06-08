@@ -3,7 +3,7 @@
   <h1 class="Burst-text"><%= character.rating %></h1>
 </aside>
 
-<header class="CharacterInfo-header CharacterInfo-header--<%= character.css_class_name %> <%= character.css_faction %>">
+<header class="CharacterInfo-header CharacterInfo-header--<%= character.css_class_name %> is-<%= character.faction %>">
   <h1 class="CharacterInfo-heading">
     <%= link_to character.info, character.armory_url %>
   </h1>
