@@ -8,9 +8,11 @@
     <%= link_to character.info, character.armory_url %>
   </h1>
 
-  <b class="CharacterInfo-guildName" <%= tid :guild_name %>>
-    <%= character.guild_name %>
-  </b>
+  <% if @character.guild_name %>
+    <b class="CharacterInfo-guildName" <%= tid :guild_name %>>
+      <%= character.guild_name %>
+    </b>
+  <% end %>
 </header>
 
 <output class="CharacterInfo-score" <%= tid :score %>>
