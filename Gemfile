@@ -10,6 +10,7 @@ gem 'faraday' # HTTP client
 gem 'normalize-rails' # Base CSS reset
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
+gem 'ruby_identicon' # Avatar generator
 gem 'redis' # Redis client gem
 gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
 gem 'sidekiq' # Background job queue built on Redis

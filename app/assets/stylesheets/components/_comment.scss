@@ -1,4 +1,18 @@
+.Comment-author {
+  align-items: center;
+  display: flex;
+}
+
+.Comment-avatar {
+  $avatar-size: 18px;
+
+  height: $avatar-size;
+  width: $avatar-size;
+  margin-right: 0.5em;
+}
+
 .Comment-meta {
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
