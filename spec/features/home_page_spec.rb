@@ -10,6 +10,8 @@ RSpec.feature 'Homepage' do
 
   scenario 'User visits homepage' do
     comments = Array.new(6).map { Fabricate(:comment) }
+    RecentComment.refresh
+
     visit root_path
 
     expect(page).to have_title('WTF is My Gear Score?')

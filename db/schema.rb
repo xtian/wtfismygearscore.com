@@ -12,11 +12,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608192000) do
+ActiveRecord::Schema.define(version: 20160608213258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "citext"
+
+  create_table "ar_internal_metadata", primary_key: "key", id: :string, force: :cascade do |t|
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.integer  "region",     null: false
@@ -53,4 +59,21 @@ ActiveRecord::Schema.define(version: 20160608192000) do
   end
 
   add_foreign_key "comments", "characters", on_delete: :cascade
+
+  create_view :recent_comments, materialized: true,  sql_definition: <<-SQL
+      SELECT characters.class_name AS character_class,
+      characters.name AS character_name,
+      characters.realm AS character_realm,
+      characters.region AS character_region,
+      comments.created_at,
+      comments.id AS comment_id,
+      comments.poster_name
+     FROM (comments
+       JOIN characters ON ((comments.character_id = characters.id)))
+    ORDER BY comments.created_at DESC
+   LIMIT 5;
+  SQL
+
+  add_index "recent_comments", ["comment_id"], name: "index_recent_comments_on_comment_id", unique: true, using: :btree
+
 end

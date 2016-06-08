@@ -6,7 +6,7 @@
     </span>
     on
     <span <%= tid :character_name %>>
-      <%= character_link(comment.character) %>
+      <%= link_to(comment.character_name, character_path(*comment.character_info), class: comment.character_link_class) %>
     </span>
   </div>
 

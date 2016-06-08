@@ -35,7 +35,10 @@ RSpec.feature 'Character page' do
 
     character_page.fill_comment_body 'hi'
     character_page.fill_comment_name 'IdealPoster'
-    character_page.submit_comment
+
+    expect {
+      character_page.submit_comment
+    }.to have_enqueued_job(RefreshRecentCommentsJob)
 
     expect(character_page.notice_message).to eq(I18n.t('comment.posted_successfully'))
 
