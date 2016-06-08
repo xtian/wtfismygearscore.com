@@ -13,10 +13,6 @@ Fabricator(:character) do
     sequence(:name) { |i| "Character#{i}" }
   end
 
-  guild_name do
-    sequence(:guild_name) { |i| "Guild#{i}" }
-  end
-
   realm do
     sequence(:realm) { |i| "Realm#{i}" }
   end
