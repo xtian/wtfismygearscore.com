@@ -2,6 +2,11 @@
 require_relative './page'
 
 class CharacterPage < Page
+  def faction
+    return 'alliance' if page.has_selector?('.is-alliance')
+    'horde' if page.has_selector?('.is-horde')
+  end
+
   def guild_name
     find_tid(:guild_name).text
   end

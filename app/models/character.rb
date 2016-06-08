@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class Character < ApplicationRecord
   enum class_name: CLASSES
+  enum faction: FACTIONS
   enum region: VALID_REGIONS_WITH_REALM
 
   has_many :comments, -> { order(created_at: :desc) }
@@ -33,7 +34,7 @@ class Character < ApplicationRecord
   end
 
   def update_from_armory(character, score)
-    fields = %i(avg_ilvl class_name guild_name level max_ilvl min_ilvl name realm)
+    fields = %i(avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm)
       .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
 
     fields[:score] = score

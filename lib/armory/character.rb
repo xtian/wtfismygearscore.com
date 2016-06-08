@@ -19,6 +19,10 @@ class Armory
       CLASSES[body["class"] - 1]
     end
 
+    def faction
+      FACTIONS[body["faction"]]
+    end
+
     def guild_name
       body["guild"]["name"].freeze
     end
