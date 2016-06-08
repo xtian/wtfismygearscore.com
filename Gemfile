@@ -10,8 +10,6 @@ gem 'faraday' # HTTP client
 gem 'normalize-rails' # Base CSS reset
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
-gem 'rack-throttle' # Provides logic for rate-limiting incoming HTTP requests
-gem 'rack-timeout' # Abort requests that are taking too long
 gem 'redis' # Redis client gem
 gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
 gem 'sidekiq' # Background job queue built on Redis
@@ -23,6 +21,11 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+  gem 'rack-throttle' # Provides logic for rate-limiting incoming HTTP requests
+  gem 'rack-timeout' # Abort requests that are taking too long
+end
 
 group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
