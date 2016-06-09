@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 require 'ruby_identicon'
 
-# frozen_string_literal: true
 class CommentPresenter < ApplicationPresenter
   def avatar
     RubyIdenticon.create_base64(
