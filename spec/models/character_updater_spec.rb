@@ -16,7 +16,7 @@ RSpec.describe CharacterUpdater do
       allow(character).to receive(:new_record?).and_return(true)
 
       expect(character).to receive(:update_from_armory)
-        .with(duck_type(:level, :class_name, :guild_name), 19_717)
+        .with(duck_type(:level, :class_name, :guild_name), 19_891)
 
       return_value = described_class.call(character)
 

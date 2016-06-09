@@ -118,10 +118,10 @@ module ArmoryHelpers
         },
         "finger1" => {
           "id" => 113877,
-          "name" => "Unexploded Explosive Shard",
-          "icon" => "inv_ringwod_d2_4",
-          "quality" => 4,
-          "itemLevel" => 685
+          "name" => "Thorasus, the Stone Heart of Draenor",
+          "icon" => "inv_60legendary_ring1c",
+          "quality" => 5,
+          "itemLevel" => 795
         },
         "finger2" => {
           "id" => 118302,
@@ -175,14 +175,14 @@ module ArmoryHelpers
         "averageItemLevel" => 457,
         "averageItemLevelEquipped" => 457,
         "head" => {
-          "id" => 122246,
-          "name" => "Tarnished Raging Berserker's Helm",
-          "icon" => "inv_helmet_25",
+          "id" => 122248,
+          "name" => "Stained Shadowcraft Cap",
+          "icon" => "inv_helmet_41",
           "quality" => 7,
-          "itemLevel" => 605,
-          "armor" => 137,
+          "itemLevel" => 85,
+          "armor" => 19,
           "context" => "",
-          "bonusLists" => [583]
+          "bonusLists" => []
         },
         "neck" => {
           "id" => 122668,
@@ -335,14 +335,14 @@ module ArmoryHelpers
           "bonusLists" => [583]
         },
         "offHand" => {
-          "id" => 122396,
-          "name" => "Brawler's Razor Claws",
-          "icon" => "inv_weapon_hand_21",
-          "quality" => 7,
-          "itemLevel" => 605,
+          "id" => 6195,
+          "name" => "Noburu's Cudgel",
+          "icon" => "inv_mace_10",
+          "quality" => 0,
+          "itemLevel" => 34,
           "armor" => 0,
           "context" => "",
-          "bonusLists" => [583]
+          "bonusLists" => []
         }
       }
     }
