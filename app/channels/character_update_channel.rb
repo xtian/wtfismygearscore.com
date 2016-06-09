@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class CharacterUpdateChannel < ApplicationCable::Channel
   def follow(data)
+    stop_all_streams
     raise "Invalid data: #{data}" unless valid_data?(data)
 
     character = Character.find(data['id'])
@@ -10,6 +11,10 @@ class CharacterUpdateChannel < ApplicationCable::Channel
 
   rescue ActiveRecord::RecordNotFound
     logger.warn "CharacterUpdateChannel: No Character with found with id: #{data['id']}"
+  end
+
+  def unfollow
+    stop_all_streams
   end
 
   private

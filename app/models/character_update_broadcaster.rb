@@ -11,7 +11,7 @@ class CharacterUpdateBroadcaster
 
   def call
     return unless character.updated_at > caller_updated_at
-    ActionCable.server.broadcast channel_name, character: partial
+    ActionCable.server.broadcast channel_name, html: partial, id: character.to_param
   end
 
   private
