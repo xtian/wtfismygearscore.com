@@ -27,6 +27,10 @@ class CharacterPage < Page
     find_tid(:min_ilvl).text.to_i
   end
 
+  def median_difference
+    find_tid(:median_difference).text.to_i
+  end
+
   def rating
     find_tid(:rating).text
   end

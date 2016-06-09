@@ -1,6 +1,10 @@
 <%# frozen_string_literal: true %>
-<aside class="Burst Burst--<%= character.rating %>" <%= tid :rating %>>
-  <h1 class="Burst-text"><%= character.rating %></h1>
+<aside class="Burst Burst--<%= character.rating %>">
+  <h1 class="Burst-text" <%= tid :rating %>><%= character.rating %></h1>
+  <dl class="Tooltip">
+    <dt class="Tooltip-label">± Median:</dt>
+    <dd <%= tid :median_difference %>><%= character.median_difference %></dd>
+  </dl>
 </aside>
 
 <header class="CharacterInfo-header CharacterInfo-header--<%= character.css_class_name %> is-<%= character.faction %>">
