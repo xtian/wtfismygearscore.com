@@ -7,8 +7,10 @@
 }
 
 .SecondaryContent-panel {
+  $border-radius: $border-radius-base - 1;
+
   background-color: $navy;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 $border-radius $border-radius;
   box-shadow: 0 2px 4px rgba($black, 0.4);
   position: absolute;
   top: 0;

@@ -38,6 +38,11 @@ a {
   }
 }
 
+dl,
+dd {
+  margin: 0;
+}
+
 ol,
 ul {
   list-style: none;
@@ -50,7 +55,7 @@ select,
 textarea,
 button {
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: $border-radius-base - 1;
   color: $navy;
   font-family: inherit;
 }

@@ -1,6 +1,8 @@
 .SecondaryContent {
+  $border-radius: $border-radius-base - 1;
+
   background-color: $navy;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 $border-radius $border-radius;
   box-shadow: 0 2px 4px rgba($black, 0.4);
   color: $gray;
   margin: 0 15px;
@@ -28,7 +30,9 @@
   }
 
   &:last-child {
+    $border-radius: $border-radius-base - 2;
+
     border-bottom: 0;
-    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 $border-radius $border-radius;
   }
 }

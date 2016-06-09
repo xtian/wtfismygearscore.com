@@ -1,5 +1,27 @@
 @import 'variables';
+
+.Burst {
+  .Tooltip {
+    left: 82px;
+    top: 20px;
+  }
+
+  &:hover .Tooltip {
+    left: 92px;
+    opacity: 1;
+  }
+}
+
+.Burst--fail .Tooltip {
+  color: $red;
+}
+
+.Burst--win .Tooltip {
+  color: $green;
+}
+
 @import 'components/character-info';
 @import 'components/comment';
 @import 'components/comment-form';
 @import 'components/ilvls';
+@import 'components/tooltip';

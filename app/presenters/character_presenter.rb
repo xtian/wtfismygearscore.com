@@ -16,6 +16,12 @@ class CharacterPresenter < ApplicationPresenter
     "#{name.humanize}, #{level} #{class_name.titleize}"
   end
 
+  def median_difference
+    float = super
+    int = float.to_i
+    int == float ? int : float
+  end
+
   def rating
     median_difference >= 0 ? 'win' : 'fail'
   end
