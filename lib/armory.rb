@@ -29,8 +29,9 @@ class Armory
   class NotFoundError < StandardError; end
 
   def build_url(region, realm, name)
-    url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}?apikey=#{api_key}&fields=guild,items"
-    Addressable::URI.encode(url)
+    url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}"
+    query = "?apikey=#{api_key}&locale=en_US&fields=guild,items"
+    Addressable::URI.encode(url + query)
   end
 
   def faraday
