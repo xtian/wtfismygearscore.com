@@ -39,14 +39,19 @@ class GearscoreCalculator
     attr_reader :ilvl, :quality, :slot
 
     def quality_modifier
-      @_quality_mod ||= case ilvl
-                        when 278..Float::INFINITY
-                          [91.45, 0.65]
-                        when 121..277
-                          QUALITY_MODIFIERS[quality]
-                        else
-                          VANILLA_QUALITY_MODIFIERS[quality]
-                        end
+      @_quality_mod ||= begin
+        return [ilvl, 1] if quality == 0
+
+        case ilvl
+        when 278..inf then [91.45, 0.65]
+        when 121..277 then QUALITY_MODIFIERS[quality]
+        else               VANILLA_QUALITY_MODIFIERS[quality]
+        end
+      end
+    end
+
+    def inf
+      Float::INFINITY
     end
   end
 
@@ -74,20 +79,24 @@ class GearscoreCalculator
   }.freeze
 
   QUALITY_MODIFIERS = [
+    nil,
     [73, 1],
     [81.375, 0.8125],
     [91.45, 0.65],
     [91.45, 0.5],
     [91.45, 0.5],
+    [81.375, 0.8125],
     [81.375, 0.8125]
   ].freeze
 
   VANILLA_QUALITY_MODIFIERS = [
+    nil,
     [8, 2],
     [0.75, 1.8],
     [26, 1.2],
     [26, 0.923],
     [26, 0.923],
+    [81.375, 0.8125],
     [81.375, 0.8125]
   ].freeze
 end

@@ -66,7 +66,7 @@ RSpec.describe Armory::Character do
 
   describe '#maximum_ilvl' do
     it 'returns the character’s highest item level' do
-      expect(subject.max_ilvl).to eq(695)
+      expect(subject.max_ilvl).to eq(795)
     end
   end
 
