@@ -1,5 +1,5 @@
 (() => {
-  function initContentToggle() {
+  let initContentToggle = () => {
     let toggleable = $$('.js-toggleable');
 
     $('.js-toggleContent').addEventListener('click', (ev) => {
@@ -8,7 +8,7 @@
     });
   }
 
-  function initFormCache(form) {
+  let initFormCache = (form) => {
     let store = window.localStorage;
 
     let region = store.getItem('region');
@@ -26,7 +26,7 @@
     });
   }
 
-  function initFormRedirect(form) {
+  let initFormRedirect = (form) => {
     if (!Turbolinks.supported) { return; }
 
     form.addEventListener('submit', (ev) => {
