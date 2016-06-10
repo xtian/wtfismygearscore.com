@@ -1,6 +1,7 @@
 <%# frozen_string_literal: true %>
 <% content_for(:head) do %>
   <%= preload_link_tag image_path('burst-fail') %>
+  <%= stylesheet_link_tag 'home' %>
 <% end %>
 
 <% content_for(:javascripts) do %>
@@ -45,8 +46,6 @@
     <button class="RedirectForm-submit" tabindex="4">Score Me!</button>
   </div>
 <% end %>
-
-<%= async_stylesheet_link_tag 'home' %>
 
 <% content_for(:secondary_content) do %>
   <section class="SecondaryContent-panel js-toggleable">

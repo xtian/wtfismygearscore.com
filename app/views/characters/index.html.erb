@@ -3,6 +3,7 @@
 
 <% content_for(:head) do %>
   <%= preload_link_tag image_path('burst-fail') %>
+  <%= stylesheet_link_tag 'ranking' %>
 <% end %>
 
 <aside class="Burst Burst--fail">
@@ -56,5 +57,3 @@
 
   <tbody><%= render partial: 'character_row', collection: @characters, as: :character %></tbody>
 </table>
-
-<%= async_stylesheet_link_tag 'ranking' %>

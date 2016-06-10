@@ -7,6 +7,8 @@
   <% if @character.rating == 'win' %>
     <link rel="shortcut icon" href="/favicon-win.ico">
   <% end %>
+
+  <%= stylesheet_link_tag 'character' %>
 <% end %>
 
 <% content_for(:javascripts) do %>
@@ -29,8 +31,6 @@
 <div class="js-characterContainer" data-id="<%= @character.to_param %>" data-timestamp="<%= @character.updated_at %>">
   <%= render @character %>
 </div>
-
-<%= async_stylesheet_link_tag 'character' %>
 
 <% content_for(:secondary_content) do %>
   <h1 class="SecondaryContent-heading">Comments</h1>

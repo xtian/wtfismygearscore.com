@@ -82,7 +82,7 @@ Avoid nesting whenever possible and never exceed three levels of nesting.
 It can be tempting to mirror the structure of your HTML using SCSS, but since our naming conventions guarantee that every identifier will be unique, the extra specificity introduces coupling to that structure without conferring any benefits. The longer selectors nesting creates are also more difficult to debug and increase file size.
 
 ### Page-specific styles
-Page-specific styles should be placed in individual files in `app/assets/stylesheets` and added to the `manifest.js`. Include them at the end of the relevent page using the `async_stylesheet_link_tag` helper. Since we are serving the site over HTTP/2, there is no penalty for splitting styles into as many files as necessary.
+Page-specific styles should be placed in individual files in `app/assets/stylesheets` and added to the `manifest.js`. Since we are serving the site over HTTP/2, there is no penalty for splitting styles into as many files as necessary.
 
 ### Element selectors
 Element selectors should almost never be used. They codify a set of assumptions about the ways in which a tag will be used that nearly always end up being incorrect over time.

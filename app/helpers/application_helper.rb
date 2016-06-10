@@ -7,11 +7,8 @@ module ApplicationHelper
     )
   end
 
-  # Enables progressive rendering using `<link>` tags within the `<body>` after the content they style.
-  # See: https://jakearchibald.com/2016/link-in-body/
-  def async_stylesheet_link_tag(name, options = {})
-    concat stylesheet_link_tag(name, options.reverse_merge('data-turbolinks-track' => 'reload'))
-    content_tag :script, ' '
+  def stylesheet_link_tag(name, options = {})
+    super(name, options.reverse_merge('data-turbolinks-track' => 'reload'))
   end
 
   def page_title(page_title: nil, site_name: nil, subtitle: nil)
