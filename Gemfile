@@ -19,6 +19,7 @@ gem 'redis' # Redis client gem
 gem 'ruby_identicon', require: false # Avatar generator
 gem 'sass-rails', github: 'rails/sass-rails', ref: 'dfbcc6a' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
+gem 'secure_headers' # Applies several headers that are related to security
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
 gem 'slack-notifier' # Sends Slack webhook notifications

@@ -293,6 +293,8 @@ GEM
     scss_lint (0.52.0)
       rake (>= 0.9, < 13)
       sass (~> 3.4.20)
+    secure_headers (3.6.1)
+      useragent
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
@@ -337,6 +339,7 @@ GEM
       equalizer (~> 0.0.9)
       parser (~> 2.3.0)
       procto (~> 0.0.2)
+    useragent (0.16.8)
     utf8-cleaner (0.2.5)
       activesupport
     web-console (3.4.0)
@@ -393,6 +396,7 @@ DEPENDENCIES
   sass-rails!
   scenic
   scss_lint
+  secure_headers
   shoulda-matchers
   sidekiq
   sidekiq-unique-jobs

@@ -11,6 +11,7 @@ Rails:
 
 Metrics/BlockLength:
   ExcludedMethods:
+    - configure
     - describe
     - feature
     - it

@@ -23,6 +23,8 @@
     <% end %>
 
     <%= yield :head %>
+
+    <%= render 'livereload' if Rails.env.development? %>
   </head>
 
   <body>
