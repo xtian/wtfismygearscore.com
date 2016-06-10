@@ -39,7 +39,7 @@ RSpec.feature 'Character page' do
 
     expect {
       character_page.submit_comment
-    }.to have_enqueued_job(RefreshRecentCommentsJob)
+    }.to have_enqueued_job(CommentPostedJob)
 
     expect(character_page.notice_message).to eq(I18n.t('comment.posted_successfully'))
 
