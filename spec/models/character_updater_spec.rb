@@ -13,7 +13,7 @@ RSpec.describe CharacterUpdater do
     end
 
     it 'saves a new record with data from the Armory' do
-      allow(character).to receive(:new_record?).and_return(true)
+      allow(character).to receive(:new_record?) { true }
 
       expect(character).to receive(:update_from_armory)
         .with(duck_type(:level, :class_name, :guild_name), 19_891)
@@ -25,8 +25,8 @@ RSpec.describe CharacterUpdater do
 
     it 'updates an outdated record with data from the Armory' do
       freeze_time do
-        allow(character).to receive(:new_record?).and_return(false)
-        allow(character).to receive(:updated_at).and_return(15.minutes.ago)
+        allow(character).to receive(:new_record?) { false }
+        allow(character).to receive(:updated_at) { 15.minutes.ago }
 
         expect(character).to receive(:update_from_armory)
 
@@ -35,8 +35,8 @@ RSpec.describe CharacterUpdater do
     end
 
     it 'does nothing if character was recently updated' do
-      allow(character).to receive(:new_record?).and_return(false)
-      allow(character).to receive(:updated_at).and_return(14.minutes.ago)
+      allow(character).to receive(:new_record?) { false }
+      allow(character).to receive(:updated_at) { 14.minutes.ago }
 
       expect(character).not_to receive(:update_from_armory)
 
@@ -45,8 +45,8 @@ RSpec.describe CharacterUpdater do
     end
 
     it 'handles not found errors' do
-      allow(character).to receive(:new_record?).and_return(false)
-      allow(character).to receive(:updated_at).and_return(15.minutes.ago)
+      allow(character).to receive(:new_record?) { false }
+      allow(character).to receive(:updated_at) { 15.minutes.ago }
       expect(character).to receive(:destroy!)
 
       allow(ARMORY).to receive(:fetch_character).and_raise(Armory::NotFoundError)
@@ -55,7 +55,7 @@ RSpec.describe CharacterUpdater do
     end
 
     it 'reraises not found errors for new records' do
-      allow(character).to receive(:new_record?).and_return(true)
+      allow(character).to receive(:new_record?) { true }
 
       allow(ARMORY).to receive(:fetch_character).and_raise(Armory::NotFoundError)
 

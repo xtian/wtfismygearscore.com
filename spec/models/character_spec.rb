@@ -92,7 +92,7 @@ RSpec.describe Character do
     it 'returns difference between character score and median score for level' do
       3.times do |i|
         median = instance_double('MedianGearscore', median_score: i + 1)
-        allow(MedianGearscore).to receive(:find_or_initialize_by).with(level: i + 1).and_return(median)
+        allow(MedianGearscore).to receive(:find_or_initialize_by).with(level: i + 1) { median }
       end
 
       subject = Fabricate.build(:character, level: 1, score: 2)
