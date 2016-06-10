@@ -29,4 +29,18 @@ RSpec.describe Comment do
       end
     end
   end
+
+  describe '#spam?' do
+    subject { Fabricate.build(:comment) }
+
+    it 'returns true if Akismet considers comment spam' do
+      stub_request(:post, %r{https://.+\.akismet\.com/.+/comment-check}).to_return(body: 'true')
+      expect(subject.spam?).to eq(true)
+    end
+
+    it 'returns false if Akismet considers comment valid' do
+      stub_request(:post, %r{https://.+\.akismet\.com/.+/comment-check})
+      expect(subject.spam?).to eq(false)
+    end
+  end
 end

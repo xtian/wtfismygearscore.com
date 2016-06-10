@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     comment = Character.find_by!(params.permit(:region, :realm, :name))
       .create_comment(comment_params)
 
-    RefreshRecentCommentsJob.perform_later
+    CommentPostedJob.perform_later(comment) if comment.valid?
     redirect_back(redirect_options(comment))
   end
 
