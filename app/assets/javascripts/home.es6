@@ -8,10 +8,26 @@
     });
   }
 
-  function initForm() {
-    if (!Turbolinks.supported) { return; }
+  function initFormCache(form) {
+    let store = window.localStorage;
 
-    let form = $('.js-redirectForm');
+    let region = store.getItem('region');
+    let realm = store.getItem('realm');
+
+    let regionField = $('.js-redirectForm-region', form);
+    let realmField = $('.js-redirectForm-realm', form);
+
+    if (region) { regionField.value = region; }
+    if (realm) { realmField.value = realm; }
+
+    form.addEventListener('submit', (ev) => {
+      store.setItem('region', regionField.value.trim());
+      store.setItem('realm', realmField.value.trim());
+    });
+  }
+
+  function initFormRedirect(form) {
+    if (!Turbolinks.supported) { return; }
 
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
@@ -26,6 +42,9 @@
     });
   }
 
+  let form = $('.js-redirectForm');
+
   initContentToggle();
-  initForm();
+  initFormCache(form);
+  initFormRedirect(form);
 }());
