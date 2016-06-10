@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/xtian/rakismet.git
+  revision: 19b5c4e3318b2e864346a24ea1eb2e9428e40ab9
+  specs:
+    rakismet (1.5.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -370,6 +376,7 @@ DEPENDENCIES
   rack-throttle
   rack-timeout
   rails (>= 5.0.0.beta3, < 5.1)
+  rakismet!
   redis
   rspec-rails (>= 3.5.0.beta3)
   rubocop
@@ -396,4 +403,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.12.4
+   1.12.5

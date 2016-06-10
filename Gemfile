@@ -13,6 +13,7 @@ gem 'normalize-rails' # Base CSS reset
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
+gem 'rakismet', github: 'xtian/rakismet' # Akismet integration
 gem 'ruby_identicon', require: false # Avatar generator
 gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
