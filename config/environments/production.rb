@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 Rails.application.configure do
-  config.middleware.use Rack::Throttle::Minute, cache: Redis.current, key_prefix: :throttle
+  config.middleware.use Rack::Throttle::Hourly, cache: Redis.current, key_prefix: :throttle
 
   # Settings specified here will take precedence over those in config/application.rb.
 
