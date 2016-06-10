@@ -27,6 +27,7 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 # gem 'capistrano-rails', group: :development
 
 group :production do
+  gem 'exception_notification' # Sends notifications when errors occur
   gem 'rack-throttle' # Provides logic for rate-limiting incoming HTTP requests
   gem 'rack-timeout' # Abort requests that are taking too long
 end
