@@ -44,7 +44,7 @@
       <p>Something broken or just want to chat? Email us: support@wtfismygs.com</p>
     </footer>
 
-    <%= render 'analytics' %>
+    <%= render 'analytics' if secrets.ga_id %>
 
     <%= async_javascript_include_tag 'turbolinks' %>
     <%= async_javascript_include_tag 'base' %>
