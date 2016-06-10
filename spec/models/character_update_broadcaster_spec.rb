@@ -14,7 +14,7 @@ RSpec.describe CharacterUpdateBroadcaster do
     end
 
     it 'broadcasts to channel if caller is out of date' do
-      allow(character).to receive(:updated_at).and_return(Time.current)
+      allow(character).to receive(:updated_at) { Time.current }
 
       expect(ActionCable.server).to receive(:broadcast)
         .with("characters:1:armory_updates", hash_including(html: /<.+>/, id: 1))
@@ -24,7 +24,7 @@ RSpec.describe CharacterUpdateBroadcaster do
 
     it 'does not broadcast if caller is up to date' do
       freeze_time do
-        allow(character).to receive(:updated_at).and_return(1.hour.ago)
+        allow(character).to receive(:updated_at) { 1.hour.ago }
 
         expect(ActionCable.server).not_to receive(:broadcast)
         described_class.call(character, 1.hour.ago)

@@ -11,21 +11,21 @@ RSpec.describe CommentPresenter do
     end
 
     it 'delegates to comment' do
-      allow(comment).to receive(:poster_name).and_return('idealposter')
+      allow(comment).to receive(:poster_name) { 'idealposter' }
       expect(subject.poster_name).to eq('idealposter')
     end
   end
 
   describe '#timestamp' do
     it 'returns iso8601 string' do
-      allow(comment).to receive(:created_at).and_return(1.week.ago)
+      allow(comment).to receive(:created_at) { 1.week.ago }
       expect(subject.timestamp).to eq(1.week.ago.iso8601)
     end
   end
 
   describe '#posted_at' do
     it 'returns human readable date string' do
-      allow(comment).to receive(:created_at).and_return(Date.new(2016, 05, 29))
+      allow(comment).to receive(:created_at) { Date.new(2016, 05, 29) }
       expect(subject.posted_at).to eq('May 29, 2016')
     end
   end
