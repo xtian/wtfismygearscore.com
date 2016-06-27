@@ -38,7 +38,7 @@ group :development, :test do
   gem 'eslint-rails' # Ensures consistent JavaScript style
   gem 'mutant-rspec', require: false # Mutation testing tool
   gem 'rspec-rails', '>= 3.5.0.beta3' # Test framework
-  gem 'rubocop', require: false # Ensures consistent Ruby style
+  gem 'rubocop', github: 'bbatsov/rubocop', ref: 'd4fdff3', require: false # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
   gem 'scss_lint', require: false # Ensures consistent SCSS style
 end
