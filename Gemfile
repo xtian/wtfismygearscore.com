@@ -2,7 +2,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'rails', '~> 5.0.0'
 
 gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
@@ -14,12 +14,12 @@ gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
 gem 'ruby_identicon', require: false # Avatar generator
-gem 'sass-rails', '>= 6.0.0.beta1' # Use SCSS for stylesheets
+gem 'sass-rails', github: 'rails/sass-rails', ref: 'dfbcc6a' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
 gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and images
-gem 'turbolinks', '>= 5.0.0.beta2' # Makes navigating your web application faster
+gem 'turbolinks' # Makes navigating your web application faster
 gem 'typhoeus', require: false # HTTP client backend for Faraday
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
@@ -37,8 +37,8 @@ group :development, :test do
   gem 'coderay', require: false # Syntax highlighting for RSpec failures
   gem 'eslint-rails' # Ensures consistent JavaScript style
   gem 'mutant-rspec', require: false # Mutation testing tool
-  gem 'rspec-rails', '>= 3.5.0.beta3' # Test framework
-  gem 'rubocop', github: 'bbatsov/rubocop', ref: 'd4fdff3', require: false # Ensures consistent Ruby style
+  gem 'rspec-rails', '>= 3.5.0.beta4' # Test framework
+  gem 'rubocop' # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
   gem 'scss_lint', require: false # Ensures consistent SCSS style
 end
@@ -47,7 +47,6 @@ group :development do
   gem 'guard', require: false # Tool to perform actions on file modification
   gem 'guard-livereload', require: false # Reloads page when view-related files are changed
   gem 'listen' # Watches file system for changes
-  gem 'quiet_assets' # Strips noisy asset requests from the log
   gem 'rack-livereload' # Injects livereload snippet
   gem 'spring' # Keeps application running in the background
   gem 'spring-commands-rspec' # Implements the rspec command for Spring
