@@ -36,8 +36,8 @@ group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'coderay', require: false # Syntax highlighting for RSpec failures
   gem 'eslint-rails' # Ensures consistent JavaScript style
-  gem 'mutant-rspec', require: false # Mutation testing tool
-  gem 'rspec-rails', '>= 3.5.0.beta4' # Test framework
+  gem 'mutant-rspec', github: 'mbj/mutant', ref: 'cfc09e9', require: false # Mutation testing tool
+  gem 'rspec-rails' # Test framework
   gem 'rubocop' # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
   gem 'scss_lint', require: false # Ensures consistent SCSS style
@@ -58,7 +58,7 @@ group :test do
   gem 'capybara' # Allows simulation of user interaction in feature specs
   gem 'fabrication' # Allows creation of model objects with default data
   gem 'fakeredis', require: 'fakeredis/rspec' # Fake implementation of redis-rb
-  gem 'fuubar', '>= 2.1.0.beta2' # RSpec progress bar formatter
+  gem 'fuubar' # RSpec progress bar formatter
   gem 'shoulda-matchers' # Rails RSpec helpers
   gem 'webmock' # Mocks external requests
 end
