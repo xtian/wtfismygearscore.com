@@ -1,8 +1,29 @@
 # frozen_string_literal: true
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+Character.create!(
+  avg_ilvl: 681,
+  class_name: 'hunter',
+  faction: 'alliance',
+  guild_name: 'The Gentlemens Club',
+  level: 100,
+  max_ilvl: 795,
+  min_ilvl: 655,
+  name: 'Dargonaut',
+  realm: 'Shadowmoon',
+  region: 'us',
+  score: 19_891
+)
+
+Character.create!(
+  avg_ilvl: 457,
+  class_name: 'shaman',
+  faction: 'neutral',
+  guild_name: nil,
+  level: 100,
+  max_ilvl: 605,
+  min_ilvl: 10,
+  name: 'Doubleagent',
+  realm: 'Mannoroth',
+  region: 'us',
+  score: 10_331
+)
