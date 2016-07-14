@@ -17,9 +17,7 @@ RSpec.describe Character do
   end
 
   it { should have_db_index([:name, :realm, :region]).unique }
-  it { should have_db_index([:realm, :region, :score]) }
-  it { should have_db_index([:region, :score]) }
-  it { should have_db_index(:score) }
+  it { should have_db_index([:score, :region, :realm, :name]) }
 
   describe '.ranked' do
     before do
