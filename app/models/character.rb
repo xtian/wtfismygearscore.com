@@ -11,17 +11,6 @@ class Character < ApplicationRecord
   validates :avg_ilvl, :level, :max_ilvl, :min_ilvl, :score,
             numericality: { only_integer: true, greater_than: 0 }, presence: true
 
-  def self.ranked(by: nil)
-    partition = case by
-                when :region then 'PARTITION BY region'
-                when :realm then 'PARTITION BY realm, region'
-                end
-
-    from <<-SQL.strip_heredoc
-      (SELECT *, rank() OVER (#{partition} ORDER BY score DESC) FROM characters) AS characters
-    SQL
-  end
-
   def create_comment(params)
     comments.create(params)
   end

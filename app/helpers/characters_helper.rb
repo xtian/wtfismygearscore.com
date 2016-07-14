@@ -3,14 +3,8 @@ module CharactersHelper
   REGION_REALM_SEPARATOR = '-'
 
   def character_path(character)
-    parts = server_parts(character)
-    parts << character.name.downcase
+    parts = [*server_parts(character), character.name]
     super(*parts)
-  end
-
-  def extra_column_name
-    return 'Guild' if params[:realm]
-    'Realm'
   end
 
   def extra_column(character)
@@ -21,21 +15,28 @@ module CharactersHelper
       character.realm.titleize
     ].compact.join(REGION_REALM_SEPARATOR)
 
-    parts = server_parts(character)
-    link_to name, characters_path(*parts)
+    link_to name, characters_path(*server_parts(character))
   end
 
-  def ranking_title(region, realm)
+  def next_ranking_path(cursor)
+    characters_path(*server_parts, after: cursor, per_page: params[:per_page])
+  end
+
+  def prev_ranking_path(cursor)
+    characters_path(*server_parts, before: cursor, per_page: params[:per_page])
+  end
+
+  def ranking_title
     [region, realm].compact.join(REGION_REALM_SEPARATOR) + ' WoW Character Ranking'
+  end
+
+  def realm
+    params[:realm]&.titleize
   end
 
   def region
     region = params[:region]
     world_page? ? region.titleize : region.upcase
-  end
-
-  def realm
-    params[:realm]&.titleize
   end
 
   def server_parts(character = nil)

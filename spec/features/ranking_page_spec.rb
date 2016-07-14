@@ -10,7 +10,7 @@ RSpec.feature 'Ranking page' do
   before do
     Fabricate(:character, name: 'a', region: 'eu', realm: 'shadowmoon', score: 200)
     Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 200)
-    Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
+    Fabricate(:character, name: 'top', region: 'us', realm: 'illidan', score: 500)
 
     Fabricate(
       :character,
@@ -53,16 +53,23 @@ RSpec.feature 'Ranking page' do
   end
 
   scenario 'User visits world ranking page' do
-    visit characters_path('world')
+    visit characters_path('world', per_page: 2)
 
     expect(page).to have_title('World WoW Character Ranking — WTF is My Gear Score?')
 
-    expect(ranking_page.characters.length).to eq(4)
-
+    expect(ranking_page.characters.length).to eq(2)
+    expect(ranking_page.characters[0].name).to eq('top')
     expect(ranking_page.characters[0].extra_column).to eq('US-Illidan')
-
     expect(ranking_page.characters[1].rank).to eq(2)
-    expect(ranking_page.characters[2].rank).to eq(3)
-    expect(ranking_page.characters[3].rank).to eq(3)
+
+    ranking_page.next_page
+
+    expect(ranking_page.characters.length).to eq(2)
+    expect(ranking_page.characters[0].rank).to eq(3)
+    expect(ranking_page.characters[1].rank).to eq(3)
+
+    ranking_page.prev_page
+
+    expect(ranking_page.characters[0].name).to eq('top')
   end
 end

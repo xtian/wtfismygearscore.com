@@ -3,12 +3,13 @@ class CharactersController < ApplicationController
   rescue_from 'Armory::NotFoundError', with: :not_found
 
   def index
-    characters = Character.ranked(rank_scope)
-      .select(*index_fields)
-      .where(index_criteria)
-      .order(score: :desc, name: :asc)
-
-    @characters = CharacterPresenter.present_collection(characters)
+    @ranking = RankingQuery.call(
+      cursor: params[:after] || params[:before],
+      page_direction: page_direction,
+      per_page: per_page,
+      realm: params[:realm],
+      region: params[:region]
+    )
   end
 
   def show
@@ -17,26 +18,6 @@ class CharactersController < ApplicationController
   end
 
   private
-
-  def index_criteria
-    @_criteria ||= params.permit(:region, :realm).tap do |params|
-      params.delete(:region) if world_page?
-    end
-  end
-
-  def index_fields
-    %i(name class_name faction rank score).tap do |fields|
-      fields << :guild_name if params[:realm]
-      fields << :realm unless params[:realm]
-      fields << :region if world_page?
-    end
-  end
-
-  def rank_scope
-    return { by: :realm } if index_criteria[:realm]
-    return { by: :region } if index_criteria[:region]
-    {}
-  end
 
   def fetch_character(params)
     character = Character.find_or_initialize_by(params)
@@ -47,8 +28,17 @@ class CharactersController < ApplicationController
     character
   end
 
+  def page_direction
+    return :after if params[:after]
+    :before if params[:before]
+  end
+
+  def per_page
+    [params[:per_page]&.to_i, 50].compact.min
+  end
+
   def world_page?
-    params[:region].casecmp('world') == 0
+    @_world_page ||= !REALM_REGIONS_SET.include?(params[:region].downcase)
   end
   helper_method :world_page?
 end

@@ -19,46 +19,6 @@ RSpec.describe Character do
   it { should have_db_index([:name, :realm, :region]).unique }
   it { should have_db_index([:score, :region, :realm, :name]) }
 
-  describe '.ranked' do
-    before do
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200)
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200)
-      Fabricate(:character, region: 'us', realm: 'shadowmoon', score: 300)
-      Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
-    end
-
-    it 'returns ranked characters' do
-      characters = described_class.ranked.all
-
-      expect(characters.size).to eq(4)
-
-      expect(characters[0].rank).to eq(1)
-      expect(characters[0].score).to eq(500)
-
-      expect(characters[1].rank).to eq(2)
-      expect(characters[2].rank).to eq(3)
-      expect(characters[3].rank).to eq(3)
-    end
-
-    it 'returns characters ranked by region' do
-      characters = described_class.ranked(by: :region).where(region: 'eu')
-
-      expect(characters.size).to eq(2)
-
-      expect(characters[0].rank).to eq(1)
-      expect(characters[1].rank).to eq(1)
-    end
-
-    it 'returns characters ranked by realm' do
-      characters = described_class.ranked(by: :realm).where(region: 'eu', realm: 'shadowmoon')
-
-      expect(characters.size).to eq(2)
-
-      expect(characters[0].rank).to eq(1)
-      expect(characters[1].rank).to eq(1)
-    end
-  end
-
   describe '#create_comment' do
     it 'creates a comment' do
       subject.save!
@@ -88,9 +48,9 @@ RSpec.describe Character do
 
   describe '#median_difference' do
     it 'returns difference between character score and median score for level' do
-      3.times do |i|
-        median = instance_double('MedianGearscore', median_score: i + 1)
-        allow(MedianGearscore).to receive(:find_or_initialize_by).with(level: i + 1) { median }
+      (1..3).each do |i|
+        median = instance_double('MedianGearscore', median_score: i)
+        allow(MedianGearscore).to receive(:find_or_initialize_by).with(level: i) { median }
       end
 
       subject = Fabricate.build(:character, level: 1, score: 2)
