@@ -7,13 +7,13 @@ class MedianGearscore < ApplicationRecord
   # @return void
   def calculate
     result = self.class.find_by_sql(median_sql).first
-    self.median_score = result.median_score || 0
+    self.median_score = result.median_score
     save!
   end
 
   # @return [Float, Fixnum]
   def median_score
-    super || 0
+    super() || 0
   end
 
   private

@@ -7,6 +7,16 @@ RSpec.describe MedianGearscore do
   it { should validate_numericality_of(:level).only_integer.is_greater_than(0) }
   it { should validate_numericality_of(:median_score).is_greater_than_or_equal_to(0) }
 
+  describe '#median_score' do
+    it 'defaults to zero' do
+      subject = described_class.new
+      expect(subject.median_score).to eq(0)
+
+      subject.median_score = 1
+      expect(subject.median_score).to eq(1)
+    end
+  end
+
   describe '#calculate' do
     subject { described_class.new(level: 100) }
 
