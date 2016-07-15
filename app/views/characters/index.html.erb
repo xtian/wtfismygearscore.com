@@ -1,5 +1,5 @@
 <%# frozen_string_literal: true %>
-<% content_for(:page_title, ranking_title(region, realm)) %>
+<% content_for(:page_title, ranking_title) %>
 
 <% content_for(:head) do %>
   <%= preload_link_tag image_path('burst-fail') %>
@@ -13,18 +13,32 @@
 <nav class="SubHeader">
   <ul class="SubHeader-navList">
     <li class="SubHeader-navItem">
-      <%= link_to 'World', characters_url('world'), rel: 'index' %>
+      <%= link_to 'World', characters_path('world'), rel: 'index' %>
     </li>
 
     <% unless world_page? %>
       <li class="SubHeader-navItem">
-        <%= link_to region, characters_url(*server_parts.first), rel: ('up' if realm) %>
+        <%= link_to region, characters_path(*server_parts.first), rel: ('up' if realm) %>
       </li>
     <% end %>
 
     <% if realm %>
       <li class="SubHeader-navItem">
-        <%= link_to realm, characters_url(*server_parts) %>
+        <%= link_to realm, characters_path(*server_parts) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <ul>
+    <% unless @ranking.first_page? %>
+      <li>
+        <%= link_to 'Prev Page', prev_ranking_path(@ranking.prev_cursor), rel: 'prev' %>
+      </li>
+    <% end %>
+
+    <% unless @ranking.last_page? %>
+      <li>
+        <%= link_to 'Next Page', next_ranking_path(@ranking.next_cursor), rel: 'next' %>
       </li>
     <% end %>
   </ul>
@@ -49,11 +63,11 @@
     <th class="Leaderboard-cell">Name</th>
 
     <th class="Leaderboard-cell" <%= tid :extra_column_name %>>
-      <%= extra_column_name %>
+      <%= @ranking.extra_column_name %>
     </th>
 
     <th class="Leaderboard-cell">Score</th>
   </thead>
 
-  <tbody><%= render partial: 'character_row', collection: @characters, as: :character %></tbody>
+  <tbody><%= render partial: 'character_row', collection: @ranking, as: :character %></tbody>
 </table>

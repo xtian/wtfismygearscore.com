@@ -18,6 +18,16 @@ class RankingPage < Page
     end
   end
 
+  def next_page
+    @_characters = nil
+    click_on 'Next Page'
+  end
+
+  def prev_page
+    @_characters = nil
+    click_on 'Prev Page'
+  end
+
   private
 
   def class_name(node)
