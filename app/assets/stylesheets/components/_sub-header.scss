@@ -2,7 +2,9 @@
   background: $brown-dark linear-gradient(to bottom, rgba($black, 0.4), rgba($black, 0) 12%) no-repeat;
   border-top: 1px solid darken($brown, 25%);
   color: $tan;
+  display: flex;
   font-size: 14px;
+  justify-content: space-between;
   padding: 1em;
 
   a {
@@ -23,11 +25,11 @@
   display: flex;
 }
 
-.SubHeader-navItem {
-  + .SubHeader-navItem {
-    padding-left: 0.3em;
-  }
+.SubHeader-navItem + .SubHeader-navItem {
+  padding-left: 0.3em;
+}
 
+.SubHeader-rankingNavItem {
   &::after {
     content: ' – ';
   }
