@@ -1,13 +1,22 @@
 # frozen_string_literal: true
+
+# Updates a given {Character} with latest data from the Armory
 class CharacterUpdater
+  # @param character [Character]
   def initialize(character)
     @character = character
   end
 
+  # Convenience method to avoid object initialization
+  # @param character [Character]
+  # @return [Character]
   def self.call(character)
     new(character).call
   end
 
+  # Updates {Character} with latest Armory data unless it has been updated in
+  # the recent past. Will destroy {Character} if Armory returns a 404.
+  # @return [Character] updated character
   def call
     return character if recently_updated?
 
