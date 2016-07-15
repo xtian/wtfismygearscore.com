@@ -70,7 +70,7 @@ RSpec.describe Character do
         'Armory::Character',
         avg_ilvl: subject.avg_ilvl + 1,
         class_name: (CLASSES - [subject.class_name]).sample,
-        faction: subject.faction,
+        faction: (FACTIONS - [subject.faction]).sample,
         guild_name: 'Green Street Elite',
         level: subject.level + 1,
         max_ilvl: subject.max_ilvl + 1,
