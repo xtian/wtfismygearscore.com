@@ -21,13 +21,13 @@ class Armory
   # @see https://dev.battle.net/io-docs Armory API docs
   def fetch_character(region:, realm:, name:)
     url = build_url(region, realm, name)
-    response = make_request(url)
+    response = Faraday.get(url)
     body = JSON.parse(response.body)
 
     case response.status
     when 200 then Character.new(region, body)
     when 404 then raise NotFoundError, url
-    else raise StandardError, "#{url}\n#{body['code']} #{body['detail']}"
+    else raise "#{url}\n#{body.fetch('code')} #{body.fetch('detail')}"
     end
   end
 
@@ -41,18 +41,5 @@ class Armory
     url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}"
     query = "?apikey=#{api_key}&locale=en_US&fields=guild,items"
     Addressable::URI.encode(url + query)
-  end
-
-  def faraday
-    @_faraday ||= Faraday.new do |faraday|
-      faraday.adapter :typhoeus
-    end
-  end
-
-  def make_request(url)
-    faraday.get do |req|
-      req.headers['Accept'] = 'application/json'
-      req.url url
-    end
   end
 end

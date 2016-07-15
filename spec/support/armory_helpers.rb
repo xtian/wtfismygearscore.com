@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 # rubocop:disable Metrics/ModuleLength
 module ArmoryHelpers
-  def stub_character_request(name = 'dargonaut')
-    stub_request(:get, %r{https://us\.api\.battle\.net/wow/character/shadowmoon/#{name}.+}i)
-      .to_return(body: character_response_body.to_json)
+  def stub_character_request(name: 'dargonaut', api_key: 'not-a-bnet-key')
+    url = %r{
+      https://us\.api\.battle\.net/wow/character/shadowmoon/#{name}
+      \?apikey=#{api_key}
+      &fields=guild,items
+      &locale=en_US
+    }ix
+
+    stub_request(:get, url).to_return(body: character_response_body.to_json)
   end
 
   # rubocop:disable Metrics/MethodLength, Style/NumericLiterals
@@ -73,6 +79,13 @@ module ArmoryHelpers
           "icon" => "inv_chest_mail_draenorhonors2_c_01",
           "quality" => 4,
           "itemLevel" => 685
+        },
+        "tabard" => {
+          "id" => 69210,
+          "name" => "Renowned Guild Tabard",
+          "icon" => "inv_epicguildtabard",
+          "quality" => 4,
+          "itemLevel" => 1
         },
         "shirt" => {
           "id" => 89194,

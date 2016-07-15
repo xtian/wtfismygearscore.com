@@ -19,28 +19,28 @@ class Armory
     # @!method level
     %w(name realm level).each do |method_name|
       define_method method_name do
-        body[method_name].freeze
+        body[method_name]
       end
     end
 
     # @return [String]
     def class_name
-      CLASSES[body["class"] - 1]
+      CLASSES.fetch(body.fetch('class') - 1)
     end
 
     # @return [String]
     def faction
-      FACTIONS[body["faction"]]
+      FACTIONS.fetch(body.fetch('faction'))
     end
 
     # @return [String, nil]
     def guild_name
-      body.dig("guild", "name")&.freeze
+      body.dig('guild', 'name')
     end
 
     # @return [Hash]
     def items
-      body["items"]
+      body.fetch('items')
     end
 
     # @return [Fixnum]
@@ -58,12 +58,12 @@ class Armory
     attr_reader :body, :ilvls
 
     def process_items
-      body["items"].delete "averageItemLevel"
-      @avg_ilvl = body["items"].delete("averageItemLevelEquipped")
+      body.fetch('items').delete 'averageItemLevel'
+      @avg_ilvl = body.fetch('items').delete('averageItemLevelEquipped')
 
-      @ilvls = body["items"].freeze
+      @ilvls = body.fetch('items').freeze
         .reject { |k| %w(shirt tabard).include? k }
-        .map { |_k, hash| hash["itemLevel"] }
+        .map { |_k, hash| hash.fetch('itemLevel') }
     end
   end
 end
