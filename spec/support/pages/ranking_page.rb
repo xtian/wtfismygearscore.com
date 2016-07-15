@@ -20,20 +20,20 @@ class RankingPage < Page
 
   def next_page
     @_characters = nil
-    click_on 'Next Page'
+    click_on 'Next >'
   end
 
   def next_page?
-    page.has_content?('Next Page')
+    page.has_content?('Next >')
   end
 
   def prev_page
     @_characters = nil
-    click_on 'Prev Page'
+    click_on '< Prev'
   end
 
   def prev_page?
-    page.has_content?('Prev Page')
+    page.has_content?('< Prev')
   end
 
   private
