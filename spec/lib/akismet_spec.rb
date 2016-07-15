@@ -3,15 +3,17 @@ require 'rails_helper'
 require 'akismet'
 
 RSpec.describe Akismet do
-  subject { AKISMET }
+  subject { described_class.new(is_test: true, key: 'foo', url: 'bar') }
 
   describe '#new' do
     it 'raises an argument error if key is not provided' do
-      expect { described_class.new(is_test: '', key: nil, url: '') }.to raise_error(ArgumentError)
+      expect { described_class.new(is_test: '', key: nil, url: '') }
+        .to raise_error(ArgumentError, 'Akismet key and url required')
     end
 
     it 'raises an argument error if url is not provided' do
-      expect { described_class.new(is_test: '', key: '', url: nil) }.to raise_error(ArgumentError)
+      expect { described_class.new(is_test: '', key: '', url: nil) }
+        .to raise_error(ArgumentError, 'Akismet key and url required')
     end
   end
 
@@ -19,17 +21,23 @@ RSpec.describe Akismet do
     let(:comment) do
       instance_double(
         'Comment',
-        body: '',
+        body: 'body',
         created_at: Time.current,
-        poster_name: '',
-        poster_ip_address: ''
+        poster_name: 'poster-name',
+        poster_ip_address: IPAddr.new('0.0.0.0')
       )
     end
 
     it 'returns true if Akismet considers the comment spam' do
-      stub_request(:get, %r{https://.+\.akismet\.com/.+/comment-check.+}).to_return(body: 'true')
+      url = %r{
+        https://foo\.rest\.akismet\.com/.+/comment-check
+        \?blog=bar&comment_author=poster-name&comment_content=body&comment_date_gmt=.+Z
+        &is_test=true&referrer=r&user_agent=ua&user_ip=0.0.0.0
+      }x
 
-      expect(subject.spam?(comment, referrer: '', user_agent: '')).to eq(true)
+      stub_request(:get, url).to_return(body: 'true')
+
+      expect(subject.spam?(comment, referrer: 'r', user_agent: 'ua')).to eq(true)
     end
 
     it 'returns false if Akismet considers the comment valid' do

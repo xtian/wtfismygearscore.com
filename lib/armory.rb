@@ -44,9 +44,7 @@ class Armory
   end
 
   def faraday
-    @_faraday ||= Faraday.new do |faraday|
-      faraday.adapter :typhoeus
-    end
+    @_faraday ||= Faraday.new
   end
 
   def make_request(url)
