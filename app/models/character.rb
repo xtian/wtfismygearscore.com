@@ -11,10 +11,14 @@ class Character < ApplicationRecord
   validates :avg_ilvl, :level, :max_ilvl, :min_ilvl, :score,
             numericality: { only_integer: true, greater_than: 0 }, presence: true
 
+  # @param params [Hash]
+  # @return [Comment]
   def create_comment(params)
     comments.create(params)
   end
 
+  # @return [Float] difference between character's score and median for
+  #   their level
   def median_difference
     @_median_difference ||= begin
       median_score = MedianGearscore.find_or_initialize_by(level: level).median_score
@@ -22,6 +26,9 @@ class Character < ApplicationRecord
     end
   end
 
+  # @param character [Armory::Character] armory data
+  # @param score [Fixnum] character's gearscore
+  # @return void
   def update_from_armory(character, score)
     fields = %i(avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm)
       .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
