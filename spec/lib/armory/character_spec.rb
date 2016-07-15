@@ -4,7 +4,7 @@ require 'armory/character'
 require 'support/armory_helpers'
 
 RSpec.describe Armory::Character do
-  subject { described_class.new('us', character_response_body) }
+  subject { described_class.new('US', character_response_body) }
 
   describe '#faction' do
     it 'returns character faction' do
@@ -78,6 +78,8 @@ RSpec.describe Armory::Character do
 
   describe '#items' do
     it 'returns hash of items' do
+      expect(subject.items.frozen?).to eq(true)
+
       keys = subject.items.keys
 
       expect(keys).to include("head")

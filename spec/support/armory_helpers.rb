@@ -74,6 +74,13 @@ module ArmoryHelpers
           "quality" => 4,
           "itemLevel" => 685
         },
+        "tabard" => {
+          "id" => 69210,
+          "name" => "Renowned Guild Tabard",
+          "icon" => "inv_epicguildtabard",
+          "quality" => 4,
+          "itemLevel" => 1
+        },
         "shirt" => {
           "id" => 89194,
           "name" => "Tailored Officer's Shirt",
