@@ -135,7 +135,7 @@ GEM
     fast_blank (1.0.0)
     ffi (1.9.14)
     formatador (0.2.5)
-    fuubar (2.1.0)
+    fuubar (2.1.1)
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
     globalid (0.3.6)
