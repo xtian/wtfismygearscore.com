@@ -41,7 +41,7 @@ class RankingQuery
       characters.order(score: :desc, name: :asc, realm: :asc).where(page_criteria(%w(< >))).to_a
     when :before
       characters.order(score: :asc, name: :desc, realm: :desc).where(page_criteria(%w(> <))).to_a.reverse
-    else characters
+    else characters.to_a
     end
   end
 

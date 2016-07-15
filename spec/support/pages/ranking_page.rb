@@ -23,9 +23,17 @@ class RankingPage < Page
     click_on 'Next Page'
   end
 
+  def next_page?
+    page.has_content?('Next Page')
+  end
+
   def prev_page
     @_characters = nil
     click_on 'Prev Page'
+  end
+
+  def prev_page?
+    page.has_content?('Prev Page')
   end
 
   private
