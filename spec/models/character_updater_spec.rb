@@ -8,9 +8,8 @@ RSpec.describe CharacterUpdater do
   end
 
   describe '.call' do
-    let(:character) do
-      instance_double('Character', region: 'us', realm: 'shadowmoon', name: 'dargonaut')
-    end
+    let(:params) { { region: 'us', realm: 'shadowmoon', name: 'dargonaut' } }
+    let(:character) { instance_double('Character', params) }
 
     it 'saves a new record with data from the Armory' do
       allow(character).to receive(:new_record?) { true }
@@ -47,7 +46,11 @@ RSpec.describe CharacterUpdater do
     it 'handles not found errors' do
       allow(character).to receive(:new_record?) { false }
       allow(character).to receive(:updated_at) { 15.minutes.ago }
+
       expect(character).to receive(:destroy!)
+      expect(Rails.logger).to receive(:warn).with(
+        "#{params} did not resolve to a valid Armory profile. Deleting cached character."
+      )
 
       allow(ARMORY).to receive(:fetch_character).and_raise(Armory::NotFoundError)
 
