@@ -22,21 +22,26 @@ class CharactersController < ApplicationController
   def fetch_character(params)
     character = Character.find_or_initialize_by(params)
 
+    # Initiate synchronous Armory API call if character is not cached in DB
     return CharacterUpdater.call(character) if character.new_record?
 
+    # Update character from Armory in background
     CharacterUpdaterJob.perform_later(character)
     character
   end
 
+  # Pagination direction based on provided cursor
   def page_direction
     return :after if params[:after]
     :before if params[:before]
   end
 
+  # Number of characters to display; defaults/limits to 50
   def per_page
     [params[:per_page]&.to_i, 50].compact.min
   end
 
+  # Returns `true` if `/world` was requested
   def world_page?
     @_world_page ||= !REALM_REGIONS_SET.include?(params[:region].downcase)
   end

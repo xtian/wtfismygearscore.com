@@ -41,6 +41,14 @@ To ensure complete test coverage for a class, you can run mutation tests with mu
 RAILS_ENV=test bin/mutant -r ./config/environment --use rspec ClassName
 ```
 
+## Documentation
+
+Documentation is written using [Yard](http://yardoc.org) in Markdown format. Use this command to run a server hosting the generated HTML docs:
+
+```
+bin/yard server -r
+```
+
 ## Development
 
 See [CONTRIBUTING.md](https://gitlab.com/closedloops/wtfismygs-rails/blob/master/CONTRIBUTING.md)

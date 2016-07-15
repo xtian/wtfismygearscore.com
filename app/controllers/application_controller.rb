@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # Renders as a 404 in production
   def not_found
     raise ActionController::RoutingError, 'Not Found'
   end
@@ -21,6 +22,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :secrets
 
+  # Sets UUID used by ApplicationCable::Connection to identify session
   def set_uuid
     cookies.signed[:uuid] ||= SecureRandom.uuid
   end

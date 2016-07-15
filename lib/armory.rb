@@ -5,11 +5,20 @@ require 'faraday'
 require 'json'
 require 'typhoeus/adapters/faraday'
 
+# Encapsulates logic for making requests to Battle.net Armory API
 class Armory
+  # @param api_key [String] Armory API key
   def initialize(api_key)
     @api_key = api_key
   end
 
+  # @param region [String]
+  # @param realm [String]
+  # @param name [String]
+  # @return [Armory::Character]
+  # @raise [Armory::NotFoundError] if API returns 404
+  # @raise [StandardError] for all other API errors
+  # @see https://dev.battle.net/io-docs Armory API docs
   def fetch_character(region:, realm:, name:)
     url = build_url(region, realm, name)
     response = make_request(url)

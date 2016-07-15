@@ -3,12 +3,15 @@ class MedianGearscore < ApplicationRecord
   validates :level, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :median_score, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
+  # Recalculates median score for given level
+  # @return void
   def calculate
     result = self.class.find_by_sql(median_sql).first
     self.median_score = result.median_score || 0
     save!
   end
 
+  # @return [Float, Fixnum]
   def median_score
     super || 0
   end

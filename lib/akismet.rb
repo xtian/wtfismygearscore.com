@@ -2,7 +2,11 @@
 require 'faraday'
 require 'typhoeus/adapters/faraday'
 
+# Encapsulates logic for making requests to Akismet spam detection service
 class Akismet
+  # @param is_test [Boolean] whether request is a test
+  # @param key [String] API key
+  # @param url [String] Site URL
   def initialize(is_test:, key:, url:)
     @is_test = is_test
     @key = key
@@ -11,6 +15,12 @@ class Akismet
     raise ArgumentError, 'Akismet key and url required' unless key && url
   end
 
+  # @param comment [Comment] posted comment
+  # @param referrer [String] referrer for comment POST request
+  # @param user_agent [String] User agent string for user's browser
+  # @return [Boolean] whether passed info is detected as spam
+  # @raise [StandardError] if request is considered invalid
+  # @see https://akismet.com/development/api/#comment-check Akismet Documentation
   def spam?(comment, referrer:, user_agent:)
     params = params_for(comment, user_agent, referrer)
     response = make_request(params)
