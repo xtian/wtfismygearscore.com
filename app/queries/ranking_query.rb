@@ -1,15 +1,27 @@
 # frozen_string_literal: true
+
+# Encapsulates logic for fetching sorted, paginated results from
+# characters table
 class RankingQuery
   attr_reader :per_page, :realm
 
+  # @option options [Fixnum] cursor
+  # @option options [Symbol] page_direction
+  # @option options [Fixnum] per_page
+  # @option options [String, nil] realm
+  # @option options [String] region
   def initialize(options)
     options.each { |key, value| instance_variable_set("@#{key}", value) }
   end
 
+  # Convenience method to avoid object initialization
+  # @param options [Hash]
+  # @return [RankedCharactersPresenter]
   def self.call(options = {})
     new(options).call
   end
 
+  # @return [RankedCharactersPresenter]
   def call
     characters = ranked_characters
       .where(filter_criteria)
@@ -27,6 +39,7 @@ class RankingQuery
     { realm: realm, region: (region unless world?) }.compact
   end
 
+  # Certain fields are unnecessary depending on the ranking context
   def fields
     %i(class_name faction id name rank score).tap do |fields|
       fields << :guild_name if realm
@@ -35,6 +48,11 @@ class RankingQuery
     end
   end
 
+  # Pagination is done by finding results whose sort values are equal to or
+  # greater than given cursor. This means that reverse-paginated results will
+  # be in reverse order and so the sort must be corrected in memory. We limit
+  # results to a maximum number of rows to prevent this from being a
+  # significant performance problem.
   def page(characters)
     case page_direction
     when :after
