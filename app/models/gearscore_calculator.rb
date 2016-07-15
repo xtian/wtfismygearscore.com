@@ -1,15 +1,24 @@
 # frozen_string_literal: true
+
+# Calculates overall item score based on slot value, ilvl, and quality for
+# each item
 class GearscoreCalculator
+  # @param items [Hash]
   def initialize(items)
     @items = items
   end
 
+  # Convenience method to avoid object initialization
+  # @param items [Hash]
+  # @return [Fixnum]
   def self.calculate(items)
     new(items).calculate
   end
 
+  # @return [Fixnum] gearscore for given items hash
   def calculate
     @_score ||= items.reduce(0) do |sum, (slot, hash)|
+      # Count main hand weapon as a two-hander if off-hand not present
       slot = 'twoHand' if slot.eql?('mainHand') && !items.key?('offHand')
       sum + Item.new(slot, hash).score
     end
@@ -20,12 +29,15 @@ class GearscoreCalculator
   attr_reader :items
 
   class Item
+    # @param slot [String]
+    # @param hash [Hash]
     def initialize(slot, hash)
       @slot = slot
       @ilvl = hash['itemLevel']
       @quality = hash['quality']
     end
 
+    # @return [Fixnum]
     def score
       (
         ((ilvl - quality_modifier[0]) / quality_modifier[1]) *
@@ -55,6 +67,8 @@ class GearscoreCalculator
     end
   end
 
+  # Some slots are allocated a greater quantity of stats so this accounts
+  # for that
   SLOT_MODIFIERS = {
     "head" => 1,
     "neck" => 0.5625,
