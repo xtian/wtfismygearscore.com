@@ -52,6 +52,7 @@ group :development do
   gem 'spring-commands-rspec' # Implements the rspec command for Spring
   gem 'spring-watcher-listen' # Uses Listen to watch for changes instead of polling
   gem 'web-console' # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'yard', require: false # Generates documentation pages
 end
 
 group :test do
