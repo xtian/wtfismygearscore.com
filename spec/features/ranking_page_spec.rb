@@ -9,8 +9,8 @@ RSpec.feature 'Ranking page' do
 
   before do
     Fabricate(:character, name: 'a', region: 'eu', realm: 'shadowmoon', score: 200)
-    Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 200)
-    Fabricate(:character, name: 'top', region: 'us', realm: 'illidan', score: 500)
+    b = Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 200)
+    top = Fabricate(:character, name: 'top', region: 'us', realm: 'illidan', score: 500)
 
     Fabricate(
       :character,
@@ -20,6 +20,9 @@ RSpec.feature 'Ranking page' do
       class_name: 'hunter',
       guild_name: 'The Gentlemens Club'
     )
+
+    [b, top].each { |character| Fabricate(:comment, character: character) }
+    RecentComment.refresh
   end
 
   scenario 'User visits realm ranking page' do
@@ -28,6 +31,7 @@ RSpec.feature 'Ranking page' do
     expect(page).to have_title('US-Shadowmoon WoW Character Ranking — WTF is My Gear Score?')
 
     expect(ranking_page.extra_column_name).to eq('Guild')
+    expect(ranking_page.comments.length).to eq(0)
 
     expect(ranking_page.characters.length).to eq(1)
     expect(ranking_page.characters[0].rank).to eq(1)
@@ -42,6 +46,7 @@ RSpec.feature 'Ranking page' do
     expect(page).to have_title('EU WoW Character Ranking — WTF is My Gear Score?')
 
     expect(ranking_page.extra_column_name).to eq('Realm')
+    expect(ranking_page.comments.length).to eq(1)
     expect(ranking_page.characters.length).to eq(2)
 
     expect(ranking_page.characters[0].rank).to eq(1)
@@ -56,6 +61,8 @@ RSpec.feature 'Ranking page' do
     visit characters_path('world', per_page: 2)
 
     expect(page).to have_title('World WoW Character Ranking — WTF is My Gear Score?')
+
+    expect(ranking_page.comments.length).to eq(2)
 
     expect(ranking_page.characters.length).to eq(2)
     expect(ranking_page.characters[0].name).to eq('top')

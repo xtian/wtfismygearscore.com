@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class RankedCharactersPresenter < CollectionPresenter
+  delegate :comments, to: :query
+
   # @param characters [Enumerable<Character>]
   # @param query [RankingQuery]
   def initialize(characters, query)

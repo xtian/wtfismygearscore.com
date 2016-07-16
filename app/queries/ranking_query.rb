@@ -31,6 +31,14 @@ class RankingQuery
     RankedCharactersPresenter.new(page(characters), self)
   end
 
+  def comments
+    @_comments ||= begin
+      filter = { region: Character.regions[region] }.compact
+      comments = RecentComment.where(filter).limit(5)
+      RecentCommentPresenter.present_collection(comments)
+    end
+  end
+
   private
 
   attr_reader :cursor, :page_direction, :region

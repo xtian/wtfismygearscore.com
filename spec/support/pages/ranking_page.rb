@@ -18,6 +18,10 @@ class RankingPage < Page
     end
   end
 
+  def comments
+    @_comments ||= all_tid(:comment)
+  end
+
   def next_page
     @_characters = nil
     click_on I18n.t('page.next')

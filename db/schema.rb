@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608213258) do
+ActiveRecord::Schema.define(version: 20160716195109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,17 +58,28 @@ ActiveRecord::Schema.define(version: 20160608213258) do
   add_foreign_key "comments", "characters", on_delete: :cascade
 
   create_view :recent_comments, materialized: true,  sql_definition: <<-SQL
-      SELECT characters.class_name AS character_class,
-      characters.name AS character_name,
-      characters.realm AS character_realm,
-      characters.region AS character_region,
+      SELECT comments.class_name AS character_class,
+      comments.name AS character_name,
+      comments.realm AS character_realm,
+      comments.region,
       comments.created_at,
       comments.id AS comment_id,
       comments.poster_name
-     FROM (comments
-       JOIN characters ON ((comments.character_id = characters.id)))
-    ORDER BY comments.created_at DESC
-   LIMIT 5;
+     FROM ( SELECT comments_1.id,
+              comments_1.body,
+              comments_1.poster_ip_address,
+              comments_1.poster_name,
+              comments_1.character_id,
+              comments_1.created_at,
+              comments_1.updated_at,
+              characters.class_name,
+              characters.name,
+              characters.realm,
+              characters.region,
+              row_number() OVER (PARTITION BY characters.region ORDER BY comments_1.created_at DESC) AS row_number
+             FROM (comments comments_1
+               JOIN characters ON ((comments_1.character_id = characters.id)))) comments
+    WHERE (comments.row_number < 6);
   SQL
 
   add_index "recent_comments", ["comment_id"], name: "index_recent_comments_on_comment_id", unique: true, using: :btree
