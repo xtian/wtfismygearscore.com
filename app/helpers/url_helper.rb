@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 module UrlHelper
-  # @overload character_path(character)
+  # @overload character_path(character, **options)
   #   @param character [Character]
-  # @overload character_path(region, realm, name)
+  # @overload character_path(region, realm, name, **options)
   #   @param region [String]
   #   @param realm [String]
   #   @param name [String]
   # @return [String] path to character page
-  def character_path(*args)
+  def character_path(*args, **options)
     return super if args.length == 3
 
     character = args.first
-    super(character.region, character.realm, character.name)
+    super(character.region, character.realm, character.name, **options)
   end
 
   # @overload comments_path(character)

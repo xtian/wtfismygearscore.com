@@ -5,6 +5,10 @@ en:
   comment:
     posted_successfully: Your comment was posted successfully!
 
+  page:
+    next: Next >
+    prev: < Prev
+
   activerecord:
     errors:
       models:

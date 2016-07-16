@@ -11,34 +11,34 @@
 </aside>
 
 <nav class="SubHeader">
-  <ul class="SubHeader-navList">
-    <li class="SubHeader-rankingNavItem SubHeader-navItem">
+  <ul class="Navigation">
+    <li class="SubHeader-rankingNavItem Navigation-item">
       <%= link_to 'World', characters_path('world'), rel: 'index' %>
     </li>
 
     <% unless world_page? %>
-      <li class="SubHeader-rankingNavItem SubHeader-navItem">
+      <li class="SubHeader-rankingNavItem Navigation-item">
         <%= link_to region, characters_path(*server_parts.first), rel: ('up' if realm) %>
       </li>
     <% end %>
 
     <% if realm %>
-      <li class="SubHeader-rankingNavItem SubHeader-navItem">
+      <li class="SubHeader-rankingNavItem Navigation-item">
         <%= link_to realm, characters_path(*server_parts) %>
       </li>
     <% end %>
   </ul>
 
-  <ul class="SubHeader-navList">
+  <ul class="Navigation">
     <% unless @ranking.first_page? %>
-      <li class="SubHeader-navItem">
-        <%= link_to '< Prev', prev_ranking_path(@ranking.prev_cursor), rel: 'prev' %>
+      <li class="Navigation-item">
+        <%= link_to t('page.prev'), prev_ranking_path(@ranking.prev_cursor), rel: 'prev' %>
       </li>
     <% end %>
 
     <% unless @ranking.last_page? %>
-      <li class="SubHeader-navItem">
-        <%= link_to 'Next >', next_ranking_path(@ranking.next_cursor), rel: 'next' %>
+      <li class="Navigation-item">
+        <%= link_to t('page.next'), next_ranking_path(@ranking.next_cursor), rel: 'next' %>
       </li>
     <% end %>
   </ul>
