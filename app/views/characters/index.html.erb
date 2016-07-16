@@ -32,13 +32,13 @@
   <ul class="SubHeader-navList">
     <% unless @ranking.first_page? %>
       <li class="SubHeader-navItem">
-        <%= link_to '< Prev', prev_ranking_path(@ranking.prev_cursor), rel: 'prev' %>
+        <%= link_to t('page.prev'), prev_ranking_path(@ranking.prev_cursor), rel: 'prev' %>
       </li>
     <% end %>
 
     <% unless @ranking.last_page? %>
       <li class="SubHeader-navItem">
-        <%= link_to 'Next >', next_ranking_path(@ranking.next_cursor), rel: 'next' %>
+        <%= link_to t('page.next'), next_ranking_path(@ranking.next_cursor), rel: 'next' %>
       </li>
     <% end %>
   </ul>
