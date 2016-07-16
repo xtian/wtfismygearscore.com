@@ -20,13 +20,23 @@ class HomePage < Page
 
   def comments
     @_comments ||= all_tid(:comment).map do |node|
-      name = node.find_tid(:name).text
-      body = node.find_tid(:character_name).text
-      posted_at = Time.zone.parse(node.find_tid(:posted_at)[:datetime])
-
-      Comment.new(name, body, posted_at)
+      Comment.new(name(node), character_name(node), posted_at(node))
     end
   end
 
+  private
+
   Comment = Struct.new(:name, :character_name, :posted_at)
+
+  def character_name(node)
+    node.find_tid(:character_name).text
+  end
+
+  def name(node)
+    node.find_tid(:name).text
+  end
+
+  def posted_at(node)
+    Time.zone.parse(node.find_tid(:posted_at)[:datetime])
+  end
 end

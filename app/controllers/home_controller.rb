@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    comments = RecentComment.all
+    comments = RecentComment.limit(5)
     @comments = RecentCommentPresenter.present_collection(comments)
   end
 

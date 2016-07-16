@@ -4,7 +4,10 @@ module CharactersHelper
 
   # @param character [Character]
   # @return [String] path to character page
-  def character_path(character, **options)
+  def character_path(*args, **options)
+    return super if args.length == 3
+
+    character = args.first
     parts = [*server_parts(character), character.name]
     super(*parts, **options)
   end
@@ -41,13 +44,13 @@ module CharactersHelper
 
   # @return [String, nil]
   def realm
-    params[:realm]&.titleize
+    @_realm ||= params[:realm]&.titleize
   end
 
   # @return [String]
   def region
     region = params[:region]
-    world_page? ? region.titleize : region.upcase
+    @_region ||= (world_page? ? region.titleize : region.upcase)
   end
 
   # Infers region and realm from page params if they are not present on

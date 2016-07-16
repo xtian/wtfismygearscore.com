@@ -71,3 +71,11 @@
 
   <tbody><%= render partial: 'character_row', collection: @ranking, as: :character %></tbody>
 </table>
+
+<% content_for(:secondary_content) do %>
+  <% unless realm %>
+    <section class="SecondaryContent-panel">
+      <%= render 'recent_comments', comments: @ranking.comments %>
+    </section>
+  <% end %>
+<% end %>

@@ -2,7 +2,7 @@
 class RecentCommentPresenter < CommentPresenter
   # @return [Array<String>]
   def character_info
-    [character_region, character_realm, character_name]
+    [region, character_realm, character_name]
   end
 
   # @return [String]
@@ -20,7 +20,7 @@ class RecentCommentPresenter < CommentPresenter
     CharacterPresenter.new(Character.new(class_name)).css_class_name
   end
 
-  def character_region
+  def region
     VALID_REGIONS_WITH_REALM[super]
   end
 

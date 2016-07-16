@@ -8,7 +8,7 @@ RSpec.describe RecentCommentPresenter do
       character_class: 5,
       character_name: 'Granwe',
       character_realm: 'Shadowmoon',
-      character_region: 0
+      region: 0
     )
   end
 
