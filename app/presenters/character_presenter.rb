@@ -18,7 +18,7 @@ class CharacterPresenter < ApplicationPresenter
     class_name.parameterize.underscore.camelize(:lower)
   end
 
-  # @return [Array<CommentPresenter>]
+  # @return [CollectionPresenter<CommentPresenter>]
   def comments
     CommentPresenter.present_collection(query.comments)
   end

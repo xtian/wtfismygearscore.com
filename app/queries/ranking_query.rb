@@ -31,6 +31,7 @@ class RankingQuery
     RankedCharactersPresenter.new(page(characters), self)
   end
 
+  # @return [CollectionPresenter<RecentCommentPresenter>]
   def comments
     @_comments ||= begin
       filter = { region: Character.regions[region] }.compact
