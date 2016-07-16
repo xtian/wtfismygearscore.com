@@ -27,6 +27,7 @@ group :production do
   gem 'exception_notification' # Sends notifications when errors occur
   gem 'rack-throttle' # Provides logic for rate-limiting incoming HTTP requests
   gem 'rack-timeout' # Abort requests that are taking too long
+  gem 'slack-notifier' # Sends Slack webhook notifications
 end
 
 group :development, :test do

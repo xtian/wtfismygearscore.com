@@ -4,9 +4,9 @@ Rails.application.configure do
 
   config.middleware.use Rack::Throttle::Hourly, cache: Redis.current, key_prefix: :throttle
 
-  Rails.application.config.middleware.use ExceptionNotification::Rack, email: {
-    email_prefix: "[ERROR] ",
-    exception_recipients: secrets.notification_addresses.split(' ')
+  Rails.application.config.middleware.use ExceptionNotification::Rack, slack: {
+    webhook_url: Rails.application.secrets.slack_webhook_url,
+    additional_parameters: { mrkdwn: true }
   }
 
   # Code is not reloaded between requests.

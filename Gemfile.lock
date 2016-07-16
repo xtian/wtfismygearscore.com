@@ -296,6 +296,7 @@ GEM
     sidekiq-unique-jobs (4.0.17)
       sidekiq (>= 2.6)
       thor
+    slack-notifier (1.5.1)
     slop (3.6.0)
     spring (1.7.2)
     spring-commands-rspec (1.0.4)
@@ -385,6 +386,7 @@ DEPENDENCIES
   shoulda-matchers
   sidekiq
   sidekiq-unique-jobs
+  slack-notifier
   spring
   spring-commands-rspec
   spring-watcher-listen
