@@ -28,7 +28,7 @@
   </ul>
 </nav>
 
-<div class="js-characterContainer" data-id="<%= @character.to_param %>" data-timestamp="<%= @character.updated_at %>">
+<div class="js-characterContainer" data-id="<%= @character.to_param %>" data-timestamp="<%= @character.updated_at.iso8601(6) %>">
   <%= render @character %>
 </div>
 
