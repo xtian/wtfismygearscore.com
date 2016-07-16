@@ -11,6 +11,11 @@ class Character < ApplicationRecord
   validates :avg_ilvl, :level, :max_ilvl, :min_ilvl, :score,
             numericality: { only_integer: true, greater_than: 0 }, presence: true
 
+  # @return [Fixnum]
+  def comments_count
+    @_comments_count ||= comments.count
+  end
+
   # @param params [Hash]
   # @return [Comment]
   def create_comment(params)

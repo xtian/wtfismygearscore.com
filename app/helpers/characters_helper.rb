@@ -4,9 +4,9 @@ module CharactersHelper
 
   # @param character [Character]
   # @return [String] path to character page
-  def character_path(character)
+  def character_path(character, **options)
     parts = [*server_parts(character), character.name]
-    super(*parts)
+    super(*parts, **options)
   end
 
   # @param character [Character]

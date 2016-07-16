@@ -17,12 +17,12 @@
 <% end %>
 
 <nav class="SubHeader">
-  <ul class="SubHeader-navList">
-    <li class="SubHeader-rankingNavItem SubHeader-navItem">
+  <ul class="Navigation">
+    <li class="SubHeader-rankingNavItem Navigation-item">
       <%= link_to region, characters_path(*server_parts.first), rel: 'up up' %>
     </li>
 
-    <li class="SubHeader-rankingNavItem SubHeader-navItem">
+    <li class="SubHeader-rankingNavItem Navigation-item">
       <%= link_to realm, characters_path(*server_parts), rel: 'up' %>
     </li>
   </ul>
@@ -33,12 +33,32 @@
 </div>
 
 <% content_for(:secondary_content) do %>
-  <h1 class="SecondaryContent-heading">Comments</h1>
+  <header class="SecondaryContent-heading">
+    <h1 class="SecondaryContent-title">
+      Comments
+      (<span <%= tid :comments_count %>><%= @character.comments_count %></span>)
+    </h1>
+
+    <ul class="Navigation">
+      <% unless @character.first_page? %>
+        <li class="Navigation-item">
+          <%= link_to t('page.prev'), character_path(@character, page: page - 1, per_page: params[:per_page]), rel: 'prev' %>
+        </li>
+      <% end %>
+
+      <% unless @character.last_page? %>
+        <li class="Navigation-item">
+          <%= link_to t('page.next'), character_path(@character, page: page + 1, per_page: params[:per_page]), rel: 'next' %>
+        </li>
+      <% end %>
+    </ul>
+  </header>
+
   <%= render partial: 'comment', collection: @character.comments %>
 
   <%= form_for :comment, url: comments_path(@character), html: { class: %w(SecondaryContent-item CommentForm) } do |f| %>
     <%= f.label :body, 'Comment', class: 'u-visuallyHidden' %>
-    <%= f.text_area :body, required: true, maxlength: 1000, rows: 5, placeholder: 'Comment', class: 'CommentForm-body'  %>
+    <%= f.text_area :body, required: true, maxlength: 1000, rows: 5, placeholder: 'Comment', class: 'CommentForm-body' %>
 
     <div class="CommentForm-row">
       <%= f.label :poster_name, 'Name (optional)', class: 'u-visuallyHidden' %>

@@ -11,7 +11,7 @@ RSpec.describe UrlHelper do
         name: 'dewbaca'
       )
 
-      expect(helper.character_path(character)).to eq('/us/shadowmoon/dewbaca')
+      expect(helper.character_path(character, page: 2)).to eq('/us/shadowmoon/dewbaca?page=2')
     end
 
     it 'handles region, realm, and name as params' do

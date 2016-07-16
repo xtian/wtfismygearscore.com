@@ -19,6 +19,13 @@ RSpec.describe Character do
   it { should have_db_index([:name, :realm, :region]).unique }
   it { should have_db_index([:score, :region, :realm, :name]) }
 
+  describe '#comments_count' do
+    it 'returns the number of comments' do
+      allow(subject.comments).to receive(:count) { 1 }
+      expect(subject.comments_count).to eq(1)
+    end
+  end
+
   describe '#create_comment' do
     it 'creates a comment' do
       subject.save!

@@ -20,15 +20,6 @@
   }
 }
 
-.SubHeader-navList {
-  align-items: center;
-  display: flex;
-}
-
-.SubHeader-navItem + .SubHeader-navItem {
-  padding-left: 0.3em;
-}
-
 .SubHeader-rankingNavItem {
   &::after {
     content: ' – ';

@@ -6,29 +6,29 @@ class CharactersController < ApplicationController
     @ranking = RankingQuery.call(
       cursor: params[:after] || params[:before],
       page_direction: page_direction,
-      per_page: per_page,
+      per_page: per_page(50),
       realm: params[:realm],
       region: params[:region]
     )
   end
 
   def show
-    character = fetch_character(params.permit(:region, :realm, :name))
-    @character = CharacterPresenter.new(character)
+    @character = CharacterQuery.call(
+      name: params[:name],
+      page: page,
+      per_page: per_page(10),
+      realm: params[:realm],
+      region: params[:region]
+    )
   end
 
   private
 
-  def fetch_character(params)
-    character = Character.find_or_initialize_by(params)
-
-    # Initiate synchronous Armory API call if character is not cached in DB
-    return CharacterUpdater.call(character) if character.new_record?
-
-    # Update character from Armory in background
-    CharacterUpdaterJob.perform_later(character)
-    character
+  # Defaults/limits `page` param to 1
+  def page
+    [params[:page].to_i, 1].max
   end
+  helper_method :page
 
   # Pagination direction based on provided cursor
   def page_direction
@@ -36,9 +36,10 @@ class CharactersController < ApplicationController
     :before if params[:before]
   end
 
-  # Number of characters to display; defaults/limits to 50
-  def per_page
-    [params[:per_page]&.to_i, 50].compact.min
+  # Defaults/limits `per_page` param to `max`
+  def per_page(max)
+    param = params[:per_page].to_i
+    param > 0 ? [param, max].min : max
   end
 
   # Returns `true` if `/world` was requested

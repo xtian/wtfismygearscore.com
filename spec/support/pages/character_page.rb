@@ -35,6 +35,28 @@ class CharacterPage < Page
     find_tid(:rating).text
   end
 
+  def comments_count
+    find_tid(:comments_count).text.to_i
+  end
+
+  def next_page
+    @_comments = nil
+    click_on I18n.t('page.next')
+  end
+
+  def next_page?
+    page.has_content?(I18n.t('page.next'))
+  end
+
+  def prev_page
+    @_comments = nil
+    click_on I18n.t('page.prev')
+  end
+
+  def prev_page?
+    page.has_content?(I18n.t('page.prev'))
+  end
+
   def fill_comment_body(value)
     fill_in 'Comment', with: value
   end

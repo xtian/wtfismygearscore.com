@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 class CharacterPresenter < ApplicationPresenter
+  delegate :first_page?, :last_page?, to: :query
+
+  def initialize(character, query = nil)
+    @query = query
+    super character
+  end
+
   # @return [String] URL to character's Armory page
   def armory_url
     # If trailing slash is left off, Armory will return 404.
@@ -13,7 +20,7 @@ class CharacterPresenter < ApplicationPresenter
 
   # @return [Array<CommentPresenter>]
   def comments
-    CommentPresenter.present_collection(super)
+    CommentPresenter.present_collection(query.comments)
   end
 
   # @return [String]
@@ -32,4 +39,8 @@ class CharacterPresenter < ApplicationPresenter
   def rating
     median_difference >= 0 ? 'win' : 'fail'
   end
+
+  private
+
+  attr_reader :query
 end
