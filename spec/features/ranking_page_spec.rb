@@ -41,7 +41,7 @@ RSpec.feature 'Ranking page' do
   end
 
   scenario 'User visits region ranking page' do
-    visit characters_path('eu')
+    visit characters_path('eu', per_page: 10)
 
     expect(page).to have_title('EU WoW Character Ranking — WTF is My Gear Score?')
 
@@ -55,6 +55,9 @@ RSpec.feature 'Ranking page' do
 
     expect(ranking_page.characters[1].rank).to eq(1)
     expect(ranking_page.characters[1].name).to eq('b')
+
+    expect(ranking_page.next_page?).to eq(false)
+    expect(ranking_page.prev_page?).to eq(false)
   end
 
   scenario 'User visits world ranking page' do
@@ -78,12 +81,5 @@ RSpec.feature 'Ranking page' do
     ranking_page.prev_page
 
     expect(ranking_page.characters[0].name).to eq('top')
-  end
-
-  scenario 'User visits ranking page with fewer characters than per_page limit' do
-    visit characters_path('world', per_page: 5)
-
-    expect(ranking_page.next_page?).to eq(false)
-    expect(ranking_page.prev_page?).to eq(false)
   end
 end
