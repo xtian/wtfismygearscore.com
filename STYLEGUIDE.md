@@ -97,4 +97,4 @@ ID selectors hinder reuse because their behavior is undefined when multiple inst
 ### JavaScript and test dependencies
 If an identifier is needed for integrating with a JavaScript plugin, use a new class prefixed with `.js-`. This makes the use of the class clear and prevents breakages when refactoring either the CSS or HTML.
 
-Likewise, if an identifier is needed for an acceptance test, use a new class prefixed with `.t-`.
+If an identifier is needed for an acceptance test, use the `tid` helper method.
