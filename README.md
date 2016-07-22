@@ -51,4 +51,4 @@ bin/yard server -r
 
 ## Development
 
-See [CONTRIBUTING.md](https://gitlab.com/closedloops/wtfismygs-rails/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)
