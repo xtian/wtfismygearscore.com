@@ -35,7 +35,7 @@ bin/rake scss_lint
 
 ### Mutation tests
 
-To ensure complete test coverage for a class, you can run mutation tests with mutant:
+To ensure complete test coverage for a class, you can run mutation tests with [mutant](https://github.com/mbj/mutant):
 
 ```
 RAILS_ENV=test bin/mutant -r ./config/environment --use rspec ClassName
