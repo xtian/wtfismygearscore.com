@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
       page_direction: page_direction,
       per_page: per_page(50),
       realm: params[:realm],
-      region: params[:region]
+      region: region
     )
   end
 
@@ -18,7 +18,7 @@ class CharactersController < ApplicationController
       page: page,
       per_page: per_page(10),
       realm: params[:realm],
-      region: params[:region]
+      region: region
     )
   end
 
@@ -42,9 +42,13 @@ class CharactersController < ApplicationController
     param > 0 ? [param, max].min : max
   end
 
+  def region
+    @_region ||= params[:region].downcase
+  end
+
   # Returns `true` if `/world` was requested
   def world_page?
-    @_world_page ||= !REALM_REGIONS_SET.include?(params[:region].downcase)
+    @_world_page ||= !REALM_REGIONS_SET.include?(region)
   end
   helper_method :world_page?
 end
