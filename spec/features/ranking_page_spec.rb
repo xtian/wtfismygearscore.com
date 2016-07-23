@@ -26,7 +26,7 @@ RSpec.feature 'Ranking page' do
   end
 
   scenario 'User visits realm ranking page' do
-    visit characters_path('us', 'shadowmoon')
+    visit characters_path('Us', 'shadowmoon')
 
     expect(page).to have_title('US-Shadowmoon WoW Character Ranking — WTF is My Gear Score?')
 

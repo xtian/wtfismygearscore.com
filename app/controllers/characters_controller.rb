@@ -43,7 +43,7 @@ class CharactersController < ApplicationController
   end
 
   def region
-    @_region ||= params[:region].downcase
+    @_downcased_region ||= params[:region].downcase
   end
 
   # Returns `true` if `/world` was requested
