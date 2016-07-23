@@ -27,8 +27,10 @@ class Armory
     case response.status
     when 200 then Character.new(region, body)
     when 404 then raise NotFoundError, url
-    else raise "#{url}\n#{body.fetch('code')} #{body.fetch('detail')}"
+    else raise error_message(url, body)
     end
+  rescue JSON::ParserError
+    raise error_message(url, 'code' => response.status)
   end
 
   private
@@ -41,5 +43,10 @@ class Armory
     url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}"
     query = "?apikey=#{api_key}&locale=en_US&fields=guild,items"
     Addressable::URI.encode(url + query)
+  end
+
+  def error_message(url, body = {})
+    message = [body['code'], body['detail']].compact.join(' ')
+    [url, message].compact.join("\n")
   end
 end
