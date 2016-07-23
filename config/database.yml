@@ -82,6 +82,4 @@ test:
 #
 production:
   <<: *default
-  database: gearscore_production
-  username: gearscore
-  password: <%= ENV['GEARSCORE_DATABASE_PASSWORD'] %>
+  url: ENV['DATABASE_URL']
