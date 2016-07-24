@@ -17,7 +17,7 @@ CLASSES = [
 
 FACTIONS = %w(alliance horde neutral).freeze
 
-VALID_REGIONS = %w(world us eu kr tw cn).freeze
+VALID_REGIONS = %w(world us eu kr tw).freeze
 VALID_REGIONS_WITH_REALM = (VALID_REGIONS - ['world']).freeze
 
 REGIONS_SET = Set.new(VALID_REGIONS).freeze

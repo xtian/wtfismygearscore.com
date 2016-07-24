@@ -9,8 +9,7 @@ RSpec.describe HomeHelper do
           %w(US us),
           %w(EU eu),
           %w(KR kr),
-          %w(TW tw),
-          %w(CN cn)
+          %w(TW tw)
         ]
       )
     end
