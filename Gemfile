@@ -22,6 +22,7 @@ gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and 
 gem 'turbolinks' # Makes navigating your web application faster
 gem 'typhoeus', require: false # HTTP client backend for Faraday
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
+gem 'utf8-cleaner' # Removes invalid UTF-8 characters from the environment
 
 group :production do
   gem 'exception_notification' # Sends notifications when errors occur
