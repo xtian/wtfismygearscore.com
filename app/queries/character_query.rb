@@ -55,7 +55,7 @@ class CharacterQuery
   end
 
   def fetch_comments
-    character.comments.limit(per_page).offset(offset)
+    character.comments.limit(per_page).offset(offset).order(created_at: :desc)
   end
 
   def offset

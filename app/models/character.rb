@@ -4,7 +4,7 @@ class Character < ApplicationRecord
   enum faction: FACTIONS
   enum region: VALID_REGIONS_WITH_REALM
 
-  has_many :comments, -> { order(created_at: :desc) }
+  has_many :comments
 
   validates :class_name, :level, :name, :realm, :region, :score, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
