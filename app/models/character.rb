@@ -6,10 +6,11 @@ class Character < ApplicationRecord
 
   has_many :comments, -> { order(created_at: :desc) }
 
-  validates :class_name, :level, :name, :realm, :region, presence: true
+  validates :class_name, :level, :name, :realm, :region, :score, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :score, numericality: { only_integer: true }
 
-  validates :avg_ilvl, :max_ilvl, :min_ilvl, :score,
+  validates :avg_ilvl, :max_ilvl, :min_ilvl,
             numericality: { only_integer: true, greater_than_or_equal_to: 0 }, presence: true
 
   # @return [Fixnum]
