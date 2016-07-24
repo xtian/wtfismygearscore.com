@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     get ':region(/:realm)', to: 'characters#index', as: :characters
   end
 
+  get '/ping.txt', to: proc { [200, {}, ['ok']] }
+
   root 'home#show'
 end
