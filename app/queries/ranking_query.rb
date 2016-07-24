@@ -31,6 +31,19 @@ class RankingQuery
     RankedCharactersPresenter.new(page(characters), self)
   end
 
+  # @return [String] canonical URL to disambiguate duplicate content for SEO
+  def canonical_url
+    Rails.application.routes.url_helpers.url_for(
+      action: 'index',
+      controller: 'characters',
+      host: Rails.application.secrets.base_url,
+      page_direction => cursor,
+      per_page: per_page,
+      realm: realm,
+      region: region
+    ).downcase
+  end
+
   # @return [CollectionPresenter<RecentCommentPresenter>]
   def comments
     @_comments ||= begin

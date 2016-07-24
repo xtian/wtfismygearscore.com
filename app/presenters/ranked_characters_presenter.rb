@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class RankedCharactersPresenter < CollectionPresenter
-  delegate :comments, to: :query
+  delegate :canonical_url, :comments, to: :query
 
   # @param characters [Enumerable<Character>]
   # @param query [RankingQuery]

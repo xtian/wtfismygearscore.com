@@ -29,6 +29,16 @@ class CharacterQuery
     CharacterPresenter.new(character, self)
   end
 
+  # @return [String] canonical URL to disambiguate duplicate content for SEO
+  def canonical_url
+    Rails.application.routes.url_helpers.url_for(
+      action: 'show',
+      controller: 'characters',
+      host: Rails.application.secrets.base_url,
+      **page_params
+    ).downcase
+  end
+
   # @return [Boolean] whether current comments page is the first one available
   def first_page?
     offset.eql?(0)
@@ -41,7 +51,7 @@ class CharacterQuery
 
   private
 
-  attr_reader :character, :per_page
+  attr_reader :character, :page, :per_page
 
   def fetch_character
     character = Character.find_or_initialize_by(params)
@@ -59,7 +69,17 @@ class CharacterQuery
   end
 
   def offset
-    (@page - 1) * per_page
+    (page - 1) * per_page
+  end
+
+  def page_params
+    {
+      name: character.name,
+      page: page,
+      per_page: per_page,
+      realm: character.realm,
+      region: character.region
+    }
   end
 
   def params

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class CharacterPresenter < ApplicationPresenter
-  delegate :first_page?, :last_page?, to: :query
+  delegate :canonical_url, :first_page?, :last_page?, to: :query
 
   def initialize(character, query = nil)
     @query = query

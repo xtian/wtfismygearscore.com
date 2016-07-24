@@ -2,11 +2,6 @@
 module CharactersHelper
   REGION_REALM_SEPARATOR = '-'
 
-  # @return [String] canonical URL to disambiguate duplicate content for SEO
-  def canonical_url
-    [secrets.base_url, *params.values_at(:region, :realm, :name)].compact.join('/').downcase
-  end
-
   # @param character [Character]
   # @return [String] path to character page
   def character_path(*args, **options)
