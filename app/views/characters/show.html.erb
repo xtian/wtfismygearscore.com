@@ -2,6 +2,7 @@
 <% content_for(:page_title, "(#{@character.rating.upcase}) #{@character.info}") %>
 
 <% content_for(:head) do %>
+  <link rel="canonical" href="<%= canonical_url %>">
   <%= preload_link_tag image_path("burst-#{@character.rating}.svg") %>
 
   <% if @character.rating == 'win' %>

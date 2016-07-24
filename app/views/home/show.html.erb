@@ -1,5 +1,6 @@
 <%# frozen_string_literal: true %>
 <% content_for(:head) do %>
+  <link rel="canonical" href="<%= secrets.base_url %>">
   <%= preload_link_tag image_path('burst-fail.svg') %>
   <%= stylesheet_link_tag 'home' %>
 <% end %>
