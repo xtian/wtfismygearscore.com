@@ -32,7 +32,7 @@ RSpec.describe Armory do
       stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
         .to_return(status: 403, body: '{"code":"403", "detail": "Account Inactive"}')
 
-      expect { subject.fetch_character(args) }.to raise_error(%r{https://.+\n403 Account Inactive})
+      expect { subject.fetch_character(args) }.to raise_error(%r{https://.+\n})
     end
 
     it 'raises an error for failed requests with no response' do
@@ -45,6 +45,13 @@ RSpec.describe Armory do
     it 'raises a NotFoundError for 404s' do
       stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
         .to_return(status: 404, body: '{"code":"nok", "detail": "Character not found."}')
+
+      expect { subject.fetch_character(args) }.to raise_error(Armory::NotFoundError, %r{https://.+})
+    end
+
+    it 'raises a NotFoundError for successful requests with no response' do
+      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+        .to_return(status: 200, body: '{}')
 
       expect { subject.fetch_character(args) }.to raise_error(Armory::NotFoundError, %r{https://.+})
     end

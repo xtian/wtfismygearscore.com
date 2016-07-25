@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 require 'faraday'
-require 'typhoeus/adapters/faraday'
 
 # Encapsulates logic for making requests to Akismet spam detection service
 class Akismet
