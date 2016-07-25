@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Armory
-  # Simple wrapper around Armory API responses
+  # Simple wrapper around Armory character objects
   class Character
     attr_reader :avg_ilvl, :region
 
