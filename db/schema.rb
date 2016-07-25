@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716195109) do
+ActiveRecord::Schema.define(version: 20160725225458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,7 +78,8 @@ ActiveRecord::Schema.define(version: 20160716195109) do
               row_number() OVER (PARTITION BY characters.region ORDER BY comments_1.created_at DESC) AS row_number
              FROM (comments comments_1
                JOIN characters ON ((comments_1.character_id = characters.id)))) comments
-    WHERE (comments.row_number < 6);
+    WHERE (comments.row_number < 6)
+    ORDER BY comments.created_at DESC;
   SQL
 
   add_index "recent_comments", ["comment_id"], name: "index_recent_comments_on_comment_id", unique: true, using: :btree
