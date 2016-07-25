@@ -15,6 +15,10 @@ CLASSES = [
   'demon hunter'
 ].freeze
 
+CLASS_IMAGES = CLASSES.map { |class_name|
+  class_name.parameterize.underscore.camelize(:lower) + '.png'
+}.freeze
+
 FACTIONS = %w(alliance horde neutral).freeze
 
 VALID_REGIONS = %w(world us eu kr tw).freeze

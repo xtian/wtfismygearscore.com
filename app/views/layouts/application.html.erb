@@ -16,6 +16,10 @@
     <%= preload_link_tag image_path('logo.svg') %>
     <link rel="prefetch" href="<%= javascript_path('action_cable') %>">
 
+    <% CLASS_IMAGES.each do |img_name| %>
+      <link rel="prefetch" href="<%= image_path("#{img_name}") %>">
+    <% end %>
+
     <%= yield :head %>
   </head>
 
