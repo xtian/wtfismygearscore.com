@@ -35,11 +35,11 @@ RSpec.describe Armory do
       expect { subject.fetch_character(args) }.to raise_error(%r{https://.+\n})
     end
 
-    it 'raises an error for failed requests with no response' do
+    it 'raises a GatewayTimeoutError for 504 responses' do
       stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
         .to_return(status: 504, body: '')
 
-      expect { subject.fetch_character(args) }.to raise_error(%r{https://.+\n504})
+      expect { subject.fetch_character(args) }.to raise_error(Armory::GatewayTimeoutError, %r{https://.+})
     end
 
     it 'raises a NotFoundError for 404s' do

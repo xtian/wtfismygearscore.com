@@ -34,5 +34,14 @@ RSpec.describe CharactersController do
 
       expect(Character.count).to eq(1)
     end
+
+    it 'handles a 504 response from the Armory' do
+      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+        .to_return(status: 504, body: '')
+
+      get :show, params: character_info
+
+      expect(response.status).to eq(504)
+    end
   end
 end

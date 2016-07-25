@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 class CharactersController < ApplicationController
   rescue_from 'Armory::NotFoundError', with: :not_found
+  rescue_from 'Armory::GatewayTimeoutError' do
+    render file: Rails.public_path.join('504.html'), status: 504, layout: false
+  end
 
   def index
     @ranking = RankingQuery.call(
