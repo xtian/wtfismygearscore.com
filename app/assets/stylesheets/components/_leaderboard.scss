@@ -19,7 +19,7 @@
   }
 
   &:last-child {
-    width: 15%;
+    width: 13.1%;
   }
 }
 
@@ -37,10 +37,10 @@
 .Leaderboard-cell {
   $padding: 12px;
 
-  padding: $padding ($padding / 4);
+  padding: $padding ($padding / 6);
 
   &:first-child {
-    padding-left: $padding;
+    padding-left: $padding * (2 / 3);
   }
 
   &:nth-child(2) {
@@ -52,7 +52,7 @@
   }
 
   &:last-child {
-    padding-right: $padding;
+    padding-right: $padding * (2 / 3);
     text-align: right;
   }
 }
