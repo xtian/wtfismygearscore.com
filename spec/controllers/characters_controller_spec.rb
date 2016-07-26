@@ -43,5 +43,14 @@ RSpec.describe CharactersController do
 
       expect(response.status).to eq(504)
     end
+
+    it 'handles a 500 response from the Armory' do
+      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+        .to_return(status: 500, body: '')
+
+      get :show, params: character_info
+
+      expect(response.status).to eq(502)
+    end
   end
 end
