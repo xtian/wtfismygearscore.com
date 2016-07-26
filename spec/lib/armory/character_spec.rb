@@ -58,21 +58,36 @@ RSpec.describe Armory::Character do
     end
   end
 
-  describe '#average_ilvl' do
+  describe '#avg_ilvl' do
     it 'returns the character’s average item level' do
       expect(subject.avg_ilvl).to eq(681)
     end
-  end
 
-  describe '#maximum_ilvl' do
-    it 'returns the character’s highest item level' do
-      expect(subject.max_ilvl).to eq(795)
+    it 'returns zero if character is naked' do
+      subject = described_class.new('us', 'items' => {})
+      expect(subject.avg_ilvl).to eq(0)
     end
   end
 
-  describe '#minimum_ilvl' do
+  describe '#max_ilvl' do
+    it 'returns the character’s highest item level' do
+      expect(subject.max_ilvl).to eq(795)
+    end
+
+    it 'returns zero if character is naked' do
+      subject = described_class.new('us', 'items' => {})
+      expect(subject.max_ilvl).to eq(0)
+    end
+  end
+
+  describe '#min_ilvl' do
     it 'returns the character’s lowest item level' do
       expect(subject.min_ilvl).to eq(655)
+    end
+
+    it 'returns zero if character is naked' do
+      subject = described_class.new('us', 'items' => {})
+      expect(subject.min_ilvl).to eq(0)
     end
   end
 

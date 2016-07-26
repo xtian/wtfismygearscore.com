@@ -59,11 +59,13 @@ class Armory
 
     def process_items
       body.fetch('items').delete 'averageItemLevel'
-      @avg_ilvl = body.fetch('items').delete('averageItemLevelEquipped')
+      @avg_ilvl = body.fetch('items').delete('averageItemLevelEquipped') || 0
 
       @ilvls = body.fetch('items').freeze
         .reject { |k| %w(shirt tabard).include? k }
         .map { |_k, hash| hash.fetch('itemLevel') }
+
+      @ilvls = [0] if @ilvls.empty?
     end
   end
 end
