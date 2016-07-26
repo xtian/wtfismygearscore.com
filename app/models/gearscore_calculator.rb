@@ -52,7 +52,7 @@ class GearscoreCalculator
 
     def quality_modifier
       @_quality_mod ||= begin
-        return [ilvl, 1] if quality == 0
+        return [ilvl, 1] if quality.zero?
 
         case ilvl
         when 278..inf then [91.45, 0.65]

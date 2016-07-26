@@ -43,7 +43,7 @@ class CharactersController < ApplicationController
   # Defaults/limits `per_page` param to `max`
   def per_page(max)
     param = params[:per_page].to_i
-    param > 0 ? [param, max].min : max
+    param.positive? ? [param, max].min : max
   end
 
   def region
