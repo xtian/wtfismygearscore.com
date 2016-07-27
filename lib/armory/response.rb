@@ -9,6 +9,7 @@ class Armory
       @response = response_object
     end
 
+    # @raise [JSON::ParserError] for non-JSON response bodies
     # @return [Hash] parsed response body
     def body
       @_body ||= response.body.present? ? JSON.parse(response.body) : {}

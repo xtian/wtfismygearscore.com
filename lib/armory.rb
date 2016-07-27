@@ -29,6 +29,8 @@ class Armory
     when 500, 504 then raise ServerError, url
     else raise "#{url}\n#{response.error_message}"
     end
+  rescue JSON::ParserError
+    raise ServerError, url
   end
 
   private

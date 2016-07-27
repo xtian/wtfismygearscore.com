@@ -49,6 +49,13 @@ RSpec.describe Armory do
       expect { subject.fetch_character(args) }.to raise_error(Armory::ServerError, %r{https://.+})
     end
 
+    it 'raises a ServerError for invalid response bodies' do
+      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+        .to_return(body: '<DOCTYPE html>')
+
+      expect { subject.fetch_character(args) }.to raise_error(Armory::ServerError, %r{https://.+})
+    end
+
     it 'raises a NotFoundError for 400s' do
       stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
         .to_return(status: 400, body: '')
