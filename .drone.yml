@@ -1,0 +1,28 @@
+build:
+  image: xtianw/ruby-node
+  environment:
+    - CI=1
+    - DATABASE_HOST=localhost
+    - DATABASE_USER=postgres
+    - DATABASE_PASSWORD=postgres
+    - RAILS_ENV=test
+
+  commands:
+    - bin/bundle install --without development production --path .bundle
+    - bin/rake db:create
+    - bin/rake rubocop
+    - bin/rspec
+    - bin/rake eslint:run
+    - bin/rake scss_lint
+
+cache:
+  mount:
+    - .bundle
+    - .git
+
+compose:
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
