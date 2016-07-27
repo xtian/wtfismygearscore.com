@@ -4,8 +4,8 @@ Rails.application.configure do
 
   config.middleware.use Rack::Throttle::Hourly, cache: Redis.current, key_prefix: :throttle
 
-  Rails.application.config.middleware.use ExceptionNotification::Rack, slack: {
-    webhook_url: Rails.application.secrets.slack_webhook_url,
+  config.middleware.use ExceptionNotification::Rack, slack: {
+    webhook_url: secrets.slack_webhook_url,
     additional_parameters: { mrkdwn: true }
   }
 
