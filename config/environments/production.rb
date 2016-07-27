@@ -44,7 +44,7 @@ Rails.application.configure do
 
   # Action Cable endpoint configuration
   # config.action_cable.url = 'wss://example.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  config.action_cable.allowed_request_origins = secrets.cable_origins
 
   # Don't mount Action Cable in the main server process.
   # config.action_cable.mount_path = nil
