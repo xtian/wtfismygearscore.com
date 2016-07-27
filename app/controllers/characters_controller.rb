@@ -2,11 +2,7 @@
 class CharactersController < ApplicationController
   rescue_from 'Armory::NotFoundError', with: :not_found
 
-  rescue_from 'Armory::GatewayTimeoutError' do
-    render file: Rails.public_path.join('504.html'), status: 504, layout: false
-  end
-
-  rescue_from 'Armory::InternalServerError' do
+  rescue_from 'Armory::ServerError' do
     render file: Rails.public_path.join('502.html'), status: 502, layout: false
   end
 

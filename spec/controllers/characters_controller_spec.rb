@@ -41,7 +41,7 @@ RSpec.describe CharactersController do
 
       get :show, params: character_info
 
-      expect(response.status).to eq(504)
+      expect(response.status).to eq(502)
     end
 
     it 'handles a 500 response from the Armory' do

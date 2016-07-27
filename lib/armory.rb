@@ -15,8 +15,7 @@ class Armory
   # @param realm [String]
   # @param name [String]
   # @return [Armory::Character]
-  # @raise [Armory::GatewayTimeoutError] if API returns 504
-  # @raise [Armory::InternalServerError] if API returns 500
+  # @raise [Armory::ServerError] if API returns 500 or 504
   # @raise [Armory::NotFoundError] if API returns 400 or 404
   # @raise [StandardError] for all other API errors
   # @see https://dev.battle.net/io-docs Armory API docs
@@ -27,8 +26,7 @@ class Armory
     case response.status
     when 200      then Character.new(region, response.body)
     when 400, 404 then raise NotFoundError, url
-    when 500      then raise InternalServerError, url
-    when 504      then raise GatewayTimeoutError, url
+    when 500, 504 then raise ServerError, url
     else raise "#{url}\n#{response.error_message}"
     end
   end
@@ -37,9 +35,8 @@ class Armory
 
   attr_reader :api_key
 
-  class GatewayTimeoutError < StandardError; end
-  class InternalServerError < StandardError; end
   class NotFoundError < StandardError; end
+  class ServerError < StandardError; end
 
   def build_url(region, realm, name)
     url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}"
