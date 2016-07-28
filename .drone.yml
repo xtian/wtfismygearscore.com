@@ -8,12 +8,12 @@ build:
     - RAILS_ENV=test
 
   commands:
-    - bin/bundle install --without development production --path .bundle
-    - bin/rake db:create
+    - bin/bundle install --jobs $(nproc) --without development production --path .bundle
     - bin/rake rubocop
-    - bin/rspec
     - bin/rake eslint:run
     - bin/rake scss_lint
+    - bin/rake db:create
+    - bin/rspec
 
 cache:
   mount:
