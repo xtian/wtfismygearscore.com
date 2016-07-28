@@ -18,8 +18,8 @@ RSpec.describe Character do
     it { should validate_numericality_of(field).only_integer.is_greater_than_or_equal_to(0) }
   end
 
-  it { should have_db_index([:name, :realm, :region]).unique }
-  it { should have_db_index([:score, :region, :realm, :name]) }
+  it { should have_db_index(%i(name realm region)).unique }
+  it { should have_db_index(%i(score region realm name)) }
 
   describe '#comments_count' do
     it 'returns the number of comments' do
