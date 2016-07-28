@@ -8,7 +8,7 @@ build:
     - RAILS_ENV=test
 
   commands:
-    - bin/bundle install --without development production --path .bundle
+    - bin/bundle install --jobs $(nproc) --without development production --path .bundle
     - bin/rake db:create
     - bin/rake rubocop
     - bin/rspec
