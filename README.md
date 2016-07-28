@@ -1,5 +1,7 @@
 # WTF is My Gear Score?
 
+[![Build Status](https://drone.xtian.us/api/badges/xtian/wtfismygearscore.com/status.svg)](https://drone.xtian.us/xtian/wtfismygearscore.com)
+
 ## Setup
 
 First, install [Homebrew](http://brew.sh).
