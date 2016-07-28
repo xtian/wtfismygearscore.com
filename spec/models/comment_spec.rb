@@ -8,7 +8,7 @@ RSpec.describe Comment do
   it { should validate_length_of(:body).is_at_most(1000) }
   it { should validate_length_of(:poster_name).is_at_most(15) }
 
-  it { should have_db_index([:character_id, :created_at]) }
+  it { should have_db_index(%i(character_id created_at)) }
 
   %i(body poster_name).each do |field|
     method_name = "#{field}="

@@ -18,11 +18,26 @@ RSpec/ExampleLength:
 Style/BlockDelimiters:
   EnforcedStyle: braces_for_chaining
 
+Style/CollectionMethods:
+  Enabled: true
+
 Style/Documentation:
   Enabled: false
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
 
 Style/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
+Style/Send:
+  Enabled: true
+
 Style/StringLiterals:
   Enabled: false
+
+Style/StringMethods:
+  Enabled: true
+
+Style/SymbolArray:
+  Enabled: true
