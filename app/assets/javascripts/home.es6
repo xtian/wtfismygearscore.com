@@ -1,6 +1,6 @@
 (() => {
   let initContentToggle = () => {
-    let toggleable = $$('.js-toggleable');
+    let toggleable = [].slice.call($$('.js-toggleable'));
 
     $('.js-toggleContent').addEventListener('click', (ev) => {
       ev.preventDefault();
