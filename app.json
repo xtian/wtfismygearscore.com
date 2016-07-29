@@ -1,0 +1,12 @@
+{
+  "name": "WTF is My Gear Score?",
+  "repository": "https://github.com/xtian/wtfismygearscore.com",
+  "scripts": {
+    "postdeploy": "bin/rake db:migrate"
+  },
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true"
+  }
+}
