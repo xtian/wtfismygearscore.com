@@ -26,11 +26,3 @@ compose:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-
-deploy:
-  git_push:
-    branch: master
-    remote: dokku@wtfismygearscore.com:wtfismygs
-    force: false
-    when:
-      branch: master
