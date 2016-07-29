@@ -14,7 +14,7 @@ gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
 gem 'ruby_identicon', require: false # Avatar generator
-gem 'sass-rails', github: 'rails/sass-rails', ref: 'dfbcc6a' # Use SCSS for stylesheets
+gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', ref: 'dfbcc6a' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
@@ -35,7 +35,7 @@ group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'coderay', require: false # Syntax highlighting for RSpec failures
   gem 'eslint-rails' # Ensures consistent JavaScript style
-  gem 'mutant-rspec', github: 'mbj/mutant', ref: 'cfc09e9', require: false # Mutation testing tool
+  gem 'mutant-rspec', git: 'https://github.com/mbj/mutant.git', ref: 'cfc09e9', require: false # Mutation testing tool
   gem 'rspec-rails' # Test framework
   gem 'rubocop' # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
