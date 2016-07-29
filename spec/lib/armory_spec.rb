@@ -35,9 +35,16 @@ RSpec.describe Armory do
       expect { subject.fetch_character(args) }.to raise_error(%r{https://.+\n})
     end
 
-    it 'raises an ServerError for 500s' do
+    it 'raises a ServerError for 500s' do
       stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
         .to_return(status: 500, body: '')
+
+      expect { subject.fetch_character(args) }.to raise_error(Armory::ServerError, %r{https://.+})
+    end
+
+    it 'raises a ServerError for 503s' do
+      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+        .to_return(status: 503, body: '')
 
       expect { subject.fetch_character(args) }.to raise_error(Armory::ServerError, %r{https://.+})
     end
