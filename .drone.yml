@@ -31,6 +31,4 @@ deploy:
   git_push:
     branch: master
     remote: dokku@wtfismygearscore.com:wtfismygs
-    force: false
-    when:
-      branch: master
+    force: true
