@@ -4,10 +4,11 @@ Rails.application.configure do
 
   config.middleware.use Rack::Throttle::Hourly, cache: Redis.current, key_prefix: :throttle
 
-  config.middleware.use ExceptionNotification::Rack, slack: {
-    webhook_url: secrets.slack_webhook_url,
-    additional_parameters: { mrkdwn: true }
-  }
+  ignored_exceptions = %w(ActionController::ParameterMissing) + ExceptionNotifier.ignored_exceptions
+
+  config.middleware.use ExceptionNotification::Rack,
+                        ignore_exceptions: ignored_exceptions,
+                        slack: { webhook_url: secrets.slack_webhook_url }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
