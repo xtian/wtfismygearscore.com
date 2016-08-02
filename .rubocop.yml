@@ -15,6 +15,9 @@ Metrics/LineLength:
 RSpec/ExampleLength:
   Max: 10
 
+RSpec/NamedSubject:
+  Enabled: false
+
 Style/BlockDelimiters:
   EnforcedStyle: braces_for_chaining
 
