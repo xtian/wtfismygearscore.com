@@ -71,6 +71,17 @@ RSpec.describe Character do
       subject = Fabricate.build(:character, level: 3, score: 2)
       expect(subject.median_difference).to eq(-1)
     end
+
+    it 'handles negative median scores' do
+      median = instance_double('MedianGearscore', median_score: -20)
+      allow(MedianGearscore).to receive(:find_or_initialize_by).with(level: 1) { median }
+
+      winner = Fabricate.build(:character, level: 1, score: -10)
+      failure = Fabricate.build(:character, level: 1, score: -30)
+
+      expect(winner.median_difference).to eq(10)
+      expect(failure.median_difference).to eq(-10)
+    end
   end
 
   describe '#update_from_armory' do

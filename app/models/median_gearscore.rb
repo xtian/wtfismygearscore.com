@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class MedianGearscore < ApplicationRecord
   validates :level, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :median_score, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :median_score, presence: true, numericality: true
 
   # Recalculates median score for given level
   # @return void
