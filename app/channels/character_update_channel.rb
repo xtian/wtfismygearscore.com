@@ -7,7 +7,7 @@ class CharacterUpdateChannel < ApplicationCable::Channel
   # @option data [String] 'id' id of {Character} to stream updates for
   # @option data [String] 'timestamp' timestamp of when client character data
   #   was last updated
-  # @return void
+  # @return [void]
   def follow(data)
     stop_all_streams
     raise "Invalid data: #{data}" unless valid_data?(data)
@@ -23,7 +23,7 @@ class CharacterUpdateChannel < ApplicationCable::Channel
     logger.warn "CharacterUpdateChannel: No Character with found with id: #{data['id']}"
   end
 
-  # @return void
+  # @return [void]
   def unfollow
     stop_all_streams
   end

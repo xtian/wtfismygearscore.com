@@ -12,14 +12,14 @@ class CharacterUpdateBroadcaster
   # Convenience method to avoid object initialization
   # @param character [Character]
   # @param updated_at [String, DateTime]
-  # @return void
+  # @return [void]
   def self.call(character, updated_at)
     new(character, updated_at).call
   end
 
   # Broadcasts update to the relevant {CharacterUpdateChannel} if given
   # {Character} was updated more recently than given timestamp
-  # @return void
+  # @return [void]
   def call
     return unless character.updated_at > caller_updated_at
     ActionCable.server.broadcast channel_name, html: partial, id: character.to_param
