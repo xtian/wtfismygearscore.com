@@ -34,7 +34,7 @@ a {
   &:hover,
   &:active,
   &:focus {
-    color: $blue-light;
+    color: darken($blue, 15%);
   }
 }
 
