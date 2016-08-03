@@ -27,5 +27,7 @@ module WtfIsMyGearscore
     config.action_controller.include_all_helpers = false
 
     config.active_job.queue_adapter = :sidekiq
+
+    routes.default_url_options[:host] = secrets.base_url
   end
 end
