@@ -32,7 +32,7 @@ class CommentNotifier
       text: "New comment posted on [#{character.name}](#{page_url}):",
       fields: [
         { title: 'Poster Name', value: comment.poster_name, short: true },
-        { title: 'Poster IP Address', value: comment.poster_ip_address, short: true },
+        { title: 'Poster IP Address', value: comment.poster_ip_address.to_s, short: true },
         { title: 'Body', value: comment.body }
       ]
     }
