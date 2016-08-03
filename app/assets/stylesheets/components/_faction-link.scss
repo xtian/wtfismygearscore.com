@@ -3,11 +3,12 @@
     &:link,
     &:visited {
       color: $color;
-    }
 
-    &:hover,
-    &:active {
-      color: darken($color, 15%);
+      &:hover,
+      &:active,
+      &:focus {
+        color: darken($color, 15%);
+      }
     }
   }
 }

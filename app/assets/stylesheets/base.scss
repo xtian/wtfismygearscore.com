@@ -29,6 +29,12 @@ a {
 
   &:visited {
     color: $purple;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($purple, 15%);
+    }
   }
 
   &:hover,
