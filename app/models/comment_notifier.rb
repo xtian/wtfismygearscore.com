@@ -28,7 +28,6 @@ class CommentNotifier
 
   def message_options
     {
-      color: 'good',
       text: "New comment posted on [#{character.name}](#{page_url}):",
       fields: [
         { title: 'Poster Name', value: comment.poster_name, short: true },
