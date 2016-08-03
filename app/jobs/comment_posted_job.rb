@@ -13,6 +13,8 @@ class CommentPostedJob < ApplicationJob
     @user_agent = user_agent
 
     return comment.destroy! if spam?
+
+    CommentNotifier.call(comment, comment.character)
     RecentComment.refresh
   end
 

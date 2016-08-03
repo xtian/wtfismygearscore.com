@@ -18,6 +18,7 @@ gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', ref: 'dfbcc6a'
 gem 'scenic' # Create and manage database views in Rails
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
+gem 'slack-notifier' # Sends Slack webhook notifications
 gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and images
 gem 'turbolinks' # Makes navigating your web application faster
 gem 'typhoeus', require: false # HTTP client backend for Faraday
@@ -28,7 +29,6 @@ group :production do
   gem 'exception_notification' # Sends notifications when errors occur
   gem 'rack-throttle' # Provides logic for rate-limiting incoming HTTP requests
   gem 'rack-timeout' # Abort requests that are taking too long
-  gem 'slack-notifier' # Sends Slack webhook notifications
 end
 
 group :development, :test do
