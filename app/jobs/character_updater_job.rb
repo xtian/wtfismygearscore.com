@@ -6,6 +6,8 @@ class CharacterUpdaterJob < ApplicationJob
   # @return [void]
   def perform(character)
     broadcast(update(character), character.updated_at)
+  rescue Armory::ServerError => e
+    Rails.logger.warn "#{self.class} #{e.inspect}"
   end
 
   private
