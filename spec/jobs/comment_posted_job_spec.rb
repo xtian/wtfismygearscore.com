@@ -7,7 +7,7 @@ RSpec.describe CommentPostedJob do
 
   describe '#perform' do
     it 'deletes a comment if it is spam' do
-      expect(AKISMET).to receive(:spam?).with(comment, referrer: 'foo', user_agent: 'bar') { true }
+      allow(Akismet).to receive(:new) { instance_double('Akismet', spam?: true) }
       expect(comment).to receive(:destroy!)
       expect(RecentComment).not_to receive(:refresh)
       expect(CommentNotifier).not_to receive(:call)
@@ -16,7 +16,7 @@ RSpec.describe CommentPostedJob do
     end
 
     it 'refreshes recent comments' do
-      allow(AKISMET).to receive(:spam?).with(comment, referrer: 'foo', user_agent: 'bar') { false }
+      allow(Akismet).to receive(:new) { instance_double('Akismet', spam?: false) }
       expect(RecentComment).to receive(:refresh)
       expect(CommentNotifier).to receive(:call)
 
