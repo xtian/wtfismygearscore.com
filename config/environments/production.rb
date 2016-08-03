@@ -3,12 +3,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.middleware.use Rack::Throttle::Hourly, cache: Redis.current, key_prefix: :throttle
-
-  ignored_exceptions = %w(ActionController::ParameterMissing) + ExceptionNotifier.ignored_exceptions
-
-  config.middleware.use ExceptionNotification::Rack,
-                        ignore_exceptions: ignored_exceptions,
-                        slack: { webhook_url: secrets.slack_webhook_url }
+  config.middleware.use ExceptionNotification::Rack
 
   # Code is not reloaded between requests.
   config.cache_classes = true
