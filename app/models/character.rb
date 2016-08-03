@@ -35,7 +35,7 @@ class Character < ApplicationRecord
 
   # @param character [Armory::Character] armory data
   # @param score [Fixnum] character's gearscore
-  # @return void
+  # @return [void]
   def update_from_armory(character, score)
     fields = %i(avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm)
       .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }

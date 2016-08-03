@@ -4,7 +4,7 @@ class MedianGearscore < ApplicationRecord
   validates :median_score, presence: true, numericality: true
 
   # Recalculates median score for given level
-  # @return void
+  # @return [void]
   def calculate
     result = self.class.find_by_sql(median_sql).first
     self.median_score = result.median_score
