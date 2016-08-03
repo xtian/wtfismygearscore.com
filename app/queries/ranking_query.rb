@@ -48,7 +48,7 @@ class RankingQuery
   def comments
     @_comments ||= begin
       filter = { region: Character.regions[region] }.compact
-      comments = RecentComment.where(filter).limit(5)
+      comments = RecentComment.where(filter).limit(5).order(created_at: :desc)
       RecentCommentPresenter.present_collection(comments)
     end
   end
