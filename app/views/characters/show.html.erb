@@ -23,8 +23,8 @@
       <%= link_to region, characters_path(*server_parts.first), rel: 'up up' %>
     </li>
 
-    <li class="SubHeader-rankingNavItem Navigation-item">
-      <%= link_to realm, characters_path(*server_parts), rel: 'up' %>
+    <li class="SubHeader-rankingNavItem Navigation-item" <%= tid :realm %>>
+      <%= link_to @character.realm, characters_path(*server_parts), rel: 'up' %>
     </li>
   </ul>
 </nav>

@@ -2,41 +2,21 @@
 require_relative './page'
 
 class CharacterPage < Page
+  %i(avg_ilvl comments_count max_ilvl median_difference min_ilvl score).each do |key|
+    define_method key do
+      find_tid(key).text.to_i
+    end
+  end
+
+  %i(guild_name rating realm).each do |key|
+    define_method key do
+      find_tid(key).text
+    end
+  end
+
   def faction
     return 'alliance' if page.has_selector?('.is-alliance')
     'horde' if page.has_selector?('.is-horde')
-  end
-
-  def guild_name
-    find_tid(:guild_name).text
-  end
-
-  def score
-    find_tid(:score).text.to_i
-  end
-
-  def avg_ilvl
-    find_tid(:avg_ilvl).text.to_i
-  end
-
-  def max_ilvl
-    find_tid(:max_ilvl).text.to_i
-  end
-
-  def min_ilvl
-    find_tid(:min_ilvl).text.to_i
-  end
-
-  def median_difference
-    find_tid(:median_difference).text.to_i
-  end
-
-  def rating
-    find_tid(:rating).text
-  end
-
-  def comments_count
-    find_tid(:comments_count).text.to_i
   end
 
   def next_page

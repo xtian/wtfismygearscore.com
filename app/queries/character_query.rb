@@ -54,7 +54,7 @@ class CharacterQuery
   attr_reader :character, :page, :per_page
 
   def fetch_character
-    character = Character.find_or_initialize_by(params)
+    character = Character.from_params(params)
 
     # Initiate synchronous Armory API call if character is not cached in DB
     return CharacterUpdater.call(character) if character.new_record?

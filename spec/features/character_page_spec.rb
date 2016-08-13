@@ -10,6 +10,7 @@ RSpec.feature 'Character page' do
 
   before do
     stub_character_request
+    Realm.create!(name: 'Shadowmoon', translations: ['Der Schatten Mond'])
   end
 
   scenario 'User visits character page' do
@@ -26,6 +27,14 @@ RSpec.feature 'Character page' do
     expect(character_page.max_ilvl).to eq(795)
     expect(character_page.median_difference).to eq(19_891)
     expect(character_page.rating).to eq('win')
+  end
+
+  scenario 'User visits character page using translated realm name' do
+    character = Fabricate(:character, realm: 'Shadowmoon')
+
+    visit character_path(character.region, 'Der Schatten Mond', character.name)
+
+    expect(character_page.realm).to eq('Shadowmoon')
   end
 
   scenario 'User visits another page of comments' do
