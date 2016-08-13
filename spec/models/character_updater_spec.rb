@@ -66,15 +66,5 @@ RSpec.describe CharacterUpdater do
         described_class.call(character)
       }.to raise_error(Armory::NotFoundError)
     end
-
-    it 'returns correct character if Armory translation causes a duplicate insert to be attempted' do
-      record = Fabricate(:character, params)
-
-      allow(character).to receive(:new_record?) { true }
-      allow(character).to receive(:update_from_armory).and_raise(ActiveRecord::RecordNotUnique)
-
-      return_value = described_class.call(character)
-      expect(return_value).to eq(record)
-    end
   end
 end
