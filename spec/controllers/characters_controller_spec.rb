@@ -8,7 +8,7 @@ RSpec.describe CharactersController do
 
   describe '#show' do
     context 'with an existing character' do
-      let!(:character) { Fabricate(:character, character_info) }
+      let!(:character) { fabricate_character(character_info) }
 
       it 'loads the character from the DB' do
         get :show, params: character_info

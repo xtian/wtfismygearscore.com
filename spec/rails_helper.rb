@@ -6,6 +6,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
+require 'support/character_helpers'
 require 'support/time_helpers'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

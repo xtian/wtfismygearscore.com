@@ -29,7 +29,7 @@ RSpec.feature 'Character page' do
   end
 
   scenario 'User visits another page of comments' do
-    character = Fabricate(:character)
+    character = fabricate_character
     Fabricate(:comment, body: 'hey', character: character, created_at: 2.weeks.ago)
     Fabricate(:comment, body: 'cool', character: character, created_at: 1.week.ago)
 
