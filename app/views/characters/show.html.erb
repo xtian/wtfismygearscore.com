@@ -24,7 +24,7 @@
     </li>
 
     <li class="SubHeader-rankingNavItem Navigation-item" <%= tid :realm %>>
-      <%= link_to @character.realm, characters_path(*server_parts), rel: 'up' %>
+      <%= link_to @character.realm, characters_path(*server_parts(@character)), rel: 'up' %>
     </li>
   </ul>
 </nav>
