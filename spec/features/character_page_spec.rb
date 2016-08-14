@@ -10,7 +10,9 @@ RSpec.feature 'Character page' do
 
   before do
     stub_character_request
-    Realm.create!(name: 'Shadowmoon', translations: ['Der Schatten Mond'])
+
+    Realm.create!(name: 'Shadowmoon')
+    Realm.create!(name: 'Demon Soul', translations: ['Alma de demonio'])
   end
 
   scenario 'User visits character page' do
@@ -30,11 +32,11 @@ RSpec.feature 'Character page' do
   end
 
   scenario 'User visits character page using translated realm name' do
-    character = Fabricate(:character, realm: 'Shadowmoon')
+    character = Fabricate(:character, realm: 'Demon Soul')
 
-    visit character_path(character.region, 'Der Schatten Mond', character.name)
+    visit character_path(character.region, 'Alma-de-demonio', character.name)
 
-    expect(character_page.realm).to eq('Shadowmoon')
+    expect(character_page.realm).to eq('Demon Soul')
   end
 
   scenario 'User visits another page of comments' do
