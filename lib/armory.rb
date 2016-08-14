@@ -15,7 +15,7 @@ class Armory
   # @param realm [String]
   # @param name [String]
   # @return [Armory::Character]
-  # @raise [Armory::ServerError] if API returns 500 or 504
+  # @raise [Armory::ServerError] if API returns 500, 503, 504, or invalid JSON
   # @raise [Armory::NotFoundError] if API returns 400 or 404
   # @raise [StandardError] for all other API errors
   # @see https://dev.battle.net/io-docs Armory API docs
