@@ -8,9 +8,9 @@ RSpec.feature 'Ranking page' do
   end
 
   before do
-    Fabricate(:character, name: 'a', region: 'eu', realm: 'shadowmoon', score: 200)
-    b = Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 200)
-    top = Fabricate(:character, name: 'top', region: 'us', realm: 'illidan', score: 500)
+    fabricate_character(name: 'a', region: 'eu', realm: 'shadowmoon', score: 200)
+    b = fabricate_character(name: 'b', region: 'eu', realm: 'shadowmoon', score: 200)
+    top = fabricate_character(name: 'top', region: 'us', realm: 'illidan', score: 500)
 
     Fabricate(
       :character,

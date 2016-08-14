@@ -25,12 +25,6 @@ class CharacterUpdater
 
   rescue Armory::NotFoundError
     handle_not_found
-  rescue ActiveRecord::RecordNotUnique
-    # This is a temporary fix to handle realms which are translated by the
-    # Armory from their requested form into English. The correct way to handle
-    # this issue is to use a join the initial character query on a table of
-    # all possible realm translations.
-    Character.find_by(params(armory_response))
   end
 
   private
@@ -47,13 +41,11 @@ class CharacterUpdater
     character.destroy!
   end
 
-  def params(object = nil)
-    object ||= character
-
+  def params
     {
-      region: object.region,
-      realm: object.realm,
-      name: object.name
+      region: character.region,
+      realm: character.realm,
+      name: character.name
     }
   end
 

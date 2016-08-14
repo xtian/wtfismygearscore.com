@@ -1,0 +1,820 @@
+---
+- name: Aegwynn
+  translations: []
+- name: Aerie Peak
+  translations: []
+- name: Agamaggan
+  translations: []
+- name: Aggramar
+  translations: []
+- name: Akama
+  translations: []
+- name: Alexstrasza
+  translations: []
+- name: Alleria
+  translations: []
+- name: Altar of Storms
+  translations: []
+- name: Alterac Mountains
+  translations: []
+- name: Aman'Thul
+  translations: []
+- name: Andorhal
+  translations: []
+- name: Anetheron
+  translations: []
+- name: Antonidas
+  translations: []
+- name: Anub'arak
+  translations: []
+- name: Anvilmar
+  translations: []
+- name: Arathor
+  translations: []
+- name: Archimonde
+  translations: []
+- name: Area 52
+  translations: []
+- name: Argent Dawn
+  translations: []
+- name: Arthas
+  translations:
+  - 阿薩斯
+- name: Arygos
+  translations:
+  - 亞雷戈斯
+- name: Auchindoun
+  translations: []
+- name: Azgalor
+  translations: []
+- name: Azjol-Nerub
+  translations: []
+- name: Azralon
+  translations: []
+- name: Azshara
+  translations:
+  - 아즈샤라
+- name: Azuremyst
+  translations: []
+- name: Baelgun
+  translations: []
+- name: Balnazzar
+  translations: []
+- name: Barthilas
+  translations: []
+- name: Black Dragonflight
+  translations: []
+- name: Blackhand
+  translations: []
+- name: Blackrock
+  translations: []
+- name: Blackwater Raiders
+  translations: []
+- name: Blackwing Lair
+  translations: []
+- name: Blade's Edge
+  translations: []
+- name: Bladefist
+  translations: []
+- name: Bleeding Hollow
+  translations:
+  - 血之谷
+- name: Blood Furnace
+  translations: []
+- name: Bloodhoof
+  translations: []
+- name: Bloodscalp
+  translations: []
+- name: Bonechewer
+  translations: []
+- name: Borean Tundra
+  translations:
+  - Борейская тундра
+- name: Boulderfist
+  translations: []
+- name: Bronzebeard
+  translations: []
+- name: Burning Blade
+  translations: []
+- name: Burning Legion
+  translations:
+  - 불타는 군단
+- name: Caelestrasz
+  translations: []
+- name: Cairne
+  translations: []
+- name: Cenarion Circle
+  translations: []
+- name: Cenarius
+  translations:
+  - 세나리우스
+- name: Cho'gall
+  translations:
+  - Cho’gall
+- name: Chromaggus
+  translations: []
+- name: Coilfang
+  translations: []
+- name: Crushridge
+  translations: []
+- name: Daggerspine
+  translations: []
+- name: Dalaran
+  translations: []
+- name: Dalvengyr
+  translations: []
+- name: Dark Iron
+  translations: []
+- name: Darkspear
+  translations: []
+- name: Darrowmere
+  translations: []
+- name: Dath'Remar
+  translations: []
+- name: Dawnbringer
+  translations: []
+- name: Deathwing
+  translations:
+  - 데스윙
+- name: Demon Soul
+  translations:
+  - Alma de demonio
+- name: Dentarg
+  translations: []
+- name: Destromath
+  translations: []
+- name: Dethecus
+  translations: []
+- name: Detheroc
+  translations: []
+- name: Doomhammer
+  translations: []
+- name: Draenor
+  translations: []
+- name: Dragonblight
+  translations: []
+- name: Dragonmaw
+  translations:
+  - 巨龍之喉
+- name: Drak'Tharon
+  translations: []
+- name: Drak'thul
+  translations: []
+- name: Draka
+  translations: []
+- name: Drakkari
+  translations: []
+- name: Dreadmaul
+  translations: []
+- name: Drenden
+  translations: []
+- name: Dunemaul
+  translations: []
+- name: Durotan
+  translations:
+  - 듀로탄
+- name: Duskwood
+  translations: []
+- name: Earthen Ring
+  translations: []
+- name: Echo Isles
+  translations: []
+- name: Eitrigg
+  translations: []
+- name: Eldre'Thalas
+  translations: []
+- name: Elune
+  translations: []
+- name: Emerald Dream
+  translations: []
+- name: Eonar
+  translations: []
+- name: Eredar
+  translations: []
+- name: Executus
+  translations: []
+- name: Exodar
+  translations: []
+- name: Farstriders
+  translations: []
+- name: Feathermoon
+  translations: []
+- name: Fenris
+  translations: []
+- name: Firetree
+  translations: []
+- name: Fizzcrank
+  translations: []
+- name: Frostmane
+  translations:
+  - 冰霜之刺
+- name: Frostmourne
+  translations:
+  - Agonía de Escarcha
+- name: Frostwolf
+  translations: []
+- name: Galakrond
+  translations:
+  - Галакронд
+- name: Gallywix
+  translations: []
+- name: Garithos
+  translations: []
+- name: Garona
+  translations: []
+- name: Garrosh
+  translations: []
+- name: Ghostlands
+  translations: []
+- name: Gilneas
+  translations: []
+- name: Gnomeregan
+  translations: []
+- name: Goldrinn
+  translations:
+  - Голдринн
+- name: Gorefiend
+  translations: []
+- name: Gorgonnash
+  translations: []
+- name: Greymane
+  translations:
+  - Седогрив
+- name: Grizzly Hills
+  translations: []
+- name: Gul'dan
+  translations:
+  - Gul’dan
+- name: Gundrak
+  translations: []
+- name: Gurubashi
+  translations: []
+- name: Hakkar
+  translations: []
+- name: Haomarush
+  translations: []
+- name: Hellscream
+  translations:
+  - 헬스크림
+  - 地獄吼
+- name: Hydraxis
+  translations: []
+- name: Hyjal
+  translations:
+  - 하이잘
+- name: Icecrown
+  translations:
+  - 寒冰皇冠
+- name: Illidan
+  translations: []
+- name: Jaedenar
+  translations: []
+- name: Jubei'Thos
+  translations: []
+- name: Kael'thas
+  translations: []
+- name: Kalecgos
+  translations: []
+- name: Kargath
+  translations: []
+- name: Kel'Thuzad
+  translations: []
+- name: Khadgar
+  translations: []
+- name: Khaz Modan
+  translations: []
+- name: Khaz'goroth
+  translations: []
+- name: Kil'jaeden
+  translations: []
+- name: Kilrogg
+  translations: []
+- name: Kirin Tor
+  translations: []
+- name: Korgath
+  translations: []
+- name: Korialstrasz
+  translations: []
+- name: Kul Tiras
+  translations: []
+- name: Laughing Skull
+  translations: []
+- name: Lethon
+  translations: []
+- name: Lightbringer
+  translations: []
+- name: Lightning's Blade
+  translations: []
+- name: Lightninghoof
+  translations: []
+- name: Llane
+  translations: []
+- name: Lothar
+  translations: []
+- name: Madoran
+  translations: []
+- name: Maelstrom
+  translations: []
+- name: Magtheridon
+  translations: []
+- name: Maiev
+  translations: []
+- name: Mal'Ganis
+  translations: []
+- name: Malfurion
+  translations: []
+- name: Malorne
+  translations: []
+- name: Malygos
+  translations: []
+- name: Mannoroth
+  translations: []
+- name: Medivh
+  translations: []
+- name: Misha
+  translations: []
+- name: Mok'Nathal
+  translations: []
+- name: Moon Guard
+  translations: []
+- name: Moonrunner
+  translations: []
+- name: Mug'thol
+  translations: []
+- name: Muradin
+  translations: []
+- name: Nagrand
+  translations: []
+- name: Nathrezim
+  translations: []
+- name: Nazgrel
+  translations: []
+- name: Nazjatar
+  translations: []
+- name: Nemesis
+  translations:
+  - Némesis
+- name: Ner'zhul
+  translations:
+  - Ner’zhul
+- name: Nesingwary
+  translations: []
+- name: Nordrassil
+  translations: []
+- name: Norgannon
+  translations: []
+- name: Onyxia
+  translations: []
+- name: Perenolde
+  translations: []
+- name: Proudmoore
+  translations: []
+- name: Quel'Thalas
+  translations: []
+- name: Quel'dorei
+  translations:
+  - 眾星之子
+- name: Ragnaros
+  translations: []
+- name: Ravencrest
+  translations: []
+- name: Ravenholdt
+  translations: []
+- name: Rexxar
+  translations: []
+- name: Rivendare
+  translations: []
+- name: Runetotem
+  translations: []
+- name: Sargeras
+  translations: []
+- name: Saurfang
+  translations: []
+- name: Scarlet Crusade
+  translations: []
+- name: Scilla
+  translations: []
+- name: Sen'jin
+  translations: []
+- name: Sentinels
+  translations: []
+- name: Shadow Council
+  translations: []
+- name: Shadowmoon
+  translations:
+  - 暗影之月
+- name: Shadowsong
+  translations: []
+- name: Shandris
+  translations: []
+- name: Shattered Halls
+  translations: []
+- name: Shattered Hand
+  translations: []
+- name: Shu'halo
+  translations: []
+- name: Silver Hand
+  translations: []
+- name: Silvermoon
+  translations: []
+- name: Sisters of Elune
+  translations: []
+- name: Skullcrusher
+  translations: []
+- name: Skywall
+  translations:
+  - 天空之牆
+- name: Smolderthorn
+  translations: []
+- name: Spinebreaker
+  translations: []
+- name: Spirestone
+  translations:
+  - 尖石
+- name: Staghelm
+  translations: []
+- name: Steamwheedle Cartel
+  translations: []
+- name: Stonemaul
+  translations: []
+- name: Stormrage
+  translations: []
+- name: Stormreaver
+  translations: []
+- name: Stormscale
+  translations:
+  - 雷鱗
+- name: Suramar
+  translations: []
+- name: Tanaris
+  translations: []
+- name: Terenas
+  translations: []
+- name: Terokkar
+  translations: []
+- name: Thaurissan
+  translations: []
+- name: The Forgotten Coast
+  translations: []
+- name: The Scryers
+  translations: []
+- name: The Underbog
+  translations: []
+- name: The Venture Co
+  translations: []
+- name: Thorium Brotherhood
+  translations: []
+- name: Thrall
+  translations: []
+- name: Thunderhorn
+  translations: []
+- name: Thunderlord
+  translations: []
+- name: Tichondrius
+  translations: []
+- name: Tol Barad
+  translations: []
+- name: Tortheldrin
+  translations: []
+- name: Trollbane
+  translations: []
+- name: Turalyon
+  translations: []
+- name: Twisting Nether
+  translations: []
+- name: Uldaman
+  translations: []
+- name: Uldum
+  translations: []
+- name: Undermine
+  translations: []
+- name: Ursin
+  translations: []
+- name: Uther
+  translations: []
+- name: Vashj
+  translations: []
+- name: Vek'nilash
+  translations: []
+- name: Velen
+  translations: []
+- name: Warsong
+  translations: []
+- name: Whisperwind
+  translations:
+  - 語風
+- name: Wildhammer
+  translations: []
+- name: Windrunner
+  translations:
+  - 윈드러너
+- name: Winterhoof
+  translations: []
+- name: Wyrmrest Accord
+  translations: []
+- name: Ysera
+  translations: []
+- name: Ysondre
+  translations: []
+- name: Zangarmarsh
+  translations: []
+- name: Zul'jin
+  translations:
+  - 줄진
+- name: Zuluhed
+  translations: []
+- name: Aggra (Português)
+  translations:
+  - Aggra (Portugiesisch)
+- name: Ahn'Qiraj
+  translations: []
+- name: Al'Akir
+  translations: []
+- name: Alonsus
+  translations: []
+- name: Ambossar
+  translations: []
+- name: Anachronos
+  translations:
+  - Anacronos
+- name: Arak-arahm
+  translations: []
+- name: Arathi
+  translations: []
+- name: Ashenvale
+  translations:
+  - Ясеневый лес
+- name: Aszune
+  translations: []
+- name: Azuregos
+  translations:
+  - Азурегос
+- name: Blackmoore
+  translations: []
+- name: Blackscar
+  translations:
+  - Черный Шрам
+- name: Bloodfeather
+  translations: []
+- name: Blutkessel
+  translations: []
+- name: Booty Bay
+  translations:
+  - Пиратская бухта
+- name: Bronze Dragonflight
+  translations: []
+- name: Burning Steppes
+  translations: []
+- name: C'Thun
+  translations: []
+- name: Chamber of Aspects
+  translations: []
+- name: Chants éternels
+  translations: []
+- name: Colinas Pardas
+  translations:
+  - Spirestone
+- name: Confrérie du Thorium
+  translations: []
+- name: Conseil des Ombres
+  translations: []
+- name: Culte de la Rive noire
+  translations: []
+- name: Darkmoon Faire
+  translations: []
+- name: Darksorrow
+  translations: []
+- name: Das Konsortium
+  translations: []
+- name: Das Syndikat
+  translations: []
+- name: Deathguard
+  translations:
+  - Страж Смерти
+- name: Deathweaver
+  translations:
+  - Ткач Смерти
+- name: Deepholm
+  translations:
+  - Deephome
+  - Подземье
+- name: Defias Brotherhood
+  translations: []
+- name: Der Mithrilorden
+  translations: []
+- name: Der Rat von Dalaran
+  translations: []
+- name: Der abyssische Rat
+  translations: []
+- name: Die Aldor
+  translations: []
+- name: Die Arguswacht
+  translations:
+  - La Veille d'Argus
+- name: Die Nachtwache
+  translations: []
+- name: Die Silberne Hand
+  translations: []
+- name: Die Todeskrallen
+  translations: []
+- name: Die ewige Wacht
+  translations: []
+- name: Drek'Thar
+  translations: []
+- name: Dun Modr
+  translations: []
+- name: Dun Morogh
+  translations: []
+- name: Echsenkessel
+  translations: []
+- name: Emeriss
+  translations: []
+- name: Eversong
+  translations:
+  - Вечная Песня
+- name: Festung der Stürme
+  translations: []
+- name: Fordragon
+  translations:
+  - Дракономор
+- name: Forscherliga
+  translations: []
+- name: Frostwhisper
+  translations: []
+- name: Genjuros
+  translations: []
+- name: Gordunni
+  translations:
+  - Гордунни
+- name: Grim Batol
+  translations: []
+- name: Grom
+  translations:
+  - Гром
+- name: Hellfire
+  translations: []
+- name: Howling Fjord
+  translations:
+  - Ревущий фьорд
+- name: Karazhan
+  translations: []
+- name: Kazzak
+  translations: []
+- name: Kor'gall
+  translations: []
+- name: Krag'jin
+  translations: []
+- name: Krasus
+  translations: []
+- name: Kult der Verdammten
+  translations: []
+- name: La Croisade écarlate
+  translations: []
+- name: Les Clairvoyants
+  translations: []
+- name: Les Sentinelles
+  translations: []
+- name: Lich King
+  translations:
+  - Король-лич
+- name: Lordaeron
+  translations: []
+- name: Los Errantes
+  translations: []
+- name: Madmortem
+  translations: []
+- name: Marécage de Zangar
+  translations: []
+- name: Mazrigos
+  translations: []
+- name: Minahonda
+  translations: []
+- name: Moonglade
+  translations: []
+- name: Naxxramas
+  translations: []
+- name: Nefarian
+  translations: []
+- name: Neptulon
+  translations: []
+- name: Nera'thor
+  translations: []
+- name: Nethersturm
+  translations: []
+- name: Nozdormu
+  translations: []
+- name: Outland
+  translations: []
+- name: Pozzo dell'Eternità
+  translations:
+  - Well of Eternity
+- name: Rajaxx
+  translations: []
+- name: Rashgarroth
+  translations: []
+- name: Razuvious
+  translations:
+  - Разувий
+- name: Sanguino
+  translations: []
+- name: Scarshield Legion
+  translations:
+  - Légion du Bouclier balafré
+- name: Shattrath
+  translations: []
+- name: Shen'dralar
+  translations: []
+- name: Sinstralis
+  translations: []
+- name: Soulflayer
+  translations:
+  - Свежеватель Душ
+- name: Sporeggar
+  translations: []
+- name: Sunstrider
+  translations: []
+- name: Sylvanas
+  translations: []
+- name: Taerar
+  translations: []
+- name: Talnivarr
+  translations: []
+- name: Tarren Mill
+  translations: []
+- name: Teldrassil
+  translations: []
+- name: Temple noir
+  translations: []
+- name: Terrordar
+  translations: []
+- name: The Maelstrom
+  translations: []
+- name: The Sha'tar
+  translations: []
+- name: Theradras
+  translations: []
+- name: Thermaplugg
+  translations:
+  - Термоштепсель
+- name: Throk'Feroth
+  translations: []
+- name: Tirion
+  translations: []
+- name: Todeswache
+  translations: []
+- name: Twilight's Hammer
+  translations: []
+- name: Tyrande
+  translations: []
+- name: Ulduar
+  translations: []
+- name: Un'Goro
+  translations: []
+- name: Varimathras
+  translations: []
+- name: Vek'lor
+  translations: []
+- name: Vol'jin
+  translations: []
+- name: Wrathbringer
+  translations:
+  - 憤怒使者
+- name: Xavius
+  translations: []
+- name: Zenedar
+  translations: []
+- name: Zirkel des Cenarius
+  translations: []
+- name: Chillwind Point
+  translations:
+  - 冰風崗哨
+- name: Crystalpine Stinger
+  translations:
+  - 水晶之刺
+- name: Demon Fall Canyon
+  translations:
+  - 屠魔山谷
+- name: Light's Hope
+  translations:
+  - 聖光之願
+- name: Menethil
+  translations:
+  - 米奈希爾
+- name: Nightsong
+  translations:
+  - 夜空之歌
+- name: Order of the Cloud Serpent
+  translations:
+  - 雲蛟衛
+- name: Silverwing Hold
+  translations:
+  - 銀翼要塞
+- name: Sundown Marsh
+  translations:
+  - 日落沼澤
+- name: World Tree
+  translations:
+  - 世界之樹
+- name: Zealot Blade
+  translations:
+  - 狂熱之刃

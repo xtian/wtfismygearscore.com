@@ -4,10 +4,10 @@ require 'rails_helper'
 RSpec.describe RankingQuery do
   describe '#call' do
     before do
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, region: 'us', realm: 'shadowmoon', score: 300)
-      Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
+      fabricate_character(region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
+      fabricate_character(region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
+      fabricate_character(region: 'us', realm: 'shadowmoon', score: 300)
+      fabricate_character(region: 'us', realm: 'illidan', score: 500)
     end
 
     it 'returns ranked characters' do

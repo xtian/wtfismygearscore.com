@@ -13,6 +13,18 @@ class Character < ApplicationRecord
   validates :avg_ilvl, :max_ilvl, :min_ilvl,
             numericality: { only_integer: true, greater_than_or_equal_to: 0 }, presence: true
 
+  # @param region [String]
+  # @param realm [String]
+  # @param name [String]
+  # @return [Character] cached character or unsaved character initialized from params
+  def self.from_params(region:, realm:, name:)
+    character = joins('JOIN realms ON realms.name = characters.realm')
+      .where('characters.realm = ? OR ? = ANY(realms.translations)', realm, realm)
+      .find_by(region: region, name: name)
+
+    character || new(region: region, realm: realm, name: name)
+  end
+
   # @return [Fixnum]
   def comments_count
     @_comments_count ||= comments.count

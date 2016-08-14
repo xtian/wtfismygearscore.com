@@ -21,6 +21,42 @@ RSpec.describe Character do
   it { should have_db_index(%i(name realm region)).unique }
   it { should have_db_index(%i(score region realm name)) }
 
+  describe '.from_params' do
+    params = { region: 'us', realm: 'shadowmoon', name: 'dargonaut' }
+
+    params.keys.each do |key|
+      it "requires #{key} to be passed" do
+        invalid_params = params.without(key)
+
+        expect {
+          described_class.from_params(invalid_params)
+        }.to raise_error(ArgumentError)
+      end
+    end
+
+    it 'returns a character for the passed params' do
+      character = fabricate_character(params)
+      found = described_class.from_params(params)
+
+      expect(found).to eq(character)
+    end
+
+    it 'returns a character using a translated realm' do
+      character = Fabricate(:character, params)
+      Realm.create!(name: params[:realm], translations: [params[:realm].reverse])
+
+      found = described_class.from_params(params)
+
+      expect(found).to eq(character)
+    end
+
+    it 'returns a new character if one is not cached for params' do
+      found = described_class.from_params(params)
+
+      expect(found.new_record?).to eq(true)
+    end
+  end
+
   describe '#comments_count' do
     it 'returns the number of comments' do
       allow(subject.comments).to receive(:count) { 1 }

@@ -10,6 +10,7 @@ RSpec.feature 'Character page' do
 
   before do
     stub_character_request
+    Realm.create!(name: 'Shadowmoon', translations: ['Der Schatten Mond'])
   end
 
   scenario 'User visits character page' do
@@ -28,8 +29,16 @@ RSpec.feature 'Character page' do
     expect(character_page.rating).to eq('win')
   end
 
+  scenario 'User visits character page using translated realm name' do
+    character = Fabricate(:character, realm: 'Shadowmoon')
+
+    visit character_path(character.region, 'Der Schatten Mond', character.name)
+
+    expect(character_page.realm).to eq('Shadowmoon')
+  end
+
   scenario 'User visits another page of comments' do
-    character = Fabricate(:character)
+    character = fabricate_character
     Fabricate(:comment, body: 'hey', character: character, created_at: 2.weeks.ago)
     Fabricate(:comment, body: 'cool', character: character, created_at: 1.week.ago)
 

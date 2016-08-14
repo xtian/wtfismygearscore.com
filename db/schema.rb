@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725225458) do
+ActiveRecord::Schema.define(version: 20160813202141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,10 @@ ActiveRecord::Schema.define(version: 20160725225458) do
 
   create_table "median_gearscores", primary_key: "level", id: :integer, force: :cascade do |t|
     t.float "median_score", null: false
+  end
+
+  create_table "realms", primary_key: "name", id: :citext, force: :cascade do |t|
+    t.citext "translations", array: true
   end
 
   add_foreign_key "comments", "characters", on_delete: :cascade
