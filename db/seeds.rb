@@ -27,3 +27,6 @@ Character.create!(
   region: 'us',
   score: 10_331
 )
+
+realms = YAML::load_file(Rails.root.join('db/seeds/realms.yml'))
+Realm.create!(realms)
