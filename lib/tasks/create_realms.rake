@@ -37,6 +37,21 @@ task create_realms: :environment do
     end
   end
 
+  # Some Korean connected realms aren't returned independently so they
+  # have to be translated based on their slugs
+  fetch_realms('kr', 'en_US').each do |realm|
+    connected = realm.fetch('connected_realms')
+    locale_connected = fetch_realms('kr', 'ko_KR', realm.fetch('slug')).first.fetch('connected_realms')
+
+    connected.zip(locale_connected)
+      .drop(1) # The first item is the requested realm
+      .map { |pair| pair.map(&:titleize) }
+      .each do |name, translation|
+        name = "Gul'dan" if name == 'Guldan'
+        realms[name] << translation unless translation.in?(realms[name])
+      end
+  end
+
   # Create Realm records
   realms.each do |name, translations|
     Realm.find_or_initialize_by(name: name).update!(translations: translations)
