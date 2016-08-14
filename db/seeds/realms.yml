@@ -10,7 +10,8 @@
 - name: Akama
   translations: []
 - name: Alexstrasza
-  translations: []
+  translations:
+  - 알렉스트라자
 - name: Alleria
   translations: []
 - name: Altar of Storms
@@ -120,7 +121,8 @@
 - name: Daggerspine
   translations: []
 - name: Dalaran
-  translations: []
+  translations:
+  - 달라란
 - name: Dalvengyr
   translations: []
 - name: Dark Iron
@@ -221,7 +223,8 @@
 - name: Garithos
   translations: []
 - name: Garona
-  translations: []
+  translations:
+  - 가로나
 - name: Garrosh
   translations: []
 - name: Ghostlands
@@ -245,6 +248,7 @@
 - name: Gul'dan
   translations:
   - Gul’dan
+  - 굴단
 - name: Gundrak
   translations: []
 - name: Gurubashi
@@ -322,7 +326,8 @@
 - name: Mal'Ganis
   translations: []
 - name: Malfurion
-  translations: []
+  translations:
+  - 말퓨리온
 - name: Malorne
   translations: []
 - name: Malygos
@@ -362,7 +367,8 @@
 - name: Nordrassil
   translations: []
 - name: Norgannon
-  translations: []
+  translations:
+  - 노르간논
 - name: Onyxia
   translations: []
 - name: Perenolde
@@ -381,7 +387,8 @@
 - name: Ravenholdt
   translations: []
 - name: Rexxar
-  translations: []
+  translations:
+  - 렉사르
 - name: Rivendare
   translations: []
 - name: Runetotem
