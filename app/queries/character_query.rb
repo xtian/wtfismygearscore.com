@@ -83,6 +83,6 @@ class CharacterQuery
   end
 
   def params
-    { region: @region, realm: @realm, name: @name }
+    { region: @region, realm: @realm.strip, name: @name.strip }
   end
 end

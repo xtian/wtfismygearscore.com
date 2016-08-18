@@ -16,7 +16,7 @@ RSpec.feature 'Character page' do
   end
 
   scenario 'User visits character page' do
-    visit character_path('US', 'shadowmoon', 'dargonaut')
+    visit character_path('US', 'shadowmoon', 'dargonaut ')
 
     expect(page).to have_title('Dargonaut, 100 Hunter — WTF is My Gear Score?')
 
