@@ -7,8 +7,9 @@ require 'faraday'
 # Encapsulates logic for making requests to Battle.net Armory API
 class Armory
   # @param api_key [String] Armory API key
-  def initialize(api_key)
+  def initialize(api_key, timeout)
     @api_key = api_key
+    @timeout = timeout
   end
 
   # @param region [String]
@@ -21,7 +22,7 @@ class Armory
   # @see https://dev.battle.net/io-docs Armory API docs
   def fetch_character(region:, realm:, name:)
     url = build_url(region, realm, name)
-    response = Response.new(Faraday.get(url))
+    response = Response.new(send_request(url))
 
     case response.status
     when 200      then Character.new(region, response.body)
@@ -29,13 +30,13 @@ class Armory
     when 500..504 then raise ServerError, url
     else raise "#{url}\n#{response.error_message}"
     end
-  rescue JSON::ParserError
+  rescue Faraday::TimeoutError, JSON::ParserError
     raise ServerError, url
   end
 
   private
 
-  attr_reader :api_key
+  attr_reader :api_key, :timeout
 
   class NotFoundError < StandardError; end
   class ServerError < StandardError; end
@@ -44,5 +45,12 @@ class Armory
     url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}"
     query = "?apikey=#{api_key}&locale=en_US&fields=guild,items"
     Addressable::URI.encode(url + query)
+  end
+
+  def send_request(url)
+    Faraday.get do |req|
+      req.url url
+      req.options.timeout = timeout
+    end
   end
 end

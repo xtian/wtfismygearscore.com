@@ -4,7 +4,7 @@ require 'armory'
 require 'support/armory_helpers'
 
 RSpec.describe Armory do
-  subject { described_class.new('foo') }
+  subject { described_class.new('foo', 15) }
 
   describe '#fetch_character' do
     def stub_armory_request(status: 200, body: '')
@@ -59,6 +59,12 @@ RSpec.describe Armory do
 
     it 'raises a ServerError for invalid response bodies' do
       stub_armory_request(body: '<DOCTYPE html>')
+
+      expect { subject.fetch_character(args) }.to raise_error(Armory::ServerError, %r{https://.+})
+    end
+
+    it 'raises a ServerError for timeouts' do
+      stub_request(:get, %r{https://.+\.api\.battle\.net/.+}).to_timeout
 
       expect { subject.fetch_character(args) }.to raise_error(Armory::ServerError, %r{https://.+})
     end
