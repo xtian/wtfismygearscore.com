@@ -2,6 +2,8 @@
 require 'rails_helper'
 
 RSpec.describe RankedCharactersPresenter do
+  subject { described_class.new([], query) }
+
   let(:characters) do
     [
       instance_double('Character', id: 1),
@@ -10,8 +12,6 @@ RSpec.describe RankedCharactersPresenter do
   end
 
   let(:query) { instance_double('RankingQuery', per_page: 1, realm: nil) }
-
-  subject { described_class.new([], query) }
 
   describe '#extra_column_name' do
     it 'returns Guild for realm ranking' do

@@ -2,6 +2,8 @@
 require 'rails_helper'
 
 RSpec.describe RecentCommentPresenter do
+  subject { described_class.new(recent_comment) }
+
   let(:recent_comment) do
     instance_double(
       'RecentComment',
@@ -11,8 +13,6 @@ RSpec.describe RecentCommentPresenter do
       region: 0
     )
   end
-
-  subject { described_class.new(recent_comment) }
 
   describe '#character_info' do
     it 'returns array of identifying info' do

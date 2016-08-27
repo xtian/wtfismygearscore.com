@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-# rubocop:disable RSpec/DescribeClass
+# rubocop:disable RSpec/DescribeClass, RSpec/ExpectActual
 RSpec.describe 'region routing' do
   VALID_REGIONS.each do |region|
     it "routes /#{region} to characters#index" do
