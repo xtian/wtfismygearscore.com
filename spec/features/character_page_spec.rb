@@ -3,6 +3,7 @@ require 'rails_helper'
 require 'support/armory_helpers'
 require 'support/pages/character_page'
 
+# rubocop:disable RSpec/ExampleLength
 RSpec.feature 'Character page' do
   def character_page
     CharacterPage.new

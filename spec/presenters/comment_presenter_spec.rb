@@ -2,8 +2,8 @@
 require 'rails_helper'
 
 RSpec.describe CommentPresenter do
-  let(:comment) { instance_double('Comment', poster_name: nil) }
   subject { described_class.new(comment) }
+  let(:comment) { instance_double('Comment', poster_name: nil) }
 
   describe '#poster_name' do
     it 'defaults to Anonymous' do
