@@ -15,7 +15,7 @@ RSpec.describe CharacterUpdaterJob do
       character = instance_double('Character', updated_at: Time.current)
       expect(CharacterUpdater).to receive(:call).and_raise(Armory::ServerError)
 
-      expect { subject.perform(character) }.not_to raise_error
+      expect { described_class.perform_now(character) }.not_to raise_error
     end
   end
 end
