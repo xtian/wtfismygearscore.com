@@ -27,8 +27,6 @@
   }
 
   let initFormRedirect = (form) => {
-    if (!Turbolinks.supported) { return; }
-
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
 
@@ -38,7 +36,7 @@
         .filter(Boolean)
         .join('/');
 
-      Turbolinks.visit(url);
+      document.location = url
     });
   }
 

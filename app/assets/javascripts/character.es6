@@ -35,7 +35,6 @@
       if (this._visitHandlerInstalled) { return; }
 
       this._visitHandlerInstalled = true;
-      document.addEventListener('turbolinks:visit', () => this.follow());
     }
   });
 }());
