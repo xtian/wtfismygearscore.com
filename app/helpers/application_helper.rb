@@ -6,16 +6,7 @@ module ApplicationHelper
   # @param options [Hash]
   # @return [String]
   def async_javascript_include_tag(name, options = {})
-    javascript_include_tag name, options.reverse_merge(
-      'data-turbolinks-track' => 'reload',
-      defer: true
-    )
-  end
-
-  # @param name [String]
-  # @return [String]
-  def stylesheet_link_tag(name, options = {})
-    super(name, options.reverse_merge('data-turbolinks-track' => 'reload'))
+    javascript_include_tag name, options.reverse_merge(defer: true)
   end
 
   # @return [String]

@@ -50,7 +50,6 @@
 
     <%= render 'analytics' if secrets.ga_id %>
 
-    <%= async_javascript_include_tag 'turbolinks' %>
     <%= async_javascript_include_tag 'base' %>
     <%= yield :javascripts %>
   </body>

@@ -6,4 +6,3 @@ linters:
   SelectorFormat:
     class_convention: ^(?:u|is)\-[a-z][a-zA-Z0-9]*$|^(?!u|is)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$
     class_convention_explanation: should follow SUITCSS naming conventions
-    ignored_names: ['turbolinks-progress-bar']
