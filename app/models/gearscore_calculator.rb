@@ -88,7 +88,6 @@ class GearscoreCalculator
     "twoHand" => 2,
     "mainHand" => 1,
     "offHand" => 1,
-    "ranged" => 0.3164,
     "tabard" => 0
   }.freeze
 
