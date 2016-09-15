@@ -5,10 +5,10 @@ require 'json'
 API_KEY = Rails.application.secrets.armory_api_key
 
 LOCALES = {
-  us: %w(es_MX pt_BR),
-  eu: %w(es_ES fr_FR ru_RU de_DE pt_PT it_IT),
-  kr: %w(ko_KR),
-  tw: %w(zh_TW)
+  us: %w(es pt),
+  eu: %w(es fr ru de pt it),
+  kr: %w(ko),
+  tw: %w(zh)
 }.freeze
 
 desc 'Create Realms from Armory realm status API'
@@ -16,7 +16,7 @@ task create_realms: :environment do
   realms = {}
 
   LOCALES.each do |region, locales|
-    fetch_realms(region, 'en_US').each do |realm|
+    fetch_realms(region, 'en').each do |realm|
       name = realm.fetch('name')
       slug = realm.fetch('slug')
 
@@ -44,9 +44,9 @@ task create_realms: :environment do
 
   # Some Korean connected realms aren't returned independently so they
   # have to be translated based on their slugs
-  fetch_realms('kr', 'en_US').each do |realm|
+  fetch_realms('kr', 'en').each do |realm|
     connected = realm.fetch('connected_realms')
-    locale_connected = fetch_realms('kr', 'ko_KR', realm.fetch('slug')).first.fetch('connected_realms')
+    locale_connected = fetch_realms('kr', 'ko', realm.fetch('slug')).first.fetch('connected_realms')
 
     connected.zip(locale_connected)
       .drop(1) # The first item is the requested realm
