@@ -2,7 +2,8 @@
 - name: Aegwynn
   translations: []
 - name: Aerie Peak
-  translations: []
+  translations:
+  - aerie-peak
 - name: Agamaggan
   translations: []
 - name: Aggramar
@@ -15,11 +16,14 @@
 - name: Alleria
   translations: []
 - name: Altar of Storms
-  translations: []
+  translations:
+  - altar-of-storms
 - name: Alterac Mountains
-  translations: []
+  translations:
+  - alterac-mountains
 - name: Aman'Thul
-  translations: []
+  translations:
+  - amanthul
 - name: Andorhal
   translations: []
 - name: Anetheron
@@ -27,7 +31,8 @@
 - name: Antonidas
   translations: []
 - name: Anub'arak
-  translations: []
+  translations:
+  - anubarak
 - name: Anvilmar
   translations: []
 - name: Arathor
@@ -35,9 +40,11 @@
 - name: Archimonde
   translations: []
 - name: Area 52
-  translations: []
+  translations:
+  - area-52
 - name: Argent Dawn
-  translations: []
+  translations:
+  - argent-dawn
 - name: Arthas
   translations:
   - 阿薩斯
@@ -49,7 +56,8 @@
 - name: Azgalor
   translations: []
 - name: Azjol-Nerub
-  translations: []
+  translations:
+  - azjolnerub
 - name: Azralon
   translations: []
 - name: Azshara
@@ -64,24 +72,30 @@
 - name: Barthilas
   translations: []
 - name: Black Dragonflight
-  translations: []
+  translations:
+  - black-dragonflight
 - name: Blackhand
   translations: []
 - name: Blackrock
   translations: []
 - name: Blackwater Raiders
-  translations: []
+  translations:
+  - blackwater-raiders
 - name: Blackwing Lair
-  translations: []
+  translations:
+  - blackwing-lair
 - name: Blade's Edge
-  translations: []
+  translations:
+  - blades-edge
 - name: Bladefist
   translations: []
 - name: Bleeding Hollow
   translations:
+  - bleeding-hollow
   - 血之谷
 - name: Blood Furnace
-  translations: []
+  translations:
+  - blood-furnace
 - name: Bloodhoof
   translations: []
 - name: Bloodscalp
@@ -90,27 +104,34 @@
   translations: []
 - name: Borean Tundra
   translations:
+  - borean-tundra
   - Борейская тундра
+  - бореиская-тундра
 - name: Boulderfist
   translations: []
 - name: Bronzebeard
   translations: []
 - name: Burning Blade
-  translations: []
+  translations:
+  - burning-blade
 - name: Burning Legion
   translations:
+  - burning-legion
   - 불타는 군단
+  - 불타는-군단
 - name: Caelestrasz
   translations: []
 - name: Cairne
   translations: []
 - name: Cenarion Circle
-  translations: []
+  translations:
+  - cenarion-circle
 - name: Cenarius
   translations:
   - 세나리우스
 - name: Cho'gall
   translations:
+  - chogall
   - Cho’gall
 - name: Chromaggus
   translations: []
@@ -126,13 +147,15 @@
 - name: Dalvengyr
   translations: []
 - name: Dark Iron
-  translations: []
+  translations:
+  - dark-iron
 - name: Darkspear
   translations: []
 - name: Darrowmere
   translations: []
 - name: Dath'Remar
-  translations: []
+  translations:
+  - dathremar
 - name: Dawnbringer
   translations: []
 - name: Deathwing
@@ -140,7 +163,9 @@
   - 데스윙
 - name: Demon Soul
   translations:
+  - demon-soul
   - Alma de demonio
+  - alma-de-demonio
 - name: Dentarg
   translations: []
 - name: Destromath
@@ -159,9 +184,11 @@
   translations:
   - 巨龍之喉
 - name: Drak'Tharon
-  translations: []
+  translations:
+  - draktharon
 - name: Drak'thul
-  translations: []
+  translations:
+  - drakthul
 - name: Draka
   translations: []
 - name: Drakkari
@@ -178,17 +205,21 @@
 - name: Duskwood
   translations: []
 - name: Earthen Ring
-  translations: []
+  translations:
+  - earthen-ring
 - name: Echo Isles
-  translations: []
+  translations:
+  - echo-isles
 - name: Eitrigg
   translations: []
 - name: Eldre'Thalas
-  translations: []
+  translations:
+  - eldrethalas
 - name: Elune
   translations: []
 - name: Emerald Dream
-  translations: []
+  translations:
+  - emerald-dream
 - name: Eonar
   translations: []
 - name: Eredar
@@ -211,13 +242,13 @@
   translations:
   - 冰霜之刺
 - name: Frostmourne
-  translations:
-  - Agonía de Escarcha
+  translations: []
 - name: Frostwolf
   translations: []
 - name: Galakrond
   translations:
   - Галакронд
+  - галакронд
 - name: Gallywix
   translations: []
 - name: Garithos
@@ -236,6 +267,7 @@
 - name: Goldrinn
   translations:
   - Голдринн
+  - голдринн
 - name: Gorefiend
   translations: []
 - name: Gorgonnash
@@ -243,10 +275,13 @@
 - name: Greymane
   translations:
   - Седогрив
+  - седогрив
 - name: Grizzly Hills
-  translations: []
+  translations:
+  - grizzly-hills
 - name: Gul'dan
   translations:
+  - guldan
   - Gul’dan
   - 굴단
 - name: Gundrak
@@ -259,7 +294,6 @@
   translations: []
 - name: Hellscream
   translations:
-  - 헬스크림
   - 地獄吼
 - name: Hydraxis
   translations: []
@@ -274,41 +308,51 @@
 - name: Jaedenar
   translations: []
 - name: Jubei'Thos
-  translations: []
+  translations:
+  - jubeithos
 - name: Kael'thas
-  translations: []
+  translations:
+  - kaelthas
 - name: Kalecgos
   translations: []
 - name: Kargath
   translations: []
 - name: Kel'Thuzad
-  translations: []
+  translations:
+  - kelthuzad
 - name: Khadgar
   translations: []
 - name: Khaz Modan
-  translations: []
+  translations:
+  - khaz-modan
 - name: Khaz'goroth
-  translations: []
+  translations:
+  - khazgoroth
 - name: Kil'jaeden
-  translations: []
+  translations:
+  - kiljaeden
 - name: Kilrogg
   translations: []
 - name: Kirin Tor
-  translations: []
+  translations:
+  - kirin-tor
 - name: Korgath
   translations: []
 - name: Korialstrasz
   translations: []
 - name: Kul Tiras
-  translations: []
+  translations:
+  - kul-tiras
 - name: Laughing Skull
-  translations: []
+  translations:
+  - laughing-skull
 - name: Lethon
   translations: []
 - name: Lightbringer
   translations: []
 - name: Lightning's Blade
-  translations: []
+  translations:
+  - lightnings-blade
 - name: Lightninghoof
   translations: []
 - name: Llane
@@ -324,7 +368,8 @@
 - name: Maiev
   translations: []
 - name: Mal'Ganis
-  translations: []
+  translations:
+  - malganis
 - name: Malfurion
   translations:
   - 말퓨리온
@@ -339,13 +384,16 @@
 - name: Misha
   translations: []
 - name: Mok'Nathal
-  translations: []
+  translations:
+  - moknathal
 - name: Moon Guard
-  translations: []
+  translations:
+  - moon-guard
 - name: Moonrunner
   translations: []
 - name: Mug'thol
-  translations: []
+  translations:
+  - mugthol
 - name: Muradin
   translations: []
 - name: Nagrand
@@ -357,10 +405,10 @@
 - name: Nazjatar
   translations: []
 - name: Nemesis
-  translations:
-  - Némesis
+  translations: []
 - name: Ner'zhul
   translations:
+  - nerzhul
   - Ner’zhul
 - name: Nesingwary
   translations: []
@@ -376,9 +424,11 @@
 - name: Proudmoore
   translations: []
 - name: Quel'Thalas
-  translations: []
+  translations:
+  - quelthalas
 - name: Quel'dorei
   translations:
+  - queldorei
   - 眾星之子
 - name: Ragnaros
   translations: []
@@ -398,15 +448,18 @@
 - name: Saurfang
   translations: []
 - name: Scarlet Crusade
-  translations: []
+  translations:
+  - scarlet-crusade
 - name: Scilla
   translations: []
 - name: Sen'jin
-  translations: []
+  translations:
+  - senjin
 - name: Sentinels
   translations: []
 - name: Shadow Council
-  translations: []
+  translations:
+  - shadow-council
 - name: Shadowmoon
   translations:
   - 暗影之月
@@ -415,17 +468,22 @@
 - name: Shandris
   translations: []
 - name: Shattered Halls
-  translations: []
+  translations:
+  - shattered-halls
 - name: Shattered Hand
-  translations: []
+  translations:
+  - shattered-hand
 - name: Shu'halo
-  translations: []
+  translations:
+  - shuhalo
 - name: Silver Hand
-  translations: []
+  translations:
+  - silver-hand
 - name: Silvermoon
   translations: []
 - name: Sisters of Elune
-  translations: []
+  translations:
+  - sisters-of-elune
 - name: Skullcrusher
   translations: []
 - name: Skywall
@@ -441,7 +499,8 @@
 - name: Staghelm
   translations: []
 - name: Steamwheedle Cartel
-  translations: []
+  translations:
+  - steamwheedle-cartel
 - name: Stonemaul
   translations: []
 - name: Stormrage
@@ -462,15 +521,20 @@
 - name: Thaurissan
   translations: []
 - name: The Forgotten Coast
-  translations: []
+  translations:
+  - the-forgotten-coast
 - name: The Scryers
-  translations: []
+  translations:
+  - the-scryers
 - name: The Underbog
-  translations: []
+  translations:
+  - the-underbog
 - name: The Venture Co
-  translations: []
+  translations:
+  - the-venture-co
 - name: Thorium Brotherhood
-  translations: []
+  translations:
+  - thorium-brotherhood
 - name: Thrall
   translations: []
 - name: Thunderhorn
@@ -480,7 +544,8 @@
 - name: Tichondrius
   translations: []
 - name: Tol Barad
-  translations: []
+  translations:
+  - tol-barad
 - name: Tortheldrin
   translations: []
 - name: Trollbane
@@ -488,7 +553,8 @@
 - name: Turalyon
   translations: []
 - name: Twisting Nether
-  translations: []
+  translations:
+  - twisting-nether
 - name: Uldaman
   translations: []
 - name: Uldum
@@ -502,7 +568,8 @@
 - name: Vashj
   translations: []
 - name: Vek'nilash
-  translations: []
+  translations:
+  - veknilash
 - name: Velen
   translations: []
 - name: Warsong
@@ -518,7 +585,8 @@
 - name: Winterhoof
   translations: []
 - name: Wyrmrest Accord
-  translations: []
+  translations:
+  - wyrmrest-accord
 - name: Ysera
   translations: []
 - name: Ysondre
@@ -527,16 +595,21 @@
   translations: []
 - name: Zul'jin
   translations:
+  - zuljin
   - 줄진
 - name: Zuluhed
   translations: []
 - name: Aggra (Português)
   translations:
+  - aggra-portugues
   - Aggra (Portugiesisch)
+  - aggra-portugiesisch
 - name: Ahn'Qiraj
-  translations: []
+  translations:
+  - ahnqiraj
 - name: Al'Akir
-  translations: []
+  translations:
+  - alakir
 - name: Alonsus
   translations: []
 - name: Ambossar
@@ -545,93 +618,128 @@
   translations:
   - Anacronos
 - name: Arak-arahm
-  translations: []
+  translations:
+  - arakarahm
 - name: Arathi
   translations: []
 - name: Ashenvale
   translations:
   - Ясеневый лес
+  - ясеневыи-лес
 - name: Aszune
   translations: []
 - name: Azuregos
   translations:
   - Азурегос
+  - азурегос
 - name: Blackmoore
   translations: []
 - name: Blackscar
   translations:
   - Черный Шрам
+  - черныи-шрам
 - name: Bloodfeather
   translations: []
 - name: Blutkessel
   translations: []
 - name: Booty Bay
   translations:
+  - booty-bay
   - Пиратская бухта
+  - пиратская-бухта
 - name: Bronze Dragonflight
-  translations: []
+  translations:
+  - bronze-dragonflight
 - name: Burning Steppes
-  translations: []
+  translations:
+  - burning-steppes
 - name: C'Thun
-  translations: []
+  translations:
+  - cthun
 - name: Chamber of Aspects
-  translations: []
+  translations:
+  - chamber-of-aspects
 - name: Chants éternels
-  translations: []
+  translations:
+  - chants-eternels
 - name: Colinas Pardas
   translations:
+  - colinas-pardas
   - Spirestone
 - name: Confrérie du Thorium
-  translations: []
+  translations:
+  - confrerie-du-thorium
 - name: Conseil des Ombres
-  translations: []
+  translations:
+  - conseil-des-ombres
 - name: Culte de la Rive noire
-  translations: []
+  translations:
+  - culte-de-la-rive-noire
 - name: Darkmoon Faire
-  translations: []
+  translations:
+  - darkmoon-faire
 - name: Darksorrow
   translations: []
 - name: Das Konsortium
-  translations: []
+  translations:
+  - das-konsortium
 - name: Das Syndikat
-  translations: []
+  translations:
+  - das-syndikat
 - name: Deathguard
   translations:
   - Страж Смерти
+  - страж-смерти
 - name: Deathweaver
   translations:
   - Ткач Смерти
+  - ткач-смерти
 - name: Deepholm
   translations:
   - Deephome
   - Подземье
+  - подземье
 - name: Defias Brotherhood
-  translations: []
+  translations:
+  - defias-brotherhood
 - name: Der Mithrilorden
-  translations: []
+  translations:
+  - der-mithrilorden
 - name: Der Rat von Dalaran
-  translations: []
+  translations:
+  - der-rat-von-dalaran
 - name: Der abyssische Rat
-  translations: []
+  translations:
+  - der-abyssische-rat
 - name: Die Aldor
-  translations: []
+  translations:
+  - die-aldor
 - name: Die Arguswacht
   translations:
+  - die-arguswacht
   - La Veille d'Argus
+  - la-veille-dargus
 - name: Die Nachtwache
-  translations: []
+  translations:
+  - die-nachtwache
 - name: Die Silberne Hand
-  translations: []
+  translations:
+  - die-silberne-hand
 - name: Die Todeskrallen
-  translations: []
+  translations:
+  - die-todeskrallen
 - name: Die ewige Wacht
-  translations: []
+  translations:
+  - die-ewige-wacht
 - name: Drek'Thar
-  translations: []
+  translations:
+  - drekthar
 - name: Dun Modr
-  translations: []
+  translations:
+  - dun-modr
 - name: Dun Morogh
-  translations: []
+  translations:
+  - dun-morogh
 - name: Echsenkessel
   translations: []
 - name: Emeriss
@@ -639,11 +747,14 @@
 - name: Eversong
   translations:
   - Вечная Песня
+  - вечная-песня
 - name: Festung der Stürme
-  translations: []
+  translations:
+  - festung-der-sturme
 - name: Fordragon
   translations:
   - Дракономор
+  - дракономор
 - name: Forscherliga
   translations: []
 - name: Frostwhisper
@@ -653,45 +764,60 @@
 - name: Gordunni
   translations:
   - Гордунни
+  - гордунни
 - name: Grim Batol
-  translations: []
+  translations:
+  - grim-batol
 - name: Grom
   translations:
   - Гром
+  - гром
 - name: Hellfire
   translations: []
 - name: Howling Fjord
   translations:
+  - howling-fjord
   - Ревущий фьорд
+  - ревущии-фьорд
 - name: Karazhan
   translations: []
 - name: Kazzak
   translations: []
 - name: Kor'gall
-  translations: []
+  translations:
+  - korgall
 - name: Krag'jin
-  translations: []
+  translations:
+  - kragjin
 - name: Krasus
   translations: []
 - name: Kult der Verdammten
-  translations: []
+  translations:
+  - kult-der-verdammten
 - name: La Croisade écarlate
-  translations: []
+  translations:
+  - la-croisade-ecarlate
 - name: Les Clairvoyants
-  translations: []
+  translations:
+  - les-clairvoyants
 - name: Les Sentinelles
-  translations: []
+  translations:
+  - les-sentinelles
 - name: Lich King
   translations:
+  - lich-king
   - Король-лич
+  - корольлич
 - name: Lordaeron
   translations: []
 - name: Los Errantes
-  translations: []
+  translations:
+  - los-errantes
 - name: Madmortem
   translations: []
 - name: Marécage de Zangar
-  translations: []
+  translations:
+  - marecage-de-zangar
 - name: Mazrigos
   translations: []
 - name: Minahonda
@@ -705,7 +831,8 @@
 - name: Neptulon
   translations: []
 - name: Nera'thor
-  translations: []
+  translations:
+  - nerathor
 - name: Nethersturm
   translations: []
 - name: Nozdormu
@@ -714,7 +841,9 @@
   translations: []
 - name: Pozzo dell'Eternità
   translations:
+  - pozzo-delleternita
   - Well of Eternity
+  - well-of-eternity
 - name: Rajaxx
   translations: []
 - name: Rashgarroth
@@ -722,20 +851,25 @@
 - name: Razuvious
   translations:
   - Разувий
+  - разувии
 - name: Sanguino
   translations: []
 - name: Scarshield Legion
   translations:
+  - scarshield-legion
   - Légion du Bouclier balafré
+  - legion-du-bouclier-balafre
 - name: Shattrath
   translations: []
 - name: Shen'dralar
-  translations: []
+  translations:
+  - shendralar
 - name: Sinstralis
   translations: []
 - name: Soulflayer
   translations:
   - Свежеватель Душ
+  - свежеватель-душ
 - name: Sporeggar
   translations: []
 - name: Sunstrider
@@ -747,42 +881,52 @@
 - name: Talnivarr
   translations: []
 - name: Tarren Mill
-  translations: []
+  translations:
+  - tarren-mill
 - name: Teldrassil
   translations: []
 - name: Temple noir
-  translations: []
+  translations:
+  - temple-noir
 - name: Terrordar
   translations: []
 - name: The Maelstrom
-  translations: []
+  translations:
+  - the-maelstrom
 - name: The Sha'tar
-  translations: []
+  translations:
+  - the-shatar
 - name: Theradras
   translations: []
 - name: Thermaplugg
   translations:
   - Термоштепсель
+  - термоштепсель
 - name: Throk'Feroth
-  translations: []
+  translations:
+  - throkferoth
 - name: Tirion
   translations: []
 - name: Todeswache
   translations: []
 - name: Twilight's Hammer
-  translations: []
+  translations:
+  - twilights-hammer
 - name: Tyrande
   translations: []
 - name: Ulduar
   translations: []
 - name: Un'Goro
-  translations: []
+  translations:
+  - ungoro
 - name: Varimathras
   translations: []
 - name: Vek'lor
-  translations: []
+  translations:
+  - veklor
 - name: Vol'jin
-  translations: []
+  translations:
+  - voljin
 - name: Wrathbringer
   translations:
   - 憤怒使者
@@ -791,18 +935,23 @@
 - name: Zenedar
   translations: []
 - name: Zirkel des Cenarius
-  translations: []
+  translations:
+  - zirkel-des-cenarius
 - name: Chillwind Point
   translations:
+  - chillwind-point
   - 冰風崗哨
 - name: Crystalpine Stinger
   translations:
+  - crystalpine-stinger
   - 水晶之刺
 - name: Demon Fall Canyon
   translations:
+  - demon-fall-canyon
   - 屠魔山谷
 - name: Light's Hope
   translations:
+  - lights-hope
   - 聖光之願
 - name: Menethil
   translations:
@@ -812,16 +961,21 @@
   - 夜空之歌
 - name: Order of the Cloud Serpent
   translations:
+  - order-of-the-cloud-serpent
   - 雲蛟衛
 - name: Silverwing Hold
   translations:
+  - silverwing-hold
   - 銀翼要塞
 - name: Sundown Marsh
   translations:
+  - sundown-marsh
   - 日落沼澤
 - name: World Tree
   translations:
+  - world-tree
   - 世界之樹
 - name: Zealot Blade
   translations:
+  - zealot-blade
   - 狂熱之刃

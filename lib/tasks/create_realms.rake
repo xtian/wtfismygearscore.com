@@ -17,9 +17,11 @@ task create_realms: :environment do
 
   LOCALES.each do |region, locales|
     fetch_realms(region, 'en_US').each do |realm|
-      # Use the en_US realm name as the default
       name = realm.fetch('name')
-      realms[name] ||= []
+      slug = realm.fetch('slug')
+
+      # Use the en_US realm name as the default
+      realms[name] = name.casecmp(slug).zero? ? [] : [slug]
 
       # Check each locale for a different returned name
       locales.each do |locale|
@@ -27,12 +29,15 @@ task create_realms: :environment do
 
         # Realms must be checked individually as the status API does not
         # include a unique ID or in a consistent order
-        locale_name = fetch_realms(region, locale, realm.fetch('slug')).first.fetch('name')
+        locale_realm = fetch_realms(region, locale, slug).first
+        locale_name = locale_realm.fetch('name')
+        locale_slug = locale_realm.fetch('slug')
 
-        if name.casecmp(locale_name).nonzero? && !locale_name.in?(realms[name])
-          puts "Translation found: #{locale_name}"
-          realms[name] << locale_name
-        end
+        next if name.casecmp(locale_name).zero? || locale_name.in?(realms[name])
+
+        puts "Translation found: #{locale_name}"
+        realms[name] << locale_name
+        realms[name] << locale_slug if locale_name.casecmp(locale_slug).nonzero?
       end
     end
   end

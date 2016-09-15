@@ -18,7 +18,10 @@ class Character < ApplicationRecord
   # @param name [String]
   # @return [Character] cached character or unsaved character initialized from params
   def self.from_params(region:, realm:, name:)
-    character = with_realm(realm).find_by(region: region, name: name)
+    character = joins('JOIN realms ON realms.name = characters.realm')
+      .where('characters.realm = ? OR ? = ANY(realms.translations)', realm, realm)
+      .find_by(region: region, name: name)
+
     character || new(region: region, realm: realm, name: name)
   end
 
@@ -52,17 +55,4 @@ class Character < ApplicationRecord
     fields[:score] = score
     update!(fields)
   end
-
-  def self.with_realm(realm)
-    query = "characters.realm = :realm OR :realm = ANY(realms.translations)"
-    undasherized = realm.tr('-', ' ')
-
-    joined = joins('JOIN realms ON realms.name = characters.realm')
-    filtered = joined.where(query, realm: realm)
-
-    return filtered if realm.eql?(undasherized)
-
-    filtered.or(joined.where(query, realm: undasherized))
-  end
-  private_class_method :with_realm
 end
