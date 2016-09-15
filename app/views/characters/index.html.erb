@@ -7,9 +7,11 @@
   <%= stylesheet_link_tag 'ranking' %>
 <% end %>
 
-<aside class="Burst Burst--fail">
-  <h1 class="Burst-text">Sup?</h1>
-</aside>
+<a href="#recent-comments">
+  <aside class="Burst Burst--fail">
+    <h1 class="Burst-text">Sup?</h1>
+  </aside>
+</a>
 
 <nav class="SubHeader">
   <ul class="Navigation">
@@ -75,7 +77,7 @@
 
 <% content_for(:secondary_content) do %>
   <% unless realm %>
-    <section class="SecondaryContent-panel">
+    <section class="SecondaryContent-panel" id="recent-comments">
       <%= render 'recent_comments', comments: @ranking.comments %>
     </section>
   <% end %>
