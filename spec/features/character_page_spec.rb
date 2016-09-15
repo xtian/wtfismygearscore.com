@@ -13,7 +13,9 @@ RSpec.feature 'Character page' do
     stub_character_request
 
     Realm.create!(name: 'Shadowmoon')
-    Realm.create!(name: 'Demon Soul', translations: ['Alma de demonio'])
+
+    translations = ['demon-soul', 'Alma de demonio', 'alma-de-demonio']
+    Realm.create!(name: 'Demon Soul', translations: translations)
   end
 
   scenario 'User visits character page' do
