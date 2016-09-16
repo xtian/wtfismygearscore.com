@@ -100,7 +100,7 @@ class GearscoreCalculator
     [91.45, 0.5],
     [81.375, 0.8125],
     [81.375, 0.8125]
-  ].freeze
+  ].map(&:freeze).freeze
 
   VANILLA_QUALITY_MODIFIERS = [
     nil,
@@ -111,5 +111,5 @@ class GearscoreCalculator
     [26, 0.923],
     [81.375, 0.8125],
     [81.375, 0.8125]
-  ].freeze
+  ].map(&:freeze).freeze
 end
