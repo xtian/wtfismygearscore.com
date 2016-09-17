@@ -6,8 +6,6 @@ class Character < ApplicationRecord
 
   has_many :comments
 
-  upsert_keys %i(name realm region)
-
   validates :class_name, :level, :name, :realm, :region, :score, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
   validates :score, numericality: { only_integer: true }
@@ -51,10 +49,10 @@ class Character < ApplicationRecord
   # @param score [Fixnum] character's gearscore
   # @return [void]
   def update_from_armory(character, score)
-    self.score = score
-    self.attributes = %i(avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm)
+    fields = %i(avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm)
       .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
 
-    upsert || raise(ActiveRecord::RecordInvalid)
+    fields[:score] = score
+    update!(fields)
   end
 end

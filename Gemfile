@@ -4,7 +4,6 @@ ruby '2.3.1'
 
 gem 'rails', '~> 5.0.0'
 
-gem 'active_record_upsert', git: 'https://github.com/phoffer/active_record_upsert', ref: '91482c6' # native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code

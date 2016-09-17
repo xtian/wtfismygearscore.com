@@ -1,14 +1,4 @@
 GIT
-  remote: https://github.com/phoffer/active_record_upsert
-  revision: 91482c622f7529d27e012b3991f52bcd05045c94
-  ref: 91482c6
-  specs:
-    active_record_upsert (0.6.0)
-      activerecord (~> 5.0.0.beta2)
-      arel (~> 7.0)
-      pg (~> 0.18)
-
-GIT
   remote: https://github.com/rails/sass-rails.git
   revision: dfbcc6a53653d8908007e26324a0f299f026ec4f
   ref: dfbcc6a
@@ -355,7 +345,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_record_upsert!
   addressable
   autoprefixer-rails
   babel-transpiler

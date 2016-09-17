@@ -136,11 +136,9 @@ RSpec.describe Character do
       )
     end
 
-    before do
-      subject.update_from_armory(character, 100)
-    end
-
     it 'stores score and information from Armory::Character' do
+      subject.update_from_armory(character, 100)
+
       expect(subject.new_record?).to eq(false)
 
       expect(subject.guild_name).to eq('Green Street Elite')
@@ -151,16 +149,6 @@ RSpec.describe Character do
       %i(avg_ilvl class_name faction level max_ilvl min_ilvl).each do |field|
         expect(subject.public_send(field)).to eq(character.public_send(field))
       end
-    end
-
-    it 'does not raise error for duplicate records' do
-      duplicate = described_class.new(
-        name: subject.name,
-        realm: subject.realm,
-        region: subject.region
-      )
-
-      expect { duplicate.update_from_armory(character, 100) }.not_to raise_error
     end
   end
 end
