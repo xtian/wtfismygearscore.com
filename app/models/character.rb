@@ -54,5 +54,7 @@ class Character < ApplicationRecord
 
     fields[:score] = score
     update!(fields)
+  rescue ActiveRecord::RecordNotUnique
+    nil
   end
 end
