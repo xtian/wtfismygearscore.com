@@ -5,9 +5,17 @@ en:
   comment:
     posted_successfully: Your comment was posted successfully!
 
+  description:
+    home: World of Warcraft GearScore rankings, WIN/FAIL ratings, and character comments
+    character: World of Warcraft GearScore and comments for %{info} of %{server}
+    ranking: World of Warcraft highest %{server} GearScore rankings
+
   page:
     next: Next >
     prev: < Prev
+
+  title:
+    ranking: "%{server} WoW Character Ranking"
 
   activerecord:
     errors:

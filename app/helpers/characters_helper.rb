@@ -37,11 +37,6 @@ module CharactersHelper
     characters_path(*server_parts, before: cursor, per_page: params[:per_page])
   end
 
-  # @return [String]
-  def ranking_title
-    [region, realm].compact.join(REGION_REALM_SEPARATOR) + ' WoW Character Ranking'
-  end
-
   # @return [String, nil]
   def realm
     @_realm ||= params[:realm]&.titleize
@@ -51,6 +46,11 @@ module CharactersHelper
   def region
     region = params[:region]
     @_region ||= (world_page? ? region.titleize : region.upcase)
+  end
+
+  # @return [String]
+  def server
+    @_server ||= [region, realm].compact.join(REGION_REALM_SEPARATOR)
   end
 
   # Infers region and realm from page params if they are not present on

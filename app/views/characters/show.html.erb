@@ -1,4 +1,5 @@
 <%# frozen_string_literal: true %>
+<% content_for(:page_description, t('description.character', server: server, info: @character.info)) %>
 <% content_for(:page_title, "(#{@character.rating.upcase}) #{@character.info}") %>
 
 <% content_for(:head) do %>
