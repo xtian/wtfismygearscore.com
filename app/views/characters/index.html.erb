@@ -1,5 +1,6 @@
 <%# frozen_string_literal: true %>
-<% content_for(:page_title, ranking_title) %>
+<% content_for(:page_description, t('description.ranking', server: server)) %>
+<% content_for(:page_title, t('title.ranking', server: server)) %>
 
 <% content_for(:head) do %>
   <link rel="canonical" href="<%= @ranking.canonical_url %>">
