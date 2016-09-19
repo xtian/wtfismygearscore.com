@@ -8,6 +8,7 @@ build:
     - RAILS_ENV=test
 
   commands:
+    - gem install bundler --version 1.13.1 --conservative
     - bin/bundle install --jobs $(nproc) --without development production --path .bundle
     - bin/rake rubocop
     - bin/rake eslint:run
@@ -17,6 +18,7 @@ build:
 
 cache:
   mount:
+    - /var/lib/gems/2.3.0
     - .bundle
     - .git
 
