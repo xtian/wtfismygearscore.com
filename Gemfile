@@ -2,9 +2,11 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
+
 gem 'rails', '~> 5.0.0'
 
-gem 'active_record_upsert', git: 'https://github.com/phoffer/active_record_upsert', ref: '91482c6' # native PG upsert
+gem 'active_record_upsert', github: 'phoffer/active_record_upsert', ref: '91482c6' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code
@@ -15,7 +17,7 @@ gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
 gem 'ruby_identicon', require: false # Avatar generator
-gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', ref: 'dfbcc6a' # Use SCSS for stylesheets
+gem 'sass-rails', github: 'rails/sass-rails', ref: 'dfbcc6a' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
