@@ -2,7 +2,9 @@
   "name": "WTF is My Gear Score?",
   "repository": "https://github.com/xtian/wtfismygearscore.com",
   "scripts": {
-    "postdeploy": "bin/rake db:migrate"
+    "dokku": {
+      "postdeploy": "bin/rake db:migrate"
+    }
   },
   "env": {
     "RAILS_ENV": "production",
