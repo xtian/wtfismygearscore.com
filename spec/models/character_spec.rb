@@ -164,7 +164,13 @@ RSpec.describe Character do
     end
 
     it 'handles saved records' do
-      expect { subject.update_from_armory(character, 100) }.not_to raise_error
+      subject.update! updated_at: 1.week.ago
+
+      expect {
+        subject.update_from_armory(character, 100)
+      }.not_to raise_error
+
+      expect(subject.updated_at).to be > 1.week.ago
     end
   end
 end
