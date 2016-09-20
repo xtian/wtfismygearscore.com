@@ -18,7 +18,6 @@ build:
 
 cache:
   mount:
-    - /var/lib/gems/2.3.0
     - .bundle
     - .git
 
