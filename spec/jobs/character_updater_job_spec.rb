@@ -17,12 +17,5 @@ RSpec.describe CharacterUpdaterJob do
 
       expect { described_class.perform_now(character) }.not_to raise_error
     end
-
-    it 'handles uniqueness errors' do
-      character = instance_double('Character', updated_at: Time.current)
-      expect(CharacterUpdater).to receive(:call).and_raise(ActiveRecord::RecordNotUnique)
-
-      expect { described_class.perform_now(character) }.not_to raise_error
-    end
   end
 end

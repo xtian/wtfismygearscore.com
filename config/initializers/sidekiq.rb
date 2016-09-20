@@ -7,3 +7,12 @@ Sidekiq.default_worker_options = {
 }
 
 SidekiqUniqueJobs.config.unique_args_enabled = true
+
+Sidekiq.configure_server do |config|
+  config.on(:startup) do
+    unless Rails.env.test?
+      MedianGearscoreUpdaterJob.perform_later
+      RefreshStaleCharactersJob.perform_later
+    end
+  end
+end
