@@ -22,7 +22,7 @@ class Armory
 
     # @return [Fixnum] HTTP status code
     def status
-      return 404 if response.status == 200 && body == {}
+      return 500 if response.status == 200 && body == {}
       response.status
     end
 

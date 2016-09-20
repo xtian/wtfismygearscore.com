@@ -32,9 +32,9 @@ RSpec.describe Armory::Response do
   end
 
   describe '#status' do
-    it 'returns 404 for successful responses with an empty body' do
+    it 'returns 500 for successful responses with an empty body' do
       subject = described_class.new(faraday_response(200, '{}'))
-      expect(subject.status).to eq(404)
+      expect(subject.status).to eq(500)
     end
 
     it 'returns status of the original response' do
