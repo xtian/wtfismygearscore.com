@@ -35,17 +35,21 @@ RSpec.describe Character do
     end
 
     it 'returns a character for the passed params' do
-      character = fabricate_character(params)
+      character = Fabricate(:character, params)
       found = described_class.from_params(params)
 
       expect(found).to eq(character)
     end
 
     it 'returns a character using a translated realm' do
-      character = Fabricate(:character, params)
       Realm.create!(name: params[:realm], translations: [params[:realm].reverse])
+      character = Fabricate(:character, params)
 
-      found = described_class.from_params(params)
+      found = described_class.from_params(
+        name: params[:name],
+        realm: params[:realm].reverse,
+        region: params[:region]
+      )
 
       expect(found).to eq(character)
     end
