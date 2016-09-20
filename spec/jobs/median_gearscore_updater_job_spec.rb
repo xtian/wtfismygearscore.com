@@ -4,8 +4,8 @@ require 'rails_helper'
 RSpec.describe MedianGearscoreUpdaterJob do
   describe '#perform' do
     it 'calculates a median for each level present in DB' do
-      fabricate_character(level: 1)
-      fabricate_character(level: 100)
+      Fabricate(:character, level: 1)
+      Fabricate(:character, level: 100)
 
       expect(MedianGearscore.count).to eq(0)
 

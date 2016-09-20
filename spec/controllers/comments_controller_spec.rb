@@ -12,7 +12,7 @@ RSpec.describe CommentsController do
     end
 
     it 'returns an error flash message if comment is invalid' do
-      fabricate_character(character_info)
+      Fabricate(:character, character_info)
 
       post :create, params: character_info.merge(comment: { body: nil })
 

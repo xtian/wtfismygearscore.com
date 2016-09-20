@@ -21,7 +21,7 @@ RSpec.describe MedianGearscore do
     subject { described_class.new(level: 100) }
 
     it 'calculates median score for odd number of characters' do
-      fabricate_character(level: 100, score: 100)
+      Fabricate(:character, level: 100, score: 100)
 
       subject.calculate
 
@@ -29,8 +29,8 @@ RSpec.describe MedianGearscore do
     end
 
     it 'calculates median score for even number of characters' do
-      fabricate_character(level: 100, score: 100)
-      fabricate_character(level: 100, score: 200)
+      Fabricate(:character, level: 100, score: 100)
+      Fabricate(:character, level: 100, score: 200)
 
       subject.calculate
 
