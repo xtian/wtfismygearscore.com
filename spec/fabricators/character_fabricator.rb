@@ -13,8 +13,8 @@ Fabricator(:character) do
     sequence(:name) { |i| "Character#{i}" }
   end
 
-  after_build do |character|
-    character.realm ||= Fabricate.sequence(:realm) { |i| "Realm#{i}" }
+  realm do
+    sequence(:realm) { |i| "Realm#{i}" }
   end
 
   after_save { |character| Realm.find_or_create_by!(name: character.realm) }
