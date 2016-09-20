@@ -58,6 +58,7 @@ class Character < ApplicationRecord
     if new_record?
       upsert!
     else
+      touch
       save!
     end
   end
