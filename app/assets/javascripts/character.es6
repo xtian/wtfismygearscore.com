@@ -1,6 +1,6 @@
 (() => {
   let cable = ActionCable.createConsumer();
-  let selector = '.js-characterContainer'
+  let selector = '.js-characterContainer';
 
   let updater = cable.subscriptions.create('CharacterUpdateChannel', {
     connected() {
