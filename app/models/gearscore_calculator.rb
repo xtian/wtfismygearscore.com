@@ -70,25 +70,25 @@ class GearscoreCalculator
   # Some slots are allocated a greater quantity of stats so this accounts
   # for that
   SLOT_MODIFIERS = {
-    "head" => 1,
-    "neck" => 0.5625,
-    "shoulder" => 0.75,
-    "shirt" => 0,
+    "back" => 0.5625,
     "chest" => 1,
-    "waist" => 0.75,
-    "legs" => 1,
     "feet" => 0.75,
-    "wrist" => 0.5625,
-    "hands" => 0.75,
     "finger1" => 0.5625,
     "finger2" => 0.5625,
+    "hands" => 0.75,
+    "head" => 1,
+    "legs" => 1,
+    "mainHand" => 1,
+    "neck" => 0.5625,
+    "offHand" => 1,
+    "shirt" => 0,
+    "shoulder" => 0.75,
+    "tabard" => 0,
     "trinket1" => 0.5625,
     "trinket2" => 0.5625,
-    "back" => 0.5625,
     "twoHand" => 2,
-    "mainHand" => 1,
-    "offHand" => 1,
-    "tabard" => 0
+    "waist" => 0.75,
+    "wrist" => 0.5625
   }.freeze
 
   QUALITY_MODIFIERS = [
