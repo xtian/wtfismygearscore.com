@@ -2,6 +2,8 @@
 
 [![Build Status](https://drone.xtian.us/api/badges/xtian/wtfismygearscore.com/status.svg)](https://drone.xtian.us/xtian/wtfismygearscore.com) [![Code Climate](https://codeclimate.com/github/xtian/wtfismygearscore.com/badges/gpa.svg)](https://codeclimate.com/github/xtian/wtfismygearscore.com)
 
+> **WTF is My Gear Score?** is an online implementation of the formula from the popular yet oft-maligned GearScore addon for World of Warcraft, which quantifies the quality of a character's gear. We use the scores calculated to rank the top characters by region and realm.
+
 ## Setup
 
 First, install [Homebrew](http://brew.sh).
