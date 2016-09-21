@@ -10,7 +10,7 @@ class CharactersController < ApplicationController
     @ranking = RankingQuery.call(
       cursor: params[:after] || params[:before],
       page_direction: page_direction,
-      per_page: per_page(50),
+      per_page: per_page(25),
       realm: params[:realm],
       region: region
     )
