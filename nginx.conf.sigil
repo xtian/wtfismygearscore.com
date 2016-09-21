@@ -31,8 +31,11 @@ server {
   charset utf-8;
 
   gzip on;
-  gzip_min_length 1100;
   gzip_buffers 4 32k;
+  gzip_comp_level 6;
+  gzip_min_length 1100;
+  gzip_static on;
+  gzip_vary on;
   gzip_types
     application/atom+xml
     application/javascript
@@ -58,9 +61,6 @@ server {
     text/vtt
     text/x-component
     text/x-cross-domain-policy;
-
-  gzip_vary on;
-  gzip_comp_level 6;
 
   location ~* \.(?:css|js|gif|ico|jpg|jpeg|png|svg|svgz)$ {
     expires max;
