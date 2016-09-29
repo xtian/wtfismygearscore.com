@@ -3,6 +3,7 @@
 # Wraps {CharacterUpdater} and {CharacterUpdateBroadcaster} in a background job
 class CharacterUpdaterJob < ApplicationJob
   rescue_from ActiveJob::DeserializationError, with: :log_error
+  rescue_from ActiveRecord::RecordNotUnique, with: :log_error
   rescue_from Armory::ServerError, with: :log_error
 
   # @param character [Character] character to check for updates
