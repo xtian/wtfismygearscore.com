@@ -19,11 +19,17 @@ class Akismet
   # @raise [StandardError] if request is considered invalid
   # @see https://akismet.com/development/api/#comment-check Akismet Documentation
   def spam?(comment)
-    params = params_for(comment)
-    response = make_request(params)
+    response = make_request('comment-check', comment)
 
     raise response.headers.fetch('X-akismet-debug-help') if response.body.eql?('invalid')
     response.body.eql?('true')
+  end
+
+  # @param comment [Comment] posted comment
+  # @return [void]
+  # @see https://akismet.com/development/api/#submit-spam Akismet Documentation
+  def spam!(comment)
+    make_request('submit-spam', comment)
   end
 
   private
@@ -34,10 +40,10 @@ class Akismet
     @_faraday ||= Faraday.new(url: "https://#{key}.rest.akismet.com")
   end
 
-  def make_request(params)
+  def make_request(url, comment)
     faraday.get do |req|
-      req.url '/1.1/comment-check'
-      req.params = params
+      req.url "/1.1/#{url}"
+      req.params = params_for(comment)
     end
   end
 

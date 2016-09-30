@@ -5,6 +5,18 @@ require 'akismet'
 RSpec.describe Akismet do
   subject { described_class.new(is_test: true, key: 'foo', url: 'bar') }
 
+  let(:comment) do
+    instance_double(
+      'Comment',
+      body: 'body',
+      created_at: Time.current,
+      poster_name: 'poster-name',
+      poster_ip_address: IPAddr.new('0.0.0.0'),
+      referrer: 'r',
+      user_agent: 'ua'
+    )
+  end
+
   describe '#new' do
     it 'raises an argument error if key is not provided' do
       expect { described_class.new(is_test: '', key: nil, url: '') }
@@ -18,18 +30,6 @@ RSpec.describe Akismet do
   end
 
   describe '#spam?' do
-    let(:comment) do
-      instance_double(
-        'Comment',
-        body: 'body',
-        created_at: Time.current,
-        poster_name: 'poster-name',
-        poster_ip_address: IPAddr.new('0.0.0.0'),
-        referrer: 'r',
-        user_agent: 'ua'
-      )
-    end
-
     it 'returns true if Akismet considers the comment spam' do
       url = %r{
         https://foo\.rest\.akismet\.com/.+/comment-check
@@ -55,6 +55,22 @@ RSpec.describe Akismet do
       expect {
         subject.spam?(comment)
       }.to raise_error('foo')
+    end
+  end
+
+  describe '#spam!' do
+    it 'submits comment as spam' do
+      url = %r{
+        https://foo\.rest\.akismet\.com/.+/submit-spam
+        \?blog=bar&comment_author=poster-name&comment_content=body&comment_date_gmt=.+Z
+        &is_test=true&referrer=r&user_agent=ua&user_ip=0.0.0.0
+      }x
+
+      spam_submission = stub_request(:get, url)
+
+      subject.spam!(comment)
+
+      expect(spam_submission).to have_been_requested
     end
   end
 end
