@@ -65,7 +65,11 @@ class CharacterQuery
   end
 
   def fetch_comments
-    character.comments.limit(per_page).offset(offset).order(created_at: :desc)
+    character.comments
+      .select(:body, :created_at, :poster_name, :poster_ip_address)
+      .limit(per_page)
+      .offset(offset)
+      .order(created_at: :desc)
   end
 
   def offset
