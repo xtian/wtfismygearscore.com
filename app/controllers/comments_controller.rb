@@ -4,16 +4,18 @@ class CommentsController < ApplicationController
     comment = Character.find_by!(params.permit(:region, :realm, :name))
       .create_comment(comment_params)
 
-    CommentPostedJob.perform_later(comment, request.referer, request.user_agent) if comment.valid?
+    CommentPostedJob.perform_later(comment) if comment.valid?
     redirect_back(redirect_options(comment))
   end
 
   private
 
   def comment_params
-    hash = params.require(:comment).permit(:poster_name, :body)
-    hash[:poster_ip_address] = request.remote_ip
-    hash
+    params.require(:comment).permit(:poster_name, :body).tap do |hash|
+      hash[:poster_ip_address] = request.remote_ip
+      hash[:referrer] = request.referer
+      hash[:user_agent] = request.user_agent
+    end
   end
 
   def redirect_options(comment)

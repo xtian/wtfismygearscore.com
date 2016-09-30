@@ -15,17 +15,21 @@ class Akismet
   end
 
   # @param comment [Comment] posted comment
-  # @param referrer [String] referrer for comment POST request
-  # @param user_agent [String] User agent string for user's browser
   # @return [Boolean] whether passed info is detected as spam
   # @raise [StandardError] if request is considered invalid
   # @see https://akismet.com/development/api/#comment-check Akismet Documentation
-  def spam?(comment, referrer:, user_agent:)
-    params = params_for(comment, referrer, user_agent)
-    response = make_request(params)
+  def spam?(comment)
+    response = make_request('comment-check', comment)
 
     raise response.headers.fetch('X-akismet-debug-help') if response.body.eql?('invalid')
     response.body.eql?('true')
+  end
+
+  # @param comment [Comment] posted comment
+  # @return [void]
+  # @see https://akismet.com/development/api/#submit-spam Akismet Documentation
+  def spam!(comment)
+    make_request('submit-spam', comment)
   end
 
   private
@@ -36,22 +40,22 @@ class Akismet
     @_faraday ||= Faraday.new(url: "https://#{key}.rest.akismet.com")
   end
 
-  def make_request(params)
+  def make_request(url, comment)
     faraday.get do |req|
-      req.url '/1.1/comment-check'
-      req.params = params
+      req.url "/1.1/#{url}"
+      req.params = params_for(comment)
     end
   end
 
-  def params_for(comment, referrer, user_agent)
+  def params_for(comment)
     {
       blog: url,
       comment_author: comment.poster_name,
       comment_content: comment.body,
       comment_date_gmt: comment.created_at.iso8601,
       is_test: is_test,
-      referrer: referrer,
-      user_agent: user_agent,
+      referrer: comment.referrer,
+      user_agent: comment.user_agent,
       user_ip: comment.poster_ip_address
     }
   end
