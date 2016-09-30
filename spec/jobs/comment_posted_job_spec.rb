@@ -12,7 +12,7 @@ RSpec.describe CommentPostedJob do
       expect(RecentComment).not_to receive(:refresh)
       expect(CommentNotifier).not_to receive(:call)
 
-      subject.perform(comment, 'foo', 'bar')
+      subject.perform(comment)
     end
 
     it 'refreshes recent comments' do
@@ -20,7 +20,7 @@ RSpec.describe CommentPostedJob do
       expect(RecentComment).to receive(:refresh)
       expect(CommentNotifier).to receive(:call)
 
-      subject.perform(comment, 'foo', 'bar')
+      subject.perform(comment)
     end
   end
 end

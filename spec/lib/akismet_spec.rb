@@ -24,7 +24,9 @@ RSpec.describe Akismet do
         body: 'body',
         created_at: Time.current,
         poster_name: 'poster-name',
-        poster_ip_address: IPAddr.new('0.0.0.0')
+        poster_ip_address: IPAddr.new('0.0.0.0'),
+        referrer: 'r',
+        user_agent: 'ua'
       )
     end
 
@@ -37,13 +39,13 @@ RSpec.describe Akismet do
 
       stub_request(:get, url).to_return(body: 'true')
 
-      expect(subject.spam?(comment, referrer: 'r', user_agent: 'ua')).to eq(true)
+      expect(subject.spam?(comment)).to eq(true)
     end
 
     it 'returns false if Akismet considers the comment valid' do
       stub_request(:get, %r{https://.+\.akismet\.com/.+/comment-check})
 
-      expect(subject.spam?(comment, referrer: '', user_agent: '')).to eq(false)
+      expect(subject.spam?(comment)).to eq(false)
     end
 
     it 'handles errors' do
@@ -51,7 +53,7 @@ RSpec.describe Akismet do
         .to_return(body: 'invalid', headers: { 'X-akismet-debug-help' => 'foo' })
 
       expect {
-        subject.spam?(comment, referrer: '', user_agent: '')
+        subject.spam?(comment)
       }.to raise_error('foo')
     end
   end
