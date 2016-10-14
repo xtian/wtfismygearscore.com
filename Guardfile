@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
 guard :livereload do
   extensions = {
     css: :css,
@@ -36,3 +37,4 @@ guard :livereload do
   watch(%r{app/helpers/.+\.rb})
   watch(%r{config/locales/.+\.yml})
 end
+# rubocop:enable Metrics/BlockLength
