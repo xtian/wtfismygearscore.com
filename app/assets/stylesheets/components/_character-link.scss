@@ -7,7 +7,7 @@
       &:hover,
       &:active,
       &:focus {
-        color: saturate(lighten($color, 15%), 100%);
+        color: darken($color, 30%);
       }
     }
   }
