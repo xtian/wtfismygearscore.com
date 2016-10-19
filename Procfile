@@ -1,3 +1,3 @@
-web: bin/rails server --port ${PORT:-3000} --environment ${RAILS_ENV:-development}
+web: bin/puma -C config/puma.rb
 queue: bin/sidekiq
 reload: bin/guard -i

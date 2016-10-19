@@ -29,6 +29,7 @@ gem 'utf8-cleaner' # Removes invalid UTF-8 characters from the environment
 
 group :production do
   gem 'exception_notification' # Sends notifications when errors occur
+  gem 'puma-heroku' # Default Puma configuration
   gem 'rack-throttle' # Provides logic for rate-limiting incoming HTTP requests
   gem 'rack-timeout' # Abort requests that are taking too long
 end

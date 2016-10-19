@@ -211,6 +211,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (3.6.0)
+    puma-heroku (1.0.0)
+      puma (~> 3.0)
     rack (2.0.1)
     rack-livereload (0.3.16)
       rack
@@ -376,6 +378,7 @@ DEPENDENCIES
   normalize-rails
   pg
   puma
+  puma-heroku
   rack-livereload
   rack-throttle
   rack-timeout
@@ -408,4 +411,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.1
+   1.13.5
