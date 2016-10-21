@@ -10,12 +10,12 @@ class GearscoreCalculator
 
   # Convenience method to avoid object initialization
   # @param items [Hash]
-  # @return [Fixnum]
+  # @return [Integer]
   def self.calculate(items)
     new(items).calculate
   end
 
-  # @return [Fixnum] gearscore for given items hash
+  # @return [Integer] gearscore for given items hash
   def calculate
     @_score ||= items.reduce(0) do |sum, (slot, hash)|
       # Count main hand weapon as a two-hander if off-hand not present
@@ -37,7 +37,7 @@ class GearscoreCalculator
       @quality = hash['quality']
     end
 
-    # @return [Fixnum]
+    # @return [Integer]
     def score
       (
         ((ilvl - quality_modifier[0]) / quality_modifier[1]) *

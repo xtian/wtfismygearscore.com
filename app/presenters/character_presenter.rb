@@ -28,7 +28,7 @@ class CharacterPresenter < ApplicationPresenter
     "#{name.humanize}, #{level} #{class_name.titleize}"
   end
 
-  # @return [Fixnum, Float] median difference with trailing zero trimmed
+  # @return [Integer, Float] median difference with trailing zero trimmed
   def median_difference
     float = super
     int = float.to_i

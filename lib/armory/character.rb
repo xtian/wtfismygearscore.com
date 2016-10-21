@@ -43,12 +43,12 @@ class Armory
       body.fetch('items')
     end
 
-    # @return [Fixnum]
+    # @return [Integer]
     def max_ilvl
       @_max_ilvl ||= ilvls.max
     end
 
-    # @return [Fixnum]
+    # @return [Integer]
     def min_ilvl
       @_min_ilvl ||= ilvls.min
     end

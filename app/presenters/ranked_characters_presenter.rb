@@ -24,12 +24,12 @@ class RankedCharactersPresenter < CollectionPresenter
     collection.size < query.per_page
   end
 
-  # @return [Fixnum, nil]
+  # @return [Integer, nil]
   def next_cursor
     collection.last&.id
   end
 
-  # @return [Fixnum, nil]
+  # @return [Integer, nil]
   def prev_cursor
     collection.first&.id
   end

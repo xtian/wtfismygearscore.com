@@ -3,8 +3,8 @@ class CharacterQuery
   attr_reader :comments
 
   # @option options [String] name
-  # @option options [Fixnum] page
-  # @option options [Fixnum] per_page
+  # @option options [Integer] page
+  # @option options [Integer] per_page
   # @option options [String] realm
   # @option options [String] region
   def initialize(options)

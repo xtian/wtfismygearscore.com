@@ -20,7 +20,7 @@ class Armory
       [body.fetch('code', status), body.fetch('detail', nil)].compact.join(' ')
     end
 
-    # @return [Fixnum] HTTP status code
+    # @return [Integer] HTTP status code
     def status
       return 500 if response.status == 200 && body == {}
       response.status

@@ -11,7 +11,7 @@ class MedianGearscore < ApplicationRecord
     save!
   end
 
-  # @return [Float, Fixnum]
+  # @return [Float, Integer]
   def median_score
     super() || 0
   end

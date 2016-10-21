@@ -25,13 +25,13 @@ module CharactersHelper
     link_to name, characters_path(*server_parts(character))
   end
 
-  # @param cursor [Fixnum] ID of last {Character} on ranking page
+  # @param cursor [Integer] ID of last {Character} on ranking page
   # @return [String] path to next ranking page
   def next_ranking_path(cursor)
     characters_path(*server_parts, after: cursor, per_page: params[:per_page])
   end
 
-  # @param cursor [Fixnum] ID of first {Character} on ranking page
+  # @param cursor [Integer] ID of first {Character} on ranking page
   # @return [String] path to previous ranking page
   def prev_ranking_path(cursor)
     characters_path(*server_parts, before: cursor, per_page: params[:per_page])

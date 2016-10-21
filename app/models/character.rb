@@ -27,7 +27,7 @@ class Character < ApplicationRecord
     character || new(region: region, realm: realm, name: name)
   end
 
-  # @return [Fixnum]
+  # @return [Integer]
   def comments_count
     @_comments_count ||= comments.count
   end
@@ -48,7 +48,7 @@ class Character < ApplicationRecord
   end
 
   # @param character [Armory::Character] armory data
-  # @param score [Fixnum] character's gearscore
+  # @param score [Integer] character's gearscore
   # @return [void]
   def update_from_armory(character, score)
     self.score = score

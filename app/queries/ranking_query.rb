@@ -5,9 +5,9 @@
 class RankingQuery
   attr_reader :per_page, :realm
 
-  # @option options [Fixnum] cursor
+  # @option options [Integer] cursor
   # @option options [Symbol] page_direction
-  # @option options [Fixnum] per_page
+  # @option options [Integer] per_page
   # @option options [String, nil] realm
   # @option options [String] region
   def initialize(options)
