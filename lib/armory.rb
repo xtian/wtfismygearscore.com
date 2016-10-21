@@ -50,6 +50,7 @@ class Armory
   def send_request(url)
     Faraday.get do |req|
       req.url url
+      req.options.open_timeout = timeout
       req.options.timeout = timeout
     end
   end
