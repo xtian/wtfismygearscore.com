@@ -7,6 +7,7 @@ require 'faraday'
 # Encapsulates logic for making requests to Battle.net Armory API
 class Armory
   # @param api_key [String] Armory API key
+  # @param timeout [Integer] Request timeout in seconds
   def initialize(api_key, timeout)
     @api_key = api_key
     @timeout = timeout
