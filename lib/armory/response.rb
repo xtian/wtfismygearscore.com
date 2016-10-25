@@ -17,12 +17,12 @@ class Armory
 
     # @return [String] Armory debug message
     def error_message
-      [body.fetch('code', status), body.fetch('detail', nil)].compact.join(' ')
+      [status, body.fetch('detail', nil)].compact.join(' ')
     end
 
     # @return [Integer] HTTP status code
     def status
-      return 500 if response.status == 200 && body == {}
+      return 500 if response.status.equal?(200) && body.empty?
       response.status
     end
 

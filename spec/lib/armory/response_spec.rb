@@ -9,8 +9,8 @@ RSpec.describe Armory::Response do
 
   describe '#body' do
     it 'returns parsed JSON' do
-      subject = described_class.new(faraday_response(200, '{}'))
-      expect(subject.body).to eq({})
+      subject = described_class.new(faraday_response(200, '{"name": "Dargonaut"}'))
+      expect(subject.body).to eq("name" => "Dargonaut")
     end
 
     it 'handles an empty body' do
@@ -21,7 +21,7 @@ RSpec.describe Armory::Response do
 
   describe '#error_message' do
     it 'returns string with error code and detail' do
-      subject = described_class.new(faraday_response(403, '{"code":"403", "detail": "Account Inactive"}'))
+      subject = described_class.new(faraday_response(403, '{"detail": "Account Inactive"}'))
       expect(subject.error_message).to eq('403 Account Inactive')
     end
 
@@ -40,6 +40,9 @@ RSpec.describe Armory::Response do
     it 'returns status of the original response' do
       subject = described_class.new(faraday_response(504, ''))
       expect(subject.status).to eq(504)
+
+      subject = described_class.new(faraday_response(200, '{"name": "Dargonaut"}'))
+      expect(subject.status).to eq(200)
     end
   end
 end
