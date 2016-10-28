@@ -4,22 +4,22 @@ require 'rails_helper'
 RSpec.describe Character do
   subject { Fabricate.build(:character) }
 
-  it { should define_enum_for(:class_name).with(CLASSES) }
-  it { should define_enum_for(:faction).with(FACTIONS) }
-  it { should define_enum_for(:region).with(VALID_REGIONS_WITH_REALM) }
-  it { should validate_numericality_of(:level).only_integer.is_greater_than(0) }
-  it { should validate_numericality_of(:score).only_integer }
+  it { is_expected.to define_enum_for(:class_name).with(CLASSES) }
+  it { is_expected.to define_enum_for(:faction).with(FACTIONS) }
+  it { is_expected.to define_enum_for(:region).with(VALID_REGIONS_WITH_REALM) }
+  it { is_expected.to validate_numericality_of(:level).only_integer.is_greater_than(0) }
+  it { is_expected.to validate_numericality_of(:score).only_integer }
 
   %i(avg_ilvl class_name level max_ilvl min_ilvl name realm region score).each do |field|
-    it { should validate_presence_of(field) }
+    it { is_expected.to validate_presence_of(field) }
   end
 
   %i(avg_ilvl max_ilvl min_ilvl).each do |field|
-    it { should validate_numericality_of(field).only_integer.is_greater_than_or_equal_to(0) }
+    it { is_expected.to validate_numericality_of(field).only_integer.is_greater_than_or_equal_to(0) }
   end
 
-  it { should have_db_index(%i(name realm region)).unique }
-  it { should have_db_index(%i(score region realm name)) }
+  it { is_expected.to have_db_index(%i(name realm region)).unique }
+  it { is_expected.to have_db_index(%i(score region realm name)) }
 
   describe '.from_params' do
     params = { region: 'us', realm: 'shadowmoon', name: 'dargonaut' }

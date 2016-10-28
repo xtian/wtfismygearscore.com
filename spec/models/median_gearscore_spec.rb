@@ -2,10 +2,10 @@
 require 'rails_helper'
 
 RSpec.describe MedianGearscore do
-  it { should validate_presence_of :level }
+  it { is_expected.to validate_presence_of :level }
 
-  it { should validate_numericality_of(:level).only_integer.is_greater_than(0) }
-  it { should validate_numericality_of(:median_score) }
+  it { is_expected.to validate_numericality_of(:level).only_integer.is_greater_than(0) }
+  it { is_expected.to validate_numericality_of(:median_score) }
 
   describe '#median_score' do
     it 'defaults to zero' do
