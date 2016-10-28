@@ -10,8 +10,11 @@ class Armory
     # @param response_body [Hash]
     def initialize(region, response_body)
       @region = region.downcase
+      @avg_ilvl = response_body.fetch('items').delete('averageItemLevelEquipped') { 0 }
+
+      response_body.fetch('items').delete 'averageItemLevel'
+      response_body.fetch('items').freeze
       @body = response_body
-      process_items
     end
 
     # @!method name
@@ -55,17 +58,13 @@ class Armory
 
     private
 
-    attr_reader :body, :ilvls
+    attr_reader :body
 
-    def process_items
-      body.fetch('items').delete 'averageItemLevel'
-      @avg_ilvl = body.fetch('items').delete('averageItemLevelEquipped') || 0
-
-      @ilvls = body.fetch('items').freeze
-        .reject { |k| %w(shirt tabard).include? k }
+    def ilvls
+      @_ilvls ||= body.fetch('items')
+        .without('shirt', 'tabard')
         .map { |_k, hash| hash.fetch('itemLevel') }
-
-      @ilvls = [0] if @ilvls.empty?
+        .tap { |ilvls| ilvls << 0 if ilvls.empty? }
     end
   end
 end
