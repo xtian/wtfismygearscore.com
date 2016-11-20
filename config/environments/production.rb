@@ -1,6 +1,14 @@
 # frozen_string_literal: true
+require 'sidekiq/web'
+
+# rubocop:disable Metrics/BlockLength
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    ActiveSupport::SecurityUtils.secure_compare(username, ENV['SIDEKIQ_USERNAME']) &
+      ActiveSupport::SecurityUtils.secure_compare(password, ENV['SIDEKIQ_PASSWORD'])
+  end
 
   config.middleware.use Rack::Throttle::Hourly, cache: Redis.current, key_prefix: :throttle
   config.middleware.use ExceptionNotification::Rack

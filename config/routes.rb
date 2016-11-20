@@ -1,5 +1,9 @@
 # frozen_string_literal: true
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web, at: '/sidekiq'
+
   get 'redirect', to: 'home#redirect', as: :redirect
 
   get 'gearscore.php', to: 'legacy#show'
