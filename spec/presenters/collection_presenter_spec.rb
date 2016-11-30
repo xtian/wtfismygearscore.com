@@ -3,8 +3,7 @@ require 'rails_helper'
 
 RSpec.describe CollectionPresenter do
   class TestPresenter
-    def initialize(object)
-    end
+    def initialize(object); end
 
     def foo
       'foo'
