@@ -15,7 +15,7 @@ chdir APP_ROOT do
   system! 'brew tap Homebrew/bundle'
   system! 'brew bundle'
 
-  system! 'gem install bundler --version 1.13.1 --conservative'
+  system! 'gem install bundler --version 1.13.6 --conservative'
   system! 'gem install foreman --conservative'
   system('bundle check') || system!('bundle install')
 
