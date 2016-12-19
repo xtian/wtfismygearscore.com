@@ -14,16 +14,6 @@ module ApplicationHelper
     [page_title, site_name, (subtitle unless page_title)].compact.join(' — ')
   end
 
-  # Outputs a `<link rel=subresource>` and `<link rel=preload>` which both
-  # indicate that a resource is required for the current page. Both are needed
-  # because `rel=subresource` is deprecated but `rel=preload` has limited
-  # browser support.
-  # @return [String] pair of `<link>` tags for preloading a resource
-  def preload_link_tag(path)
-    concat tag(:link, rel: 'subresource', href: path)
-    tag(:link, rel: 'preload', href: path)
-  end
-
   if Rails.env.test?
     # @param id [Symbol] unique element identifier
     # @return [String] data attribute identifier for tests

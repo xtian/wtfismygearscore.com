@@ -15,7 +15,7 @@
     <%= stylesheet_link_tag 'normalize-rails' %>
     <%= stylesheet_link_tag 'base' %>
 
-    <%= preload_link_tag image_path('logo.svg') %>
+    <link rel="preload" href="<%= image_path('logo.svg') %>" as="style">
     <link rel="prefetch" href="<%= javascript_path('action_cable') %>">
 
     <% CLASS_IMAGES.each do |img_name| %>
