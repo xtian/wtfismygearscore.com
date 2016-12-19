@@ -4,7 +4,7 @@
 
 <% content_for(:head) do %>
   <link rel="canonical" href="<%= @character.canonical_url %>">
-  <link rel="preload" href="<%= image_path("burst-#{@character.rating}.svg") %>" as="style">
+  <link rel="preload" href="<%= image_path("burst-#{@character.rating}.svg") %>" as="image">
 
   <% if @character.rating == 'win' %>
     <link rel="shortcut icon" href="/favicon-win.ico">
