@@ -4,7 +4,7 @@ ruby '2.3.3'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.0.1'
 
 gem 'active_record_upsert', github: 'jesjos/active_record_upsert', ref: '3de5c1d' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
@@ -22,7 +22,7 @@ gem 'scenic' # Create and manage database views in Rails
 gem 'sidekiq' # Background job queue built on Redis
 gem 'sidekiq-unique-jobs' # Prevents duplicate jobs from being enqueued
 gem 'slack-notifier' # Sends Slack webhook notifications
-gem 'sprockets', '>= 4.0.0.beta2' # Asset compilation pipeline for CSS, JS, and images
+gem 'sprockets', '~> 4.0.0.beta4' # Asset compilation pipeline for CSS, JS, and images
 gem 'typhoeus', require: false # HTTP client backend for Faraday
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'utf8-cleaner' # Removes invalid UTF-8 characters from the environment
