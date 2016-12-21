@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 require 'sidekiq/web'
 
-# rubocop:disable Metrics/BlockLength
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -48,7 +47,7 @@ Rails.application.configure do
 
   # Action Cable endpoint configuration
   # config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = secrets.cable_origins
+  # config.action_cable.allowed_request_origins = secrets.cable_origins
 
   # Don't mount Action Cable in the main server process.
   # config.action_cable.mount_path = nil
