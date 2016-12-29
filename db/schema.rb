@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160930133403) do
     t.string   "guild_name"
     t.integer  "faction",    null: false
     t.index ["name", "realm", "region"], name: "index_characters_on_name_and_realm_and_region", unique: true, using: :btree
-    t.index ["score", "region", "realm", "name"], name: "index_characters_on_score_and_region_and_realm_and_name", order: {"score"=>:desc}, using: :btree
+    t.index ["score", "region", "realm", "name"], name: "index_characters_on_score_and_region_and_realm_and_name", order: { score: :desc }, using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160930133403) do
     t.datetime "updated_at",        null: false
     t.string   "referrer"
     t.string   "user_agent"
-    t.index ["character_id", "created_at"], name: "index_comments_on_character_id_and_created_at", order: {"created_at"=>:desc}, using: :btree
+    t.index ["character_id", "created_at"], name: "index_comments_on_character_id_and_created_at", order: { created_at: :desc }, using: :btree
   end
 
   create_table "median_gearscores", primary_key: "level", id: :integer, force: :cascade do |t|
