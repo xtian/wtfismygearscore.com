@@ -9,6 +9,13 @@ AllCops:
 Rails:
   Enabled: true
 
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - feature
+    - it
+    - task
+
 Metrics/LineLength:
   Max: 120
 

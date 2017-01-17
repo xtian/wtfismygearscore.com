@@ -58,7 +58,7 @@ class Character < ApplicationRecord
     if new_record?
       upsert!
     else
-      touch
+      self.updated_at = Time.current
       save!
     end
   end
