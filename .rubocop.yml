@@ -1,13 +1,20 @@
 require: rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.4
   Exclude:
     - 'bin/**/*'
     - 'db/**/*'
 
 Rails:
   Enabled: true
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - feature
+    - it
+    - task
 
 Metrics/LineLength:
   Max: 120

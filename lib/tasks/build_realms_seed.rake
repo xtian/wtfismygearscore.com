@@ -59,7 +59,7 @@ task build_realms_seed: :environment do
 
   # Save a seed file
   yaml = realms.map { |name, translations| { 'name' => name, 'translations' => translations } }.to_yaml
-  File.write(Rails.root.join('db/seeds/realms.yml'), yaml)
+  File.write(Rails.root.join('db', 'seeds', 'realms.yml'), yaml)
 end
 
 def fetch_realms(region, locale, slug = nil)
