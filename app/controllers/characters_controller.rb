@@ -8,8 +8,7 @@ class CharactersController < ApplicationController
 
   def index
     @ranking = RankingQuery.call(
-      cursor: params[:after] || params[:before],
-      page_direction: page_direction,
+      page: page,
       per_page: per_page(25),
       realm: params[:realm],
       region: region
@@ -33,12 +32,6 @@ class CharactersController < ApplicationController
     [params[:page].to_i, 1].max
   end
   helper_method :page
-
-  # Pagination direction based on provided cursor
-  def page_direction
-    return :after if params[:after]
-    :before if params[:before]
-  end
 
   # Defaults/limits `per_page` param to `max`
   def per_page(max)
