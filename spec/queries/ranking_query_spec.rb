@@ -11,7 +11,7 @@ RSpec.describe RankingQuery do
     end
 
     it 'returns ranked characters' do
-      characters = described_class.call(region: 'world', per_page: 3)
+      characters = described_class.call(region: 'world', page: 1, per_page: 3)
 
       expect(characters.size).to eq(3)
 
@@ -27,7 +27,7 @@ RSpec.describe RankingQuery do
     end
 
     it 'returns characters ranked by region' do
-      characters = described_class.call(region: 'eu')
+      characters = described_class.call(region: 'eu', page: 1, per_page: 3)
 
       expect(characters.size).to eq(2)
 
@@ -40,7 +40,7 @@ RSpec.describe RankingQuery do
     end
 
     it 'returns characters ranked by realm' do
-      characters = described_class.call(region: 'eu', realm: 'shadowmoon')
+      characters = described_class.call(region: 'eu', realm: 'shadowmoon', page: 1, per_page: 3)
 
       expect(characters.size).to eq(2)
 

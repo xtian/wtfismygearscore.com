@@ -11,7 +11,7 @@ RSpec.describe RankedCharactersPresenter do
     ]
   end
 
-  let(:query) { instance_double('RankingQuery', per_page: 1, realm: nil) }
+  let(:query) { instance_double('RankingQuery', page: 1, per_page: 1, realm: nil) }
 
   describe '#extra_column_name' do
     it 'returns Guild for realm ranking' do
@@ -26,14 +26,11 @@ RSpec.describe RankedCharactersPresenter do
   end
 
   describe '#first_page?' do
-    # rubocop:disable RSpec/VerifiedDoubles
-    it 'returns true if first character is ranked 1' do
-      character = double(rank: 1)
-      subject = described_class.new([character], query)
+    it 'returns true if query page is 1' do
+      subject = described_class.new(characters, query)
 
       expect(subject.first_page?).to eq(true)
     end
-    # rubocop:enable RSpec/VerifiedDoubles
 
     it 'handles an empty collection' do
       expect(subject.first_page?).to eq(true)
@@ -49,22 +46,6 @@ RSpec.describe RankedCharactersPresenter do
       subject = described_class.new([instance_double('Character')], query)
 
       expect(subject.last_page?).to eq(false)
-    end
-  end
-
-  describe '#prev_cursor' do
-    it 'returns ID of first character' do
-      subject = described_class.new(characters, query)
-
-      expect(subject.prev_cursor).to eq(1)
-    end
-  end
-
-  describe '#next_cursor' do
-    it 'returns ID of last character' do
-      subject = described_class.new(characters, query)
-
-      expect(subject.next_cursor).to eq(2)
     end
   end
 end

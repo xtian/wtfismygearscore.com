@@ -3,15 +3,17 @@
 # Encapsulates logic for fetching sorted, paginated results from
 # characters table
 class RankingQuery
-  attr_reader :per_page, :realm
+  attr_reader :page, :per_page, :realm
 
-  # @option options [Integer] cursor
-  # @option options [Symbol] page_direction
+  # @option options [Integer] page
   # @option options [Integer] per_page
   # @option options [String, nil] realm
   # @option options [String] region
-  def initialize(options)
-    options.each { |key, value| instance_variable_set("@#{key}", value) }
+  def initialize(page:, per_page:, realm: nil, region:)
+    @page = page
+    @per_page = per_page
+    @region = region
+    @realm = realm
   end
 
   # Convenience method to avoid object initialization
@@ -24,11 +26,12 @@ class RankingQuery
   # @return [RankedCharactersPresenter]
   def call
     characters = ranked_characters
-      .where(filter_criteria)
       .select(*fields)
+      .where(filter_criteria)
+      .order(score: :desc, name: :asc, realm: :asc)
       .limit(per_page)
 
-    RankedCharactersPresenter.new(page(characters), self)
+    RankedCharactersPresenter.new(paginate(characters), self)
   end
 
   # @return [String] canonical URL to disambiguate duplicate content for SEO
@@ -37,7 +40,7 @@ class RankingQuery
       action: 'index',
       controller: 'characters',
       host: Rails.application.secrets.base_url,
-      page_direction => cursor,
+      page: page,
       per_page: per_page,
       realm: realm,
       region: region
@@ -55,7 +58,7 @@ class RankingQuery
 
   private
 
-  attr_reader :cursor, :page_direction, :region
+  attr_reader :region
 
   def filter_criteria
     { realm: realm, region: (region unless world?) }.compact
@@ -70,40 +73,27 @@ class RankingQuery
     end
   end
 
-  # Pagination is done by finding results whose sort values are equal to or
-  # greater than given cursor. This means that reverse-paginated results will
-  # be in reverse order and so the sort must be corrected in memory. We limit
-  # results to a maximum number of rows to prevent this from being a
-  # significant performance problem.
-  def page(characters)
-    case page_direction
-    when :after
-      characters.order(score: :desc, name: :asc, realm: :asc).where(page_criteria(%w(< >))).to_a
-    when :before
-      characters.order(score: :asc, name: :desc, realm: :desc).where(page_criteria(%w(> <))).to_a.reverse
-    else characters.to_a
+  def paginate(characters)
+    return characters if page.eql?(1)
+    characters.where("row_number >= ?", ((page - 1) * per_page) + 1)
+  end
+
+  def ranking_partition
+    if realm
+      'PARTITION BY realm, region'
+    elsif !world?
+      'PARTITION BY region'
     end
   end
 
-  def page_criteria(comparisons)
-    return unless cursor
-    character = Character.find(cursor)
-
-    query = <<-SQL.strip_heredoc
-      score #{comparisons[0]} ?
-      OR
-      (score = ? AND (name #{comparisons[1]} ? OR realm #{comparisons[1]} ?))
-    SQL
-
-    [query, character.score, character.score, character.name, character.realm]
-  end
-
   def ranked_characters
-    partition = 'PARTITION BY realm, region' if realm
-    partition ||= 'PARTITION BY region' unless world?
-
     Character.from <<-SQL.strip_heredoc
-      (SELECT *, rank() OVER (#{partition} ORDER BY score DESC) FROM characters) AS characters
+      (
+        SELECT *,
+          rank() OVER (#{ranking_partition} ORDER BY score DESC),
+          row_number() OVER (#{ranking_partition} ORDER BY score DESC)
+        FROM characters
+      ) AS characters
     SQL
   end
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class RankedCharactersPresenter < CollectionPresenter
-  delegate :canonical_url, :comments, to: :query
+  delegate :canonical_url, :comments, :page, to: :query
 
   # @param characters [Enumerable<Character>]
   # @param query [RankingQuery]
@@ -16,22 +16,12 @@ class RankedCharactersPresenter < CollectionPresenter
 
   # @return [Boolean]
   def first_page?
-    !collection.first || collection.first.rank == 1
+    query.page.eql?(1)
   end
 
   # @return [Boolean]
   def last_page?
-    collection.size < query.per_page
-  end
-
-  # @return [Integer, nil]
-  def next_cursor
-    collection.last&.id
-  end
-
-  # @return [Integer, nil]
-  def prev_cursor
-    collection.first&.id
+    collection.length < query.per_page
   end
 
   private
