@@ -16,8 +16,10 @@ SecureHeaders::Configuration.default do |config|
     default_src: %w('none'),
     connect_src: %w('self') << (Rails.env.production? ? 'wss:' : 'ws:'),
     img_src: %w('self' data: www.google-analytics.com),
-    script_src: %w('self' www.google-analytics.com),
     style_src: %w('self'),
+
+    # Hash is to allow Google Analytics snippet
+    script_src: %w('self' www.google-analytics.com 'sha256-5/w5wEj5C2EFROmL8m0pVUE+CraUgYqRYT1b/0vrU70='),
 
     block_all_mixed_content: true,
     upgrade_insecure_requests: Rails.env.production?
