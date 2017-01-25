@@ -2,7 +2,9 @@
 require "warning_filter"
 
 Rails.application.configure do
-  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload,
+                                 ignore: [/.+/],
+                                 live_reload_port: secrets.livereload_port
 
   # Settings specified here will take precedence over those in config/application.rb.
 
