@@ -16,7 +16,9 @@ SecureHeaders::Configuration.default do |config|
     default_src: %w('none'),
     connect_src: %w('self') << (Rails.env.production? ? 'wss:' : 'ws:'),
     img_src: %w('self' data: www.google-analytics.com),
-    style_src: %w('self'),
+
+    # Hash is to allow inline error page styles
+    style_src: %w('self' 'sha256-vRzNr8OXAI2PQ1gJpDovs4Q1XX0wpMl7zKd9MQyJpTw='),
 
     # Hash is to allow Google Analytics snippet
     script_src: %w('self' www.google-analytics.com 'sha256-5/w5wEj5C2EFROmL8m0pVUE+CraUgYqRYT1b/0vrU70='),
