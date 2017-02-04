@@ -10,7 +10,7 @@ RSpec.describe Armory::Response do
   describe '#body' do
     it 'returns parsed JSON' do
       subject = described_class.new(faraday_response(200, '{"name": "Dargonaut"}'))
-      expect(subject.body).to eq("name" => "Dargonaut")
+      expect(subject.body).to eq('name' => 'Dargonaut')
     end
 
     it 'handles an empty body' do

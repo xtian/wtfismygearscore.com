@@ -17,7 +17,7 @@ RSpec.describe CharacterUpdateBroadcaster do
       allow(character).to receive(:updated_at) { Time.current }
 
       expect(ActionCable.server).to receive(:broadcast)
-        .with("characters:1:armory_updates", hash_including(html: /<.+>/, id: 1))
+        .with('characters:1:armory_updates', hash_including(html: /<.+>/, id: 1))
 
       described_class.call(character, 1.hour.ago)
     end

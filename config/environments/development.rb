@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require "warning_filter"
+require 'warning_filter'
 
 Rails.application.configure do
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload,

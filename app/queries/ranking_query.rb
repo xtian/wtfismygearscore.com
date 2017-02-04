@@ -75,7 +75,7 @@ class RankingQuery
 
   def paginate(characters)
     return characters if page.eql?(1)
-    characters.where("row_number >= ?", ((page - 1) * per_page) + 1)
+    characters.where('row_number >= ?', ((page - 1) * per_page) + 1)
   end
 
   def ranking_partition

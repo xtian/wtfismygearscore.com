@@ -53,9 +53,6 @@ Style/MultilineMethodCallIndentation:
 Style/Send:
   Enabled: true
 
-Style/StringLiterals:
-  Enabled: false
-
 Style/StringMethods:
   Enabled: true
 

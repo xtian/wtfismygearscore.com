@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require "warning_filter"
+require 'warning_filter'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.

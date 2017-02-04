@@ -9,12 +9,12 @@ class Comment < ApplicationRecord
   # @param value [String]
   # @return [String] input value stripped of extranneous whitespace
   def body=(value)
-    super value&.strip.presence
+    super value&.strip&.presence
   end
 
   # @param value [String]
   # @return [String] input value stripped of extranneous whitespace
   def poster_name=(value)
-    super value&.strip.presence
+    super value&.strip&.presence
   end
 end

@@ -97,10 +97,10 @@ RSpec.describe Armory::Character do
 
       keys = subject.items.keys
 
-      expect(keys).to include("head")
-      expect(keys).to include("chest")
-      expect(keys).not_to include("averageItemLevel")
-      expect(keys).not_to include("averageItemLevelEquipped")
+      expect(keys).to include('head')
+      expect(keys).to include('chest')
+      expect(keys).not_to include('averageItemLevel')
+      expect(keys).not_to include('averageItemLevelEquipped')
     end
   end
 end
