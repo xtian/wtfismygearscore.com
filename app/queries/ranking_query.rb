@@ -79,11 +79,12 @@ class RankingQuery
   end
 
   def ranking_partition
-    if realm
-      'PARTITION BY realm, region'
-    elsif !world?
-      'PARTITION BY region'
-    end
+    @_ranking_partition ||=
+      if realm
+        'PARTITION BY realm, region'
+      elsif !world?
+        'PARTITION BY region'
+      end
   end
 
   def ranked_characters
