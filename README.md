@@ -18,7 +18,7 @@ Then:
 bin/setup
 ```
 
-If you are using Windows this will not work and you are on your own. Good luck!
+If you are not using Homebrew, you will need to manually install Postgres and Redis and then run `bin/rails db:setup db:migrate`
 
 ## Starting the app
 
