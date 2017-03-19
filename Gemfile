@@ -4,7 +4,7 @@ ruby '2.4.0'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.0.2'
 
 gem 'active_record_upsert', github: 'jesjos/active_record_upsert', ref: '3de5c1d' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
