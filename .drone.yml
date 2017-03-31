@@ -16,6 +16,14 @@ pipeline:
       - bin/rake db:create
       - bin/rspec
 
+  git_push:
+    image: plugins/git-push
+    branch: master
+    remote: dokku@wtfismygearscore.com:wtfismygs
+    force: false
+    when:
+      branch: master
+
 cache:
   mount:
     - .bundle
@@ -27,11 +35,3 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-
-deploy:
-  git_push:
-    branch: master
-    remote: dokku@wtfismygearscore.com:wtfismygs
-    force: false
-    when:
-      branch: master
