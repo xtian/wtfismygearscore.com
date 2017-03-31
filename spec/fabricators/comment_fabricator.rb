@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Fabricator(:comment) do
   body 'hi'
   character

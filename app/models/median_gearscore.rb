@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class MedianGearscore < ApplicationRecord
   validates :level, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :median_score, presence: true, numericality: true

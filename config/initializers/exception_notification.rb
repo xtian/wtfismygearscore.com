@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 if Rails.env.production?
   require 'exception_notification/rails'
   require 'exception_notification/sidekiq'
@@ -8,7 +9,7 @@ if Rails.env.production?
     # ActiveRecord::RecordNotFound, Mongoid::Errors::DocumentNotFound,
     # AbstractController::ActionNotFound and ActionController::RoutingError are
     # already added.
-    config.ignored_exceptions += %w(ActionController::ParameterMissing)
+    config.ignored_exceptions += %w[ActionController::ParameterMissing]
 
     config.add_notifier :slack,
                         backtrace_lines: 15,

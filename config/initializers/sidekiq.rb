@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'sidekiq'
 
 Sidekiq.default_worker_options = {

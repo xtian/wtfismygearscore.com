@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class RecentCommentPresenter < CommentPresenter
   # @return [Array<String>]
   def character_info

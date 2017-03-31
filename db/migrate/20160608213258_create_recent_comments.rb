@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CreateRecentComments < ActiveRecord::Migration
   def change
     create_view :recent_comments, materialized: true

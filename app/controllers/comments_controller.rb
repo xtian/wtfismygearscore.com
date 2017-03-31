@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def create
     comment = Character.find_by!(params.permit(:region, :realm, :name))

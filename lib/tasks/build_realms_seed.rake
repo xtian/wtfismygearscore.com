@@ -1,14 +1,15 @@
 # frozen_string_literal: true
+
 require 'faraday'
 require 'json'
 
 API_KEY = Rails.application.secrets.armory_api_key
 
 LOCALES = {
-  us: %w(es pt),
-  eu: %w(es fr ru de pt it),
-  kr: %w(ko),
-  tw: %w(zh)
+  us: %w[es pt],
+  eu: %w[es fr ru de pt it],
+  kr: %w[ko],
+  tw: %w[zh]
 }.freeze
 
 desc 'Build realms.yml seed file from Armory realm status API'

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe RankingQuery do
@@ -18,7 +19,7 @@ RSpec.describe RankingQuery do
       expect(characters[0].rank).to eq(1)
       expect(characters[0].score).to eq(500)
 
-      %i(class_name faction id realm region).each do |field|
+      %i[class_name faction id realm region].each do |field|
         expect(characters[0].public_send(field)).to be_present
       end
 

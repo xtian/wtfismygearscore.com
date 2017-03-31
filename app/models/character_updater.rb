@@ -22,7 +22,6 @@ class CharacterUpdater
 
     character.update_from_armory(armory_response, score)
     character
-
   rescue Armory::NotFoundError
     handle_not_found
   end

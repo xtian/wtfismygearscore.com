@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'armory'
 
 api_key = Rails.application.secrets.armory_api_key

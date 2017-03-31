@@ -20,7 +20,7 @@ class Armory
     # @!method name
     # @!method realm
     # @!method level
-    %w(name realm level).each do |method_name|
+    %w[name realm level].each do |method_name|
       define_method method_name do
         body.fetch(method_name)
       end

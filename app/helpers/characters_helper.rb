@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module CharactersHelper
   REGION_REALM_SEPARATOR = '-'
 
@@ -52,7 +53,7 @@ module CharactersHelper
   # @param character [Character]
   # @return [Array<String>] region and realm for page or given {Character}
   def server_parts(character = nil)
-    %i(region realm).map do |field|
+    %i[region realm].map do |field|
       character&.respond_to?(field) ? character.public_send(field).downcase : params[field]
     end
   end

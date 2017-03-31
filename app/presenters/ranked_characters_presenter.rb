@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class RankedCharactersPresenter < CollectionPresenter
   delegate :canonical_url, :comments, :page, to: :query
 

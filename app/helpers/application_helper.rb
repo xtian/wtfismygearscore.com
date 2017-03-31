@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module ApplicationHelper
   # Outputs a `<script defer>` tag which executes in the order included in the
   # page after the DOM has been loaded.
