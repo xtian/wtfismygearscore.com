@@ -19,7 +19,7 @@ pipeline:
   git_push:
     image: plugins/git-push
     branch: master
-    remote: drone@wtfismygearscore.com:wtfismygs
+    remote: dokku@wtfismygearscore.com:wtfismygs
     force: false
     when:
       branch: master
