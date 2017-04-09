@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe RecentCommentPresenter do
@@ -16,7 +17,7 @@ RSpec.describe RecentCommentPresenter do
 
   describe '#character_info' do
     it 'returns array of identifying info' do
-      expect(subject.character_info).to eq(%w(us Shadowmoon Granwe))
+      expect(subject.character_info).to eq(%w[us Shadowmoon Granwe])
     end
   end
 

@@ -18,7 +18,6 @@ class CharacterUpdateChannel < ApplicationCable::Channel
     # Try to trigger broadcast immediately as character may have been updated
     # in time between initial request and ActionCable connection.
     CharacterUpdateBroadcaster.call(character, data['timestamp'])
-
   rescue ActiveRecord::RecordNotFound
     logger.warn "CharacterUpdateChannel: No Character with found with id: #{data['id']}"
   end

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CharactersController < ApplicationController
   rescue_from 'Armory::NotFoundError', with: :not_found
 

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Sends notifications for new comments to Slack webhook
 class CommentNotifier
   # @param comment [Comment]
@@ -18,7 +19,7 @@ class CommentNotifier
 
   # @return [void]
   def call
-    return unless webhook_url.present?
+    return if webhook_url.blank?
     Slack::Notifier.new(webhook_url).ping '', attachments: [message_options]
   end
 

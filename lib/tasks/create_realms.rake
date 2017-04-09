@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'yaml'
 
 desc 'Create Realms from realms.yml seed file'

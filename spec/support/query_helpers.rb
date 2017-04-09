@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module QueryHelpers
   def find_tid(id)
     find("[data-t-#{id}]")

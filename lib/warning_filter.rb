@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'delegate'
 
 # Filters Ruby warnings from gems out of `$stderr` when `$VERBOSE` is enabled

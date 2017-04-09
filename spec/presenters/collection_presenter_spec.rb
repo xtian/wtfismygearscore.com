@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe CollectionPresenter do
@@ -21,14 +22,14 @@ RSpec.describe CollectionPresenter do
     it 'returns an enumerable that wraps each item in a presenter' do
       presented = described_class.new([double, double], TestPresenter)
 
-      expect(presented.map(&:foo)).to eq(%w(foo foo))
+      expect(presented.map(&:foo)).to eq(%w[foo foo])
     end
 
     it 'returns an enumerable that wraps calls to #to_ary' do
       relation = instance_double('ActiveRecord::Relation', to_ary: [double, double])
       presented = described_class.new(relation, TestPresenter)
 
-      expect(presented.to_ary.map(&:foo)).to eq(%w(foo foo))
+      expect(presented.to_ary.map(&:foo)).to eq(%w[foo foo])
     end
   end
 end

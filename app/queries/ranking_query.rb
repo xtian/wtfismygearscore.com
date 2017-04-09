@@ -66,7 +66,7 @@ class RankingQuery
 
   # Certain fields are unnecessary depending on the ranking context
   def fields
-    %i(class_name faction id name rank score).tap do |fields|
+    %i[class_name faction id name rank score].tap do |fields|
       fields << :guild_name if realm
       fields << :realm unless realm
       fields << :region if world?

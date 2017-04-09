@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # rubocop:disable Metrics/ModuleLength
 module ArmoryHelpers
   def stub_character_request(name: 'dargonaut', api_key: 'not-a-bnet-key')

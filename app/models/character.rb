@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Character < ApplicationRecord
   enum class_name: CLASSES
   enum faction: FACTIONS
@@ -6,7 +7,7 @@ class Character < ApplicationRecord
 
   has_many :comments
 
-  upsert_keys %i(name realm region)
+  upsert_keys %i[name realm region]
 
   validates :class_name, :level, :name, :realm, :region, :score, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
@@ -52,7 +53,7 @@ class Character < ApplicationRecord
   # @return [void]
   def update_from_armory(character, score)
     self.score = score
-    self.attributes = %i(avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm)
+    self.attributes = %i[avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm]
       .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
 
     if new_record?

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'faraday'
 
 # Encapsulates logic for making requests to Akismet spam detection service

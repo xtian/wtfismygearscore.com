@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module UrlHelper
   # @overload character_path(character, **options)
   #   @param character [Character]

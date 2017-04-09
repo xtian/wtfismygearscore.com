@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module HomeHelper
   # @return [Array<Array>] options for region `<select>`
   def region_options

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 SecureHeaders::Configuration.default do |config|
   config.cookies = {
     secure: true,
@@ -13,15 +14,15 @@ SecureHeaders::Configuration.default do |config|
     report_only: false,
     preserve_schemes: false,
 
-    default_src: %w('none'),
-    connect_src: %w('self') << (Rails.env.production? ? 'wss:' : 'ws:'),
-    img_src: %w('self' data: www.google-analytics.com),
+    default_src: %w['none'],
+    connect_src: %w['self'] << (Rails.env.production? ? 'wss:' : 'ws:'),
+    img_src: %w['self' data: www.google-analytics.com],
 
     # Hash is to allow inline error page styles
-    style_src: %w('self' 'sha256-vRzNr8OXAI2PQ1gJpDovs4Q1XX0wpMl7zKd9MQyJpTw='),
+    style_src: %w['self' 'sha256-vRzNr8OXAI2PQ1gJpDovs4Q1XX0wpMl7zKd9MQyJpTw='],
 
     # Hash is to allow Google Analytics snippet
-    script_src: %w('self' www.google-analytics.com 'sha256-5/w5wEj5C2EFROmL8m0pVUE+CraUgYqRYT1b/0vrU70='),
+    script_src: %w['self' www.google-analytics.com 'sha256-5/w5wEj5C2EFROmL8m0pVUE+CraUgYqRYT1b/0vrU70='],
 
     block_all_mixed_content: true,
     upgrade_insecure_requests: Rails.env.production?

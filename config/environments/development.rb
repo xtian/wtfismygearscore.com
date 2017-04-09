@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'warning_filter'
 
 Rails.application.configure do

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'akismet'
 
 # Destroys {Comment} if it registers as spam. Otherwise updates
@@ -23,7 +24,7 @@ class CommentPostedJob < ApplicationJob
 
     return false unless key && url
 
-    akismet = Akismet.new(key: key, url: url, is_test: Rails.env.in?(%w(development test)))
+    akismet = Akismet.new(key: key, url: url, is_test: Rails.env.in?(%w[development test]))
     akismet.spam?(comment)
   end
 end

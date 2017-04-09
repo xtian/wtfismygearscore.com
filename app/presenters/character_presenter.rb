@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CharacterPresenter < ApplicationPresenter
   delegate :canonical_url, :first_page?, :last_page?, to: :query
 
