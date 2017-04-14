@@ -27,8 +27,13 @@ RSpec.describe CommentPresenter do
 
   describe '#posted_at' do
     it 'returns human readable date string' do
-      allow(comment).to receive(:created_at) { Date.new(2016, 5, 29) }
+      allow(comment).to receive(:created_at) { Time.new(2016, 5, 29).utc }
       expect(subject.posted_at).to eq('May 29, 2016')
+    end
+
+    it 'returns relative time for recent dates' do
+      allow(comment).to receive(:created_at) { 23.hours.ago }
+      expect(subject.posted_at).to eq('about 23 hours ago')
     end
   end
 end
