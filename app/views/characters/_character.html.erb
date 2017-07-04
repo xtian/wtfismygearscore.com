@@ -3,7 +3,7 @@
   <h1 class="Burst-text" <%= tid :rating %>><%= character.rating %></h1>
   <dl class="Tooltip">
     <dt class="Tooltip-label">± Median:</dt>
-    <dd <%= tid :median_difference %>><%= character.median_difference %></dd>
+    <dd <%= tid :median_difference %>><%= number_with_delimiter character.median_difference %></dd>
   </dl>
 </aside>
 
