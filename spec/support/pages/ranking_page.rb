@@ -60,7 +60,7 @@ class RankingPage < Page
   end
 
   def score(node)
-    node.find_tid(:score).text.to_i
+    node.find_tid(:score).text
   end
 
   Character = Struct.new(:rank, :class_name, :name, :extra_column, :score)

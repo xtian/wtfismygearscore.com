@@ -10,15 +10,15 @@ RSpec.feature 'Ranking page' do
   end
 
   before do
-    Fabricate(:character, name: 'a', region: 'eu', realm: 'shadowmoon', score: 200)
-    b = Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 200)
-    top = Fabricate(:character, name: 'top', region: 'us', realm: 'illidan', score: 500)
+    Fabricate(:character, name: 'a', region: 'eu', realm: 'shadowmoon', score: 20_000)
+    b = Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 20_000)
+    top = Fabricate(:character, name: 'top', region: 'us', realm: 'illidan', score: 50_000)
 
     Fabricate(
       :character,
       region: 'us',
       realm: 'shadowmoon',
-      score: 300,
+      score: 30_000,
       class_name: 'hunter',
       guild_name: 'The Gentlemens Club'
     )
@@ -37,7 +37,7 @@ RSpec.feature 'Ranking page' do
 
     expect(ranking_page.characters.length).to eq(1)
     expect(ranking_page.characters[0].rank).to eq(1)
-    expect(ranking_page.characters[0].score).to eq(300)
+    expect(ranking_page.characters[0].score).to eq('30,000')
     expect(ranking_page.characters[0].class_name).to eq('hunter')
     expect(ranking_page.characters[0].extra_column).to eq('The Gentlemens Club')
   end
