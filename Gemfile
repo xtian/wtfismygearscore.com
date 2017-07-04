@@ -5,9 +5,9 @@ ruby '2.4.0'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 5.0.4'
 
-gem 'active_record_upsert', github: 'jesjos/active_record_upsert', ref: '3de5c1d' # AR integration for native PG upsert
+gem 'active_record_upsert', github: 'jesjos/active_record_upsert', ref: 'd42d82d' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code
