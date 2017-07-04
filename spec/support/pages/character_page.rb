@@ -3,13 +3,13 @@
 require_relative './page'
 
 class CharacterPage < Page
-  %i[avg_ilvl comments_count max_ilvl median_difference min_ilvl].each do |key|
+  %i[avg_ilvl comments_count max_ilvl min_ilvl].each do |key|
     define_method key do
       find_tid(key).text.to_i
     end
   end
 
-  %i[guild_name rating realm score].each do |key|
+  %i[guild_name median_difference rating realm score].each do |key|
     define_method key do
       find_tid(key).text
     end
