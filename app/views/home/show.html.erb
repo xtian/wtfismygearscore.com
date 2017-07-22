@@ -19,7 +19,7 @@
 
 <div class="SubHeader"><%= t(:slogan) %></div>
 
-<%= form_for :redirect, url: redirect_path, method: :get, html: { class: 'RedirectForm js-redirectForm' } do |f| %>
+<%= form_with scope: :redirect, url: redirect_path, method: :get, html: { class: 'RedirectForm js-redirectForm' } do |f| %>
   <label>
     <span class="u-visuallyHidden">Character Name</span>
     <%= f.text_field :name, placeholder: 'Character Name', tabindex: 1, class: 'js-redirectForm-name' %>

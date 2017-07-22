@@ -43,7 +43,7 @@ class CharacterPage < Page
   end
 
   def fill_comment_name(value)
-    fill_in 'Name', with: value
+    fill_in 'Name (optional)', with: value
   end
 
   def submit_comment
