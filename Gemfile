@@ -5,20 +5,20 @@ ruby '2.4.0'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'rails', '~> 5.0.4'
+gem 'rails', '~> 5.1.3'
 
-gem 'active_record_upsert', github: 'jesjos/active_record_upsert', ref: 'd42d82d' # AR integration for native PG upsert
+gem 'active_record_upsert', github: 'jesjos/active_record_upsert', ref: '5993159' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code
-gem 'faraday', require: false # HTTP client
+gem 'faraday', github: 'lostisland/faraday', ref: 'ad7a8e5', require: false # HTTP client
 gem 'fast_blank' # Provides a fast implementation of Active Support's String#blank? method
 gem 'normalize-rails' # Base CSS reset
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
 gem 'ruby_identicon', require: false # Avatar generator
-gem 'sass-rails', github: 'rails/sass-rails', ref: 'dfbcc6a' # Use SCSS for stylesheets
+gem 'sass-rails', github: 'rails/sass-rails', ref: 'dd04a6a' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
 gem 'secure_headers' # Applies several headers that are related to security
 gem 'sidekiq' # Background job queue built on Redis

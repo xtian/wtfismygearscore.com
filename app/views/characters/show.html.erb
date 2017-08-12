@@ -58,7 +58,7 @@
 
   <%= render partial: 'comment', collection: @character.comments %>
 
-  <%= form_for :comment, url: comments_path(@character), html: { class: %w[SecondaryContent-item CommentForm] } do |f| %>
+  <%= form_with scope: :comment, url: comments_path(@character), html: { class: %w[SecondaryContent-item CommentForm] } do |f| %>
     <%= f.label :body, 'Comment', class: 'u-visuallyHidden' %>
     <%= f.text_area :body, required: true, maxlength: 1000, rows: 5, placeholder: 'Comment', class: 'CommentForm-body' %>
 
