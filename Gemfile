@@ -7,11 +7,11 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'rails', '~> 5.1.3'
 
-gem 'active_record_upsert', github: 'jesjos/active_record_upsert', ref: '5993159' # AR integration for native PG upsert
+gem 'active_record_upsert' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code
-gem 'faraday', github: 'lostisland/faraday', ref: 'ad7a8e5', require: false # HTTP client
+gem 'faraday', require: false # HTTP client
 gem 'fast_blank' # Provides a fast implementation of Active Support's String#blank? method
 gem 'normalize-rails' # Base CSS reset
 gem 'pg' # Use postgresql as the database for Active Record
