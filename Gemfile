@@ -67,7 +67,3 @@ group :test do
   gem 'shoulda-matchers' # Rails RSpec helpers
   gem 'webmock' # Mocks external requests
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-# rubocop:disable Style/SymbolArray
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
