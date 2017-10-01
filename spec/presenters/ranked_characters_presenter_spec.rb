@@ -16,7 +16,7 @@ RSpec.describe RankedCharactersPresenter do
 
   describe '#extra_column_name' do
     it 'returns Guild for realm ranking' do
-      allow(query).to receive(:realm) { 'Shadowmoon' }
+      allow(query).to receive(:realm).and_return('Shadowmoon')
 
       expect(subject.extra_column_name).to eq('Guild')
     end

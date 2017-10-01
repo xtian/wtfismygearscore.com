@@ -5,7 +5,7 @@ class MedianGearscoreUpdaterJob < ApplicationJob
   # in the DB. Afterwards, re-enqueues self for following midnight.
   # @return [void]
   def perform
-    Character.group(:level).count.keys.each do |level|
+    Character.group(:level).count.each_key do |level|
       MedianGearscore.find_or_initialize_by(level: level).calculate
     end
   ensure

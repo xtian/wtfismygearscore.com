@@ -37,21 +37,21 @@ RSpec.feature 'Homepage' do
       home_page.fill_realm 'Shadowmoon'
       home_page.submit
 
-      expect(current_path).to eq(character_path('us', 'Shadowmoon', 'Dargonaut'))
+      expect(page).to have_current_path(character_path('us', 'Shadowmoon', 'Dargonaut'))
     end
 
     scenario 'User submits realm info' do
       home_page.fill_realm 'Shadowmoon'
       home_page.submit
 
-      expect(current_path).to eq(characters_path('us', 'Shadowmoon'))
+      expect(page).to have_current_path(characters_path('us', 'Shadowmoon'))
     end
 
     scenario 'User submits region info' do
       home_page.fill_region 'EU'
       home_page.submit
 
-      expect(current_path).to eq(characters_path('eu'))
+      expect(page).to have_current_path(characters_path('eu'))
     end
   end
 end
