@@ -10,6 +10,9 @@ AllCops:
 Rails:
   Enabled: true
 
+Capybara/FeatureMethods:
+  Enabled: false
+
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
@@ -23,6 +26,9 @@ Metrics/BlockLength:
 
 Metrics/LineLength:
   Max: 120
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false # Handled by Postgres, see character_spec.rb
 
 RSpec/ExampleLength:
   Max: 10

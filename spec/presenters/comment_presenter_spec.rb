@@ -13,7 +13,7 @@ RSpec.describe CommentPresenter do
     end
 
     it 'delegates to comment' do
-      allow(comment).to receive(:poster_name) { 'idealposter' }
+      allow(comment).to receive(:poster_name).and_return('idealposter')
       expect(subject.poster_name).to eq('idealposter')
     end
   end

@@ -25,7 +25,7 @@ RSpec.describe Character do
   describe '.from_params' do
     params = { region: 'us', realm: 'shadowmoon', name: 'dargonaut' }
 
-    params.keys.each do |key|
+    params.each_key do |key|
       it "requires #{key} to be passed" do
         invalid_params = params.without(key)
 
@@ -64,7 +64,7 @@ RSpec.describe Character do
 
   describe '#comments_count' do
     it 'returns the number of comments' do
-      allow(subject.comments).to receive(:count) { 1 }
+      allow(subject.comments).to receive(:count).and_return(1)
       expect(subject.comments_count).to eq(1)
     end
   end
