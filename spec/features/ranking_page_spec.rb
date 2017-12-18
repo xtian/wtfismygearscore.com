@@ -85,3 +85,4 @@ RSpec.feature 'Ranking page' do
     expect(ranking_page.characters[0].name).to eq('top')
   end
 end
+# rubocop:enable RSpec/ExampleLength

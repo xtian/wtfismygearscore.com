@@ -85,3 +85,4 @@ RSpec.feature 'Character page' do
     expect(character_page.comments[0].name).to eq('IdealPoster')
   end
 end
+# rubocop:enable RSpec/ExampleLength

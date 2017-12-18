@@ -26,7 +26,7 @@ RSpec.feature 'Homepage' do
     expect(first_comment.character_name).not_to be_nil
   end
 
-  context 'submitting redirect form' do
+  context 'when submitting redirect form' do
     before do
       stub_character_request
       visit root_path

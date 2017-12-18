@@ -46,3 +46,4 @@ RSpec.describe 'region routing' do
     expect(get: '/world/shadowmoon/dargonaut').not_to be_routable
   end
 end
+# rubocop:enable RSpec/DescribeClass
