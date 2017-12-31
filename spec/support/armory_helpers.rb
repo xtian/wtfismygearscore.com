@@ -363,6 +363,7 @@ module ArmoryHelpers
   end
   # rubocop:enable Metrics/MethodLength, Style/NumericLiterals
 end
+# rubocop:enable Metrics/ModuleLength
 
 RSpec.configure do |config|
   config.include ArmoryHelpers

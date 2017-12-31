@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 Fabricator(:character) do
-  avg_ilvl { rand(700) + 1 }
+  avg_ilvl { rand(1..700) }
   class_name { CLASSES.sample }
   faction { FACTIONS.sample }
-  level { rand(110) + 1 }
-  max_ilvl { rand(700) + 1 }
-  min_ilvl { rand(700) + 1 }
+  level { rand(1..110) }
+  max_ilvl { rand(1..700) }
+  min_ilvl { rand(1..700) }
   region { VALID_REGIONS_WITH_REALM.sample }
-  score { rand(30_000) + 1 }
+  score { rand(1..30_000) }
 
   name do
     sequence(:name) { |i| "Character#{i}" }

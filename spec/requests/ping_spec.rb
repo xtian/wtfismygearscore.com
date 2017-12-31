@@ -12,3 +12,4 @@ RSpec.describe 'Ping endpoint' do
     end
   end
 end
+# rubocop:enable RSpec/DescribeClass
