@@ -5,12 +5,13 @@ ruby '2.4.2'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.0'
 
-gem 'active_record_upsert', '0.7.0' # AR integration for native PG upsert
+gem 'active_record_upsert' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
 gem 'autoprefixer-rails' # Generates vendor-prefixed CSS
 gem 'babel-transpiler' # Compiles new JS syntax into ES5-compatible code
+gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching
 gem 'faraday', require: false # HTTP client
 gem 'fast_blank' # Provides a fast implementation of Active Support's String#blank? method
 gem 'normalize-rails' # Base CSS reset
