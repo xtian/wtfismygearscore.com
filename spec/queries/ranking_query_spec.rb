@@ -5,10 +5,11 @@ require 'rails_helper'
 RSpec.describe RankingQuery do
   describe '#call' do
     before do
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, region: 'us', realm: 'shadowmoon', score: 300)
-      Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
+      # Levels need to be > 110 so they are not randomly filtered
+      Fabricate(:character, level: 111, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
+      Fabricate(:character, level: 111, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
+      Fabricate(:character, level: 111, region: 'us', realm: 'shadowmoon', score: 300)
+      Fabricate(:character, level: 111, region: 'us', realm: 'illidan', score: 500)
     end
 
     it 'returns ranked characters' do
@@ -52,6 +53,15 @@ RSpec.describe RankingQuery do
       expect { characters[0].region }.to raise_error(ActiveModel::MissingAttributeError)
 
       expect(characters[1].rank).to eq(1)
+    end
+
+    it 'filters characters with data from before the 8.0.1 ilvl squish' do
+      Fabricate(:character, level: 110, max_ilvl: 265)
+      Fabricate(:character, level: 110, max_ilvl: 266)
+
+      characters = described_class.call(region: 'world', page: 1, per_page: 6)
+
+      expect(characters.size).to eq(5)
     end
   end
 end

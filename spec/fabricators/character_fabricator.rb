@@ -4,7 +4,7 @@ Fabricator(:character) do
   avg_ilvl { rand(1..700) }
   class_name { CLASSES.sample }
   faction { FACTIONS.sample }
-  level { rand(1..110) }
+  level { rand(1..120) }
   max_ilvl { rand(1..700) }
   min_ilvl { rand(1..700) }
   region { VALID_REGIONS_WITH_REALM.sample }
