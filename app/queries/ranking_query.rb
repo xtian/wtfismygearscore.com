@@ -28,6 +28,7 @@ class RankingQuery
     characters = ranked_characters
       .select(*fields)
       .where(filter_criteria)
+      .where.not('level = 110 AND max_ilvl > 265') # Outdated data from before 8.0.1 ilvl squish
       .order(score: :desc, name: :asc, realm: :asc)
       .limit(per_page)
 

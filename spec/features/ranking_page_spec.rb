@@ -10,9 +10,10 @@ RSpec.feature 'Ranking page' do
   end
 
   before do
-    Fabricate(:character, name: 'a', region: 'eu', realm: 'shadowmoon', score: 20_000)
-    b = Fabricate(:character, name: 'b', region: 'eu', realm: 'shadowmoon', score: 20_000)
-    top = Fabricate(:character, name: 'top', region: 'us', realm: 'illidan', score: 50_000)
+    # Levels need to be > 110 so they are not randomly filtered
+    Fabricate(:character, level: 111, name: 'a', region: 'eu', realm: 'shadowmoon', score: 20_000)
+    b = Fabricate(:character, level: 111, name: 'b', region: 'eu', realm: 'shadowmoon', score: 20_000)
+    top = Fabricate(:character, level: 111, name: 'top', region: 'us', realm: 'illidan', score: 50_000)
 
     Fabricate(
       :character,
