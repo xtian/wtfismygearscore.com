@@ -17,6 +17,7 @@ RSpec.feature 'Ranking page' do
 
     Fabricate(
       :character,
+      level: 111,
       region: 'us',
       realm: 'shadowmoon',
       score: 30_000,
