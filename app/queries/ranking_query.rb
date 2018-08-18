@@ -28,7 +28,6 @@ class RankingQuery
     characters = ranked_characters
       .select(*fields)
       .where(filter_criteria)
-      .where.not('level = 110 AND max_ilvl > 265') # Outdated data from before 8.0.1 ilvl squish
       .order(score: :desc, name: :asc, realm: :asc)
       .limit(per_page)
 
@@ -95,6 +94,8 @@ class RankingQuery
           rank() OVER (#{ranking_partition} ORDER BY score DESC),
           row_number() OVER (#{ranking_partition} ORDER BY score DESC)
         FROM characters
+        -- Filter outdated data from before 8.0.1 ilvl squish
+        WHERE NOT (level < 111 AND max_ilvl > 265)
       ) AS characters
     SQL
   end
