@@ -7,6 +7,23 @@ require 'support/armory_helpers'
 RSpec.describe Armory::Character do
   subject { described_class.new('US', character_response_body) }
 
+  describe '#avg_ilvl' do
+    it 'returns the character’s average item level' do
+      expect(subject.avg_ilvl).to eq(681)
+    end
+
+    it 'returns zero if character is naked' do
+      subject = described_class.new('us', 'items' => {})
+      expect(subject.avg_ilvl).to eq(0)
+    end
+  end
+
+  describe '#class_name' do
+    it 'returns character class' do
+      expect(subject.class_name).to eq('hunter')
+    end
+  end
+
   describe '#faction' do
     it 'returns character faction' do
       expect(subject.faction).to eq('alliance')
@@ -26,6 +43,25 @@ RSpec.describe Armory::Character do
     it 'handles guildless' do
       subject = described_class.new('us', alternate_character_response_body)
       expect(subject.guild_name).to eq(nil)
+    end
+  end
+
+  describe '#items' do
+    it 'returns hash of items' do
+      expect(subject.items.frozen?).to eq(true)
+
+      keys = subject.items.keys
+
+      expect(keys).to include('head')
+      expect(keys).to include('chest')
+      expect(keys).not_to include('averageItemLevel')
+      expect(keys).not_to include('averageItemLevelEquipped')
+    end
+  end
+
+  describe '#last_modified' do
+    it 'returns a DateTime value' do
+      expect(subject.last_modified).to be < Time.current
     end
   end
 
@@ -53,23 +89,6 @@ RSpec.describe Armory::Character do
     end
   end
 
-  describe '#class_name' do
-    it 'returns character class' do
-      expect(subject.class_name).to eq('hunter')
-    end
-  end
-
-  describe '#avg_ilvl' do
-    it 'returns the character’s average item level' do
-      expect(subject.avg_ilvl).to eq(681)
-    end
-
-    it 'returns zero if character is naked' do
-      subject = described_class.new('us', 'items' => {})
-      expect(subject.avg_ilvl).to eq(0)
-    end
-  end
-
   describe '#max_ilvl' do
     it 'returns the character’s highest item level' do
       expect(subject.max_ilvl).to eq(795)
@@ -89,19 +108,6 @@ RSpec.describe Armory::Character do
     it 'returns zero if character is naked' do
       subject = described_class.new('us', 'items' => {})
       expect(subject.min_ilvl).to eq(0)
-    end
-  end
-
-  describe '#items' do
-    it 'returns hash of items' do
-      expect(subject.items.frozen?).to eq(true)
-
-      keys = subject.items.keys
-
-      expect(keys).to include('head')
-      expect(keys).to include('chest')
-      expect(keys).not_to include('averageItemLevel')
-      expect(keys).not_to include('averageItemLevelEquipped')
     end
   end
 end

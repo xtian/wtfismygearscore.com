@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Fabricator(:character) do
+  api_updated_at { Time.current }
   avg_ilvl { rand(1..700) }
   class_name { CLASSES.sample }
   faction { FACTIONS.sample }

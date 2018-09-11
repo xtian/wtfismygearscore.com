@@ -46,6 +46,10 @@ class Armory
       body.fetch('items')
     end
 
+    def last_modified
+      @_last_modified ||= Time.at(body.fetch('lastModified') / 1000).utc
+    end
+
     # @return [Integer]
     def max_ilvl
       @_max_ilvl ||= ilvls.max
