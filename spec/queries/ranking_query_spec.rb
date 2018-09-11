@@ -5,11 +5,10 @@ require 'rails_helper'
 RSpec.describe RankingQuery do
   describe '#call' do
     before do
-      # Levels need to be > 110 so they are not randomly filtered
-      Fabricate(:character, level: 111, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, level: 111, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, level: 111, region: 'us', realm: 'shadowmoon', score: 300)
-      Fabricate(:character, level: 111, region: 'us', realm: 'illidan', score: 500)
+      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
+      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
+      Fabricate(:character, region: 'us', realm: 'shadowmoon', score: 300)
+      Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
     end
 
     it 'returns ranked characters' do
@@ -56,12 +55,11 @@ RSpec.describe RankingQuery do
     end
 
     it 'filters characters with data from before the 8.0.1 ilvl squish' do
-      Fabricate(:character, level: 110, max_ilvl: 265, score: 1000)
-      Fabricate(:character, level: 90, max_ilvl: 266)
+      Fabricate(:character, score: 1000, api_updated_at: Date.new(2018, 8, 15))
 
-      characters = described_class.call(region: 'world', page: 1, per_page: 6)
+      characters = described_class.call(region: 'world', page: 1, per_page: 5)
 
-      expect(characters.size).to eq(5)
+      expect(characters.size).to eq(4)
       expect(characters[0].rank).to eq(1)
     end
   end

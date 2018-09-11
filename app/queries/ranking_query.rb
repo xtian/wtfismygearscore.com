@@ -95,7 +95,7 @@ class RankingQuery
           row_number() OVER (#{ranking_partition} ORDER BY score DESC)
         FROM characters
         -- Filter outdated data from before 8.0.1 ilvl squish
-        WHERE NOT (level < 111 AND max_ilvl > 265)
+        WHERE api_updated_at > '2018-08-15'
       ) AS characters
     SQL
   end
