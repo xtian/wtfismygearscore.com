@@ -3,8 +3,6 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
-
 gem 'rails', '~> 5.2.0'
 
 gem 'active_record_upsert' # AR integration for native PG upsert
@@ -19,7 +17,7 @@ gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
 gem 'ruby_identicon', require: false # Avatar generator
-gem 'sass-rails', github: 'rails/sass-rails', ref: 'dd04a6a' # Use SCSS for stylesheets
+gem 'sassc-rails' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
 gem 'secure_headers' # Applies several headers that are related to security
 gem 'sidekiq' # Background job queue built on Redis
