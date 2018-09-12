@@ -11,6 +11,11 @@ if Rails.env.production?
     # already added.
     config.ignored_exceptions += %w[ActionController::ParameterMissing]
 
+    config.ignore_if do |exception, _options|
+      key = exception.message.split('for').first[0..30]
+      ExpirableKey.new(key).exist_with_renew?
+    end
+
     config.add_notifier :slack,
                         backtrace_lines: 15,
                         webhook_url: Rails.application.secrets.slack_webhook_url
