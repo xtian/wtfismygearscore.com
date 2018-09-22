@@ -22,6 +22,7 @@ class CharacterUpdateBroadcaster
   # @return [void]
   def call
     return unless character.updated_at > caller_updated_at
+
     ActionCable.server.broadcast channel_name, html: partial, id: character.to_param
   end
 

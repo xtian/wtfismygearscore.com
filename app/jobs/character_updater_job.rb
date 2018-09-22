@@ -18,8 +18,8 @@ class CharacterUpdaterJob < ApplicationJob
     CharacterUpdateBroadcaster.call(*args)
   end
 
-  def log_error(e)
-    Rails.logger.warn "#{self.class} #{e.inspect}"
+  def log_error(error)
+    Rails.logger.warn "#{self.class} #{error.inspect}"
   end
 
   def update(*args)

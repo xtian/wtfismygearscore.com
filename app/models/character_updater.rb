@@ -36,6 +36,7 @@ class CharacterUpdater
 
   def handle_not_found
     raise if character.new_record?
+
     Rails.logger.warn "#{params} did not resolve to a valid Armory profile. Deleting cached character."
     character.destroy!
   end

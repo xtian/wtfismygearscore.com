@@ -20,6 +20,7 @@ class CommentNotifier
   # @return [void]
   def call
     return if webhook_url.blank?
+
     Slack::Notifier.new(webhook_url).ping '', attachments: [message_options]
   end
 

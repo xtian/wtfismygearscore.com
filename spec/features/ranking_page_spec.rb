@@ -6,7 +6,7 @@ require 'support/pages/ranking_page'
 # rubocop:disable RSpec/ExampleLength
 RSpec.feature 'Ranking page' do
   def ranking_page
-    @_page ||= RankingPage.new
+    @_ranking_page ||= RankingPage.new
   end
 
   before do

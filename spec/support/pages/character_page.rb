@@ -17,6 +17,7 @@ class CharacterPage < Page
 
   def faction
     return 'alliance' if page.has_selector?('.is-alliance')
+
     'horde' if page.has_selector?('.is-horde')
   end
 
