@@ -6,5 +6,8 @@ class ApplicationPresenter < SimpleDelegator
   end
 
   alias object __getobj__
+
+  # rubocop:disable Style/AccessModifierDeclarations
   private :object
+  # rubocop:enable Style/AccessModifierDeclarations
 end

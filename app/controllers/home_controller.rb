@@ -14,6 +14,7 @@ class HomeController < ApplicationController
 
   def destination_url(params)
     return character_url(*params) if params.length == 3
+
     characters_url(*params)
   end
 

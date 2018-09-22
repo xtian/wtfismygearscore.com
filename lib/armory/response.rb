@@ -24,6 +24,7 @@ class Armory
     # @return [Integer] HTTP status code
     def status
       return 500 if response.status.equal?(200) && body.empty?
+
       response.status
     end
 

@@ -27,6 +27,9 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 120
 
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+
 Rails/HasManyOrHasOneDependent:
   Enabled: false # Handled by Postgres, see character_spec.rb
 

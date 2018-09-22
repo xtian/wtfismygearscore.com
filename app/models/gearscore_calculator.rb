@@ -17,7 +17,7 @@ class GearscoreCalculator
 
   # @return [Integer] gearscore for given items hash
   def calculate
-    @_score ||= items.reduce(0) do |sum, (slot, hash)|
+    @_calculate ||= items.reduce(0) do |sum, (slot, hash)|
       # Count main hand weapon as a two-hander if off-hand not present
       slot = 'twoHand' if slot.eql?('mainHand') && !items.key?('offHand')
       sum + Item.new(slot, hash).score
@@ -51,7 +51,7 @@ class GearscoreCalculator
     attr_reader :ilvl, :quality, :slot
 
     def quality_modifier
-      @_quality_mod ||= begin
+      @_quality_modifier ||= begin
         return [ilvl, 1] if quality.zero?
 
         case ilvl

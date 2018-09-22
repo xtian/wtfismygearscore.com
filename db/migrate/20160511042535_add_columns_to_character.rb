@@ -2,7 +2,7 @@
 
 class AddColumnsToCharacter < ActiveRecord::Migration[5.0]
   def change
-    change_table :characters do |t|
+    change_table :characters, bulk: true do |t|
       t.integer :avg_ilvl, null: false
       t.integer :max_ilvl, null: false
       t.integer :min_ilvl, null: false

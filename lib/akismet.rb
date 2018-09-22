@@ -43,6 +43,7 @@ class Akismet
     response = faraday.post("/1.1/#{url}", params_for(comment))
 
     raise response['X-akismet-debug-help'] if response['X-akismet-debug-help']
+
     response
   end
 

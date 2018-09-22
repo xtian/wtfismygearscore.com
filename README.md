@@ -41,14 +41,6 @@ bin/rake eslint:run
 bin/rake scss_lint
 ```
 
-### Mutation tests
-
-To ensure complete test coverage for a class, you can run mutation tests with [mutant](https://github.com/mbj/mutant):
-
-```
-RAILS_ENV=test bin/mutant -r ./config/environment --use rspec ClassName
-```
-
 ## Documentation
 
 Documentation is written using [Yard](http://yardoc.org) in Markdown format. Use this command to run a server hosting the generated HTML docs:

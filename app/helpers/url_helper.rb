@@ -24,6 +24,7 @@ module UrlHelper
   # @return [String] path to comments route
   def comments_path(*args)
     return super if args.length == 3
+
     "#{character_path(args.first)}/comments"
   end
 end
