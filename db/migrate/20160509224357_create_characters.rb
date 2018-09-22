@@ -1,26 +1,28 @@
 # frozen_string_literal: true
 
 class CreateCharacters < ActiveRecord::Migration[5.0]
+  # rubocop:disable Metrics/MethodLength
   def change
     enable_extension :citext
 
     create_table :characters do |t|
-      t.with_options null: false do |t|
-        t.integer :region
-        t.citext :realm
-        t.citext :name
+      t.with_options null: false do |tt|
+        tt.integer :region
+        tt.citext :realm
+        tt.citext :name
 
-        t.integer :character_class
-        t.integer :level
-        t.integer :score
+        tt.integer :character_class
+        tt.integer :level
+        tt.integer :score
       end
 
-      t.index [:name, :realm, :region], unique: true
-      t.index [:region, :score], order: { score: :desc }
-      t.index [:realm, :region, :score], order: { score: :desc }
+      t.index %i[name realm region], unique: true
+      t.index %i[region score], order: { score: :desc }
+      t.index %i[realm region score], order: { score: :desc }
       t.index :score, order: { score: :desc }
 
       t.timestamps
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end

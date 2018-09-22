@@ -5,7 +5,7 @@ AllCops:
   Exclude:
     - Brewfile
     - 'bin/**/*'
-    - 'db/**/*'
+    - 'db/schema.rb'
 
 Rails:
   Enabled: true

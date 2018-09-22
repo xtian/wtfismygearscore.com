@@ -10,7 +10,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.belongs_to :character, null: false, index: false
       t.timestamps
 
-      t.index [:character_id, :created_at], order: { created_at: :desc }
+      t.index %i[character_id created_at], order: { created_at: :desc }
     end
 
     add_foreign_key :comments, :characters, on_delete: :cascade
