@@ -3,7 +3,7 @@
 require 'json'
 
 class Armory
-  # Simple wrapper around Armory API responses
+  # Simple wrapper around Blizzard API responses
   class Response
     # @param response_object [Faraday::Response] return from Faraday request
     def initialize(response_object)

@@ -5,12 +5,14 @@ require 'armory/character'
 require 'armory/response'
 require 'faraday'
 
-# Encapsulates logic for making requests to Battle.net Armory API
+# Encapsulates logic for making requests to the Blizzard API
 class Armory
-  # @param api_key [String] Armory API key
+  # @param client_id [String] Blizzard OAuth client ID
+  # @param client_secret [String] Blizzard OAuth client secret
   # @param timeout [Integer] Request timeout in seconds
-  def initialize(api_key, timeout)
-    @api_key = api_key
+  def initialize(client_id:, client_secret:, timeout:)
+    @client_id = client_id
+    @client_secret = client_secret
     @timeout = timeout
   end
 
@@ -21,7 +23,7 @@ class Armory
   # @raise [Armory::ServerError] if API returns 500, 503, 504, or invalid JSON
   # @raise [Armory::NotFoundError] if API returns 400 or 404
   # @raise [StandardError] for all other API errors
-  # @see https://dev.battle.net/io-docs Armory API docs
+  # @see https://develop.battle.net/documentation/api-reference Blizzard API docs
   def fetch_character(region:, realm:, name:)
     url = build_url(region, realm, name)
     response = Response.new(send_request(url))
@@ -38,14 +40,36 @@ class Armory
 
   private
 
-  attr_reader :api_key, :timeout
+  attr_reader :access_token_expiry, :client_id, :client_secret, :timeout
 
   class NotFoundError < StandardError; end
   class ServerError < StandardError; end
 
+  def access_token
+    @_access_token = nil if access_token_expiry&.past?
+
+    @_access_token ||= begin
+      response_body = fetch_access_token
+
+      @access_token_expiry = response_body.fetch('expires_in').seconds.from_now - 1.hour.seconds
+
+      response_body.fetch('access_token')
+    end
+  end
+
+  def fetch_access_token
+    url = 'https://us.battle.net/oauth/token'
+    query = "?grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
+
+    response = Response.new(send_request(url + query))
+    raise response.error_message if response.status != 200
+
+    response.body
+  end
+
   def build_url(region, realm, name)
-    url = "https://#{region}.api.battle.net/wow/character/#{realm}/#{name}"
-    query = "?apikey=#{api_key}&locale=en_US&fields=guild,items"
+    url = "https://#{region}.api.blizzard.com/wow/character/#{realm}/#{name}"
+    query = "?access_token=#{access_token}&locale=en_US&fields=guild,items"
     Addressable::URI.encode(url + query)
   end
 

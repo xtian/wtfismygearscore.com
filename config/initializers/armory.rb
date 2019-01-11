@@ -2,7 +2,12 @@
 
 require 'armory'
 
-api_key = Rails.application.secrets.armory_api_key
+client_id = Rails.application.secrets.blizzard_client_id
+client_secret = Rails.application.secrets.blizzard_client_secret
 timeout = 12
 
-ARMORY = Armory.new(api_key, timeout)
+ARMORY = Armory.new(
+  client_id: client_id,
+  client_secret: client_secret,
+  timeout: timeout
+)

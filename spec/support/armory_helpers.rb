@@ -2,15 +2,33 @@
 
 # rubocop:disable Metrics/ModuleLength
 module ArmoryHelpers
-  def stub_character_request(name: 'dargonaut', api_key: 'not-a-bnet-key')
-    url = %r{
-      https://us\.api\.battle\.net/wow/character/shadowmoon/#{name}
-      \?apikey=#{api_key}
+  def stub_character_request(name: 'dargonaut', client_id: nil, client_secret: nil)
+    access_token = 'not-an-access-token'
+    stub_token_request(access_token, client_id, client_secret)
+
+    character_url = %r{
+      https://us\.api\.blizzard\.com/wow/character/shadowmoon/#{name}
+      \?access_token=#{access_token}
       &fields=guild,items
       &locale=en_US
     }ix
 
-    stub_request(:get, url).to_return(body: character_response_body.to_json)
+    stub_request(:get, character_url).to_return(body: character_response_body.to_json)
+  end
+
+  def stub_token_request(access_token, client_id, client_secret)
+    client_id ||= Rails.application.secrets.blizzard_client_id
+    client_secret ||= Rails.application.secrets.blizzard_client_secret
+
+    token_url = %r{
+      https://us\.battle\.net/oauth/token
+      \?client_id=#{client_id}
+      &client_secret=#{client_secret}
+      &grant_type=client_credentials
+    }ix
+
+    token_response_body = { access_token: access_token, expires_in: 1.day.to_i }
+    stub_request(:get, token_url).to_return(body: token_response_body.to_json)
   end
 
   # rubocop:disable Metrics/MethodLength, Style/NumericLiterals
