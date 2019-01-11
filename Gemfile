@@ -46,6 +46,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails' # Shim to load environment variables from .env into ENV
   gem 'guard', require: false # Tool to perform actions on file modification
   gem 'guard-livereload', require: false # Reloads page when view-related files are changed
   gem 'listen' # Watches file system for changes
