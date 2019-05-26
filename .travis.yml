@@ -1,0 +1,28 @@
+language: ruby
+bundler_args: --jobs $(nproc) --without development production --path .bundle
+cache: bundler
+addons:
+  postgresql: "10"
+
+env:
+  - RAILS_ENV=test
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get --yes remove postgresql\*
+  - sudo apt-get install --yes postgresql-10 postgresql-client-10
+  - sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
+  - sudo service postgresql restart 10
+
+script:
+  - bin/rake rubocop
+  - bin/rake eslint:run
+  - bin/rake scss_lint
+  - bin/rake db:create
+  - bin/rspec
+
+deploy:
+  provider: script
+  script: bin/deploy
+  on:
+    branch: master
