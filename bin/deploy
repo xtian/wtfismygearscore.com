@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-git push dokku@wtfismygearscore.com:wtfismygs HEAD:master

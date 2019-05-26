@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -o errexit
+
+eval "$(ssh-agent -s)"
+chmod 600 .travis/deploy.key
+ssh-add .travis/deploy.key
+git push dokku@wtfismygearscore.com:wtfismygs HEAD:master
