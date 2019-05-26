@@ -33,10 +33,11 @@ class CharacterQuery
   # @return [String] canonical URL to disambiguate duplicate content for SEO
   def canonical_url
     Rails.application.routes.url_helpers.url_for(
-      action: 'show',
-      controller: 'characters',
-      host: Rails.application.secrets.base_url,
-      **page_params
+      page_params.merge(
+        action: 'show',
+        controller: 'characters',
+        host: Rails.application.secrets.base_url
+      )
     ).downcase
   end
 
