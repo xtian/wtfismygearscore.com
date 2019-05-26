@@ -1,6 +1,6 @@
 # WTF is My Gear Score?
 
-[![Build Status](https://drone.xtian.us/api/badges/xtian/wtfismygearscore.com/status.svg)](https://drone.xtian.us/xtian/wtfismygearscore.com) [![Code Climate](https://codeclimate.com/github/xtian/wtfismygearscore.com/badges/gpa.svg)](https://codeclimate.com/github/xtian/wtfismygearscore.com)
+[![Build Status](https://travis-ci.org/xtian/wtfismygearscore.com.svg?branch=master)](https://travis-ci.org/xtian/wtfismygearscore.com)
 
 As described on the site:
 
