@@ -1,8 +1,10 @@
 language: ruby
 bundler_args: --jobs $(nproc) --without development production --path .bundle
 cache: bundler
+
 addons:
   postgresql: "10"
+  ssh_known_hosts: wtfismygearscore.com
 
 env:
   - RAILS_ENV=test
