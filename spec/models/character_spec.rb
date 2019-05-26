@@ -5,9 +5,9 @@ require 'rails_helper'
 RSpec.describe Character do
   subject { Fabricate.build(:character, updated_at: Time.current) }
 
-  it { is_expected.to define_enum_for(:class_name).with(CLASSES) }
-  it { is_expected.to define_enum_for(:faction).with(FACTIONS) }
-  it { is_expected.to define_enum_for(:region).with(VALID_REGIONS_WITH_REALM) }
+  it { is_expected.to define_enum_for(:class_name).with_values(CLASSES) }
+  it { is_expected.to define_enum_for(:faction).with_values(FACTIONS) }
+  it { is_expected.to define_enum_for(:region).with_values(VALID_REGIONS_WITH_REALM) }
   it { is_expected.to validate_numericality_of(:level).only_integer.is_greater_than(0) }
   it { is_expected.to validate_numericality_of(:score).only_integer }
 
