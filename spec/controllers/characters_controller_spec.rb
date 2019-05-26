@@ -37,7 +37,7 @@ RSpec.describe CharactersController do
     end
 
     it 'handles a 504 response from the Armory' do
-      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+      stub_request(:get, %r{https://.+\.api\.blizzard\.com/.+})
         .to_return(status: 504, body: '')
 
       get :show, params: character_info
@@ -46,7 +46,7 @@ RSpec.describe CharactersController do
     end
 
     it 'handles a 500 response from the Armory' do
-      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+      stub_request(:get, %r{https://.+\.api\.blizzard\.com/.+})
         .to_return(status: 500, body: '')
 
       get :show, params: character_info

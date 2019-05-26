@@ -20,6 +20,8 @@ bin/setup
 
 If you are not using Homebrew, you will need to manually install Postgres and Redis and then run `bin/rails db:setup db:migrate`
 
+For development, you must provide a `.env` file with your Blizzard OAuth client ID and secret. See [`.env.sample`](/.env.sample) for reference.
+
 ## Starting the app
 
 First, make sure Postgres and Redis are running.

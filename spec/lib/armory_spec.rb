@@ -5,16 +5,19 @@ require 'armory'
 require 'support/armory_helpers'
 
 RSpec.describe Armory do
-  subject { described_class.new('foo', 15) }
+  subject { described_class.new(client_id: client_id, client_secret: client_secret, timeout: 15) }
+
+  let(:client_id) { 'foo' }
+  let(:client_secret) { 'bar' }
 
   describe '#fetch_character' do
     def stub_armory_request(status: 200, body: '')
-      stub_request(:get, %r{https://.+\.api\.battle\.net/.+})
+      stub_request(:get, %r{https://.+\.api\.blizzard\.com/.+})
         .to_return(status: status, body: body)
     end
 
     before do
-      stub_character_request(api_key: 'foo')
+      stub_character_request(client_id: client_id, client_secret: client_secret)
     end
 
     let(:args) do
@@ -27,7 +30,7 @@ RSpec.describe Armory do
     end
 
     it 'handles utf-8 URLs' do
-      stub_character_request(name: 'N%C3%A5jd', api_key: 'foo')
+      stub_character_request(name: 'N%C3%A5jd', client_id: client_id, client_secret: client_secret)
 
       expect {
         subject.fetch_character(region: 'us', realm: 'shadowmoon', name: 'Nåjd')
@@ -65,7 +68,7 @@ RSpec.describe Armory do
     end
 
     it 'raises a ServerError for timeouts' do
-      stub_request(:get, %r{https://.+\.api\.battle\.net/.+}).to_timeout
+      stub_request(:get, %r{https://.+\.api\.blizzard\.com/.+}).to_timeout
 
       expect { subject.fetch_character(args) }.to raise_error(Armory::ServerError, %r{https://.+})
     end

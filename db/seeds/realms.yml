@@ -211,7 +211,8 @@
   translations:
   - echo-isles
 - name: Eitrigg
-  translations: []
+  translations:
+  - Etrigg
 - name: Eldre'Thalas
   translations:
   - eldrethalas
@@ -282,7 +283,6 @@
 - name: Gul'dan
   translations:
   - guldan
-  - Gul’dan
   - 굴단
 - name: Gundrak
   translations: []
@@ -504,7 +504,8 @@
 - name: Stonemaul
   translations: []
 - name: Stormrage
-  translations: []
+  translations:
+  - 스톰레이지
 - name: Stormreaver
   translations: []
 - name: Stormscale
@@ -578,7 +579,8 @@
   translations:
   - 語風
 - name: Wildhammer
-  translations: []
+  translations:
+  - 와일드해머
 - name: Windrunner
   translations:
   - 윈드러너
@@ -645,6 +647,8 @@
 - name: Booty Bay
   translations:
   - booty-bay
+  - Пиратская Бухта
+  - пиратская-бухта
   - Пиратская бухта
   - пиратская-бухта
 - name: Bronze Dragonflight

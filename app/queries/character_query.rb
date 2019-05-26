@@ -58,7 +58,7 @@ class CharacterQuery
   def fetch_character
     character = Character.from_params(params)
 
-    # Initiate synchronous Armory API call if character is not cached in DB
+    # Initiate synchronous Blizzard API call if character is not cached in DB
     return CharacterUpdater.call(character) if character.new_record?
 
     # Update character from Armory in background
