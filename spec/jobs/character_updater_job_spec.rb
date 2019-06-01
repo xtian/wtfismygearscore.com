@@ -13,10 +13,10 @@ RSpec.describe CharacterUpdaterJob do
     end
 
     it 'handles Armory errors' do
-      character = instance_double('Character', updated_at: Time.current)
+      character = Fabricate(:character)
       expect(CharacterUpdater).to receive(:call).and_raise(Armory::ServerError)
 
-      expect { described_class.perform_now(character) }.not_to raise_error
+      expect { described_class.perform_now(character) }.to have_enqueued_job(described_class).with(character)
     end
 
     it 'handles uniqueness errors' do
