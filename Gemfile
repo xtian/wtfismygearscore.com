@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rubocop' # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
   gem 'scss_lint', require: false # Ensures consistent SCSS style
+  gem 'sorbet' # Type-checking
+  gem 'sorbet-runtime' # Runtime type-checking
 end
 
 group :development do
