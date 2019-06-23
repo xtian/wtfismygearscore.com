@@ -19,11 +19,8 @@ before_install:
   - sudo service postgresql restart 10
 
 script:
-  - bin/rake rubocop
-  - bin/rake eslint:run
-  - bin/rake scss_lint
   - bin/rake db:create
-  - bin/rspec
+  - bin/test
 
 deploy:
   provider: script

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -o errexit -o errtrace
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+set -o verbose
+
+bin/rake eslint:run
+bin/rake scss_lint
+bin/rake rubocop
+bin/srb tc --ignore=/.bundle
+bin/rspec

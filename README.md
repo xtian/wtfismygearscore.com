@@ -37,10 +37,7 @@ and visit `http://127.0.0.1:3000`
 ## Running the tests
 
 ```
-bin/rspec
-bin/rake rubocop
-bin/rake eslint:run
-bin/rake scss_lint
+bin/test
 ```
 
 ## Documentation
