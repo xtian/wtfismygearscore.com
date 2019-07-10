@@ -30,9 +30,6 @@ Metrics/LineLength:
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: required
 
-Rails/HasManyOrHasOneDependent:
-  Enabled: false # Handled by Postgres, see character_spec.rb
-
 RSpec/ExampleLength:
   Max: 10
 
