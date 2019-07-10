@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 env = ENV.fetch('RACK_ENV', 'development')

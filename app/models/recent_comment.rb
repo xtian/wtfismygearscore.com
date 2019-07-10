@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Materialized view which caches a limited number of recent comments for

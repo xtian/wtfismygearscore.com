@@ -275,6 +275,11 @@ GEM
       sidekiq (>= 4.0, < 7.0)
       thor (~> 0)
     slack-notifier (2.3.2)
+    sorbet (0.4.4411)
+      sorbet-static (= 0.4.4411)
+    sorbet-rails (0.4.0)
+    sorbet-runtime (0.4.4411)
+    sorbet-static (0.4.4411-universal-darwin-14)
     spring (2.1.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -360,6 +365,9 @@ DEPENDENCIES
   sidekiq
   sidekiq-unique-jobs
   slack-notifier
+  sorbet
+  sorbet-rails
+  sorbet-runtime
   spring
   spring-commands-rspec
   spring-watcher-listen

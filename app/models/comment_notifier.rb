@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Sends notifications for new comments to Slack webhook
