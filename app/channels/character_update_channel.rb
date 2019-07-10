@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Sets up connection to character page client code.

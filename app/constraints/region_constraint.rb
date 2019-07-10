@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Enables router to return 404s for requests with invalid regions.

@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # https://gist.github.com/Skulli/80a3f31d1b25b7b98c025b2bd182aa4a

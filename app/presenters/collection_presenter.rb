@@ -1,3 +1,4 @@
+# typed: ignore
 # frozen_string_literal: true
 
 # Wraps collection in a presenter which responds to `#each` and `#to_ary` which

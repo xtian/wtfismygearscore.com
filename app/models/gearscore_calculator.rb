@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Calculates overall item score based on slot value, ilvl, and quality for

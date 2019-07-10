@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Updates a given {Character} with latest data from the Armory

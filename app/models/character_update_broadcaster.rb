@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 # Encapsulates logic for broadcasting HTML character updates over ActionCable
