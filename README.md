@@ -10,7 +10,7 @@ This project is a rewrite of the original PHP codebase.
 
 ## Setup
 
-First, install [Homebrew](http://brew.sh).
+First, install [Homebrew](https://brew.sh).
 
 Then:
 
@@ -42,7 +42,7 @@ bin/test
 
 ## Documentation
 
-Documentation is written using [Yard](http://yardoc.org) in Markdown format. Use this command to run a server hosting the generated HTML docs:
+Documentation is written using [Yard](https://yardoc.org) in Markdown format. Use this command to run a server hosting the generated HTML docs:
 
 ```
 bin/yard server -r
