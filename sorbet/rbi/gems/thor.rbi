@@ -59,7 +59,7 @@ class Thor
   include Thor::Invocation
   include Thor::Shell
 end
-class Anonymous_Struct_24 < Struct
+class Anonymous_Struct_22 < Struct
   def ancestor_name; end
   def ancestor_name=(_); end
   def description; end
@@ -77,7 +77,7 @@ class Anonymous_Struct_24 < Struct
   def usage; end
   def usage=(_); end
 end
-class Thor::Command < Anonymous_Struct_24
+class Thor::Command < Anonymous_Struct_22
   def formatted_usage(klass, namespace = nil, subcommand = nil); end
   def handle_argument_error?(instance, error, caller); end
   def handle_no_method_error?(instance, error, caller); end

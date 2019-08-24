@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/exception_notification/all/exception_notification.rbi
 #
-# exception_notification-4.3.0
+# exception_notification-4.4.0
 module ExceptionNotifier
   def error_grouping; end
   def error_grouping=(obj); end
@@ -31,6 +31,8 @@ module ExceptionNotifier
   def self.error_grouping_period; end
   def self.error_grouping_period=(obj); end
   def self.fire_notification(notifier_name, exception, options, &block); end
+  def self.from_crawler(env, ignored_crawlers); end
+  def self.ignore_crawlers(crawlers); end
   def self.ignore_if(&block); end
   def self.ignored?(exception, options); end
   def self.ignored_exception?(ignore_array, exception); end
@@ -78,8 +80,7 @@ module ExceptionNotification
 end
 class ExceptionNotification::Rack
   def call(env); end
-  def from_crawler(env, ignored_crawlers); end
   def initialize(app, options = nil); end
 end
-class ExceptionNotification::Rack::CascadePassException < Exception
+class ExceptionNotification::Rack::CascadePassException < RuntimeError
 end

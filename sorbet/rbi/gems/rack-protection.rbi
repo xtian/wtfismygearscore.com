@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/rack-protection/all/rack-protection.rbi
 #
-# rack-protection-2.0.5
+# rack-protection-2.0.7
 module Rack
 end
 module Rack::Protection

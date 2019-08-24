@@ -224,7 +224,7 @@ class Typhoeus::Response
   include Typhoeus::Response::Informations
   include Typhoeus::Response::Status
 end
-class Typhoeus::Response::Header < Anonymous_Delegator_31
+class Typhoeus::Response::Header < Anonymous_Delegator_29
   def [](key); end
   def initialize(raw); end
   def parse; end

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/hashdiff/all/hashdiff.rbi
 #
-# hashdiff-0.4.0
+# hashdiff-1.0.0
 module Hashdiff
   def self.any_hash_or_array?(obja, objb); end
   def self.best_diff(obj1, obj2, options = nil, &block); end

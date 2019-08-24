@@ -7,8 +7,9 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/sassc/all/sassc.rbi
 #
-# sassc-2.0.1
+# sassc-2.1.0
 module SassC
+  def self.load_paths; end
 end
 module SassC::Native
   def _context_get_included_files(*arg0); end

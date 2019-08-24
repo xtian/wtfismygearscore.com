@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/regexp_parser/all/regexp_parser.rbi
 #
-# regexp_parser-1.5.1
+# regexp_parser-1.6.0
 class Regexp
 end
 class Regexp::Parser
@@ -278,6 +278,12 @@ end
 class Regexp::Syntax::V2_5 < Regexp::Syntax::V2_5_0
 end
 class Regexp::Syntax::V2_6_0 < Regexp::Syntax::V2_5
+  def initialize; end
+end
+class Regexp::Syntax::V2_6_2 < Regexp::Syntax::V2_6_0
+  def initialize; end
+end
+class Regexp::Syntax::V2_6_3 < Regexp::Syntax::V2_6_2
   def initialize; end
 end
 class Regexp::Syntax::SyntaxError < StandardError
