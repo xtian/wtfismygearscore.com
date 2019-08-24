@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/autoprefixer-rails/all/autoprefixer-rails.rbi
 #
-# autoprefixer-rails-9.6.1
+# autoprefixer-rails-9.6.1.1
 module AutoprefixerRails
   def self.install(assets, params = nil); end
   def self.process(css, opts = nil); end

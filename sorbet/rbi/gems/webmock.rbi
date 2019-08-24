@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/webmock/all/webmock.rbi
 #
-# webmock-3.6.0
+# webmock-3.6.2
 module WebMock
   def after_request(*args, &block); end
   def allow_net_connect!(*args, &block); end
@@ -474,6 +474,8 @@ class StubSocket
   def read_timeout; end
   def read_timeout=(arg0); end
   def readuntil(*args); end
+  def write_timeout; end
+  def write_timeout=(arg0); end
 end
 class Net::WebMockNetBufferedIO < Net::BufferedIO
   def initialize(io, *args); end

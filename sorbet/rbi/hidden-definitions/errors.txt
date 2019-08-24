@@ -23,11 +23,6 @@
 # wrong constant name <RESERVED_10>
 # wrong constant name <RESERVED_110>
 # wrong constant name <RESERVED_111>
-# wrong constant name <RESERVED_112>
-# wrong constant name <RESERVED_113>
-# wrong constant name <RESERVED_114>
-# wrong constant name <RESERVED_115>
-# wrong constant name <RESERVED_116>
 # wrong constant name <RESERVED_11>
 # wrong constant name <RESERVED_12>
 # wrong constant name <RESERVED_13>
@@ -1276,6 +1271,8 @@
 # uninitialized constant ActiveRecord::Base::MAX_PASSWORD_LENGTH_ALLOWED
 # uninitialized constant ActiveRecord::Base::NAME_COMPILABLE_REGEXP
 # uninitialized constant ActiveRecord::Base::UNASSIGNABLE_KEYS
+# wrong constant name inherited
+# wrong constant name sbr_old_inherited
 # wrong constant name <static-init>
 # wrong constant name dump
 # wrong constant name load
@@ -1291,7 +1288,78 @@
 # uninitialized constant ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::CALLBACK_FILTER_TYPES
 # uninitialized constant ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::MONEY_COLUMN_TYPE_OID
 # uninitialized constant ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::SIMPLE_INT
-# wrong constant name collect?
+# uninitialized constant ActiveRecord::InternalMetadata::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
+# uninitialized constant ActiveRecord::InternalMetadata::BLACKLISTED_CLASS_METHODS
+# uninitialized constant ActiveRecord::InternalMetadata::CALLBACKS
+# uninitialized constant ActiveRecord::InternalMetadata::CALLBACK_FILTER_TYPES
+# uninitialized constant ActiveRecord::InternalMetadata::CALL_COMPILABLE_REGEXP
+# wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
+# uninitialized constant ActiveRecord::InternalMetadata::MAX_PASSWORD_LENGTH_ALLOWED
+# uninitialized constant ActiveRecord::InternalMetadata::NAME_COMPILABLE_REGEXP
+# uninitialized constant ActiveRecord::InternalMetadata::UNASSIGNABLE_KEYS
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::InternalMetadata::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name []
+# wrong constant name []=
+# wrong constant name create_table
+# wrong constant name <Class:Rails41>
+# wrong constant name <Class:Rails420>
+# wrong constant name <static-init>
+# wrong constant name convert
+# wrong constant name <static-init>
+# wrong constant name convert
+# wrong constant name <static-init>
+# wrong constant name convert
 # uninitialized constant ActiveRecord::LogSubscriber::BLACK
 # uninitialized constant ActiveRecord::LogSubscriber::BLUE
 # uninitialized constant ActiveRecord::LogSubscriber::BOLD
@@ -1325,8 +1393,117 @@
 # uninitialized constant ActiveRecord::Relation::STRUCTURAL_OR_METHODS
 # uninitialized constant ActiveRecord::Relation::VALID_DIRECTIONS
 # uninitialized constant ActiveRecord::Relation::VALID_UNSCOPING_VALUES
-# wrong constant name value_for
-# wrong constant name suppressed
+# uninitialized constant ActiveRecord::Result::Elem
+# wrong constant name []
+# wrong constant name cast_values
+# wrong constant name collect!
+# wrong constant name column_types
+# wrong constant name columns
+# wrong constant name each
+# wrong constant name empty?
+# wrong constant name first
+# wrong constant name initialize
+# wrong constant name last
+# wrong constant name length
+# wrong constant name map!
+# wrong constant name rows
+# wrong constant name to_ary
+# wrong constant name to_hash
+# uninitialized constant ActiveRecord::Schema::MigrationFilenameRegexp
+# wrong constant name define
+# uninitialized constant ActiveRecord::SchemaMigration::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
+# uninitialized constant ActiveRecord::SchemaMigration::BLACKLISTED_CLASS_METHODS
+# uninitialized constant ActiveRecord::SchemaMigration::CALLBACKS
+# uninitialized constant ActiveRecord::SchemaMigration::CALLBACK_FILTER_TYPES
+# uninitialized constant ActiveRecord::SchemaMigration::CALL_COMPILABLE_REGEXP
+# wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
+# uninitialized constant ActiveRecord::SchemaMigration::MAX_PASSWORD_LENGTH_ALLOWED
+# uninitialized constant ActiveRecord::SchemaMigration::NAME_COMPILABLE_REGEXP
+# uninitialized constant ActiveRecord::SchemaMigration::UNASSIGNABLE_KEYS
+# wrong constant name version
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ActiveRecord::SchemaMigration::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name all_versions
+# wrong constant name create_table
+# wrong constant name drop_table
+# wrong constant name normalize_migration_number
+# wrong constant name normalized_versions
+# wrong constant name <Class:BindMap>
+# wrong constant name <Class:Params>
+# wrong constant name <Class:PartialQuery>
+# wrong constant name <Class:Query>
+# wrong constant name <Class:Substitute>
+# wrong constant name bind_map
+# wrong constant name execute
+# wrong constant name initialize
+# wrong constant name klass
+# wrong constant name query_builder
+# wrong constant name bind
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name bind
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name sql_for
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name create
+# wrong constant name partial_query
+# wrong constant name query
+# wrong constant name unsupported_value?
 # wrong constant name charset
 # wrong constant name charset_current
 # wrong constant name check_protected_environments!
@@ -1678,14 +1855,64 @@
 # wrong constant name uuid
 # wrong constant name uuid=
 # uninitialized constant ApplicationRecord::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
 # uninitialized constant ApplicationRecord::BLACKLISTED_CLASS_METHODS
 # uninitialized constant ApplicationRecord::CALLBACKS
 # uninitialized constant ApplicationRecord::CALLBACK_FILTER_TYPES
 # uninitialized constant ApplicationRecord::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
 # uninitialized constant ApplicationRecord::MAX_PASSWORD_LENGTH_ALLOWED
 # uninitialized constant ApplicationRecord::NAME_COMPILABLE_REGEXP
 # uninitialized constant ApplicationRecord::UNASSIGNABLE_KEYS
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of ApplicationRecord::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# wrong constant name <static-init>
 # wrong constant name <static-init>
 # uninitialized constant Arel::Visitors::PostgreSQL::AND
 # uninitialized constant Arel::Visitors::PostgreSQL::COMMA
@@ -1727,12 +1954,10 @@
 # Did you mean?  to_s
 # wrong constant name []$2
 # wrong constant name []=$2
-# wrong constant name append
 # wrong constant name bsearch
 # wrong constant name bsearch_index
 # wrong constant name collect!
 # wrong constant name concat$1
-# wrong constant name difference
 # wrong constant name dig
 # wrong constant name fetch$2
 # wrong constant name fill$2
@@ -1747,7 +1972,6 @@
 # wrong constant name pack
 # wrong constant name permutation$2
 # wrong constant name pop$2
-# wrong constant name prepend
 # wrong constant name replace
 # wrong constant name rindex$2
 # wrong constant name rotate$1
@@ -1763,7 +1987,6 @@
 # wrong constant name to_csv
 # wrong constant name to_h
 # wrong constant name to_s$1
-# wrong constant name union
 # wrong constant name wrap
 # wrong constant name <Class:BasicObject>
 # wrong constant name initialize
@@ -1963,6 +2186,7 @@
 # wrong constant name run
 # wrong constant name <static-init>
 # wrong constant name <static-init>
+# uninitialized constant Bundler::Index::Elem
 # wrong constant name initialize
 # wrong constant name inject
 # wrong constant name remove
@@ -1978,6 +2202,8 @@
 # wrong constant name ambiguous_gems
 # wrong constant name ambiguous_gems=
 # wrong constant name install
+# uninitialized constant Bundler::Molinillo::DependencyGraph::Elem
+# uninitialized constant Bundler::Molinillo::DependencyGraph::Log::Elem
 # wrong constant name ==
 # wrong constant name app_cache_dirname
 # wrong constant name app_cache_path
@@ -2094,6 +2320,7 @@
 # wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name validate!
+# uninitialized constant Bundler::SpecSet::Elem
 # wrong constant name add_color
 # wrong constant name ask
 # wrong constant name confirm
@@ -2357,11 +2584,15 @@
 # uninitialized constant Chalk
 # uninitialized constant Chalk
 # uninitialized constant Character::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
 # uninitialized constant Character::BLACKLISTED_CLASS_METHODS
 # uninitialized constant Character::CALLBACKS
 # uninitialized constant Character::CALLBACK_FILTER_TYPES
 # uninitialized constant Character::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
 # uninitialized constant Character::MAX_PASSWORD_LENGTH_ALLOWED
 # uninitialized constant Character::NAME_COMPILABLE_REGEXP
 # uninitialized constant Character::UNASSIGNABLE_KEYS
@@ -2379,10 +2610,73 @@
 # wrong constant name before_remove_for_comments=
 # wrong constant name before_remove_for_comments?
 # wrong constant name validate_associated_records_for_comments
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Character::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
 # wrong constant name comment_ids
 # wrong constant name comment_ids=
 # wrong constant name comments
 # wrong constant name comments=
+# wrong constant name <static-init>
+# wrong constant name alliance
+# wrong constant name druid
+# wrong constant name eu
+# wrong constant name horde
+# wrong constant name hunter
+# wrong constant name kr
+# wrong constant name mage
+# wrong constant name monk
+# wrong constant name neutral
+# wrong constant name paladin
+# wrong constant name priest
+# wrong constant name rogue
+# wrong constant name shaman
+# wrong constant name tw
+# wrong constant name us
+# wrong constant name warlock
+# wrong constant name warrior
 # wrong constant name <static-init>
 # wrong constant name after_add_for_comments
 # wrong constant name after_add_for_comments=
@@ -2420,23 +2714,78 @@
 # uninitialized constant Class::RUBY_RESERVED_KEYWORDS
 # wrong constant name initialize$2
 # wrong constant name json_creatable?
+# uninitialized constant Elem
+# wrong constant name each
+# wrong constant name initialize
+# wrong constant name to_ary
+# wrong constant name <static-init>
 # uninitialized constant Comment::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
 # uninitialized constant Comment::BLACKLISTED_CLASS_METHODS
 # uninitialized constant Comment::CALLBACKS
 # uninitialized constant Comment::CALLBACK_FILTER_TYPES
 # uninitialized constant Comment::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
 # uninitialized constant Comment::MAX_PASSWORD_LENGTH_ALLOWED
 # uninitialized constant Comment::NAME_COMPILABLE_REGEXP
 # uninitialized constant Comment::UNASSIGNABLE_KEYS
 # wrong constant name autosave_associated_records_for_character
 # wrong constant name belongs_to_counter_cache_after_update
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Comment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
 # wrong constant name build_character
 # wrong constant name character
 # wrong constant name character=
 # wrong constant name create_character
 # wrong constant name create_character!
 # wrong constant name reload_character
+# wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name polar
 # wrong constant name rect
@@ -2482,8 +2831,6 @@
 # uninitialized constant Date::Infinity::PETABYTE
 # uninitialized constant Date::Infinity::TERABYTE
 # wrong constant name initialize
-# undefined singleton method `_parse$1' for `Date'
-# wrong constant name _parse$1
 # wrong constant name !=
 # wrong constant name ==
 # wrong constant name __getobj__
@@ -2645,7 +2992,6 @@
 # wrong constant name first$2
 # wrong constant name grep_v
 # wrong constant name inject$2
-# wrong constant name lazy
 # wrong constant name max$2
 # wrong constant name max_by$2
 # wrong constant name min$2
@@ -2886,61 +3232,49 @@
 # wrong constant name token
 # wrong constant name token=
 # wrong constant name <static-init>
+# wrong constant name <Class:DatadogExceptionEvent>
+# wrong constant name call
+# wrong constant name client
+# wrong constant name datadog_event
+# wrong constant name default_options
+# wrong constant name initialize
+# wrong constant name backtrace
+# wrong constant name controller
+# wrong constant name event
+# wrong constant name exception
+# wrong constant name formatted_backtrace
+# wrong constant name formatted_body
+# wrong constant name formatted_key_value
+# wrong constant name formatted_request
+# wrong constant name formatted_session
+# wrong constant name formatted_title
+# wrong constant name initialize
+# wrong constant name inspect_object
+# wrong constant name options
+# wrong constant name request
+# wrong constant name tags
+# wrong constant name title_prefix
+# wrong constant name truncate
+# wrong constant name <static-init>
+# wrong constant name <static-init>
 # wrong constant name <Class:Mailer>
-# wrong constant name background_sections
-# wrong constant name background_sections=
 # wrong constant name call
 # wrong constant name create_email
-# wrong constant name deliver_with
-# wrong constant name deliver_with=
-# wrong constant name delivery_method
-# wrong constant name delivery_method=
-# wrong constant name email_format
-# wrong constant name email_format=
-# wrong constant name email_headers
-# wrong constant name email_headers=
-# wrong constant name email_prefix
-# wrong constant name email_prefix=
-# wrong constant name exception_recipients
-# wrong constant name exception_recipients=
-# wrong constant name include_controller_and_action_names_in_subject
-# wrong constant name include_controller_and_action_names_in_subject=
 # wrong constant name initialize
-# wrong constant name mailer
-# wrong constant name mailer_parent
-# wrong constant name mailer_parent=
-# wrong constant name mailer_settings
-# wrong constant name mailer_settings=
-# wrong constant name normalize_subject
-# wrong constant name normalize_subject=
-# wrong constant name options
-# wrong constant name post_callback
-# wrong constant name post_callback=
-# wrong constant name pre_callback
-# wrong constant name pre_callback=
-# wrong constant name sections
-# wrong constant name sections=
-# wrong constant name sender_address
-# wrong constant name sender_address=
-# wrong constant name template_path
-# wrong constant name template_path=
-# wrong constant name verbose_subject
-# wrong constant name verbose_subject=
 # wrong constant name <Class:MissingController>
 # wrong constant name method_missing
 # wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name extended
 # wrong constant name <static-init>
-# wrong constant name default_options
 # wrong constant name normalize_digits
-# wrong constant name <Class:MissingController>
-# wrong constant name call
-# wrong constant name httparty
-# wrong constant name httparty=
+# wrong constant name app_name
+# wrong constant name backtrace_message
+# wrong constant name controller_and_action
 # wrong constant name initialize
-# wrong constant name method_missing
-# wrong constant name <static-init>
+# wrong constant name request_message
+# wrong constant name subtitle
+# wrong constant name title
 # wrong constant name <static-init>
 # wrong constant name call
 # wrong constant name from
@@ -2954,14 +3288,6 @@
 # wrong constant name call
 # wrong constant name initialize
 # wrong constant name send_message
-# wrong constant name <static-init>
-# wrong constant name <Class:MissingController>
-# wrong constant name call
-# wrong constant name httparty
-# wrong constant name httparty=
-# wrong constant name initialize
-# wrong constant name method_missing
-# wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name background_exception_notification
@@ -3286,33 +3612,6 @@
 # wrong constant name realpath$1
 # wrong constant name umask$1
 # wrong constant name utime$1
-# wrong constant name blockdev?
-# wrong constant name chardev?
-# wrong constant name directory?
-# wrong constant name empty?
-# wrong constant name executable?
-# wrong constant name executable_real?
-# wrong constant name exist?
-# wrong constant name exists?
-# wrong constant name file?
-# wrong constant name grpowned?
-# wrong constant name identical?
-# wrong constant name owned?
-# wrong constant name pipe?
-# wrong constant name readable?
-# wrong constant name readable_real?
-# wrong constant name setgid?
-# wrong constant name setuid?
-# wrong constant name size
-# wrong constant name size?
-# wrong constant name socket?
-# wrong constant name sticky?
-# wrong constant name symlink?
-# wrong constant name world_readable?
-# wrong constant name world_writable?
-# wrong constant name writable?
-# wrong constant name writable_real?
-# wrong constant name zero?
 # wrong constant name ruby
 # wrong constant name safe_ln
 # wrong constant name sh
@@ -3320,97 +3619,12 @@
 # uninitialized constant FileUtils::DryRun::LN_SUPPORTED
 # uninitialized constant FileUtils::DryRun::RUBY
 # uninitialized constant FileUtils::DryRun::VERSION
-# wrong constant name blockdev?
-# wrong constant name chardev?
-# wrong constant name chmod
-# wrong constant name chown
-# wrong constant name copy
-# wrong constant name copy_file
-# wrong constant name copy_metadata
-# wrong constant name dereference?
-# wrong constant name directory?
-# wrong constant name door?
-# wrong constant name entries
-# wrong constant name exist?
-# wrong constant name file?
-# wrong constant name initialize
-# wrong constant name link
-# wrong constant name lstat
-# wrong constant name lstat!
-# wrong constant name path
-# wrong constant name pipe?
-# wrong constant name platform_support
-# wrong constant name postorder_traverse
-# wrong constant name prefix
-# wrong constant name preorder_traverse
-# wrong constant name rel
-# wrong constant name remove
-# wrong constant name remove_dir1
-# wrong constant name remove_file
-# wrong constant name socket?
-# wrong constant name stat
-# wrong constant name stat!
-# wrong constant name symlink?
-# wrong constant name traverse
-# wrong constant name wrap_traverse
 # uninitialized constant FileUtils::NoWrite::LN_SUPPORTED
 # uninitialized constant FileUtils::NoWrite::RUBY
 # uninitialized constant FileUtils::NoWrite::VERSION
 # uninitialized constant FileUtils::Verbose::LN_SUPPORTED
 # uninitialized constant FileUtils::Verbose::RUBY
 # uninitialized constant FileUtils::Verbose::VERSION
-# undefined singleton method `cp_r$1' for `FileUtils'
-# undefined singleton method `mkdir_p$1' for `FileUtils'
-# wrong constant name cd
-# wrong constant name chdir
-# wrong constant name chmod
-# wrong constant name chmod_R
-# wrong constant name chown
-# wrong constant name chown_R
-# wrong constant name cmp
-# wrong constant name collect_method
-# wrong constant name commands
-# wrong constant name compare_file
-# wrong constant name compare_stream
-# wrong constant name copy
-# wrong constant name copy_entry
-# wrong constant name copy_file
-# wrong constant name copy_stream
-# wrong constant name cp
-# wrong constant name cp_lr
-# wrong constant name cp_r$1
-# wrong constant name getwd
-# wrong constant name have_option?
-# wrong constant name identical?
-# wrong constant name install
-# wrong constant name link
-# wrong constant name link_entry
-# wrong constant name ln
-# wrong constant name ln_s
-# wrong constant name ln_sf
-# wrong constant name makedirs
-# wrong constant name mkdir
-# wrong constant name mkdir_p$1
-# wrong constant name mkpath
-# wrong constant name move
-# wrong constant name mv
-# wrong constant name options
-# wrong constant name options_of
-# wrong constant name private_module_function
-# wrong constant name pwd
-# wrong constant name remove
-# wrong constant name remove_dir
-# wrong constant name remove_entry
-# wrong constant name remove_entry_secure
-# wrong constant name remove_file
-# wrong constant name rm
-# wrong constant name rm_f
-# wrong constant name rm_rf
-# wrong constant name rmdir
-# wrong constant name rmtree
-# wrong constant name safe_unlink
-# wrong constant name symlink
-# wrong constant name uptodate?
 # wrong constant name <static-init>
 # wrong constant name find
 # wrong constant name prune
@@ -3424,6 +3638,8 @@
 # uninitialized constant Float::TERABYTE
 # wrong constant name rationalize$2
 # wrong constant name to_d
+# uninitialized constant Formatters
+# uninitialized constant Formatters
 # wrong constant name def_delegator
 # wrong constant name def_delegators
 # wrong constant name def_instance_delegator
@@ -3437,8 +3653,6 @@
 # wrong constant name debug=
 # wrong constant name <static-init>
 # wrong constant name garbage_collect
-# undefined singleton method `report$1' for `GC::Profiler'
-# wrong constant name report$1
 # undefined singleton method `start$1' for `GC'
 # undefined singleton method `stat$2' for `GC'
 # wrong constant name latest_gc_info
@@ -3447,1832 +3661,17 @@
 # wrong constant name stress=
 # wrong constant name verify_internal_consistency
 # wrong constant name verify_transient_heap_internal_consistency
-# wrong constant name <Class:AvailableSet>
-# wrong constant name <Class:BundlerVersionFinder>
-# wrong constant name <Class:Command>
-# wrong constant name <Class:Commands>
-# wrong constant name <Class:ConfigFile>
-# wrong constant name <Class:ConsoleUI>
-# wrong constant name <Class:DefaultUserInteraction>
-# wrong constant name <Class:DependencyInstaller>
-# wrong constant name <Class:DependencyList>
-# wrong constant name <Class:Ext>
-# wrong constant name <Class:Installer>
-# wrong constant name <Class:Licenses>
-# wrong constant name <Class:NameTuple>
-# wrong constant name <Class:Package>
-# wrong constant name <Class:RemoteFetcher>
-# wrong constant name <Class:Request>
-# wrong constant name <Class:RequestSet>
-# wrong constant name <Class:Resolver>
-# wrong constant name <Class:RuntimeRequirementNotMetError>
-# wrong constant name <Class:Security>
-# wrong constant name <Class:SilentUI>
-# wrong constant name <Class:Source>
-# wrong constant name <Class:SourceList>
-# wrong constant name <Class:SpecFetcher>
-# wrong constant name <Class:SpecificationPolicy>
-# wrong constant name <Class:StreamUI>
-# wrong constant name <Class:Text>
-# wrong constant name <Class:UninstallError>
-# wrong constant name <Class:UriFormatter>
-# wrong constant name <Class:UserInteraction>
-# wrong constant name <Class:Util>
-# wrong constant name <<
-# uninitialized constant Gem::AvailableSet::Elem
-# wrong constant name <Class:Tuple>
-# wrong constant name add
-# wrong constant name all_specs
-# wrong constant name each
-# wrong constant name each_spec
-# wrong constant name empty?
-# wrong constant name find_all
-# wrong constant name inject_into_list
-# wrong constant name match_platform!
-# wrong constant name pick_best!
-# wrong constant name prefetch
-# wrong constant name remote
-# wrong constant name remote=
-# wrong constant name remove_installed!
-# wrong constant name set
-# wrong constant name size
-# wrong constant name sorted
-# wrong constant name source_for
-# wrong constant name to_request_set
-# uninitialized constant Gem::AvailableSet::Tuple::Elem
-# wrong constant name source
-# wrong constant name source=
-# wrong constant name spec
-# wrong constant name spec=
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name members
-# wrong constant name <static-init>
-# wrong constant name activated?
-# wrong constant name base_dir
-# wrong constant name base_dir=
-# wrong constant name contains_requirable_file?
-# wrong constant name datadir
-# wrong constant name default_gem?
-# wrong constant name extension_dir
-# wrong constant name extension_dir=
-# wrong constant name extensions_dir
-# wrong constant name full_gem_path
-# wrong constant name full_gem_path=
-# wrong constant name full_name
-# wrong constant name full_require_paths
-# wrong constant name gem_build_complete_path
-# wrong constant name gem_dir
-# wrong constant name gems_dir
-# wrong constant name ignored=
-# wrong constant name internal_init
-# wrong constant name lib_dirs_glob
-# wrong constant name loaded_from
-# wrong constant name loaded_from=
-# wrong constant name matches_for_glob
-# wrong constant name name
-# wrong constant name platform
-# wrong constant name raw_require_paths
-# wrong constant name require_paths
-# wrong constant name source_paths
-# wrong constant name stubbed?
-# wrong constant name this
-# wrong constant name to_fullpath
-# wrong constant name to_spec
-# wrong constant name version
-# wrong constant name default_specifications_dir
-# wrong constant name <static-init>
-# wrong constant name bundler_version
-# wrong constant name bundler_version_with_reason
-# wrong constant name compatible?
-# wrong constant name filter!
-# wrong constant name missing_version_message
-# wrong constant name add_extra_args
-# wrong constant name add_option
-# wrong constant name arguments
-# wrong constant name begins?
-# wrong constant name command
-# wrong constant name defaults
-# wrong constant name defaults=
-# wrong constant name defaults_str
-# wrong constant name description
-# wrong constant name execute
-# wrong constant name get_all_gem_names
-# wrong constant name get_all_gem_names_and_versions
-# wrong constant name get_one_gem_name
-# wrong constant name get_one_optional_argument
-# wrong constant name handle_options
-# wrong constant name handles?
-# wrong constant name initialize
-# wrong constant name invoke
-# wrong constant name invoke_with_build_args
-# wrong constant name merge_options
-# wrong constant name options
-# wrong constant name program_name
-# wrong constant name program_name=
-# wrong constant name remove_option
-# wrong constant name show_help
-# wrong constant name show_lookup_failure
-# wrong constant name summary
-# wrong constant name summary=
-# wrong constant name usage
-# wrong constant name when_invoked
-# wrong constant name <static-init>
-# wrong constant name add_common_option
-# wrong constant name add_specific_extra_args
-# wrong constant name build_args
-# wrong constant name build_args=
-# wrong constant name common_options
-# wrong constant name extra_args
-# wrong constant name extra_args=
-# wrong constant name specific_extra_args
-# wrong constant name specific_extra_args_hash
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name []
-# wrong constant name []=
-# wrong constant name api_keys
-# wrong constant name args
-# wrong constant name backtrace
-# wrong constant name backtrace=
-# wrong constant name bulk_threshold
-# wrong constant name bulk_threshold=
-# wrong constant name cert_expiration_length_days
-# wrong constant name cert_expiration_length_days=
-# wrong constant name check_credentials_permissions
-# wrong constant name concurrent_downloads
-# wrong constant name concurrent_downloads=
-# wrong constant name config_file_name
-# wrong constant name credentials_path
-# wrong constant name disable_default_gem_server
-# wrong constant name disable_default_gem_server=
-# wrong constant name each
-# wrong constant name handle_arguments
-# wrong constant name home
-# wrong constant name home=
-# wrong constant name initialize
-# wrong constant name load_api_keys
-# wrong constant name load_file
-# wrong constant name path
-# wrong constant name path=
-# wrong constant name really_verbose
-# wrong constant name rubygems_api_key
-# wrong constant name rubygems_api_key=
-# wrong constant name set_api_key
-# wrong constant name sources
-# wrong constant name sources=
-# wrong constant name ssl_ca_cert
-# wrong constant name ssl_ca_cert=
-# wrong constant name ssl_client_cert
-# wrong constant name ssl_verify_mode
-# wrong constant name to_yaml
-# wrong constant name unset_api_key!
-# wrong constant name update_sources
-# wrong constant name update_sources=
-# wrong constant name verbose
-# wrong constant name verbose=
-# wrong constant name write
-# wrong constant name <static-init>
-# wrong constant name conflicts
-# wrong constant name initialize
-# wrong constant name target
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name ui
-# wrong constant name ui=
-# wrong constant name use_ui
-# wrong constant name <static-init>
-# wrong constant name ui
-# wrong constant name ui=
-# wrong constant name use_ui
 # wrong constant name <=>
-# wrong constant name ==
-# wrong constant name ===
-# wrong constant name =~
-# wrong constant name all_sources
-# wrong constant name all_sources=
-# wrong constant name encode_with
-# wrong constant name eql?
-# wrong constant name groups
-# wrong constant name groups=
-# wrong constant name initialize
-# wrong constant name latest_version?
-# wrong constant name match?
-# wrong constant name matches_spec?
-# wrong constant name matching_specs
-# wrong constant name merge
-# wrong constant name name
-# wrong constant name name=
-# wrong constant name prerelease=
-# wrong constant name prerelease?
-# wrong constant name requirement
-# wrong constant name requirements_list
-# wrong constant name runtime?
-# wrong constant name source
-# wrong constant name source=
-# wrong constant name specific?
-# wrong constant name to_lock
-# wrong constant name to_spec
-# wrong constant name to_specs
-# wrong constant name to_yaml_properties
-# wrong constant name type
-# wrong constant name _deprecated_add_found_dependencies
-# wrong constant name _deprecated_gather_dependencies
-# wrong constant name add_found_dependencies
-# wrong constant name available_set_for
-# wrong constant name consider_local?
-# wrong constant name consider_remote?
-# wrong constant name document
-# wrong constant name errors
-# wrong constant name find_gems_with_sources
-# wrong constant name find_spec_by_name_and_version
-# wrong constant name gather_dependencies
-# wrong constant name in_background
-# wrong constant name initialize
-# wrong constant name install
-# wrong constant name install_development_deps
-# wrong constant name installed_gems
-# wrong constant name resolve_dependencies
-# wrong constant name <static-init>
-# uninitialized constant Gem::DependencyList::Elem
-# wrong constant name add
-# wrong constant name clear
-# wrong constant name dependency_order
-# wrong constant name development
-# wrong constant name development=
-# wrong constant name each
-# wrong constant name find_name
-# wrong constant name initialize
-# wrong constant name ok?
-# wrong constant name ok_to_remove?
-# wrong constant name remove_by_name
-# wrong constant name remove_specs_unsatisfied_by
-# wrong constant name spec_predecessors
-# wrong constant name specs
-# wrong constant name tsort_each_node
-# wrong constant name why_not_ok?
-# wrong constant name <static-init>
-# wrong constant name from_specs
-# wrong constant name conflict
-# wrong constant name conflicting_dependencies
-# wrong constant name initialize
-# wrong constant name deprecate
-# wrong constant name skip
-# wrong constant name skip=
-# wrong constant name skip_during
-# wrong constant name _deprecated_source_exception
-# wrong constant name source_exception
-# wrong constant name source_exception=
-# wrong constant name <Class:BuildError>
-# wrong constant name <Class:Builder>
-# wrong constant name <Class:CmakeBuilder>
-# wrong constant name <Class:ConfigureBuilder>
-# wrong constant name <Class:ExtConfBuilder>
-# wrong constant name <Class:RakeBuilder>
-# wrong constant name <static-init>
-# wrong constant name build_args
-# wrong constant name build_args=
-# wrong constant name build_error
-# wrong constant name build_extension
-# wrong constant name build_extensions
-# wrong constant name builder_for
-# wrong constant name initialize
-# wrong constant name write_gem_make_out
-# wrong constant name <static-init>
-# wrong constant name class_name
-# wrong constant name make
-# wrong constant name redirector
-# wrong constant name run
-# uninitialized constant Gem::Ext::CmakeBuilder::CHDIR_MONITOR
-# uninitialized constant Gem::Ext::CmakeBuilder::CHDIR_MUTEX
-# wrong constant name <static-init>
-# wrong constant name build
-# uninitialized constant Gem::Ext::ConfigureBuilder::CHDIR_MONITOR
-# uninitialized constant Gem::Ext::ConfigureBuilder::CHDIR_MUTEX
-# wrong constant name <static-init>
-# wrong constant name build
-# uninitialized constant Gem::Ext::ExtConfBuilder::CHDIR_MONITOR
-# uninitialized constant Gem::Ext::ExtConfBuilder::CHDIR_MUTEX
-# wrong constant name <static-init>
-# wrong constant name build
-# wrong constant name get_relative_path
-# uninitialized constant Gem::Ext::RakeBuilder::CHDIR_MONITOR
-# uninitialized constant Gem::Ext::RakeBuilder::CHDIR_MUTEX
-# wrong constant name <static-init>
-# wrong constant name build
-# wrong constant name <static-init>
-# wrong constant name directory
-# wrong constant name initialize
-# wrong constant name file_path
-# wrong constant name file_path=
-# wrong constant name spec
-# wrong constant name spec=
-# wrong constant name build_message
-# wrong constant name conflicts
-# wrong constant name dependency
-# wrong constant name initialize
-# wrong constant name request
-# wrong constant name _deprecated_extension_build_error
-# wrong constant name app_script_text
-# wrong constant name bin_dir
-# wrong constant name build_extensions
-# wrong constant name build_root
-# wrong constant name check_executable_overwrite
-# wrong constant name check_that_user_bin_dir_is_in_path
-# wrong constant name default_spec_file
-# wrong constant name dir
-# wrong constant name ensure_dependencies_met
-# wrong constant name ensure_dependency
-# wrong constant name ensure_loadable_spec
-# wrong constant name ensure_required_ruby_version_met
-# wrong constant name ensure_required_rubygems_version_met
-# wrong constant name extension_build_error
-# wrong constant name extract_bin
-# wrong constant name extract_files
-# wrong constant name formatted_program_filename
-# wrong constant name gem
-# wrong constant name gem_dir
-# wrong constant name gem_home
-# wrong constant name generate_bin
-# wrong constant name generate_bin_script
-# wrong constant name generate_bin_symlink
-# wrong constant name generate_windows_script
-# wrong constant name initialize
-# wrong constant name install
-# wrong constant name installation_satisfies_dependency?
-# wrong constant name installed_specs
-# wrong constant name options
-# wrong constant name pre_install_checks
-# wrong constant name process_options
-# wrong constant name run_post_build_hooks
-# wrong constant name run_post_install_hooks
-# wrong constant name run_pre_install_hooks
-# wrong constant name shebang
-# wrong constant name spec
-# wrong constant name spec_file
-# wrong constant name unpack
-# wrong constant name verify_gem_home
-# wrong constant name verify_spec
-# wrong constant name windows_stub_script
-# wrong constant name write_build_info_file
-# wrong constant name write_cache_file
-# wrong constant name write_default_spec
-# wrong constant name write_spec
-# wrong constant name <static-init>
-# wrong constant name at
-# wrong constant name exec_format
-# wrong constant name exec_format=
-# wrong constant name for_spec
-# wrong constant name install_lock
-# wrong constant name path_warning
-# wrong constant name path_warning=
-# wrong constant name <static-init>
-# wrong constant name match?
-# wrong constant name suggestions
-# wrong constant name each
-# wrong constant name initialize
-# wrong constant name prepend
-# wrong constant name tail
-# wrong constant name tail=
-# wrong constant name to_a
-# wrong constant name value
-# wrong constant name value=
-# wrong constant name prepend
-# wrong constant name name
-# wrong constant name name=
-# wrong constant name requirement
-# wrong constant name requirement=
-# wrong constant name initialize
-# wrong constant name initialize
-# wrong constant name specs
-# wrong constant name <=>
-# wrong constant name ==
-# wrong constant name eql?
-# wrong constant name full_name
-# wrong constant name initialize
-# wrong constant name match_platform?
-# wrong constant name name
-# wrong constant name platform
-# wrong constant name prerelease?
-# wrong constant name spec_name
-# wrong constant name to_a
-# wrong constant name version
-# wrong constant name <static-init>
-# wrong constant name from_list
-# wrong constant name null
-# wrong constant name to_basic
-# wrong constant name <Class:DigestIO>
-# wrong constant name <Class:Error>
-# wrong constant name <Class:FileSource>
-# wrong constant name <Class:FormatError>
-# wrong constant name <Class:IOSource>
-# wrong constant name <Class:NonSeekableIO>
-# wrong constant name <Class:Old>
-# wrong constant name <Class:PathError>
-# wrong constant name <Class:Source>
-# wrong constant name <Class:TarHeader>
-# wrong constant name <Class:TarInvalidError>
-# wrong constant name <Class:TarReader>
-# wrong constant name <Class:TarWriter>
-# wrong constant name <Class:TooLongFileName>
-# wrong constant name add_checksums
-# wrong constant name add_contents
-# wrong constant name add_files
-# wrong constant name add_metadata
-# wrong constant name build
-# wrong constant name build_time
-# wrong constant name build_time=
-# wrong constant name checksums
-# wrong constant name contents
-# wrong constant name copy_to
-# wrong constant name data_mode
-# wrong constant name data_mode=
-# wrong constant name digest
-# wrong constant name dir_mode
-# wrong constant name dir_mode=
-# wrong constant name extract_files
-# wrong constant name extract_tar_gz
-# wrong constant name file_mode
-# wrong constant name files
-# wrong constant name gzip_to
-# wrong constant name initialize
-# wrong constant name install_location
-# wrong constant name load_spec
-# wrong constant name mkdir_p_safe
-# wrong constant name normalize_path
-# wrong constant name open_tar_gz
-# wrong constant name prog_mode
-# wrong constant name prog_mode=
-# wrong constant name read_checksums
-# wrong constant name security_policy
-# wrong constant name security_policy=
-# wrong constant name setup_signer
-# wrong constant name spec
-# wrong constant name spec=
-# wrong constant name verify
-# wrong constant name verify_checksums
-# wrong constant name verify_entry
-# wrong constant name verify_files
-# wrong constant name verify_gz
-# wrong constant name digests
-# wrong constant name initialize
-# wrong constant name write
-# wrong constant name <static-init>
-# wrong constant name wrap
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name path
-# wrong constant name start
-# wrong constant name with_read_io
-# wrong constant name with_write_io
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name path
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name io
-# wrong constant name path
-# wrong constant name start
-# wrong constant name with_read_io
-# wrong constant name with_write_io
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name extract_files
-# wrong constant name file_list
-# wrong constant name read_until_dashes
-# wrong constant name skip_ruby
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name checksum
-# wrong constant name devmajor
-# wrong constant name devminor
-# wrong constant name empty?
-# wrong constant name gid
-# wrong constant name gname
-# wrong constant name initialize
-# wrong constant name linkname
-# wrong constant name magic
-# wrong constant name mode
-# wrong constant name mtime
-# wrong constant name name
-# wrong constant name prefix
-# wrong constant name size
-# wrong constant name typeflag
-# wrong constant name uid
-# wrong constant name uname
-# wrong constant name update_checksum
-# wrong constant name version
-# wrong constant name <static-init>
-# wrong constant name from
-# wrong constant name strict_oct
-# wrong constant name <static-init>
-# uninitialized constant Gem::Package::TarReader::Elem
-# wrong constant name <Class:Entry>
-# wrong constant name <Class:UnexpectedEOF>
-# wrong constant name close
-# wrong constant name each
-# wrong constant name each_entry
-# wrong constant name initialize
-# wrong constant name rewind
-# wrong constant name seek
-# wrong constant name bytes_read
-# wrong constant name check_closed
-# wrong constant name close
-# wrong constant name closed?
-# wrong constant name directory?
-# wrong constant name eof?
-# wrong constant name file?
-# wrong constant name full_name
-# wrong constant name getc
-# wrong constant name header
-# wrong constant name initialize
-# wrong constant name length
-# wrong constant name pos
-# wrong constant name read
-# wrong constant name readpartial
-# wrong constant name rewind
-# wrong constant name size
-# wrong constant name symlink?
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name new
-# wrong constant name <Class:BoundedStream>
-# wrong constant name <Class:FileOverflow>
-# wrong constant name <Class:RestrictedStream>
-# wrong constant name add_file
-# wrong constant name add_file_digest
-# wrong constant name add_file_signed
-# wrong constant name add_file_simple
-# wrong constant name add_symlink
-# wrong constant name check_closed
-# wrong constant name close
-# wrong constant name closed?
-# wrong constant name flush
-# wrong constant name initialize
-# wrong constant name mkdir
-# wrong constant name split_name
-# wrong constant name initialize
-# wrong constant name limit
-# wrong constant name write
-# wrong constant name written
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name write
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name new
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name build
-# wrong constant name new
-# wrong constant name home
-# wrong constant name initialize
-# wrong constant name path
-# wrong constant name spec_cache_dir
-# wrong constant name ==
-# wrong constant name ===
-# wrong constant name =~
-# wrong constant name cpu
-# wrong constant name cpu=
-# wrong constant name eql?
-# wrong constant name initialize
-# wrong constant name os
-# wrong constant name os=
-# wrong constant name to_a
-# wrong constant name version
-# wrong constant name version=
-# wrong constant name installable?
-# wrong constant name local
-# wrong constant name match
-# wrong constant name new
-# wrong constant name add_platform
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name platforms
-# wrong constant name version
-# wrong constant name wordy
-# wrong constant name cache_update_path
-# wrong constant name close_all
-# wrong constant name correct_for_windows_path
-# wrong constant name download
-# wrong constant name download_to_cache
-# wrong constant name fetch_file
-# wrong constant name fetch_http
-# wrong constant name fetch_https
-# wrong constant name fetch_path
-# wrong constant name fetch_s3
-# wrong constant name fetch_size
-# wrong constant name headers
-# wrong constant name headers=
-# wrong constant name https?
-# wrong constant name initialize
-# wrong constant name request
-# wrong constant name s3_expiration
-# wrong constant name sign_s3_url
-# wrong constant name <static-init>
-# wrong constant name fetcher
-# wrong constant name <Class:ConnectionPools>
-# wrong constant name <Class:HTTPPool>
-# wrong constant name <Class:HTTPSPool>
-# wrong constant name cert_files
-# wrong constant name connection_for
-# wrong constant name fetch
-# wrong constant name initialize
-# wrong constant name perform_request
-# wrong constant name proxy_uri
-# wrong constant name reset
-# wrong constant name user_agent
-# wrong constant name close_all
-# wrong constant name initialize
-# wrong constant name pool_for
-# wrong constant name <static-init>
-# wrong constant name client
-# wrong constant name client=
-# wrong constant name cert_files
-# wrong constant name checkin
-# wrong constant name checkout
-# wrong constant name close_all
-# wrong constant name initialize
-# wrong constant name proxy_uri
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name configure_connection_for_https
-# wrong constant name create_with_proxy
-# wrong constant name get_cert_files
-# wrong constant name get_proxy_from_env
-# wrong constant name proxy_uri
-# wrong constant name verify_certificate
-# wrong constant name verify_certificate_message
-# wrong constant name <Class:GemDependencyAPI>
-# wrong constant name <Class:Lockfile>
-# wrong constant name always_install
-# wrong constant name always_install=
-# wrong constant name dependencies
-# wrong constant name development
-# wrong constant name development=
-# wrong constant name development_shallow
-# wrong constant name development_shallow=
-# wrong constant name errors
-# wrong constant name gem
-# wrong constant name git_set
-# wrong constant name ignore_dependencies
-# wrong constant name ignore_dependencies=
-# wrong constant name import
-# wrong constant name initialize
-# wrong constant name install
-# wrong constant name install_dir
-# wrong constant name install_from_gemdeps
-# wrong constant name install_hooks
-# wrong constant name install_into
-# wrong constant name load_gemdeps
-# wrong constant name prerelease
-# wrong constant name prerelease=
-# wrong constant name remote
-# wrong constant name remote=
-# wrong constant name resolve
-# wrong constant name resolve_current
-# wrong constant name resolver
-# wrong constant name sets
-# wrong constant name soft_missing
-# wrong constant name soft_missing=
-# wrong constant name sorted_requests
-# wrong constant name source_set
-# wrong constant name specs
-# wrong constant name specs_in
-# wrong constant name tsort_each_node
-# wrong constant name vendor_set
-# wrong constant name dependencies
-# wrong constant name find_gemspec
-# wrong constant name gem
-# wrong constant name gem_deps_file
-# wrong constant name gem_git_reference
-# wrong constant name gemspec
-# wrong constant name git
-# wrong constant name git_set
-# wrong constant name git_source
-# wrong constant name group
-# wrong constant name initialize
-# wrong constant name installing=
-# wrong constant name load
-# wrong constant name platform
-# wrong constant name platforms
-# wrong constant name requires
-# wrong constant name ruby
-# wrong constant name source
-# wrong constant name vendor_set
-# wrong constant name without_groups
-# wrong constant name without_groups=
-# wrong constant name <static-init>
-# wrong constant name <Class:ParseError>
-# wrong constant name <Class:Parser>
-# wrong constant name <Class:Tokenizer>
-# wrong constant name add_DEPENDENCIES
-# wrong constant name add_GEM
-# wrong constant name add_GIT
-# wrong constant name add_PATH
-# wrong constant name add_PLATFORMS
-# wrong constant name initialize
-# wrong constant name platforms
-# wrong constant name relative_path_from
-# wrong constant name spec_groups
-# wrong constant name write
-# wrong constant name column
-# wrong constant name initialize
-# wrong constant name line
-# wrong constant name path
-# wrong constant name <static-init>
-# wrong constant name get
-# wrong constant name initialize
-# wrong constant name parse
-# wrong constant name parse_DEPENDENCIES
-# wrong constant name parse_GEM
-# wrong constant name parse_GIT
-# wrong constant name parse_PATH
-# wrong constant name parse_PLATFORMS
-# wrong constant name parse_dependency
-# wrong constant name <static-init>
-# wrong constant name <Class:Token>
-# wrong constant name empty?
-# wrong constant name initialize
-# wrong constant name make_parser
-# wrong constant name next_token
-# wrong constant name peek
-# wrong constant name shift
-# wrong constant name skip
-# wrong constant name to_a
-# wrong constant name token_pos
-# wrong constant name unshift
-# uninitialized constant Gem::RequestSet::Lockfile::Tokenizer::Token::Elem
-# wrong constant name column
-# wrong constant name column=
-# wrong constant name line
-# wrong constant name line=
-# wrong constant name type
-# wrong constant name type=
-# wrong constant name value
-# wrong constant name value=
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name members
-# wrong constant name <static-init>
-# wrong constant name from_file
-# wrong constant name <static-init>
-# wrong constant name build
-# wrong constant name requests_to_deps
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name ===
-# wrong constant name =~
-# wrong constant name _tilde_requirements
-# wrong constant name as_list
-# wrong constant name concat
-# wrong constant name encode_with
-# wrong constant name exact?
-# wrong constant name for_lockfile
-# wrong constant name init_with
-# wrong constant name initialize
-# wrong constant name marshal_dump
-# wrong constant name marshal_load
-# wrong constant name none?
-# wrong constant name prerelease?
-# wrong constant name requirements
-# wrong constant name satisfied_by?
-# wrong constant name specific?
-# wrong constant name to_yaml_properties
-# wrong constant name yaml_initialize
-# wrong constant name create
-# wrong constant name default
-# wrong constant name parse
-# wrong constant name source_set
-# wrong constant name <Class:APISet>
-# wrong constant name <Class:APISpecification>
-# wrong constant name <Class:ActivationRequest>
-# wrong constant name <Class:BestSet>
-# wrong constant name <Class:ComposedSet>
-# wrong constant name <Class:Conflict>
-# wrong constant name <Class:CurrentSet>
-# wrong constant name <Class:DependencyRequest>
-# wrong constant name <Class:GitSet>
-# wrong constant name <Class:GitSpecification>
-# wrong constant name <Class:IndexSet>
-# wrong constant name <Class:IndexSpecification>
-# wrong constant name <Class:InstalledSpecification>
-# wrong constant name <Class:InstallerSet>
-# wrong constant name <Class:LocalSpecification>
-# wrong constant name <Class:LockSet>
-# wrong constant name <Class:LockSpecification>
-# wrong constant name <Class:Molinillo>
-# wrong constant name <Class:RequirementList>
-# wrong constant name <Class:Set>
-# wrong constant name <Class:SourceSet>
-# wrong constant name <Class:SpecSpecification>
-# wrong constant name <Class:Specification>
-# wrong constant name <Class:Stats>
-# wrong constant name <Class:VendorSet>
-# wrong constant name <Class:VendorSpecification>
-# wrong constant name activation_request
-# wrong constant name development
-# wrong constant name development=
-# wrong constant name development_shallow
-# wrong constant name development_shallow=
-# wrong constant name explain
-# wrong constant name explain_list
-# wrong constant name find_possible
-# wrong constant name ignore_dependencies
-# wrong constant name ignore_dependencies=
-# wrong constant name initialize
-# wrong constant name missing
-# wrong constant name requests
-# wrong constant name resolve
-# wrong constant name select_local_platforms
-# wrong constant name skip_gems
-# wrong constant name skip_gems=
-# wrong constant name soft_missing
-# wrong constant name soft_missing=
-# wrong constant name stats
-# wrong constant name dep_uri
-# wrong constant name initialize
-# wrong constant name prefetch_now
-# wrong constant name source
-# wrong constant name uri
-# wrong constant name versions
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name development?
-# wrong constant name download
-# wrong constant name full_name
-# wrong constant name full_spec
-# wrong constant name initialize
-# wrong constant name installed?
-# wrong constant name name
-# wrong constant name others_possible?
-# wrong constant name parent
-# wrong constant name request
-# wrong constant name spec
-# wrong constant name version
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name pick_sets
-# wrong constant name replace_failed_api_set
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name prerelease=
-# wrong constant name remote=
-# wrong constant name sets
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name activated
-# wrong constant name conflicting_dependencies
-# wrong constant name dependency
-# wrong constant name explain
-# wrong constant name explanation
-# wrong constant name failed_dep
-# wrong constant name for_spec?
-# wrong constant name initialize
-# wrong constant name request_path
-# wrong constant name requester
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name dependency
-# wrong constant name development?
-# wrong constant name explicit?
-# wrong constant name implicit?
-# wrong constant name initialize
-# wrong constant name match?
-# wrong constant name matches_spec?
-# wrong constant name name
-# wrong constant name request_context
-# wrong constant name requester
-# wrong constant name requirement
-# wrong constant name type
-# wrong constant name <static-init>
-# wrong constant name add_git_gem
-# wrong constant name add_git_spec
-# wrong constant name need_submodules
-# wrong constant name repositories
-# wrong constant name root_dir
-# wrong constant name root_dir=
-# wrong constant name specs
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name add_dependency
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name <static-init>
-# wrong constant name add_always_install
-# wrong constant name add_local
-# wrong constant name always_install
-# wrong constant name consider_local?
-# wrong constant name consider_remote?
-# wrong constant name ignore_dependencies
-# wrong constant name ignore_dependencies=
-# wrong constant name ignore_installed
-# wrong constant name ignore_installed=
-# wrong constant name initialize
-# wrong constant name load_spec
-# wrong constant name local?
-# wrong constant name prerelease=
-# wrong constant name remote=
-# wrong constant name remote_set
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name add
-# wrong constant name initialize
-# wrong constant name load_spec
-# wrong constant name specs
-# wrong constant name <static-init>
-# wrong constant name add_dependency
-# wrong constant name initialize
-# wrong constant name sources
-# wrong constant name <static-init>
-# wrong constant name <Class:CircularDependencyError>
-# wrong constant name <Class:Delegates>
-# wrong constant name <Class:DependencyGraph>
-# wrong constant name <Class:DependencyState>
-# wrong constant name <Class:NoSuchDependencyError>
-# wrong constant name <Class:PossibilityState>
-# wrong constant name <Class:ResolutionState>
-# wrong constant name <Class:Resolver>
-# wrong constant name <Class:ResolverError>
-# wrong constant name <Class:SpecificationProvider>
-# wrong constant name <Class:UI>
-# wrong constant name <Class:VersionConflict>
-# wrong constant name dependencies
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <Class:ResolutionState>
-# wrong constant name <Class:SpecificationProvider>
-# wrong constant name activated
-# wrong constant name conflicts
-# wrong constant name depth
-# wrong constant name name
-# wrong constant name possibilities
-# wrong constant name requirement
-# wrong constant name requirements
-# wrong constant name <static-init>
-# wrong constant name allow_missing?
-# wrong constant name dependencies_for
-# wrong constant name name_for
-# wrong constant name name_for_explicit_dependency_source
-# wrong constant name name_for_locking_dependency_source
-# wrong constant name requirement_satisfied_by?
-# wrong constant name search_for
-# wrong constant name sort_dependencies
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name <Class:Action>
-# wrong constant name <Class:AddEdgeNoCircular>
-# wrong constant name <Class:AddVertex>
-# wrong constant name <Class:DeleteEdge>
-# wrong constant name <Class:DetachVertexNamed>
-# wrong constant name <Class:Edge>
-# uninitialized constant Gem::Resolver::Molinillo::DependencyGraph::Elem
-# wrong constant name <Class:Log>
-# wrong constant name <Class:SetPayload>
-# wrong constant name <Class:Tag>
-# wrong constant name <Class:Vertex>
-# wrong constant name add_child_vertex
-# wrong constant name add_edge
-# wrong constant name add_vertex
-# wrong constant name delete_edge
-# wrong constant name detach_vertex_named
-# wrong constant name each
-# wrong constant name log
-# wrong constant name rewind_to
-# wrong constant name root_vertex_named
-# wrong constant name set_payload
-# wrong constant name tag
-# wrong constant name to_dot
-# wrong constant name tsort_each_child
-# wrong constant name vertex_named
-# wrong constant name vertices
-# wrong constant name down
-# wrong constant name next
-# wrong constant name next=
-# wrong constant name previous
-# wrong constant name previous=
-# wrong constant name up
-# wrong constant name <static-init>
-# wrong constant name action_name
-# wrong constant name destination
-# wrong constant name initialize
-# wrong constant name make_edge
-# wrong constant name origin
-# wrong constant name requirement
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name payload
-# wrong constant name root
-# wrong constant name <static-init>
-# wrong constant name destination_name
-# wrong constant name initialize
-# wrong constant name make_edge
-# wrong constant name origin_name
-# wrong constant name requirement
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name <static-init>
-# uninitialized constant Gem::Resolver::Molinillo::DependencyGraph::Edge::Elem
-# wrong constant name destination
-# wrong constant name destination=
-# wrong constant name origin
-# wrong constant name origin=
-# wrong constant name requirement
-# wrong constant name requirement=
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name members
-# wrong constant name add_edge_no_circular
-# wrong constant name add_vertex
-# wrong constant name delete_edge
-# wrong constant name detach_vertex_named
-# wrong constant name each
-# wrong constant name pop!
-# wrong constant name reverse_each
-# wrong constant name rewind_to
-# wrong constant name set_payload
-# wrong constant name tag
-# wrong constant name <static-init>
 # uninitialized constant Gem::Resolver::Molinillo::DependencyGraph::Log::Elem
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name payload
-# wrong constant name <static-init>
-# wrong constant name down
-# wrong constant name initialize
-# wrong constant name tag
-# wrong constant name up
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name ancestor?
-# wrong constant name descendent?
-# wrong constant name eql?
-# wrong constant name explicit_requirements
-# wrong constant name incoming_edges
-# wrong constant name incoming_edges=
-# wrong constant name initialize
-# wrong constant name is_reachable_from?
-# wrong constant name name
-# wrong constant name name=
-# wrong constant name outgoing_edges
-# wrong constant name outgoing_edges=
-# wrong constant name path_to?
-# wrong constant name payload
-# wrong constant name payload=
-# wrong constant name predecessors
-# wrong constant name recursive_predecessors
-# wrong constant name recursive_successors
-# wrong constant name requirements
-# wrong constant name root
-# wrong constant name root=
-# wrong constant name root?
-# wrong constant name shallow_eql?
-# wrong constant name successors
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name tsort
-# uninitialized constant Gem::Resolver::Molinillo::DependencyState::Elem
-# wrong constant name pop_possibility_state
-# wrong constant name <static-init>
-# wrong constant name dependency
-# wrong constant name dependency=
-# wrong constant name initialize
-# wrong constant name required_by
-# wrong constant name required_by=
-# wrong constant name <static-init>
-# uninitialized constant Gem::Resolver::Molinillo::PossibilityState::Elem
-# wrong constant name <static-init>
-# uninitialized constant Gem::Resolver::Molinillo::ResolutionState::Elem
-# wrong constant name activated
-# wrong constant name activated=
-# wrong constant name conflicts
-# wrong constant name conflicts=
-# wrong constant name depth
-# wrong constant name depth=
-# wrong constant name name
-# wrong constant name name=
-# wrong constant name possibilities
-# wrong constant name possibilities=
-# wrong constant name requirement
-# wrong constant name requirement=
-# wrong constant name requirements
-# wrong constant name requirements=
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name empty
-# wrong constant name members
-# wrong constant name <Class:Resolution>
-# wrong constant name initialize
-# wrong constant name resolve
-# wrong constant name resolver_ui
-# wrong constant name specification_provider
-# wrong constant name <Class:Conflict>
-# wrong constant name base
-# wrong constant name initialize
-# wrong constant name iteration_rate=
-# wrong constant name original_requested
-# wrong constant name resolve
-# wrong constant name resolver_ui
-# wrong constant name specification_provider
-# wrong constant name started_at=
-# wrong constant name states=
-# uninitialized constant Gem::Resolver::Molinillo::Resolver::Resolution::Conflict::Elem
-# wrong constant name activated_by_name
-# wrong constant name activated_by_name=
-# wrong constant name existing
-# wrong constant name existing=
-# wrong constant name locked_requirement
-# wrong constant name locked_requirement=
-# wrong constant name possibility
-# wrong constant name possibility=
-# wrong constant name requirement
-# wrong constant name requirement=
-# wrong constant name requirement_trees
-# wrong constant name requirement_trees=
-# wrong constant name requirements
-# wrong constant name requirements=
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name members
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name allow_missing?
-# wrong constant name dependencies_for
-# wrong constant name name_for
-# wrong constant name name_for_explicit_dependency_source
-# wrong constant name name_for_locking_dependency_source
-# wrong constant name requirement_satisfied_by?
-# wrong constant name search_for
-# wrong constant name sort_dependencies
-# wrong constant name <static-init>
-# wrong constant name after_resolution
-# wrong constant name before_resolution
-# wrong constant name debug
-# wrong constant name debug?
-# wrong constant name indicate_progress
-# wrong constant name output
-# wrong constant name progress_rate
-# wrong constant name <static-init>
-# wrong constant name conflicts
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# uninitialized constant Gem::Resolver::RequirementList::Elem
-# wrong constant name add
-# wrong constant name each
-# wrong constant name empty?
-# wrong constant name next5
-# wrong constant name remove
-# wrong constant name size
-# wrong constant name <static-init>
-# wrong constant name errors
-# wrong constant name errors=
-# wrong constant name find_all
-# wrong constant name prefetch
-# wrong constant name prerelease
-# wrong constant name prerelease=
-# wrong constant name remote
-# wrong constant name remote=
-# wrong constant name remote?
-# wrong constant name <static-init>
-# wrong constant name add_source_gem
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name dependencies
-# wrong constant name download
-# wrong constant name fetch_development_dependencies
-# wrong constant name full_name
-# wrong constant name install
-# wrong constant name installable_platform?
-# wrong constant name local?
-# wrong constant name name
-# wrong constant name platform
-# wrong constant name set
-# wrong constant name source
-# wrong constant name spec
-# wrong constant name version
-# wrong constant name <static-init>
-# wrong constant name backtracking!
-# wrong constant name display
-# wrong constant name iteration!
-# wrong constant name record_depth
-# wrong constant name record_requirements
-# wrong constant name requirement!
-# wrong constant name <static-init>
-# wrong constant name add_vendor_gem
-# wrong constant name load_spec
-# wrong constant name specs
-# wrong constant name <static-init>
-# wrong constant name ==
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name compose_sets
-# wrong constant name for_current_gems
-# wrong constant name suggestion
-# wrong constant name suggestion=
-# wrong constant name <static-init>
-# wrong constant name <Class:DIGEST_ALGORITHM>
-# wrong constant name <Class:Exception>
-# wrong constant name <Class:Policy>
-# wrong constant name <Class:Signer>
-# wrong constant name <Class:TrustDir>
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name digest
-# wrong constant name hexdigest
-# wrong constant name <static-init>
-# wrong constant name check_cert
-# wrong constant name check_chain
-# wrong constant name check_data
-# wrong constant name check_key
-# wrong constant name check_root
-# wrong constant name check_trust
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name only_signed
-# wrong constant name only_signed=
-# wrong constant name only_trusted
-# wrong constant name only_trusted=
-# wrong constant name subject
-# wrong constant name verify
-# wrong constant name verify_chain
-# wrong constant name verify_chain=
-# wrong constant name verify_data
-# wrong constant name verify_data=
-# wrong constant name verify_root
-# wrong constant name verify_root=
-# wrong constant name verify_signatures
-# wrong constant name verify_signer
-# wrong constant name verify_signer=
-# wrong constant name <static-init>
-# wrong constant name cert_chain
-# wrong constant name cert_chain=
-# wrong constant name digest_algorithm
-# wrong constant name digest_name
-# wrong constant name extract_name
-# wrong constant name initialize
-# wrong constant name key
-# wrong constant name key=
-# wrong constant name load_cert_chain
-# wrong constant name options
-# wrong constant name re_sign_key
-# wrong constant name sign
-# wrong constant name <static-init>
-# wrong constant name re_sign_cert
-# wrong constant name cert_path
-# wrong constant name dir
-# wrong constant name each_certificate
-# wrong constant name initialize
-# wrong constant name issuer_of
-# wrong constant name load_certificate
-# wrong constant name name_path
-# wrong constant name trust_cert
-# wrong constant name verify
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name alt_name_or_x509_entry
-# wrong constant name create_cert
-# wrong constant name create_cert_email
-# wrong constant name create_cert_self_signed
-# wrong constant name create_key
-# wrong constant name email_to_name
-# wrong constant name re_sign
-# wrong constant name reset
-# wrong constant name sign
-# wrong constant name trust_dir
-# wrong constant name trusted_certificates
-# wrong constant name write
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <=>
-# wrong constant name ==
-# wrong constant name <Class:Git>
-# wrong constant name <Class:Installed>
-# wrong constant name <Class:Local>
-# wrong constant name <Class:Lock>
-# wrong constant name <Class:SpecificFile>
-# wrong constant name <Class:Vendor>
-# wrong constant name cache_dir
-# wrong constant name dependency_resolver_set
-# wrong constant name download
-# wrong constant name eql?
-# wrong constant name fetch_spec
-# wrong constant name initialize
-# wrong constant name load_specs
-# wrong constant name update_cache?
-# wrong constant name uri
-# uninitialized constant Gem::Source::Git::FILES
-# wrong constant name base_dir
-# wrong constant name cache
-# wrong constant name checkout
-# wrong constant name dir_shortref
-# wrong constant name download
-# wrong constant name initialize
-# wrong constant name install_dir
-# wrong constant name name
-# wrong constant name need_submodules
-# wrong constant name reference
-# wrong constant name remote
-# wrong constant name remote=
-# wrong constant name repo_cache_dir
-# wrong constant name repository
-# wrong constant name rev_parse
-# wrong constant name root_dir
-# wrong constant name root_dir=
-# wrong constant name specs
-# wrong constant name uri_hash
-# wrong constant name <static-init>
-# uninitialized constant Gem::Source::Installed::FILES
-# wrong constant name download
-# wrong constant name initialize
-# wrong constant name <static-init>
-# uninitialized constant Gem::Source::Local::FILES
-# wrong constant name download
-# wrong constant name fetch_spec
-# wrong constant name find_gem
-# wrong constant name initialize
-# wrong constant name <static-init>
-# uninitialized constant Gem::Source::Lock::FILES
-# wrong constant name initialize
-# wrong constant name wrapped
-# wrong constant name <static-init>
-# uninitialized constant Gem::Source::SpecificFile::FILES
-# wrong constant name fetch_spec
-# wrong constant name initialize
-# wrong constant name load_specs
-# wrong constant name path
-# wrong constant name spec
-# wrong constant name <static-init>
-# uninitialized constant Gem::Source::Vendor::FILES
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name error
-# wrong constant name exception
-# wrong constant name initialize
-# wrong constant name source
-# wrong constant name wordy
-# wrong constant name <<
-# wrong constant name ==
-# uninitialized constant Gem::SourceList::Elem
-# wrong constant name clear
-# wrong constant name delete
-# wrong constant name each
-# wrong constant name each_source
-# wrong constant name empty?
-# wrong constant name first
-# wrong constant name include?
-# wrong constant name replace
-# wrong constant name sources
-# wrong constant name to_a
-# wrong constant name to_ary
-# wrong constant name <static-init>
-# wrong constant name from
-# wrong constant name available_specs
-# wrong constant name detect
-# wrong constant name initialize
-# wrong constant name latest_specs
-# wrong constant name prerelease_specs
-# wrong constant name search_for_dependency
-# wrong constant name sources
-# wrong constant name spec_for_dependency
-# wrong constant name specs
-# wrong constant name suggest_gems_from_name
-# wrong constant name tuples_for
-# wrong constant name <static-init>
-# wrong constant name fetcher
-# wrong constant name fetcher=
-# wrong constant name errors
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name version
-# wrong constant name <=>
-# wrong constant name ==
-# uninitialized constant Gem::Specification::GENERICS
-# uninitialized constant Gem::Specification::GENERIC_CACHE
-# wrong constant name _deprecated_default_executable
-# wrong constant name _deprecated_default_executable=
-# wrong constant name _deprecated_has_rdoc
-# wrong constant name _deprecated_has_rdoc=
-# wrong constant name _deprecated_has_rdoc?
-# wrong constant name _dump
-# wrong constant name abbreviate
-# wrong constant name activate
-# wrong constant name activate_dependencies
-# wrong constant name activated
-# wrong constant name activated=
-# wrong constant name add_bindir
-# wrong constant name add_dependency
-# wrong constant name add_development_dependency
-# wrong constant name add_runtime_dependency
-# wrong constant name add_self_to_load_path
-# wrong constant name author
-# wrong constant name author=
-# wrong constant name authors
-# wrong constant name authors=
-# wrong constant name autorequire
-# wrong constant name autorequire=
-# wrong constant name bin_dir
-# wrong constant name bin_file
-# wrong constant name bindir
-# wrong constant name bindir=
-# wrong constant name build_args
-# wrong constant name build_extensions
-# wrong constant name build_info_dir
-# wrong constant name build_info_file
-# wrong constant name cache_dir
-# wrong constant name cache_file
-# wrong constant name cert_chain
-# wrong constant name cert_chain=
-# wrong constant name conficts_when_loaded_with?
-# wrong constant name conflicts
-# wrong constant name date
-# wrong constant name date=
-# wrong constant name default_executable
-# wrong constant name default_executable=
-# wrong constant name default_value
-# wrong constant name dependencies
-# wrong constant name dependent_gems
-# wrong constant name dependent_specs
-# wrong constant name description
-# wrong constant name description=
-# wrong constant name development_dependencies
-# wrong constant name doc_dir
-# wrong constant name email
-# wrong constant name email=
-# wrong constant name encode_with
-# wrong constant name eql?
-# wrong constant name executable
-# wrong constant name executable=
-# wrong constant name executables
-# wrong constant name executables=
-# wrong constant name extensions
-# wrong constant name extensions=
-# wrong constant name extra_rdoc_files
-# wrong constant name extra_rdoc_files=
-# wrong constant name file_name
-# wrong constant name files
-# wrong constant name files=
-# wrong constant name for_cache
-# wrong constant name git_version
-# wrong constant name groups
-# wrong constant name has_conflicts?
-# wrong constant name has_rdoc
-# wrong constant name has_rdoc=
-# wrong constant name has_rdoc?
-# wrong constant name has_test_suite?
-# wrong constant name has_unit_tests?
-# wrong constant name homepage
-# wrong constant name homepage=
-# wrong constant name init_with
-# wrong constant name initialize
-# wrong constant name installed_by_version
-# wrong constant name installed_by_version=
-# wrong constant name keep_only_files_and_directories
-# wrong constant name lib_files
-# wrong constant name license
-# wrong constant name license=
-# wrong constant name licenses
-# wrong constant name licenses=
-# wrong constant name load_paths
-# wrong constant name location
-# wrong constant name location=
-# wrong constant name mark_version
-# wrong constant name metadata
-# wrong constant name metadata=
-# wrong constant name method_missing
-# wrong constant name missing_extensions?
-# wrong constant name name=
-# wrong constant name name_tuple
-# wrong constant name nondevelopment_dependencies
-# wrong constant name normalize
-# wrong constant name original_name
-# wrong constant name original_platform
-# wrong constant name original_platform=
-# wrong constant name platform=
-# wrong constant name post_install_message
-# wrong constant name post_install_message=
-# wrong constant name raise_if_conflicts
-# wrong constant name rdoc_options
-# wrong constant name rdoc_options=
-# wrong constant name relative_loaded_from
-# wrong constant name relative_loaded_from=
-# wrong constant name remote
-# wrong constant name remote=
-# wrong constant name require_path
-# wrong constant name require_path=
-# wrong constant name require_paths=
-# wrong constant name required_ruby_version
-# wrong constant name required_ruby_version=
-# wrong constant name required_rubygems_version
-# wrong constant name required_rubygems_version=
-# wrong constant name requirements
-# wrong constant name requirements=
-# wrong constant name reset_nil_attributes_to_default
-# wrong constant name rg_extension_dir
-# wrong constant name rg_full_gem_path
-# wrong constant name rg_loaded_from
-# wrong constant name ri_dir
-# wrong constant name rubyforge_project=
-# wrong constant name rubygems_version
-# wrong constant name rubygems_version=
-# wrong constant name runtime_dependencies
-# wrong constant name sanitize
-# wrong constant name sanitize_string
-# wrong constant name satisfies_requirement?
-# wrong constant name signing_key
-# wrong constant name signing_key=
-# wrong constant name sort_obj
-# wrong constant name source
-# wrong constant name source=
-# wrong constant name spec_dir
-# wrong constant name spec_file
-# wrong constant name spec_name
-# wrong constant name specification_version
-# wrong constant name specification_version=
-# wrong constant name summary
-# wrong constant name summary=
-# wrong constant name test_file
-# wrong constant name test_file=
-# wrong constant name test_files
-# wrong constant name test_files=
-# wrong constant name to_gemfile
-# wrong constant name to_ruby
-# wrong constant name to_ruby_for_cache
-# wrong constant name to_yaml
-# wrong constant name traverse
-# wrong constant name validate
-# wrong constant name validate_dependencies
-# wrong constant name validate_metadata
-# wrong constant name validate_permissions
-# wrong constant name version=
-# wrong constant name yaml_initialize
 # uninitialized constant Gem::Specification::Elem
-# wrong constant name _all
-# wrong constant name _clear_load_cache
-# wrong constant name _latest_specs
-# wrong constant name _load
-# wrong constant name _resort!
-# wrong constant name add_spec
-# wrong constant name add_specs
-# wrong constant name all
-# wrong constant name all=
-# wrong constant name all_names
-# wrong constant name array_attributes
-# wrong constant name attribute_names
-# wrong constant name dirs
-# wrong constant name dirs=
-# wrong constant name each
-# wrong constant name each_gemspec
-# wrong constant name each_spec
-# wrong constant name find_active_stub_by_path
-# wrong constant name find_all_by_full_name
-# wrong constant name find_all_by_name
-# wrong constant name find_by_name
-# wrong constant name find_by_path
-# wrong constant name find_in_unresolved
-# wrong constant name find_in_unresolved_tree
-# wrong constant name find_inactive_by_path
-# wrong constant name from_yaml
-# wrong constant name latest_specs
-# wrong constant name load
-# wrong constant name load_defaults
-# wrong constant name non_nil_attributes
-# wrong constant name normalize_yaml_input
-# wrong constant name outdated
-# wrong constant name outdated_and_latest_version
-# wrong constant name remove_spec
-# wrong constant name required_attribute?
-# wrong constant name required_attributes
-# wrong constant name reset
-# wrong constant name stubs
-# wrong constant name stubs_for
-# wrong constant name unresolved_deps
-# wrong constant name initialize
-# wrong constant name packaging
-# wrong constant name packaging=
-# wrong constant name validate
-# wrong constant name validate_dependencies
-# wrong constant name validate_metadata
-# wrong constant name validate_permissions
-# wrong constant name <static-init>
-# wrong constant name _deprecated_debug
-# wrong constant name _gets_noecho
-# wrong constant name alert
-# wrong constant name alert_error
-# wrong constant name alert_warning
-# wrong constant name ask
-# wrong constant name ask_for_password
-# wrong constant name ask_yes_no
-# wrong constant name backtrace
-# wrong constant name choose_from_list
-# wrong constant name close
-# wrong constant name debug
-# wrong constant name download_reporter
-# wrong constant name errs
-# wrong constant name initialize
-# wrong constant name ins
-# wrong constant name outs
-# wrong constant name progress_reporter
-# wrong constant name require_io_console
-# wrong constant name say
-# wrong constant name terminate_interaction
-# wrong constant name tty?
-# wrong constant name <static-init>
-# wrong constant name build_extensions
-# wrong constant name extensions
-# wrong constant name initialize
-# wrong constant name missing_extensions?
-# wrong constant name valid?
-# wrong constant name extensions
-# wrong constant name full_name
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name platform
-# wrong constant name require_paths
-# wrong constant name version
-# wrong constant name default_gemspec_stub
-# wrong constant name gemspec_stub
-# wrong constant name exit_code
-# wrong constant name exit_code=
-# wrong constant name initialize
-# wrong constant name clean_text
-# wrong constant name format_text
-# wrong constant name levenshtein_distance
-# wrong constant name min3
-# wrong constant name truncate_text
-# wrong constant name <static-init>
-# wrong constant name spec
-# wrong constant name spec=
-# wrong constant name <static-init>
-# wrong constant name dependency
-# wrong constant name errors
-# wrong constant name errors=
-# wrong constant name initialize
-# wrong constant name name
-# wrong constant name version
-# wrong constant name escape
-# wrong constant name initialize
-# wrong constant name normalize
-# wrong constant name unescape
-# wrong constant name uri
-# wrong constant name <static-init>
-# wrong constant name alert
-# wrong constant name alert_error
-# wrong constant name alert_warning
-# wrong constant name ask
-# wrong constant name ask_for_password
-# wrong constant name ask_yes_no
-# wrong constant name choose_from_list
-# wrong constant name say
-# wrong constant name terminate_interaction
-# wrong constant name verbose
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name glob_files_in_dir
-# wrong constant name gunzip
-# wrong constant name gzip
-# wrong constant name inflate
-# wrong constant name popen
-# wrong constant name silent_system
-# wrong constant name traverse_parents
 # wrong constant name <=>
-# wrong constant name _segments
-# wrong constant name _split_segments
-# wrong constant name _version
-# wrong constant name approximate_recommendation
-# wrong constant name bump
-# wrong constant name canonical_segments
-# wrong constant name encode_with
-# wrong constant name eql?
-# wrong constant name init_with
-# wrong constant name marshal_dump
-# wrong constant name marshal_load
-# wrong constant name prerelease?
-# wrong constant name release
-# wrong constant name segments
-# wrong constant name to_yaml_properties
-# wrong constant name version
-# wrong constant name yaml_initialize
-# wrong constant name correct?
-# wrong constant name create
-# wrong constant name new
 # undefined singleton method `bin_path$1' for `Gem'
-# wrong constant name _deprecated_detect_gemdeps
-# wrong constant name _deprecated_gunzip
-# wrong constant name _deprecated_gzip
-# wrong constant name _deprecated_inflate
-# wrong constant name activate_bin_path
 # wrong constant name bin_path$1
-# wrong constant name default_ext_dir_for
-# wrong constant name default_gems_use_full_paths?
-# wrong constant name default_spec_cache_dir
-# wrong constant name deflate
-# wrong constant name detect_gemdeps
-# wrong constant name dir
-# wrong constant name done_installing
-# wrong constant name done_installing_hooks
-# wrong constant name ensure_default_gem_subdirectories
-# wrong constant name ensure_gem_subdirectories
-# wrong constant name ensure_subdirectories
-# wrong constant name env_requirement
-# wrong constant name extension_api_version
-# wrong constant name find_files
-# wrong constant name find_files_from_load_path
-# wrong constant name find_latest_files
-# wrong constant name find_unresolved_default_spec
-# wrong constant name finish_resolve
-# wrong constant name gemdeps
-# wrong constant name gunzip
-# wrong constant name gzip
-# wrong constant name host
-# wrong constant name host=
-# wrong constant name inflate
-# wrong constant name install
-# wrong constant name install_extension_in_lib
-# wrong constant name latest_rubygems_version
-# wrong constant name latest_spec_for
-# wrong constant name latest_version_for
-# wrong constant name load_env_plugins
-# wrong constant name load_path_insert_index
-# wrong constant name load_plugin_files
-# wrong constant name load_plugins
-# wrong constant name load_yaml
-# wrong constant name loaded_specs
-# wrong constant name location_of_caller
-# wrong constant name marshal_version
-# wrong constant name needs
 # wrong constant name old_default_bindir
 # wrong constant name old_default_dir
 # wrong constant name old_default_path
 # wrong constant name old_ruby
-# wrong constant name operating_system_defaults
-# wrong constant name path
-# wrong constant name path_separator
-# wrong constant name paths
-# wrong constant name paths=
-# wrong constant name platform_defaults
-# wrong constant name platforms
-# wrong constant name platforms=
-# wrong constant name post_build
-# wrong constant name post_build_hooks
-# wrong constant name post_install
-# wrong constant name post_install_hooks
-# wrong constant name post_reset
-# wrong constant name post_reset_hooks
-# wrong constant name post_uninstall
-# wrong constant name post_uninstall_hooks
-# wrong constant name pre_install
-# wrong constant name pre_install_hooks
-# wrong constant name pre_reset
-# wrong constant name pre_reset_hooks
-# wrong constant name pre_uninstall
-# wrong constant name pre_uninstall_hooks
-# wrong constant name prefix
 # wrong constant name private_dir
-# wrong constant name read_binary
-# wrong constant name refresh
-# wrong constant name register_default_spec
-# wrong constant name remove_unresolved_default_spec
-# wrong constant name ruby
-# wrong constant name ruby_api_version
-# wrong constant name ruby_engine
-# wrong constant name ruby_version
-# wrong constant name rubygems_version
-# wrong constant name sources
-# wrong constant name sources=
-# wrong constant name spec_cache_dir
-# wrong constant name suffix_pattern
-# wrong constant name suffixes
-# wrong constant name time
-# wrong constant name try_activate
-# wrong constant name ui
-# wrong constant name use_gemdeps
-# wrong constant name use_paths
-# wrong constant name user_dir
-# wrong constant name user_home
-# wrong constant name vendor_dir
-# wrong constant name win_platform?
-# wrong constant name write_binary
 # wrong constant name <Class:BaseLocator>
 # wrong constant name <Class:BlockLocator>
 # wrong constant name <Class:UnscopedLocator>
@@ -5294,7 +3693,6 @@
 # undefined method `fetch$2' for class `Hash'
 # undefined method `initialize$2' for class `Hash'
 # Did you mean?  initialize
-# undefined method `merge$2' for class `Hash'
 # wrong constant name <
 # wrong constant name <=
 # wrong constant name >
@@ -5311,7 +3709,6 @@
 # wrong constant name flatten
 # wrong constant name index
 # wrong constant name initialize$2
-# wrong constant name merge$2
 # wrong constant name merge!
 # wrong constant name replace
 # wrong constant name slice
@@ -5322,7 +3719,7 @@
 # wrong constant name transform_values
 # wrong constant name transform_values!
 # wrong constant name update
-# wrong constant name from_trusted_xml
+# wrong constant name from_xml
 # wrong constant name <Class:Gettext>
 # wrong constant name <Class:Locale>
 # wrong constant name <Class:Middleware>
@@ -5967,81 +4364,8 @@
 # wrong constant name to_bn
 # wrong constant name to_d
 # wrong constant name sqrt
-# wrong constant name <Class:Generator>
-# wrong constant name <Class:Parser>
-# wrong constant name <Class:GeneratorMethods>
-# wrong constant name <Class:State>
-# wrong constant name <Class:Array>
-# wrong constant name <Class:FalseClass>
-# wrong constant name <Class:Float>
-# wrong constant name <Class:Hash>
-# wrong constant name <Class:Integer>
-# wrong constant name <Class:NilClass>
-# wrong constant name <Class:Object>
-# wrong constant name <Class:String>
-# wrong constant name <Class:TrueClass>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name to_json_raw
-# wrong constant name to_json_raw_object
-# wrong constant name <static-init>
-# wrong constant name to_json
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name []=
-# wrong constant name allow_nan?
-# wrong constant name array_nl
-# wrong constant name array_nl=
-# wrong constant name ascii_only?
-# wrong constant name buffer_initial_length
-# wrong constant name buffer_initial_length=
-# wrong constant name check_circular?
-# wrong constant name configure
-# wrong constant name depth
-# wrong constant name depth=
-# wrong constant name generate
-# wrong constant name indent
-# wrong constant name indent=
-# wrong constant name initialize
-# wrong constant name max_nesting
-# wrong constant name max_nesting=
-# wrong constant name merge
-# wrong constant name object_nl
-# wrong constant name object_nl=
-# wrong constant name space
-# wrong constant name space=
-# wrong constant name space_before
-# wrong constant name space_before=
-# wrong constant name to_h
-# wrong constant name to_hash
-# wrong constant name <static-init>
 # wrong constant name from_state
-# wrong constant name <static-init>
 # wrong constant name initialize
-# wrong constant name parse
-# wrong constant name source
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# undefined singleton method `dump$1' for `JSON'
-# undefined singleton method `generate$1' for `JSON'
-# undefined singleton method `pretty_generate$1' for `JSON'
-# wrong constant name dump$1
-# wrong constant name generate$1
-# wrong constant name pretty_generate$1
 # wrong constant name <Class:Error>
 # wrong constant name <Class:InvalidWeightError>
 # wrong constant name <static-init>
@@ -6120,49 +4444,75 @@
 # wrong constant name restore
 # undefined method `[]$2' for class `MatchData'
 # wrong constant name []$2
-# wrong constant name named_captures
-# undefined singleton method `log$1' for `Math'
-# wrong constant name log$1
 # uninitialized constant MedianGearscore::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
 # uninitialized constant MedianGearscore::BLACKLISTED_CLASS_METHODS
 # uninitialized constant MedianGearscore::CALLBACKS
 # uninitialized constant MedianGearscore::CALLBACK_FILTER_TYPES
 # uninitialized constant MedianGearscore::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
 # uninitialized constant MedianGearscore::MAX_PASSWORD_LENGTH_ALLOWED
 # uninitialized constant MedianGearscore::NAME_COMPILABLE_REGEXP
 # uninitialized constant MedianGearscore::UNASSIGNABLE_KEYS
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
 # wrong constant name <static-init>
-# wrong constant name <<
-# wrong constant name ===
-# wrong constant name >>
-# wrong constant name []
-# wrong constant name arity
-# wrong constant name clone
-# wrong constant name curry
-# wrong constant name name
-# wrong constant name original_name
-# wrong constant name owner
-# wrong constant name parameters
-# wrong constant name receiver
-# wrong constant name source_location
-# wrong constant name super_method
-# wrong constant name unbind
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of MedianGearscore::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
 # wrong constant name _synchronize
-# wrong constant name assert
-# wrong constant name assert_empty
-# wrong constant name assert_equal
 # wrong constant name assert_in_delta
 # wrong constant name assert_in_epsilon
-# wrong constant name assert_includes
 # wrong constant name assert_instance_of
 # wrong constant name assert_kind_of
 # wrong constant name assert_match
-# wrong constant name assert_nil
 # wrong constant name assert_operator
 # wrong constant name assert_output
 # wrong constant name assert_predicate
-# wrong constant name assert_raises
 # wrong constant name assert_respond_to
 # wrong constant name assert_same
 # wrong constant name assert_send
@@ -6177,23 +4527,17 @@
 # wrong constant name mu_pp
 # wrong constant name mu_pp_for_diff
 # wrong constant name pass
-# wrong constant name refute
-# wrong constant name refute_empty
-# wrong constant name refute_equal
 # wrong constant name refute_in_delta
 # wrong constant name refute_in_epsilon
-# wrong constant name refute_includes
 # wrong constant name refute_instance_of
 # wrong constant name refute_kind_of
 # wrong constant name refute_match
-# wrong constant name refute_nil
 # wrong constant name refute_operator
 # wrong constant name refute_predicate
 # wrong constant name refute_respond_to
 # wrong constant name refute_same
 # wrong constant name skip
 # wrong constant name skipped?
-# wrong constant name <static-init>
 # wrong constant name diff
 # wrong constant name diff=
 # wrong constant name jruby?
@@ -6248,7 +4592,6 @@
 # wrong constant name before_teardown
 # wrong constant name setup
 # wrong constant name teardown
-# wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name i_suck_and_my_tests_are_order_dependent!
 # wrong constant name io_lock
@@ -6371,8 +4714,6 @@
 # uninitialized constant Net::HTTP::DigestAuth
 # uninitialized constant Net::HTTP::Persistent
 # uninitialized constant Net::HTTP::Persistent
-# undefined singleton method `new$1' for `Net::HTTP'
-# wrong constant name new$1
 # uninitialized constant Net::HTTPAlreadyReported::CODE_CLASS_TO_OBJ
 # uninitialized constant Net::HTTPAlreadyReported::CODE_TO_OBJ
 # wrong constant name <static-init>
@@ -6543,8 +4884,6 @@
 # wrong constant name finite?
 # wrong constant name floor$2
 # wrong constant name infinite?
-# wrong constant name negative?
-# wrong constant name positive?
 # wrong constant name round$1
 # wrong constant name step$2
 # wrong constant name truncate$1
@@ -6607,169 +4946,6 @@
 # wrong constant name ==
 # wrong constant name to_der
 # wrong constant name fips_mode
-# wrong constant name <Class:Acceptables>
-# wrong constant name <Class:AmbiguousArgument>
-# wrong constant name <Class:AmbiguousOption>
-# wrong constant name <Class:Arguable>
-# wrong constant name <Class:CompletingHash>
-# wrong constant name <Class:Completion>
-# wrong constant name <Class:InvalidArgument>
-# wrong constant name <Class:InvalidOption>
-# wrong constant name <Class:List>
-# wrong constant name <Class:MissingArgument>
-# wrong constant name <Class:NeedlessArgument>
-# wrong constant name <Class:OptionMap>
-# wrong constant name <Class:ParseError>
-# wrong constant name <Class:Switch>
-# wrong constant name abort
-# wrong constant name accept
-# wrong constant name add_officious
-# wrong constant name banner
-# wrong constant name banner=
-# wrong constant name base
-# wrong constant name candidate
-# wrong constant name compsys
-# wrong constant name def_head_option
-# wrong constant name def_option
-# wrong constant name def_tail_option
-# wrong constant name default_argv
-# wrong constant name default_argv=
-# wrong constant name define
-# wrong constant name define_head
-# wrong constant name define_tail
-# wrong constant name environment
-# wrong constant name getopts
-# wrong constant name help
-# wrong constant name inc
-# wrong constant name initialize
-# wrong constant name load
-# wrong constant name make_switch
-# wrong constant name new
-# wrong constant name on
-# wrong constant name on_head
-# wrong constant name on_tail
-# wrong constant name order
-# wrong constant name order!
-# wrong constant name parse
-# wrong constant name parse!
-# wrong constant name permute
-# wrong constant name permute!
-# wrong constant name program_name
-# wrong constant name program_name=
-# wrong constant name reject
-# wrong constant name release
-# wrong constant name release=
-# wrong constant name remove
-# wrong constant name separator
-# wrong constant name set_banner
-# wrong constant name set_program_name
-# wrong constant name set_summary_indent
-# wrong constant name set_summary_width
-# wrong constant name summarize
-# wrong constant name summary_indent
-# wrong constant name summary_indent=
-# wrong constant name summary_width
-# wrong constant name summary_width=
-# wrong constant name terminate
-# wrong constant name to_a
-# wrong constant name top
-# wrong constant name ver
-# wrong constant name version
-# wrong constant name version=
-# wrong constant name warn
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name getopts
-# wrong constant name initialize
-# wrong constant name options
-# wrong constant name options=
-# wrong constant name order!
-# wrong constant name parse!
-# wrong constant name permute!
-# wrong constant name <static-init>
-# wrong constant name extend_object
-# uninitialized constant OptionParser::CompletingHash::Elem
-# uninitialized constant OptionParser::CompletingHash::K
-# uninitialized constant OptionParser::CompletingHash::V
-# wrong constant name match
-# wrong constant name <static-init>
-# wrong constant name candidate
-# wrong constant name complete
-# wrong constant name convert
-# wrong constant name <static-init>
-# wrong constant name candidate
-# wrong constant name regexp
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name accept
-# wrong constant name add_banner
-# wrong constant name append
-# wrong constant name atype
-# wrong constant name complete
-# wrong constant name compsys
-# wrong constant name each_option
-# wrong constant name list
-# wrong constant name long
-# wrong constant name prepend
-# wrong constant name reject
-# wrong constant name search
-# wrong constant name short
-# wrong constant name summarize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# uninitialized constant OptionParser::OptionMap::Elem
-# uninitialized constant OptionParser::OptionMap::K
-# uninitialized constant OptionParser::OptionMap::V
-# wrong constant name <static-init>
-# wrong constant name args
-# wrong constant name initialize
-# wrong constant name reason
-# wrong constant name reason=
-# wrong constant name recover
-# wrong constant name set_backtrace
-# wrong constant name set_option
-# wrong constant name <static-init>
-# wrong constant name filter_backtrace
-# wrong constant name <Class:NoArgument>
-# wrong constant name <Class:OptionalArgument>
-# wrong constant name <Class:PlacedArgument>
-# wrong constant name <Class:RequiredArgument>
-# wrong constant name add_banner
-# wrong constant name arg
-# wrong constant name block
-# wrong constant name compsys
-# wrong constant name conv
-# wrong constant name desc
-# wrong constant name initialize
-# wrong constant name long
-# wrong constant name match_nonswitch?
-# wrong constant name pattern
-# wrong constant name short
-# wrong constant name summarize
-# wrong constant name switch_name
-# wrong constant name parse
-# wrong constant name <static-init>
-# wrong constant name incompatible_argument_styles
-# wrong constant name parse
-# wrong constant name <static-init>
-# wrong constant name parse
-# wrong constant name <static-init>
-# wrong constant name parse
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name guess
-# wrong constant name incompatible_argument_styles
-# wrong constant name pattern
-# wrong constant name <static-init>
-# wrong constant name accept
-# wrong constant name getopts
-# wrong constant name inc
-# wrong constant name reject
-# wrong constant name terminate
-# wrong constant name top
-# wrong constant name with
 # uninitialized constant Opus
 # uninitialized constant Opus
 # wrong constant name <Class:ActiveSqlTransaction>
@@ -8012,16 +6188,12 @@
 # wrong constant name symlink?$2
 # wrong constant name sysopen$1
 # wrong constant name write$1
-# undefined singleton method `glob$1' for `Pathname'
-# wrong constant name glob$1
 # undefined method `curry$1' for class `Proc'
 # wrong constant name <<
 # wrong constant name ===
 # wrong constant name >>
-# wrong constant name []
 # wrong constant name clone
 # wrong constant name curry$1
-# wrong constant name lambda?
 # wrong constant name yield
 # uninitialized constant Proc0
 # uninitialized constant Proc0
@@ -9392,6 +7564,18 @@
 # wrong constant name variables=
 # wrong constant name <static-init>
 # wrong constant name <static-init>
+# wrong constant name <Class:Core>
+# wrong constant name <Class:Expectations>
+# wrong constant name <Class:Matchers>
+# wrong constant name <Class:Mocks>
+# wrong constant name <Class:Support>
+# wrong constant name <Class:Example>
+# wrong constant name <Class:Formatters>
+# wrong constant name <Class:SyntaxHighlighter>
+# wrong constant name <Class:ExpectationTarget>
+# wrong constant name <Class:AliasedNegatedMatcher>
+# wrong constant name <Class:BuiltIn>
+# wrong constant name <Class:BaseMatcher>
 # uninitialized constant RSpec::Core::ExampleGroup::NOT_YET_IMPLEMENTED
 # uninitialized constant RSpec::Core::ExampleGroup::NO_REASON_GIVEN
 # wrong constant name initialize
@@ -10674,6 +8858,7 @@
 # wrong constant name initialize$1
 # wrong constant name last$2
 # wrong constant name to_a
+# uninitialized constant Elem
 # undefined method `rationalize$2' for class `Rational'
 # Did you mean?  Rational
 # uninitialized constant Rational::EXABYTE
@@ -10727,24 +8912,124 @@
 # wrong constant name vi_editing_mode
 # wrong constant name vi_editing_mode?
 # uninitialized constant Realm::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
 # uninitialized constant Realm::BLACKLISTED_CLASS_METHODS
 # uninitialized constant Realm::CALLBACKS
 # uninitialized constant Realm::CALLBACK_FILTER_TYPES
 # uninitialized constant Realm::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
 # uninitialized constant Realm::MAX_PASSWORD_LENGTH_ALLOWED
 # uninitialized constant Realm::NAME_COMPILABLE_REGEXP
 # uninitialized constant Realm::UNASSIGNABLE_KEYS
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of Realm::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# wrong constant name <static-init>
 # wrong constant name <static-init>
 # uninitialized constant RecentComment::ACTIONS
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# wrong constant name <Class:ActiveRecord_Relation>
 # uninitialized constant RecentComment::BLACKLISTED_CLASS_METHODS
 # uninitialized constant RecentComment::CALLBACKS
 # uninitialized constant RecentComment::CALLBACK_FILTER_TYPES
 # uninitialized constant RecentComment::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
 # uninitialized constant RecentComment::MAX_PASSWORD_LENGTH_ALLOWED
 # uninitialized constant RecentComment::NAME_COMPILABLE_REGEXP
 # uninitialized constant RecentComment::UNASSIGNABLE_KEYS
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_AssociationRelation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Associations_CollectionProxy has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# A copy of RecentComment::ActiveRecord_Relation has been removed from the module tree but is still active!
+# wrong constant name <static-init>
+# wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name []
 # wrong constant name members
@@ -11406,6 +9691,7 @@
 # uninitialized constant RuboCop::Cop::Layout::SpaceAroundEqualsInParameterDefault::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceAroundEqualsInParameterDefault::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::SpaceAroundEqualsInParameterDefault::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Layout::SpaceAroundEqualsInParameterDefault::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Layout::SpaceAroundEqualsInParameterDefault::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Layout::SpaceAroundKeyword::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::SpaceAroundOperators::BYTE_ORDER_MARK
@@ -11420,16 +9706,19 @@
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideArrayLiteralBrackets::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideArrayLiteralBrackets::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideArrayLiteralBrackets::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Layout::SpaceInsideArrayLiteralBrackets::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideArrayLiteralBrackets::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideArrayPercentLiteral::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideArrayPercentLiteral::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideHashLiteralBraces::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideHashLiteralBraces::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideHashLiteralBraces::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Layout::SpaceInsideHashLiteralBraces::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideHashLiteralBraces::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideParens::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideParens::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideParens::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Layout::SpaceInsideParens::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideParens::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsidePercentLiteralDelimiters::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsidePercentLiteralDelimiters::LITERAL_REGEX
@@ -11437,9 +9726,13 @@
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideReferenceBrackets::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideReferenceBrackets::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideReferenceBrackets::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Layout::SpaceInsideReferenceBrackets::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideReferenceBrackets::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideStringInterpolation::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::SpaceInsideStringInterpolation::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Layout::SpaceInsideStringInterpolation::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Layout::SpaceInsideStringInterpolation::SINGLE_SPACE_REGEXP
+# uninitialized constant RuboCop::Cop::Layout::SpaceInsideStringInterpolation::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Layout::Tab::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Layout::Tab::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Layout::Tab::SPACE
@@ -11466,6 +9759,7 @@
 # uninitialized constant RuboCop::Cop::Lint::EmptyWhen::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Lint::EndInMethod::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Lint::EnsureReturn::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Lint::ErbNewArguments::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Lint::ErbNewArguments::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Lint::FlipFlop::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Lint::FloatOutOfRange::LITERAL_REGEX
@@ -11530,6 +9824,7 @@
 # uninitialized constant RuboCop::Cop::Lint::UnneededCopEnableDirective::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Lint::UnneededCopEnableDirective::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Lint::UnneededCopEnableDirective::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Lint::UnneededCopEnableDirective::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Lint::UnneededCopEnableDirective::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Lint::UnneededRequireStatement::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Lint::UnneededRequireStatement::LITERAL_REGEX
@@ -11611,7 +9906,6 @@
 # uninitialized constant RuboCop::Cop::Style::CommandLiteral::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::CommentAnnotation::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Style::CommentAnnotation::LITERAL_REGEX
-# uninitialized constant RuboCop::Cop::Style::CommentedKeyword::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Style::CommentedKeyword::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::ConditionalAssignment::ALIGN_WITH
 # uninitialized constant RuboCop::Cop::Style::ConditionalAssignment::END_ALIGNMENT
@@ -11627,6 +9921,7 @@
 # uninitialized constant RuboCop::Cop::Style::Documentation::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::DocumentationMethod::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::DocumentationMethod::NON_PUBLIC_MODIFIERS
+# uninitialized constant RuboCop::Cop::Style::DoubleCopDisableDirective::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::DoubleNegation::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::EachForSimpleLoop::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::EachWithObject::BYTE_ORDER_MARK
@@ -11701,6 +9996,8 @@
 # uninitialized constant RuboCop::Cop::Style::MultilineMemoization::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::MultilineMethodSignature::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::MultilineTernaryOperator::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Style::MultilineWhenThen::BYTE_ORDER_MARK
+# uninitialized constant RuboCop::Cop::Style::MultilineWhenThen::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::MultipleComparison::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::MutableConstant::FROZEN_STRING_LITERAL
 # uninitialized constant RuboCop::Cop::Style::MutableConstant::FROZEN_STRING_LITERAL_ENABLED
@@ -11779,6 +10076,7 @@
 # uninitialized constant RuboCop::Cop::Style::TernaryParentheses::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Style::TernaryParentheses::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::TernaryParentheses::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Style::TernaryParentheses::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Style::TernaryParentheses::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Style::TrailingBodyOnClass::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::TrailingBodyOnClass::SPACE
@@ -11791,6 +10089,7 @@
 # uninitialized constant RuboCop::Cop::Style::TrailingUnderscoreVariable::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Style::TrailingUnderscoreVariable::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::TrailingUnderscoreVariable::NO_SPACE_COMMAND
+# uninitialized constant RuboCop::Cop::Style::TrailingUnderscoreVariable::SINGLE_SPACE_REGEXP
 # uninitialized constant RuboCop::Cop::Style::TrailingUnderscoreVariable::SPACE_COMMAND
 # uninitialized constant RuboCop::Cop::Style::TrivialAccessors::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::UnlessElse::BYTE_ORDER_MARK
@@ -12368,10 +10667,10 @@
 # wrong constant name disable_tracepoints
 # wrong constant name finish
 # wrong constant name install_tracepoints
-# wrong constant name method_added
-# wrong constant name module_created
-# wrong constant name module_extended
-# wrong constant name module_included
+# wrong constant name on_method_added
+# wrong constant name on_module_created
+# wrong constant name on_module_extended
+# wrong constant name on_module_included
 # wrong constant name pre_cache_module_methods
 # wrong constant name register_delegate_class
 # wrong constant name start
@@ -12435,6 +10734,8 @@
 # wrong constant name my_require
 # wrong constant name patch_kernel
 # wrong constant name rails?
+# wrong constant name rails_load_paths
+# wrong constant name rb_file_paths
 # wrong constant name require_all_files
 # wrong constant name require_everything
 # wrong constant name alias
@@ -12467,7 +10768,6 @@
 # wrong constant name <static-init>
 # wrong constant name main
 # wrong constant name output_file
-# wrong constant name <static-init>
 # uninitialized constant SortedSet::InspectKey
 # wrong constant name initialize
 # wrong constant name setup
@@ -14365,6 +12665,7 @@
 # undefined method `lines$1' for class `String'
 # undefined method `ljust$1' for class `String'
 # undefined method `match$2' for class `String'
+# undefined method `match?$2' for class `String'
 # undefined method `prepend$1' for class `String'
 # Did you mean?  prepend
 #                prepended
@@ -14420,7 +12721,7 @@
 # wrong constant name lines$1
 # wrong constant name ljust$1
 # wrong constant name match$2
-# wrong constant name match?
+# wrong constant name match?$2
 # wrong constant name parse_csv
 # wrong constant name pathmap
 # wrong constant name pathmap_explode
@@ -14547,11 +12848,8 @@
 # undefined method `upcase$1' for class `Symbol'
 # wrong constant name []$2
 # wrong constant name capitalize$1
-# wrong constant name casecmp?
 # wrong constant name downcase$1
 # wrong constant name match$1
-# wrong constant name match?
-# wrong constant name next
 # wrong constant name slice$2
 # wrong constant name swapcase$1
 # wrong constant name upcase$1
@@ -14700,84 +12998,6 @@
 # wrong constant name <static-init>
 # wrong constant name included
 # wrong constant name rake_classes
-# wrong constant name abort_on_exception
-# wrong constant name abort_on_exception=
-# wrong constant name add_trace_func
-# wrong constant name backtrace
-# wrong constant name backtrace_locations
-# wrong constant name exit
-# wrong constant name fetch
-# wrong constant name group
-# wrong constant name initialize
-# wrong constant name join
-# wrong constant name key?
-# wrong constant name keys
-# wrong constant name name
-# wrong constant name name=
-# wrong constant name pending_interrupt?
-# wrong constant name priority
-# wrong constant name priority=
-# wrong constant name report_on_exception
-# wrong constant name report_on_exception=
-# wrong constant name run
-# wrong constant name safe_level
-# wrong constant name status
-# wrong constant name stop?
-# wrong constant name terminate
-# wrong constant name thread_variable?
-# wrong constant name thread_variable_get
-# wrong constant name thread_variable_set
-# wrong constant name thread_variables
-# wrong constant name value
-# wrong constant name wakeup
-# wrong constant name broadcast
-# wrong constant name marshal_dump
-# wrong constant name signal
-# wrong constant name wait
-# wrong constant name lock
-# wrong constant name locked?
-# wrong constant name owned?
-# wrong constant name synchronize
-# wrong constant name try_lock
-# wrong constant name unlock
-# wrong constant name <<
-# wrong constant name clear
-# wrong constant name close
-# wrong constant name closed?
-# wrong constant name deq
-# wrong constant name empty?
-# wrong constant name enq
-# wrong constant name length
-# wrong constant name marshal_dump
-# wrong constant name num_waiting
-# wrong constant name pop
-# wrong constant name push
-# wrong constant name shift
-# wrong constant name size
-# wrong constant name <<
-# wrong constant name enq
-# wrong constant name initialize
-# wrong constant name max
-# wrong constant name max=
-# wrong constant name push
-# wrong constant name abort_on_exception
-# wrong constant name abort_on_exception=
-# wrong constant name exclusive
-# wrong constant name exit
-# wrong constant name fork
-# wrong constant name handle_interrupt
-# wrong constant name kill
-# wrong constant name list
-# wrong constant name pass
-# wrong constant name pending_interrupt?
-# wrong constant name report_on_exception
-# wrong constant name report_on_exception=
-# wrong constant name start
-# wrong constant name stop
-# wrong constant name add
-# wrong constant name enclose
-# wrong constant name enclosed?
-# wrong constant name list
 # wrong constant name <Class:AtomicReferenceCacheBackend>
 # wrong constant name <Class:SynchronizedCacheBackend>
 # wrong constant name <Class:Util>
@@ -14948,20 +13168,6 @@
 # wrong constant name localtime$1
 # wrong constant name round$1
 # wrong constant name to_s$1
-# undefined singleton method `at$2' for `Time'
-# undefined singleton method `gm$1' for `Time'
-# undefined singleton method `local$1' for `Time'
-# undefined singleton method `mktime$1' for `Time'
-# undefined singleton method `utc$1' for `Time'
-# undefined singleton method `zone_offset$1' for `Time'
-# wrong constant name at$2
-# wrong constant name gm$1
-# wrong constant name local$1
-# wrong constant name mktime$1
-# wrong constant name utc$1
-# wrong constant name zone_offset$1
-# undefined singleton method `catch$1' for `Timeout::Error'
-# wrong constant name catch$1
 # undefined method `enable$2' for class `TracePoint'
 # wrong constant name __enable
 # wrong constant name enable$2
@@ -15158,6 +13364,8 @@
 # wrong constant name value
 # wrong constant name <static-init>
 # wrong constant name warn
+# wrong constant name write
+# wrong constant name <static-init>
 # wrong constant name extract
 # wrong constant name initialize
 # wrong constant name <static-init>

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/shoulda-matchers/all/shoulda-matchers.rbi
 #
-# shoulda-matchers-4.1.0
+# shoulda-matchers-4.1.2
 module Shoulda
 end
 module Shoulda::Matchers
@@ -309,6 +309,9 @@ module Shoulda::Matchers::RailsShim
   def self.action_pack_version; end
   def self.active_record_gte_5?; end
   def self.active_record_version; end
+  def self.attribute_serialization_coder_for(model, attribute_name); end
+  def self.attribute_type_for(model, attribute_name); end
+  def self.attribute_types_for(model); end
   def self.digestible_attributes_in(record); end
   def self.generate_validation_message(record, attribute, type, model_name, options); end
   def self.has_secure_password?(record, attribute_name); end
@@ -317,10 +320,17 @@ module Shoulda::Matchers::RailsShim
   def self.secure_password_module; end
   def self.serialized_attributes_for(model); end
   def self.simply_generate_validation_message(attribute, type, model_name, options); end
+  def self.supports_full_attributes_api?(model); end
   def self.tables_and_views(connection); end
   def self.type_cast_default_for(model, column); end
   def self.validation_message_key_for_association_required_option; end
   def self.verb_for_update; end
+end
+class InvalidName___Class_0x00___FakeAttributeType_31
+  def attribute_name; end
+  def coder; end
+  def initialize(model, attribute_name); end
+  def model; end
 end
 module Shoulda::Matchers::WordWrap
   def word_wrap(document, options = nil); end
@@ -1037,13 +1047,17 @@ end
 class Shoulda::Matchers::ActiveModel::ValidatePresenceOfMatcher < Shoulda::Matchers::ActiveModel::ValidationMatcher
   def allows_and_double_checks_value_of!(value); end
   def allows_original_or_typecast_value?(value); end
-  def association_being_validated?; end
+  def association?; end
   def association_name; end
   def association_options; end
   def association_reflection; end
+  def attachment?; end
+  def attribute_accepts_string_values?; end
+  def attribute_serialization_coder; end
+  def attribute_type; end
   def belongs_to_association_being_validated?; end
   def belongs_to_association_configured_to_be_required?; end
-  def collection?; end
+  def collection_association?; end
   def disallowed_values; end
   def disallows_and_double_checks_value_of!(value); end
   def disallows_original_or_typecast_value?(value); end
@@ -1053,6 +1067,7 @@ class Shoulda::Matchers::ActiveModel::ValidatePresenceOfMatcher < Shoulda::Match
   def initialize(attribute); end
   def matches?(subject); end
   def model; end
+  def model_has_associations?(associations); end
   def possibly_ignore_interference_by_writer; end
   def presence_validation_exists_on_attribute?; end
   def reason_for_existing_presence_validation; end
@@ -1605,7 +1620,6 @@ class Shoulda::Matchers::ActiveRecord::SerializeMatcher
   def model_class; end
   def serialization_coder; end
   def serialization_valid?; end
-  def serialized_attributes; end
   def type_valid?; end
 end
 class Shoulda::Matchers::ActiveRecord::AcceptNestedAttributesForMatcher

@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/dotenv-rails/all/dotenv-rails.rbi
 #
-# dotenv-rails-2.7.4
+# dotenv-rails-2.7.5
 module Dotenv
 end
 class Dotenv::Railtie < Rails::Railtie

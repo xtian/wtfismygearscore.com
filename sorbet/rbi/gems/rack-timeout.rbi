@@ -50,7 +50,7 @@ class Rack::Timeout::Scheduler
   def self.singleton; end
   include Rack::Timeout::MonotonicTime
 end
-class Anonymous_Struct_32 < Struct
+class Anonymous_Struct_30 < Struct
   def monotime; end
   def monotime=(_); end
   def proc; end
@@ -60,7 +60,7 @@ class Anonymous_Struct_32 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Rack::Timeout::Scheduler::RunEvent < Anonymous_Struct_32
+class Rack::Timeout::Scheduler::RunEvent < Anonymous_Struct_30
   def cancel!; end
   def cancelled?; end
   def initialize(*args); end
