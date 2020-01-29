@@ -11,7 +11,8 @@ class Comment < ApplicationRecord
   # @param value [String]
   # @return [String] input value stripped of extranneous whitespace
   def body=(value)
-    super value&.strip&.presence
+    value = value&.strip&.presence
+    super ActionController::Base.helpers.strip_tags(value)
   end
 
   # @param value [String]
