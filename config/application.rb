@@ -30,6 +30,8 @@ module WtfIsMyGearscore
 
     config.active_job.queue_adapter = :sidekiq
 
+    config.action_view.sanitized_allowed_tags = []
+
     routes.default_url_options[:host] = secrets.base_url
   end
 end

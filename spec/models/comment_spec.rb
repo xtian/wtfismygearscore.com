@@ -12,13 +12,6 @@ RSpec.describe Comment do
 
   it { is_expected.to have_db_index(%i[character_id created_at]) }
 
-  describe 'body' do
-    it 'strips HTML from value' do
-      subject.body = '<a>hi</a>'
-      expect(subject.body).to eq('hi')
-    end
-  end
-
   %i[body poster_name].each do |field|
     method_name = "#{field}="
 
