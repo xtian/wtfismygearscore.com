@@ -1,4 +1,7 @@
 language: ruby
+rvm:
+  - 2.7
+
 bundler_args: "--jobs $(nproc)"
 cache: bundler
 
