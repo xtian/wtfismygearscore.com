@@ -9,5 +9,4 @@ set -o verbose
 bin/rake eslint:run
 bin/rake scss_lint
 bin/rake rubocop
-bin/srb tc --ignore=/.bundle
 bin/rspec
