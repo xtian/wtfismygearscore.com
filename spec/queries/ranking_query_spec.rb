@@ -1,19 +1,19 @@
 # typed: false
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe RankingQuery do
-  describe '#call' do
+  describe "#call" do
     before do
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, region: 'eu', realm: 'shadowmoon', score: 200, guild_name: 'g')
-      Fabricate(:character, region: 'us', realm: 'shadowmoon', score: 300)
-      Fabricate(:character, region: 'us', realm: 'illidan', score: 500)
+      Fabricate(:character, region: "eu", realm: "shadowmoon", score: 200, guild_name: "g")
+      Fabricate(:character, region: "eu", realm: "shadowmoon", score: 200, guild_name: "g")
+      Fabricate(:character, region: "us", realm: "shadowmoon", score: 300)
+      Fabricate(:character, region: "us", realm: "illidan", score: 500)
     end
 
-    it 'returns ranked characters' do
-      characters = described_class.call(region: 'world', page: 1, per_page: 3)
+    it "returns ranked characters" do
+      characters = described_class.call(region: "world", page: 1, per_page: 3)
 
       expect(characters.size).to eq(3)
 
@@ -28,21 +28,21 @@ RSpec.describe RankingQuery do
       expect(characters[2].rank).to eq(3)
     end
 
-    it 'returns characters ranked by region' do
-      characters = described_class.call(region: 'eu', page: 1, per_page: 3)
+    it "returns characters ranked by region" do
+      characters = described_class.call(region: "eu", page: 1, per_page: 3)
 
       expect(characters.size).to eq(2)
 
       expect(characters[0].rank).to eq(1)
-      expect(characters[0].realm).to eq('shadowmoon')
+      expect(characters[0].realm).to eq("shadowmoon")
 
       expect { characters[0].guild_name }.to raise_error(ActiveModel::MissingAttributeError)
 
       expect(characters[1].rank).to eq(1)
     end
 
-    it 'returns characters ranked by realm' do
-      characters = described_class.call(region: 'eu', realm: 'shadowmoon', page: 1, per_page: 3)
+    it "returns characters ranked by realm" do
+      characters = described_class.call(region: "eu", realm: "shadowmoon", page: 1, per_page: 3)
 
       expect(characters.size).to eq(2)
 
@@ -55,10 +55,10 @@ RSpec.describe RankingQuery do
       expect(characters[1].rank).to eq(1)
     end
 
-    it 'filters characters with data from before the 8.0.1 ilvl squish' do
+    it "filters characters with data from before the 8.0.1 ilvl squish" do
       Fabricate(:character, score: 1000, api_updated_at: Date.new(2018, 8, 15))
 
-      characters = described_class.call(region: 'world', page: 1, per_page: 5)
+      characters = described_class.call(region: "world", page: 1, per_page: 5)
 
       expect(characters.size).to eq(4)
       expect(characters[0].rank).to eq(1)

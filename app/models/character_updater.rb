@@ -46,7 +46,7 @@ class CharacterUpdater
     {
       region: character.region,
       realm: character.realm,
-      name: character.name
+      name: character.name,
     }
   end
 

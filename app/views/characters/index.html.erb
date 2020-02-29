@@ -1,11 +1,10 @@
-<%# frozen_string_literal: true %>
-<% content_for(:page_description, t('description.ranking', server: server)) %>
-<% content_for(:page_title, t('title.ranking', server: server)) %>
+<% content_for(:page_description, t("description.ranking", server: server)) %>
+<% content_for(:page_title, t("title.ranking", server: server)) %>
 
 <% content_for(:head) do %>
   <link rel="canonical" href="<%= @ranking.canonical_url %>">
-  <link rel="preload" href="<%= image_path('burst-fail.svg') %>" as="image">
-  <%= stylesheet_link_tag 'ranking' %>
+  <link rel="preload" href="<%= image_path("burst-fail.svg") %>" as="image">
+  <%= stylesheet_link_tag "ranking" %>
 <% end %>
 
 <a href="#recent-comments">
@@ -17,12 +16,12 @@
 <nav class="SubHeader">
   <ul class="Navigation">
     <li class="SubHeader-rankingNavItem Navigation-item">
-      <%= link_to 'World', characters_path('world'), rel: 'index' %>
+      <%= link_to "World", characters_path("world"), rel: "index" %>
     </li>
 
     <% unless world_page? %>
       <li class="SubHeader-rankingNavItem Navigation-item">
-        <%= link_to region, characters_path(*server_parts.first), rel: ('up' if realm) %>
+        <%= link_to region, characters_path(*server_parts.first), rel: ("up" if realm) %>
       </li>
     <% end %>
 
@@ -36,13 +35,13 @@
   <ul class="Navigation">
     <% unless @ranking.first_page? %>
       <li class="Navigation-item">
-        <%= link_to t('page.prev'), ranking_path(@ranking.page - 1), rel: 'prev' %>
+        <%= link_to t("page.prev"), ranking_path(@ranking.page - 1), rel: "prev" %>
       </li>
     <% end %>
 
     <% unless @ranking.last_page? %>
       <li class="Navigation-item">
-        <%= link_to t('page.next'), ranking_path(@ranking.page + 1), rel: 'next' %>
+        <%= link_to t("page.next"), ranking_path(@ranking.page + 1), rel: "next" %>
       </li>
     <% end %>
   </ul>
@@ -73,13 +72,13 @@
     <th class="Leaderboard-cell">Score</th>
   </thead>
 
-  <tbody><%= render partial: 'character_row', collection: @ranking, as: :character %></tbody>
+  <tbody><%= render partial: "character_row", collection: @ranking, as: :character %></tbody>
 </table>
 
 <% content_for(:secondary_content) do %>
   <% unless realm %>
     <section class="SecondaryContent-panel" id="recent-comments">
-      <%= render 'recent_comments', comments: @ranking.comments %>
+      <%= render "recent_comments", comments: @ranking.comments %>
     </section>
   <% end %>
 <% end %>

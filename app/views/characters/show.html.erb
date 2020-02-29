@@ -1,31 +1,30 @@
-<%# frozen_string_literal: true %>
-<% content_for(:page_description, t('description.character', server: server, info: @character.info)) %>
+<% content_for(:page_description, t("description.character", server: server, info: @character.info)) %>
 <% content_for(:page_title, "(#{@character.rating.upcase}) #{@character.info}") %>
 
 <% content_for(:head) do %>
   <link rel="canonical" href="<%= @character.canonical_url %>">
   <link rel="preload" href="<%= image_path("burst-#{@character.rating}.svg") %>" as="image">
 
-  <% if @character.rating == 'win' %>
+  <% if @character.rating == "win" %>
     <link rel="shortcut icon" href="/favicon-win.ico">
   <% end %>
 
-  <%= stylesheet_link_tag 'character' %>
+  <%= stylesheet_link_tag "character" %>
 <% end %>
 
 <% content_for(:javascripts) do %>
-  <%= async_javascript_include_tag 'action_cable' %>
-  <%= async_javascript_include_tag 'character' %>
+  <%= async_javascript_include_tag "action_cable" %>
+  <%= async_javascript_include_tag "character" %>
 <% end %>
 
 <nav class="SubHeader">
   <ul class="Navigation">
     <li class="SubHeader-rankingNavItem Navigation-item">
-      <%= link_to region, characters_path(*server_parts.first), rel: 'up up' %>
+      <%= link_to region, characters_path(*server_parts.first), rel: "up up" %>
     </li>
 
     <li class="SubHeader-rankingNavItem Navigation-item" <%= tid :realm %>>
-      <%= link_to @character.realm, characters_path(*server_parts(@character)), rel: 'up' %>
+      <%= link_to @character.realm, characters_path(*server_parts(@character)), rel: "up" %>
     </li>
   </ul>
 </nav>
@@ -44,27 +43,27 @@
     <ul class="Navigation">
       <% unless @character.first_page? %>
         <li class="Navigation-item">
-          <%= link_to t('page.prev'), character_path(@character, page: page - 1, per_page: params[:per_page]), rel: 'prev' %>
+          <%= link_to t("page.prev"), character_path(@character, page: page - 1, per_page: params[:per_page]), rel: "prev" %>
         </li>
       <% end %>
 
       <% unless @character.last_page? %>
         <li class="Navigation-item">
-          <%= link_to t('page.next'), character_path(@character, page: page + 1, per_page: params[:per_page]), rel: 'next' %>
+          <%= link_to t("page.next"), character_path(@character, page: page + 1, per_page: params[:per_page]), rel: "next" %>
         </li>
       <% end %>
     </ul>
   </header>
 
-  <%= render partial: 'comment', collection: @character.comments %>
+  <%= render partial: "comment", collection: @character.comments %>
 
   <%= form_with scope: :comment, url: comments_path(@character), html: { class: %w[SecondaryContent-item CommentForm] } do |f| %>
-    <%= f.label :body, 'Comment', class: 'u-visuallyHidden' %>
-    <%= f.text_area :body, required: true, maxlength: 1000, rows: 5, placeholder: 'Comment', class: 'CommentForm-body' %>
+    <%= f.label :body, "Comment", class: "u-visuallyHidden" %>
+    <%= f.text_area :body, required: true, maxlength: 1000, rows: 5, placeholder: "Comment", class: "CommentForm-body" %>
 
     <div class="CommentForm-row">
-      <%= f.label :poster_name, 'Name (optional)', class: 'u-visuallyHidden' %>
-      <%= f.text_field :poster_name, maxlength: 15, placeholder: 'Name (optional)', class: 'CommentForm-name' %>
+      <%= f.label :poster_name, "Name (optional)", class: "u-visuallyHidden" %>
+      <%= f.text_field :poster_name, maxlength: 15, placeholder: "Name (optional)", class: "CommentForm-name" %>
 
       <button class="CommentForm-submit">Post</button>
     </div>

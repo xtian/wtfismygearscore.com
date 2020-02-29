@@ -1,4 +1,3 @@
-<%# frozen_string_literal: true %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,11 +11,11 @@
     <meta name="description" content="<%= content_for(:page_description) %>">
     <meta name="viewport" content="width=470, initial-scale=0.6">
 
-    <%= stylesheet_link_tag 'normalize-rails' %>
-    <%= stylesheet_link_tag 'base' %>
+    <%= stylesheet_link_tag "normalize-rails" %>
+    <%= stylesheet_link_tag "base" %>
 
-    <link rel="preload" href="<%= image_path('logo.svg') %>" as="image">
-    <link rel="prefetch" href="<%= javascript_path('action_cable') %>">
+    <link rel="preload" href="<%= image_path("logo.svg") %>" as="image">
+    <link rel="prefetch" href="<%= javascript_path("action_cable") %>">
 
     <% CLASS_IMAGES.each do |img_name| %>
       <link rel="prefetch" href="<%= image_path("#{img_name}") %>">
@@ -24,11 +23,11 @@
 
     <%= yield :head %>
 
-    <%= render 'livereload' if Rails.env.development? %>
+    <%= render "livereload" if Rails.env.development? %>
   </head>
 
   <body>
-    <%= render 'flash_messages' %>
+    <%= render "flash_messages" %>
 
     <div class="MainContainer">
       <header class="Header" role="banner">
@@ -52,9 +51,9 @@
       <p>Something broken or just want to chat? Email us: support@wtfismygs.com</p>
     </footer>
 
-    <%= render 'analytics' if secrets.ga_id %>
+    <%= render "analytics" if secrets.ga_id %>
 
-    <%= async_javascript_include_tag 'base' %>
+    <%= async_javascript_include_tag "base" %>
     <%= yield :javascripts %>
   </body>
 </html>

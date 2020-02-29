@@ -1,5 +1,8 @@
 require: rubocop-rspec
 
+inherit_gem:
+  rubocop-config-rufo: rubocop.yml
+
 AllCops:
   TargetRubyVersion: 2.4
   Exclude:
@@ -14,7 +17,7 @@ Capybara/FeatureMethods:
   Enabled: false
 
 Layout/LineLength:
-  Max: 120
+  Enabled: false
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented

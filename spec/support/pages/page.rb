@@ -1,7 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
-require 'support/query_helpers'
+require "support/query_helpers"
 
 class Page
   include Capybara::DSL

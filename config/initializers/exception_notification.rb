@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 if Rails.env.production?
-  require 'exception_notification/rails'
-  require 'exception_notification/sidekiq'
+  require "exception_notification/rails"
+  require "exception_notification/sidekiq"
 
   ExceptionNotification.configure do |config|
     # Ignore additional exception types.
@@ -13,7 +13,7 @@ if Rails.env.production?
     config.ignored_exceptions += %w[ActionController::ParameterMissing]
 
     config.ignore_if do |exception, _options|
-      key = exception.message.split('for').first[0..30]
+      key = exception.message.split("for").first[0..30]
       ExpirableKey.new(key).exist_with_renew?
     end
 

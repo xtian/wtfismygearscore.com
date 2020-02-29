@@ -38,23 +38,23 @@ class RankingQuery
   # @return [String] canonical URL to disambiguate duplicate content for SEO
   def canonical_url
     Rails.application.routes.url_helpers.url_for(
-      action: 'index',
-      controller: 'characters',
+      action: "index",
+      controller: "characters",
       host: Rails.application.secrets.base_url,
       page: page,
       per_page: per_page,
       realm: realm,
-      region: region
+      region: region,
     ).downcase
   end
 
   # @return [CollectionPresenter<RecentCommentPresenter>]
   def comments
     @_comments ||= begin
-      filter = { region: Character.regions[region] }.compact
-      comments = RecentComment.where(filter).limit(5).order(created_at: :desc)
-      RecentCommentPresenter.present_collection(comments)
-    end
+        filter = { region: Character.regions[region] }.compact
+        comments = RecentComment.where(filter).limit(5).order(created_at: :desc)
+        RecentCommentPresenter.present_collection(comments)
+      end
   end
 
   private
@@ -77,15 +77,14 @@ class RankingQuery
   def paginate(characters)
     return characters if page.eql?(1)
 
-    characters.where('row_number >= ?', ((page - 1) * per_page) + 1)
+    characters.where("row_number >= ?", ((page - 1) * per_page) + 1)
   end
 
   def ranking_partition
-    @_ranking_partition ||=
-      if realm
-        'PARTITION BY realm, region'
+    @_ranking_partition ||= if realm
+        "PARTITION BY realm, region"
       elsif !world?
-        'PARTITION BY region'
+        "PARTITION BY region"
       end
   end
 

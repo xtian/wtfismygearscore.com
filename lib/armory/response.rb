@@ -1,7 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
-require 'json'
+require "json"
 
 class Armory
   # Simple wrapper around Blizzard API responses
@@ -19,7 +19,7 @@ class Armory
 
     # @return [String] Armory debug message
     def error_message
-      [status, body.fetch('detail', nil)].compact.join(' ')
+      [status, body.fetch("detail", nil)].compact.join(" ")
     end
 
     # @return [Integer] HTTP status code

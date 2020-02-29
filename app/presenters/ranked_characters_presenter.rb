@@ -13,7 +13,7 @@ class RankedCharactersPresenter < CollectionPresenter
 
   # @return [String]
   def extra_column_name
-    query.realm ? 'Guild' : 'Realm'
+    query.realm ? "Guild" : "Realm"
   end
 
   # @return [Boolean]

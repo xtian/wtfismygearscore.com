@@ -24,7 +24,7 @@ class LegacyController < ApplicationController
     elsif params[:r]
       params.values_at(:r, :s, :n)
     else
-      ['world']
+      ["world"]
     end
   end
 end

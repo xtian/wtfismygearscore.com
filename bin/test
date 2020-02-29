@@ -9,4 +9,5 @@ set -o verbose
 bin/rake eslint:run
 bin/rake scss_lint
 bin/rake rubocop
+bin/rufo --check .
 bin/rspec

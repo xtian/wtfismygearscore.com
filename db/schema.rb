@@ -83,5 +83,4 @@ ActiveRecord::Schema.define(version: 2018_09_11_170740) do
     ORDER BY comments.created_at DESC;
   SQL
   add_index "recent_comments", ["comment_id"], name: "index_recent_comments_on_comment_id", unique: true
-
 end

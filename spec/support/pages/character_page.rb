@@ -1,7 +1,7 @@
 # typed: false
 # frozen_string_literal: true
 
-require_relative './page'
+require_relative "./page"
 
 class CharacterPage < Page
   %i[avg_ilvl comments_count max_ilvl min_ilvl].each do |key|
@@ -17,39 +17,39 @@ class CharacterPage < Page
   end
 
   def faction
-    return 'alliance' if page.has_selector?('.is-alliance')
+    return "alliance" if page.has_selector?(".is-alliance")
 
-    'horde' if page.has_selector?('.is-horde')
+    "horde" if page.has_selector?(".is-horde")
   end
 
   def next_page
     @_comments = nil
-    click_on I18n.t('page.next')
+    click_on I18n.t("page.next")
   end
 
   def next_page?
-    page.has_content?(I18n.t('page.next'))
+    page.has_content?(I18n.t("page.next"))
   end
 
   def prev_page
     @_comments = nil
-    click_on I18n.t('page.prev')
+    click_on I18n.t("page.prev")
   end
 
   def prev_page?
-    page.has_content?(I18n.t('page.prev'))
+    page.has_content?(I18n.t("page.prev"))
   end
 
   def fill_comment_body(value)
-    fill_in 'Comment', with: value
+    fill_in "Comment", with: value
   end
 
   def fill_comment_name(value)
-    fill_in 'Name (optional)', with: value
+    fill_in "Name (optional)", with: value
   end
 
   def submit_comment
-    click_on 'Post'
+    click_on "Post"
   end
 
   def comments

@@ -7,7 +7,7 @@ class CreateRealms < ActiveRecord::Migration[5.0]
       t.citext :translations, array: true
     end
 
-    realms = YAML.load_file(Rails.root.join('db', 'seeds', 'realms.yml'))
+    realms = YAML.load_file(Rails.root.join("db", "seeds", "realms.yml"))
     Realm.create!(realms)
   end
 

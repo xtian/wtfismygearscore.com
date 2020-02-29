@@ -39,7 +39,7 @@ class CharacterPresenter < ApplicationPresenter
 
   # @return [String]
   def rating
-    median_difference >= 0 ? 'win' : 'fail'
+    median_difference >= 0 ? "win" : "fail"
   end
 
   private

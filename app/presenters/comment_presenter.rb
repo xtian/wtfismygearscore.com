@@ -1,7 +1,7 @@
 # typed: false
 # frozen_string_literal: true
 
-require 'ruby_identicon'
+require "ruby_identicon"
 
 class CommentPresenter < ApplicationPresenter
   # @return [String] Base64 PNG of identicon based on poster's ip address
@@ -11,7 +11,7 @@ class CommentPresenter < ApplicationPresenter
       border_size: 0,
       grid_size: 9,
       square_size: 2,
-      key: Rails.application.secrets.identicon_key
+      key: Rails.application.secrets.identicon_key,
     )
   end
 
@@ -27,7 +27,7 @@ class CommentPresenter < ApplicationPresenter
 
   # @return [String]
   def poster_name
-    super || 'Anonymous'
+    super || "Anonymous"
   end
 
   # @return [String]

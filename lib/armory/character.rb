@@ -11,10 +11,10 @@ class Armory
     # @param response_body [Hash]
     def initialize(region, response_body)
       @region = region.downcase
-      @avg_ilvl = response_body.fetch('items').delete('averageItemLevelEquipped') { 0 }
+      @avg_ilvl = response_body.fetch("items").delete("averageItemLevelEquipped") { 0 }
 
-      response_body.fetch('items').delete 'averageItemLevel'
-      response_body.fetch('items').freeze
+      response_body.fetch("items").delete "averageItemLevel"
+      response_body.fetch("items").freeze
       @body = response_body
     end
 
@@ -29,26 +29,26 @@ class Armory
 
     # @return [String]
     def class_name
-      CLASSES.fetch(body.fetch('class') - 1)
+      CLASSES.fetch(body.fetch("class") - 1)
     end
 
     # @return [String]
     def faction
-      FACTIONS.fetch(body.fetch('faction'))
+      FACTIONS.fetch(body.fetch("faction"))
     end
 
     # @return [String, nil]
     def guild_name
-      body.dig('guild', 'name')
+      body.dig("guild", "name")
     end
 
     # @return [Hash]
     def items
-      body.fetch('items')
+      body.fetch("items")
     end
 
     def last_modified
-      @_last_modified ||= Time.at(body.fetch('lastModified') / 1000).utc
+      @_last_modified ||= Time.at(body.fetch("lastModified") / 1000).utc
     end
 
     # @return [Integer]
@@ -66,9 +66,9 @@ class Armory
     attr_reader :body
 
     def ilvls
-      @_ilvls ||= body.fetch('items')
-        .without('shirt', 'tabard')
-        .map { |_k, hash| hash.fetch('itemLevel') }
+      @_ilvls ||= body.fetch("items")
+        .without("shirt", "tabard")
+        .map { |_k, hash| hash.fetch("itemLevel") }
         .tap { |ilvls| ilvls << 0 if ilvls.empty? }
     end
   end

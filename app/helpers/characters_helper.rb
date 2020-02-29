@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 module CharactersHelper
-  REGION_REALM_SEPARATOR = '-'
+  REGION_REALM_SEPARATOR = "-"
 
   # @param character [Character]
   # @return [String] path to character page
@@ -21,7 +21,7 @@ module CharactersHelper
 
     name = [
       (character.region.upcase if character.respond_to?(:region)),
-      character.realm.titleize
+      character.realm.titleize,
     ].compact.join(REGION_REALM_SEPARATOR)
 
     link_to name, characters_path(*server_parts(character))

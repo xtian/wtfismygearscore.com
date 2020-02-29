@@ -35,9 +35,9 @@ class CharacterQuery
   def canonical_url
     Rails.application.routes.url_helpers.url_for(
       page_params.merge(
-        action: 'show',
-        controller: 'characters',
-        host: Rails.application.secrets.base_url
+        action: "show",
+        controller: "characters",
+        host: Rails.application.secrets.base_url,
       )
     ).downcase
   end
@@ -85,7 +85,7 @@ class CharacterQuery
       page: page,
       per_page: per_page,
       realm: character.realm,
-      region: character.region
+      region: character.region,
     }
   end
 

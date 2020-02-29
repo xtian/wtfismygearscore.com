@@ -1,7 +1,7 @@
 # typed: false
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Comment do
   it { is_expected.to validate_presence_of(:body) }
@@ -16,18 +16,18 @@ RSpec.describe Comment do
     method_name = "#{field}="
 
     describe "##{method_name}" do
-      it 'strips whitespace from value' do
+      it "strips whitespace from value" do
         subject.public_send(method_name, nil)
         expect(subject.public_send(field)).to eq(nil)
 
-        subject.public_send(method_name, '')
+        subject.public_send(method_name, "")
         expect(subject.public_send(field)).to eq(nil)
 
-        subject.public_send(method_name, ' ')
+        subject.public_send(method_name, " ")
         expect(subject.public_send(field)).to eq(nil)
 
-        subject.public_send(method_name, ' value ')
-        expect(subject.public_send(field)).to eq('value')
+        subject.public_send(method_name, " value ")
+        expect(subject.public_send(field)).to eq("value")
       end
     end
   end

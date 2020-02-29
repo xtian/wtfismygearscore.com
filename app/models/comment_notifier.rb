@@ -22,7 +22,7 @@ class CommentNotifier
   def call
     return if webhook_url.blank?
 
-    Slack::Notifier.new(webhook_url).ping '', attachments: [message_options]
+    Slack::Notifier.new(webhook_url).ping "", attachments: [message_options]
   end
 
   private
@@ -33,10 +33,10 @@ class CommentNotifier
     {
       text: "New comment posted on [#{character.name}](#{page_url}):",
       fields: [
-        { title: 'Poster Name', value: comment.poster_name, short: true },
-        { title: 'Poster IP Address', value: comment.poster_ip_address.to_s, short: true },
-        { title: 'Body', value: comment.body }
-      ]
+        { title: "Poster Name", value: comment.poster_name, short: true },
+        { title: "Poster IP Address", value: comment.poster_ip_address.to_s, short: true },
+        { title: "Body", value: comment.body },
+      ],
     }
   end
 
