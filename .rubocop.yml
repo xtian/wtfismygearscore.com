@@ -6,9 +6,10 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: 2.4
   Exclude:
-    - Brewfile
     - "bin/**/*"
     - "db/schema.rb"
+    - "vendor/bundle/**/*"
+    - Brewfile
 
 Rails:
   Enabled: true

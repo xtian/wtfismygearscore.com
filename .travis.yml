@@ -1,5 +1,5 @@
 language: ruby
-bundler_args: "--jobs $(nproc) --without development production --path .bundle"
+bundler_args: "--jobs $(nproc)"
 cache: bundler
 
 addons:
