@@ -31,14 +31,14 @@ RSpec.describe Character do
         invalid_params = params.without(key)
 
         expect {
-          described_class.from_params(invalid_params)
+          described_class.from_params(**invalid_params)
         }.to raise_error(ArgumentError)
       end
     end
 
     it 'returns a character for the passed params' do
       character = Fabricate(:character, params)
-      found = described_class.from_params(params)
+      found = described_class.from_params(**params)
 
       expect(found).to eq(character)
     end
@@ -57,7 +57,7 @@ RSpec.describe Character do
     end
 
     it 'returns a new character if one is not cached for params' do
-      found = described_class.from_params(params)
+      found = described_class.from_params(**params)
 
       expect(found.new_record?).to eq(true)
     end

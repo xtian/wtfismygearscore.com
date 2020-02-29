@@ -57,7 +57,7 @@ class CharacterQuery
   attr_reader :character, :page, :per_page
 
   def fetch_character
-    character = Character.from_params(params)
+    character = Character.from_params(**params)
 
     # Initiate synchronous Blizzard API call if character is not cached in DB
     return CharacterUpdater.call(character) if character.new_record?

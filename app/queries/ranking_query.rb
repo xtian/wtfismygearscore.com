@@ -21,7 +21,7 @@ class RankingQuery
   # @param options [Hash]
   # @return [RankedCharactersPresenter]
   def self.call(options = {})
-    new(options).call
+    new(**options).call
   end
 
   # @return [RankedCharactersPresenter]

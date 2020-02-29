@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       .create_comment(comment_params)
 
     CommentPostedJob.perform_later(comment) if comment.valid?
-    redirect_back(redirect_options(comment))
+    redirect_back(**redirect_options(comment))
   end
 
   private
