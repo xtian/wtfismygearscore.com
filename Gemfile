@@ -25,7 +25,7 @@ gem "sidekiq" # Background job queue built on Redis
 gem "sidekiq-unique-jobs" # Prevents duplicate jobs from being enqueued
 gem "slack-notifier" # Sends Slack webhook notifications
 gem "sprockets", "~> 4.0.0.beta4" # Asset compilation pipeline for CSS, JS, and images
-gem "typhoeus", require: false # HTTP client backend for Faraday
+gem "typhoeus", github: "typhoeus", require: false # HTTP client backend for Faraday
 gem "uglifier", ">= 1.3.0" # Use Uglifier as compressor for JavaScript assets
 gem "utf8-cleaner" # Removes invalid UTF-8 characters from the environment
 
