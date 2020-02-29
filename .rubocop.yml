@@ -4,14 +4,17 @@ AllCops:
   TargetRubyVersion: 2.4
   Exclude:
     - Brewfile
-    - 'bin/**/*'
-    - 'db/schema.rb'
+    - "bin/**/*"
+    - "db/schema.rb"
 
 Rails:
   Enabled: true
 
 Capybara/FeatureMethods:
   Enabled: false
+
+Layout/LineLength:
+  Max: 120
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
@@ -23,9 +26,6 @@ Metrics/BlockLength:
     - feature
     - it
     - task
-
-Metrics/LineLength:
-  Max: 120
 
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: required
@@ -53,6 +53,15 @@ Style/CollectionMethods:
 
 Style/Documentation:
   Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
 
 Style/MethodCalledOnDoEndBlock:
   Enabled: true

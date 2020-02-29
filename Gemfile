@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.7.0'
 
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0.0'
 
 gem 'active_record_upsert' # AR integration for native PG upsert
 gem 'addressable', require: false # Replacement for URI implementation
@@ -17,6 +17,7 @@ gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use Puma as the app server
 gem 'redis' # Redis client gem
 gem 'ruby_identicon', require: false # Avatar generator
+gem 'sassc', '~> 2.0.1' # https://github.com/sass/sassc-ruby/issues/160
 gem 'sassc-rails' # Use SCSS for stylesheets
 gem 'scenic' # Create and manage database views in Rails
 gem 'secure_headers' # Applies several headers that are related to security
@@ -39,7 +40,7 @@ group :development, :test do
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'coderay', require: false # Syntax highlighting for RSpec failures
   gem 'eslint-rails' # Ensures consistent JavaScript style
-  gem 'rspec-rails' # Test framework
+  gem 'rspec-rails', '~> 4.0.0.beta' # Test framework
   gem 'rubocop' # Ensures consistent Ruby style
   gem 'rubocop-rspec', require: false # Ensures consistent RSpec style
   gem 'scss_lint', require: false # Ensures consistent SCSS style
