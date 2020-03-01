@@ -19,6 +19,5 @@ script:
 deploy:
   provider: script
   script: bin/travis-deploy
-  skip_cleanup: true
   on:
     branch: master
