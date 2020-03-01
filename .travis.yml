@@ -2,7 +2,6 @@ language: ruby
 rvm:
   - 2.7
 
-bundler_args: "--jobs $(nproc)"
 cache: bundler
 
 addons:
@@ -11,6 +10,9 @@ addons:
 
 env:
   - RAILS_ENV=test
+
+before_install:
+  - gem install bundler
 
 script:
   - bin/rake db:create
