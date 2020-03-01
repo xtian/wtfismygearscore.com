@@ -1,11 +1,11 @@
 # typed: false
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe MedianGearscoreUpdaterJob do
-  describe '#perform' do
-    it 'calculates a median for each level present in DB' do
+  describe "#perform" do
+    it "calculates a median for each level present in DB" do
       Fabricate(:character, level: 1)
       Fabricate(:character, level: 100)
 

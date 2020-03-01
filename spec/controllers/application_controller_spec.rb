@@ -1,12 +1,12 @@
 # typed: false
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe ApplicationController do
   controller do
     def index
-      render html: 'foo'
+      render html: "foo"
     end
 
     def create
@@ -14,13 +14,13 @@ RSpec.describe ApplicationController do
     end
   end
 
-  it 'assigns UUID cookie' do
+  it "assigns UUID cookie" do
     get :index
 
     expect(cookies.signed[:uuid]).to be_present
   end
 
-  it 'handles authenticity token exceptions' do
+  it "handles authenticity token exceptions" do
     post :create
     expect(response.status).to eq(400)
   end

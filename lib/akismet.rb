@@ -1,7 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
-require 'faraday'
+require "faraday"
 
 # Encapsulates logic for making requests to Akismet spam detection service
 class Akismet
@@ -13,7 +13,7 @@ class Akismet
     @key = key
     @url = url
 
-    raise ArgumentError, 'Akismet key and url required' unless key && url
+    raise ArgumentError, "Akismet key and url required" unless key && url
   end
 
   # @param comment [Comment] posted comment
@@ -21,7 +21,7 @@ class Akismet
   # @raise [StandardError] if request is considered invalid
   # @see https://akismet.com/development/api/#comment-check Akismet Documentation
   def spam?(comment)
-    make_request('comment-check', comment).body.eql?('true')
+    make_request("comment-check", comment).body.eql?("true")
   end
 
   # @param comment [Comment] posted comment
@@ -29,7 +29,7 @@ class Akismet
   # @raise [StandardError] if request is considered invalid
   # @see https://akismet.com/development/api/#submit-spam Akismet Documentation
   def spam!(comment)
-    make_request('submit-spam', comment)
+    make_request("submit-spam", comment)
   end
 
   private
@@ -43,7 +43,7 @@ class Akismet
   def make_request(url, comment)
     response = faraday.post("/1.1/#{url}", params_for(comment))
 
-    raise response['X-akismet-debug-help'] if response['X-akismet-debug-help']
+    raise response["X-akismet-debug-help"] if response["X-akismet-debug-help"]
 
     response
   end
@@ -57,7 +57,7 @@ class Akismet
       is_test: is_test,
       referrer: comment.referrer,
       user_agent: comment.user_agent,
-      user_ip: comment.poster_ip_address
+      user_ip: comment.poster_ip_address,
     }
   end
 end

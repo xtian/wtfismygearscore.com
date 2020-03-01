@@ -1,10 +1,10 @@
 # typed: false
 # frozen_string_literal: true
 
-require 'addressable'
-require 'armory/character'
-require 'armory/response'
-require 'faraday'
+require "addressable"
+require "armory/character"
+require "armory/response"
+require "faraday"
 
 # Encapsulates logic for making requests to the Blizzard API
 class Armory
@@ -30,7 +30,7 @@ class Armory
     response = Response.new(send_request(url))
 
     case response.status
-    when 200      then Character.new(region, response.body)
+    when 200 then Character.new(region, response.body)
     when 400, 404 then raise NotFoundError, url
     when 401, 500..504 then raise ServerError, url
     else raise "#{url}\n#{response.error_message}"
@@ -50,16 +50,16 @@ class Armory
     @_access_token = nil if access_token_expiry&.past?
 
     @_access_token ||= begin
-      response_body = fetch_access_token
+        response_body = fetch_access_token
 
-      @access_token_expiry = response_body.fetch('expires_in').seconds.from_now - 1.hour.seconds
+        @access_token_expiry = response_body.fetch("expires_in").seconds.from_now - 1.hour.seconds
 
-      response_body.fetch('access_token')
-    end
+        response_body.fetch("access_token")
+      end
   end
 
   def fetch_access_token
-    url = 'https://us.battle.net/oauth/token'
+    url = "https://us.battle.net/oauth/token"
     query = "?grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
 
     response = Response.new(send_request(url + query))

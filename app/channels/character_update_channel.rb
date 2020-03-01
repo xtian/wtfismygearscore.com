@@ -13,14 +13,14 @@ class CharacterUpdateChannel < ApplicationCable::Channel
     stop_all_streams
     raise "Invalid data: #{data}" unless valid_data?(data)
 
-    character = Character.find(data['id'])
+    character = Character.find(data["id"])
     stream_from "characters:#{character.to_param}:armory_updates"
 
     # Try to trigger broadcast immediately as character may have been updated
     # in time between initial request and ActionCable connection.
-    CharacterUpdateBroadcaster.call(character, data['timestamp'])
+    CharacterUpdateBroadcaster.call(character, data["timestamp"])
   rescue ActiveRecord::RecordNotFound
-    logger.warn "CharacterUpdateChannel: No Character with found with id: #{data['id']}"
+    logger.warn "CharacterUpdateChannel: No Character with found with id: #{data["id"]}"
   end
 
   # @return [void]
@@ -31,6 +31,6 @@ class CharacterUpdateChannel < ApplicationCable::Channel
   private
 
   def valid_data?(data)
-    data['id'].present? && data['timestamp'].present?
+    data["id"].present? && data["timestamp"].present?
   end
 end

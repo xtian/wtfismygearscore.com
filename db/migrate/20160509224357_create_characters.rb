@@ -25,5 +25,6 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.timestamps
     end
   end
+
   # rubocop:enable Metrics/MethodLength
 end

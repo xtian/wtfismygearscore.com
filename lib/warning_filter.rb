@@ -1,7 +1,7 @@
 # typed: ignore
 # frozen_string_literal: true
 
-require 'delegate'
+require "delegate"
 
 # Filters Ruby warnings from gems out of `$stderr` when `$VERBOSE` is enabled
 class WarningFilter < DelegateClass(IO)

@@ -1,7 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
-require 'akismet'
+require "akismet"
 
 # Destroys {Comment} if it registers as spam. Otherwise updates
 # {RecentComment} materialized view.

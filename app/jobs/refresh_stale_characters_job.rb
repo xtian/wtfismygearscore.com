@@ -3,7 +3,7 @@
 
 class RefreshStaleCharactersJob < ApplicationJob
   def perform
-    Character.where('updated_at <= ?', 1.month.ago).find_each do |character|
+    Character.where("updated_at <= ?", 1.month.ago).find_each do |character|
       CharacterUpdaterJob.perform_later(character)
     end
   ensure

@@ -37,8 +37,8 @@ class CharacterUpdateBroadcaster
 
   def partial
     CharactersController.render(
-      partial: 'characters/character',
-      locals: { character: CharacterPresenter.new(character) }
+      partial: "characters/character",
+      locals: { character: CharacterPresenter.new(character) },
     )
   end
 end

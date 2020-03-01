@@ -13,7 +13,7 @@ module ApplicationHelper
 
   # @return [String]
   def page_title(page_title: nil, site_name: nil, subtitle: nil)
-    [page_title, site_name, (subtitle unless page_title)].compact.join(' — ')
+    [page_title, site_name, (subtitle unless page_title)].compact.join(" — ")
   end
 
   if Rails.env.test?

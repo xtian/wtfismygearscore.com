@@ -1,7 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
-require_relative './page'
+require_relative "./page"
 
 class RankingPage < Page
   def extra_column_name
@@ -26,20 +26,20 @@ class RankingPage < Page
 
   def next_page
     @_characters = nil
-    click_on I18n.t('page.next')
+    click_on I18n.t("page.next")
   end
 
   def next_page?
-    page.has_content?(I18n.t('page.next'))
+    page.has_content?(I18n.t("page.next"))
   end
 
   def prev_page
     @_characters = nil
-    click_on I18n.t('page.prev')
+    click_on I18n.t("page.prev")
   end
 
   def prev_page?
-    page.has_content?(I18n.t('page.prev'))
+    page.has_content?(I18n.t("page.prev"))
   end
 
   private

@@ -23,8 +23,8 @@ class Character < ApplicationRecord
   # @param name [String]
   # @return [Character] cached character or unsaved character initialized from params
   def self.from_params(region:, realm:, name:)
-    character = joins('JOIN realms ON realms.name = characters.realm')
-      .where('characters.realm = ? OR ? = ANY(realms.translations)', realm, realm)
+    character = joins("JOIN realms ON realms.name = characters.realm")
+      .where("characters.realm = ? OR ? = ANY(realms.translations)", realm, realm)
       .find_by(region: region, name: name)
 
     character || new(region: region, realm: realm, name: name)
@@ -45,9 +45,9 @@ class Character < ApplicationRecord
   #   their level
   def median_difference
     @_median_difference ||= begin
-      median_score = MedianGearscore.find_or_initialize_by(level: level).median_score
-      score - median_score
-    end
+        median_score = MedianGearscore.find_or_initialize_by(level: level).median_score
+        score - median_score
+      end
   end
 
   # @param character [Armory::Character] armory data

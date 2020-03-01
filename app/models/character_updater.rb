@@ -32,7 +32,7 @@ class CharacterUpdater
   attr_reader :character
 
   def armory_response
-    @_armory_response ||= ARMORY.fetch_character(params)
+    @_armory_response ||= ARMORY.fetch_character(**params)
   end
 
   def handle_not_found
@@ -46,7 +46,7 @@ class CharacterUpdater
     {
       region: character.region,
       realm: character.realm,
-      name: character.name
+      name: character.name,
     }
   end
 

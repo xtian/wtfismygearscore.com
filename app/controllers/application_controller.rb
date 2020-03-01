@@ -1,7 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
-require 'securerandom'
+require "securerandom"
 
 class ApplicationController < ActionController::Base
   helper UrlHelper
@@ -13,19 +13,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   rescue_from ActionController::InvalidAuthenticityToken do
-    render file: Rails.public_path.join('400.html'), status: 400, layout: false
+    render file: Rails.public_path.join("400.html"), status: 400, layout: false
   end
 
   private
 
   # Renders as a 404 in production
   def not_found
-    raise ActionController::RoutingError, 'Not Found'
+    raise ActionController::RoutingError, "Not Found"
   end
 
   def secrets
     Rails.application.secrets
   end
+
   helper_method :secrets
 
   # Sets UUID used by ApplicationCable::Connection to identify session

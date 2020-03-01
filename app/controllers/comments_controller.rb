@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       .create_comment(comment_params)
 
     CommentPostedJob.perform_later(comment) if comment.valid?
-    redirect_back(redirect_options(comment))
+    redirect_back(**redirect_options(comment))
   end
 
   private
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     {
       fallback_location: :root,
       alert: (comment.errors.messages.values.flatten if comment.invalid?),
-      notice: (t('comment.posted_successfully') if comment.valid?)
+      notice: (t("comment.posted_successfully") if comment.valid?),
     }
   end
 end

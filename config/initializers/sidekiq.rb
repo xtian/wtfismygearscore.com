@@ -1,11 +1,11 @@
 # typed: strict
 # frozen_string_literal: true
 
-require 'sidekiq'
+require "sidekiq"
 
 Sidekiq.default_worker_options = {
   lock: :until_and_while_executing,
-  unique_args: ->(args) { args.first.except('job_id') }
+  unique_args: ->(args) { args.first.except("job_id") },
 }
 
 Sidekiq.configure_server do |config|

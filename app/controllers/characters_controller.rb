@@ -2,10 +2,10 @@
 # frozen_string_literal: true
 
 class CharactersController < ApplicationController
-  rescue_from 'Armory::NotFoundError', with: :not_found
+  rescue_from "Armory::NotFoundError", with: :not_found
 
-  rescue_from 'Armory::ServerError' do
-    render file: Rails.public_path.join('502.html'), status: 502, layout: false
+  rescue_from "Armory::ServerError" do
+    render file: Rails.public_path.join("502.html"), status: 502, layout: false
   end
 
   def index
@@ -13,7 +13,7 @@ class CharactersController < ApplicationController
       page: page,
       per_page: per_page(25),
       realm: params[:realm],
-      region: downcased_region
+      region: downcased_region,
     )
   end
 
@@ -23,7 +23,7 @@ class CharactersController < ApplicationController
       page: page,
       per_page: per_page(10),
       realm: params[:realm],
-      region: downcased_region
+      region: downcased_region,
     )
   end
 
@@ -33,6 +33,7 @@ class CharactersController < ApplicationController
   def page
     [params[:page].to_i, 1].max
   end
+
   helper_method :page
 
   # Defaults/limits `per_page` param to `max`
@@ -49,5 +50,6 @@ class CharactersController < ApplicationController
   def world_page?
     @_world_page ||= !REALM_REGIONS_SET.include?(downcased_region)
   end
+
   helper_method :world_page?
 end
