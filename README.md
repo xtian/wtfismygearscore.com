@@ -6,7 +6,7 @@ As described on the site:
 
 > **WTF is My Gear Score?** is an online implementation of the formula from the popular yet oft-maligned GearScore addon for World of Warcraft, which quantifies the quality of a character's gear. We use the scores calculated to rank the top characters by region and realm.
 
-This project is a rewrite of the original PHP codebase.
+This project is a rewrite of the original PHP codebase written by [@alexbaumhoer](https://github.com/alexbaumhoer) and [@xtian](https://github.com/xtian).
 
 ## Setup
 
