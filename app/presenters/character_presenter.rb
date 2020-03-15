@@ -11,8 +11,7 @@ class CharacterPresenter < ApplicationPresenter
 
   # @return [String] URL to character's Armory page
   def armory_url
-    # If trailing slash is left off, Armory will return 404.
-    "https://#{region}.battle.net/wow/en/character/#{realm}/#{name}/"
+    "https://worldofwarcraft.com/en-us/character/#{region}/#{realm}/#{name}"
   end
 
   # @return [String] character's class converted to CSS class identifier
