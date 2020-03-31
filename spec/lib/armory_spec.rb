@@ -86,6 +86,12 @@ RSpec.describe Armory do
       expect { subject.fetch_character(**args) }.to raise_error(Armory::NotFoundError, %r{https://.+})
     end
 
+    it "raises a NotFoundError for 403s" do
+      stub_armory_request(status: 403)
+
+      expect { subject.fetch_character(**args) }.to raise_error(Armory::NotFoundError, %r{https://.+})
+    end
+
     it "raises a NotFoundError for 404s" do
       stub_armory_request(status: 404, body: '{"code":"nok", "detail": "Character not found."}')
 
