@@ -3,7 +3,6 @@
 
 require "addressable"
 require "armory/character"
-require "armory/response"
 require "faraday"
 
 # Encapsulates logic for making requests to the Blizzard API
