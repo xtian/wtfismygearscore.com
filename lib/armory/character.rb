@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 require "armory/item"
-require "date"
 
 class Armory
   # Simple wrapper around Armory character objects
