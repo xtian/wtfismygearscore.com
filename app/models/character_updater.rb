@@ -23,13 +23,17 @@ module CharacterUpdater
       character.update_from_armory(armory_response, score)
       character
     rescue Armory::NotFoundError
+      handle_not_found(character)
+    end
+
+    private
+
+    def handle_not_found(character)
       raise if character.new_record?
 
       Rails.logger.warn "#{params(character)} did not resolve to a valid Armory profile. Deleting cached character."
       character.destroy!
     end
-
-    private
 
     def params(character)
       {
