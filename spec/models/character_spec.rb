@@ -130,6 +130,7 @@ RSpec.describe Character do
     let(:character) do
       instance_double(
         "Armory::Character",
+        api_id: subject.api_id,
         avg_ilvl: subject.avg_ilvl + 1,
         class_name: (CLASSES - [subject.class_name]).sample,
         faction: (FACTIONS - [subject.faction]).sample,
@@ -149,13 +150,12 @@ RSpec.describe Character do
     it "stores score and information from Armory::Character" do
       expect(subject.new_record?).to eq(false)
 
-      expect(subject.api_id).to eq(129_786_456)
       expect(subject.guild_name).to eq("Green Street Elite")
       expect(subject.name).to eq("Dargonaut")
       expect(subject.realm).to eq("Shadowmoon")
       expect(subject.score).to eq(100)
 
-      %i[avg_ilvl class_name faction level max_ilvl min_ilvl].each do |field|
+      %i[api_id avg_ilvl class_name faction level max_ilvl min_ilvl].each do |field|
         expect(subject.public_send(field)).to eq(character.public_send(field))
       end
     end

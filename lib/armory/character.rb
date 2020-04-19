@@ -14,17 +14,17 @@ class Armory
 
     # @param region [String] Region is not included in response so it must be
     #   provided separately
-    # @param character_body [Hash]
+    # @param profile_body [Hash]
     # @param equipment_body [Hash]
-    def initialize(region:, character_body:, equipment_body:)
-      @api_id = character_body.fetch("id")
-      @avg_ilvl = character_body.fetch("equipped_item_level")
-      @class_name = CLASSES.fetch(character_body.fetch("character_class").fetch("id") - 1)
-      @faction = character_body.fetch("faction").fetch("type").downcase
-      @guild_name = character_body.dig("guild", "name")
-      @level = character_body.fetch("level")
-      @name = character_body.fetch("name")
-      @realm = character_body.fetch("realm").fetch("name")
+    def initialize(region:, profile_body:, equipment_body:)
+      @api_id = profile_body.fetch("id")
+      @avg_ilvl = profile_body.fetch("equipped_item_level")
+      @class_name = CLASSES.fetch(profile_body.fetch("character_class").fetch("id") - 1)
+      @faction = profile_body.fetch("faction").fetch("type").downcase
+      @guild_name = profile_body.dig("guild", "name")
+      @level = profile_body.fetch("level")
+      @name = profile_body.fetch("name")
+      @realm = profile_body.fetch("realm").fetch("name")
       @region = region.downcase
 
       @items = equipment_body

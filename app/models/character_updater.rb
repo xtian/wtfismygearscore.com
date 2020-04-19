@@ -15,7 +15,7 @@ module CharacterUpdater
       armory_response = ARMORY.fetch_character(**character_params)
       score = GearscoreCalculator.calculate(armory_response.items)
 
-      unless character.should_update?(armory_response.api_id)
+      if character.should_reset?(armory_response.api_id)
         character.destroy!
         character = Character.new(**character_params)
       end

@@ -26,12 +26,12 @@ class Armory
   # @raise [StandardError] for all other API errors
   # @see https://develop.battle.net/documentation/world-of-warcraft/profile-apis Blizzard API docs
   def fetch_character(region:, realm:, name:)
-    character_body = fetch_character_data(region, realm, name)
+    profile_body = fetch_character_data(region, realm, name)
     equipment_body = fetch_character_data(region, realm, name, "equipment")
 
     Character.new(
       region: region,
-      character_body: character_body,
+      profile_body: profile_body,
       equipment_body: equipment_body,
     )
   end

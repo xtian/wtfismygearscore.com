@@ -51,9 +51,9 @@ class Character < ApplicationRecord
   end
 
   # @param armory_api_id [Integer] entity ID returned with Armory data
-  # @return [Boolean] whether character should be updated using Armory data
-  def should_update?(armory_api_id)
-    new_record? || api_id.nil? || api_id == armory_api_id
+  # @return [Boolean] whether character should be recreated using new Armory data
+  def should_reset?(armory_api_id)
+    !new_record? && api_id.present? && api_id == armory_api_id
   end
 
   # @param character [Armory::Character] armory data

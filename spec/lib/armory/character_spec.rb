@@ -6,16 +6,13 @@ require "armory/character"
 require "support/armory_helpers"
 
 RSpec.describe Armory::Character do
-  subject { described_class.new("US", character_response_body) }
+  subject { described_class.new(region: "US", profile_body: profile_response_body, equipment_body: equipment_response_body) }
+
+  let(:naked) { described_class.new(region: "us", profile_body: profile_response_body, equipment_body: { "equipped_items" => [] }) }
 
   describe "#avg_ilvl" do
     it "returns the character’s average item level" do
-      expect(subject.avg_ilvl).to eq(681)
-    end
-
-    it "returns zero if character is naked" do
-      subject = described_class.new("us", "items" => {})
-      expect(subject.avg_ilvl).to eq(0)
+      expect(subject.avg_ilvl).to eq(348)
     end
   end
 
@@ -29,21 +26,11 @@ RSpec.describe Armory::Character do
     it "returns character faction" do
       expect(subject.faction).to eq("alliance")
     end
-
-    it "handles neutral faction" do
-      subject = described_class.new("us", alternate_character_response_body)
-      expect(subject.faction).to eq("neutral")
-    end
   end
 
   describe "#guild" do
     it "returns character guild" do
       expect(subject.guild_name).to eq("The Gentlemens Club")
-    end
-
-    it "handles guildless" do
-      subject = described_class.new("us", alternate_character_response_body)
-      expect(subject.guild_name).to eq(nil)
     end
   end
 
@@ -53,10 +40,8 @@ RSpec.describe Armory::Character do
 
       keys = subject.items.keys
 
-      expect(keys).to include("head")
-      expect(keys).to include("chest")
-      expect(keys).not_to include("averageItemLevel")
-      expect(keys).not_to include("averageItemLevelEquipped")
+      expect(keys).to include(:head)
+      expect(keys).to include(:chest)
     end
   end
 
@@ -80,29 +65,27 @@ RSpec.describe Armory::Character do
 
   describe "#level" do
     it "returns character level" do
-      expect(subject.level).to eq(100)
+      expect(subject.level).to eq(120)
     end
   end
 
   describe "#max_ilvl" do
     it "returns the character’s highest item level" do
-      expect(subject.max_ilvl).to eq(795)
+      expect(subject.max_ilvl).to eq(370)
     end
 
     it "returns zero if character is naked" do
-      subject = described_class.new("us", "items" => {})
-      expect(subject.max_ilvl).to eq(0)
+      expect(naked.max_ilvl).to eq(0)
     end
   end
 
   describe "#min_ilvl" do
     it "returns the character’s lowest item level" do
-      expect(subject.min_ilvl).to eq(655)
+      expect(subject.min_ilvl).to eq(325)
     end
 
     it "returns zero if character is naked" do
-      subject = described_class.new("us", "items" => {})
-      expect(subject.min_ilvl).to eq(0)
+      expect(naked.min_ilvl).to eq(0)
     end
   end
 end

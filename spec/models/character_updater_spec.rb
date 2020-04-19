@@ -15,9 +15,10 @@ RSpec.describe CharacterUpdater do
 
     it "saves a new record with data from the Armory" do
       allow(character).to receive(:new_record?).and_return(true)
+      allow(character).to receive(:should_reset?).and_return(false)
 
       expect(character).to receive(:update_from_armory)
-                             .with(duck_type(:level, :class_name, :guild_name), 19_891)
+                             .with(duck_type(:level, :class_name, :guild_name), 8641)
 
       return_value = described_class.call(character)
 
@@ -27,6 +28,7 @@ RSpec.describe CharacterUpdater do
     it "updates an outdated record with data from the Armory" do
       freeze_time do
         allow(character).to receive(:new_record?).and_return(false)
+        allow(character).to receive(:should_reset?).and_return(false)
         allow(character).to receive(:updated_at).and_return(15.minutes.ago)
 
         expect(character).to receive(:update_from_armory)
