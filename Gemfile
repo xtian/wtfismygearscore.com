@@ -40,9 +40,9 @@ group :development, :test do
   gem "byebug" # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "coderay", require: false # Syntax highlighting for RSpec failures
   gem "eslint-rails" # Ensures consistent JavaScript style
-  gem "rspec-rails", "~> 4.0.0.beta" # Test framework
+  gem "rspec-rails" # Test framework
   gem "rubocop" # Ensures consistent Ruby style
-  gem "rubocop-config-rufo", github: "xinminlabs/rubocop-config-rufo", ref: "1942606", require: false # Configures Rubocop to not conflict with Rufo
+  gem "rubocop-config-rufo", github: "xinminlabs/rubocop-config-rufo", ref: "7bc2d74", require: false # Configures Rubocop to not conflict with Rufo
   gem "rubocop-rspec", require: false # Ensures consistent RSpec style
   gem "rufo", require: false # Code formatter
   gem "scss_lint", require: false # Ensures consistent SCSS style
