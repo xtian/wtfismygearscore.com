@@ -6,8 +6,9 @@ GIT
       ethon (>= 0.9.0)
 
 GIT
-  remote: https://github.com/xtian/rubocop-config-rufo.git
-  revision: 7347ff23abba6c6e23fd2b9c4a5b19c7827866d4
+  remote: https://github.com/xinminlabs/rubocop-config-rufo.git
+  revision: 1942606dfe8c7a2b5914957fe93f672143221230
+  ref: 1942606
   specs:
     rubocop-config-rufo (0.1.0)
 
@@ -403,7 +404,7 @@ DEPENDENCIES
   yard
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.7.1p83
 
 BUNDLED WITH
    2.1.4

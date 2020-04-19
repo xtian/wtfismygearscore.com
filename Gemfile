@@ -42,7 +42,7 @@ group :development, :test do
   gem "eslint-rails" # Ensures consistent JavaScript style
   gem "rspec-rails", "~> 4.0.0.beta" # Test framework
   gem "rubocop" # Ensures consistent Ruby style
-  gem "rubocop-config-rufo", github: "xtian/rubocop-config-rufo", require: false # Configures Rubocop to not conflict with Rufo
+  gem "rubocop-config-rufo", github: "xinminlabs/rubocop-config-rufo", ref: "1942606", require: false # Configures Rubocop to not conflict with Rufo
   gem "rubocop-rspec", require: false # Ensures consistent RSpec style
   gem "rufo", require: false # Code formatter
   gem "scss_lint", require: false # Ensures consistent SCSS style
