@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 class CreateCharacters < ActiveRecord::Migration[5.0]
-  # rubocop:disable Metrics/MethodLength
   def change
     enable_extension :citext
 
@@ -25,6 +24,4 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.timestamps
     end
   end
-
-  # rubocop:enable Metrics/MethodLength
 end
