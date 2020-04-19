@@ -66,12 +66,8 @@ class Armory
   end
 
   def fetch_character_data(region, realm, name, endpoint = nil)
-    url = "https://#{region}.api.blizzard.com/profile/wow/character/#{realm}/#{name}".downcase
-    url += "/#{endpoint}" if endpoint
-
-    query = "?access_token=#{access_token}&namespace=profile-#{region}&locale=en_US"
-
-    response = send_request(Addressable::URI.encode(url + query))
+    url = build_character_url(region, realm, name, endpoint)
+    response = send_request(url)
 
     case response.status
     when 200 then JSON.parse(response.body)
@@ -82,6 +78,15 @@ class Armory
     end
   rescue Faraday::ConnectionFailed, Faraday::TimeoutError, JSON::ParserError
     raise ServerError, url
+  end
+
+  def build_character_url(region, realm, name, endpoint)
+    url = "https://#{region}.api.blizzard.com/profile/wow/character/#{realm}/#{name}".downcase
+    url += "/#{endpoint}" if endpoint
+
+    query = "?access_token=#{access_token}&namespace=profile-#{region}&locale=en_US"
+
+    Addressable::URI.encode(url + query)
   end
 
   def send_request(url)
