@@ -21,7 +21,8 @@ class Armory
   # @param name [String]
   # @return [Armory::Character]
   # @raise [Armory::ServerError] if API returns 401, 500-504, or invalid JSON
-  # @raise [Armory::NotFoundError] if API returns 403 or 404
+  # @raise [Armory::NotFoundError] if API returns 404
+  # @raise [Armory::NotUpdatedError] if API returns 403
   # @raise [StandardError] for all other API errors
   # @see https://develop.battle.net/documentation/world-of-warcraft/profile-apis Blizzard API docs
   def fetch_character(region:, realm:, name:)
@@ -40,6 +41,7 @@ class Armory
   attr_reader :access_token_expiry, :client_id, :client_secret, :timeout
 
   class NotFoundError < StandardError; end
+  class NotUpdatedError < StandardError; end
   class ServerError < StandardError; end
 
   def access_token
@@ -74,7 +76,8 @@ class Armory
 
     case response.status
     when 200 then JSON.parse(response.body)
-    when 403, 404 then raise NotFoundError, url
+    when 403 then raise NotUpdatedError, url
+    when 404 then raise NotFoundError, url
     when 401, 500..504 then raise ServerError, url
     else raise "#{url}\n#{response.status}"
     end
