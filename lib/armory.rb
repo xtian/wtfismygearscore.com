@@ -20,22 +20,19 @@ class Armory
   # @param realm [String]
   # @param name [String]
   # @return [Armory::Character]
-  # @raise [Armory::ServerError] if API returns 500, 503, 504, or invalid JSON
-  # @raise [Armory::NotFoundError] if API returns 400 or 404
+  # @raise [Armory::ServerError] if API returns 401, 500-504, or invalid JSON
+  # @raise [Armory::NotFoundError] if API returns 403 or 404
   # @raise [StandardError] for all other API errors
-  # @see https://develop.battle.net/documentation/api-reference Blizzard API docs
+  # @see https://develop.battle.net/documentation/world-of-warcraft/profile-apis Blizzard API docs
   def fetch_character(region:, realm:, name:)
-    url = build_url(region, realm, name)
-    response = Response.new(send_request(url))
+    character_body = fetch_character_data(region, realm, name)
+    equipment_body = fetch_character_data(region, realm, name, "equipment")
 
-    case response.status
-    when 200 then Character.new(region, response.body)
-    when 400, 404 then raise NotFoundError, url
-    when 401, 500..504 then raise ServerError, url
-    else raise "#{url}\n#{response.error_message}"
-    end
-  rescue Faraday::ConnectionFailed, Faraday::TimeoutError, JSON::ParserError
-    raise ServerError, url
+    Character.new(
+      region: region,
+      character_body: character_body,
+      equipment_body: equipment_body,
+    )
   end
 
   private
@@ -61,16 +58,28 @@ class Armory
     url = "https://us.battle.net/oauth/token"
     query = "?grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
 
-    response = Response.new(send_request(url + query))
-    raise response.error_message if response.status != 200
+    response = send_request(url + query)
+    raise "#{url}\n#{response.status}" if response.status != 200
 
-    response.body
+    JSON.parse(response.body)
   end
 
-  def build_url(region, realm, name)
-    url = "https://#{region}.api.blizzard.com/wow/character/#{realm}/#{name}"
-    query = "?access_token=#{access_token}&locale=en_US&fields=guild,items"
-    Addressable::URI.encode(url + query)
+  def fetch_character_data(region, realm, name, endpoint = nil)
+    url = "https://#{region}.api.blizzard.com/profile/wow/character/#{realm}/#{name}"
+    url += "/#{endpoint}" if endpoint
+
+    query = "?access_token=#{access_token}&namespace=profile-#{region}&locale=en_US"
+
+    response = send_request(Addressable::URI.encode(url + query))
+
+    case response.status
+    when 200 then JSON.parse(response.body)
+    when 403, 404 then raise NotFoundError, url
+    when 401, 500..504 then raise ServerError, url
+    else raise "#{url}\n#{response.status}"
+    end
+  rescue Faraday::ConnectionFailed, Faraday::TimeoutError, JSON::ParserError
+    raise ServerError, url
   end
 
   def send_request(url)
