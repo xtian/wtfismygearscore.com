@@ -1,75 +1,44 @@
 # typed: false
 # frozen_string_literal: true
 
+require "armory/item"
+require "date"
+
 class Armory
   # Simple wrapper around Armory character objects
   class Character
-    attr_reader :avg_ilvl, :region
+    attr_reader :avg_ilvl, :class_name, :faction, :guild_name, :items, :last_modified, :level,
+                :max_ilvl, :min_ilvl, :name, :realm, :region
 
     # @param region [String] Region is not included in response so it must be
     #   provided separately
-    # @param response_body [Hash]
-    def initialize(region, response_body)
+    # @param last_modified [String]
+    # @param character_body [Hash]
+    # @param equipment_body [Hash]
+    def initialize(region:, last_modified:, character_body:, equipment_body:)
+      @avg_ilvl = character_body.fetch("equipped_item_level")
+      @class_name = CLASSES.fetch(character_body.fetch("character_class").fetch("id") - 1)
+      @faction = character_body.fetch("faction").fetch("type").downcase
+      @guild_name = character_body.dig("guild", "name")
+      @last_modified = DateTime.parse(last_modified).to_time.utc
+      @level = character_body.fetch("level")
+      @name = character_body.fetch("name")
+      @realm = character_body.fetch("realm").fetch("name")
       @region = region.downcase
-      @avg_ilvl = response_body.fetch("items").delete("averageItemLevelEquipped") { 0 }
 
-      response_body.fetch("items").delete "averageItemLevel"
-      response_body.fetch("items").freeze
-      @body = response_body
-    end
+      @items = equipment_body
+        .fetch("equipped_items")
+        .reject { |item| %w[SHIRT TABARD].include?(item.fetch("slot").fetch("type")) }
+        .map { |item| Item.new(item) }
+        .each_with_object({}) { |item, hash| hash[item.slot] = item }
+        .freeze
 
-    # @!method name
-    # @!method realm
-    # @!method level
-    %w[name realm level].each do |method_name|
-      define_method method_name do
-        body.fetch(method_name)
-      end
-    end
+      ilvls = @items
+        .map { |_slot, item| item.level }
+        .tap { |list| list << 0 if list.empty? }
 
-    # @return [String]
-    def class_name
-      CLASSES.fetch(body.fetch("class") - 1)
-    end
-
-    # @return [String]
-    def faction
-      FACTIONS.fetch(body.fetch("faction"))
-    end
-
-    # @return [String, nil]
-    def guild_name
-      body.dig("guild", "name")
-    end
-
-    # @return [Hash]
-    def items
-      body.fetch("items")
-    end
-
-    def last_modified
-      @_last_modified ||= Time.at(body.fetch("lastModified") / 1000).utc
-    end
-
-    # @return [Integer]
-    def max_ilvl
-      @_max_ilvl ||= ilvls.max
-    end
-
-    # @return [Integer]
-    def min_ilvl
-      @_min_ilvl ||= ilvls.min
-    end
-
-    private
-
-    attr_reader :body
-
-    def ilvls
-      @_ilvls ||= body.fetch("items")
-        .without("shirt", "tabard")
-        .map { |_k, hash| hash.fetch("itemLevel") }
-        .tap { |ilvls| ilvls << 0 if ilvls.empty? }
+      @max_ilvl = ilvls.max
+      @min_ilvl = ilvls.min
     end
   end
 end
