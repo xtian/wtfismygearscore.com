@@ -1,4 +1,3 @@
-# typed: false
 # frozen_string_literal: true
 
 Fabricator(:median_gearscore) do
