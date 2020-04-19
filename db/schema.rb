@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_170740) do
+ActiveRecord::Schema.define(version: 2020_04_19_193004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_09_11_170740) do
     t.integer "min_ilvl", null: false
     t.string "guild_name"
     t.integer "faction", null: false
-    t.datetime "api_updated_at", default: -> { "now()" }, null: false
+    t.integer "api_id"
     t.index ["name", "realm", "region"], name: "index_characters_on_name_and_realm_and_region", unique: true
     t.index ["score", "region", "realm", "name"], name: "index_characters_on_score_and_region_and_realm_and_name", order: { score: :desc }
   end

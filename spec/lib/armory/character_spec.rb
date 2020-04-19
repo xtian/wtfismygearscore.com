@@ -60,12 +60,6 @@ RSpec.describe Armory::Character do
     end
   end
 
-  describe "#last_modified" do
-    it "returns a DateTime value" do
-      expect(subject.last_modified).to be < Time.current
-    end
-  end
-
   describe "#name" do
     it "returns character name" do
       expect(subject.name).to eq("Dargonaut")

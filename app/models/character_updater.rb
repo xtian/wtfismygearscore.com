@@ -11,23 +11,25 @@ module CharacterUpdater
     def call(character)
       return character if recently_updated?(character)
 
-      armory_response = ARMORY.fetch_character(**params(character))
+      character_params = params(character)
+      armory_response = ARMORY.fetch_character(**character_params)
       score = GearscoreCalculator.calculate(armory_response.items)
+
+      unless character.should_update?(armory_response.api_id)
+        character.destroy!
+        character = Character.new(**character_params)
+      end
 
       character.update_from_armory(armory_response, score)
       character
     rescue Armory::NotFoundError
-      handle_not_found(character)
-    end
-
-    private
-
-    def handle_not_found(character)
       raise if character.new_record?
 
       Rails.logger.warn "#{params(character)} did not resolve to a valid Armory profile. Deleting cached character."
       character.destroy!
     end
+
+    private
 
     def params(character)
       {
