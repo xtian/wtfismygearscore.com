@@ -10,6 +10,8 @@ class Armory
     attr_reader :api_id, :avg_ilvl, :class_name, :faction, :guild_name, :items, :level, :max_ilvl,
                 :min_ilvl, :name, :realm, :region
 
+    # rubocop:disable Metrics/AbcSize
+
     # @param region [String] Region is not included in response so it must be
     #   provided separately
     # @param character_body [Hash]
@@ -39,5 +41,7 @@ class Armory
       @max_ilvl = ilvls.max
       @min_ilvl = ilvls.min
     end
+
+    # rubocop:enable Metrics/AbcSize
   end
 end
