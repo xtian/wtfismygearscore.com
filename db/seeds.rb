@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 Character.create!(
-  api_updated_at: Time.current,
   avg_ilvl: 681,
   class_name: "hunter",
   faction: "alliance",
@@ -17,7 +16,6 @@ Character.create!(
 )
 
 Character.create!(
-  api_updated_at: Time.current,
   avg_ilvl: 457,
   class_name: "shaman",
   faction: "neutral",

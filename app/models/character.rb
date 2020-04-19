@@ -10,7 +10,7 @@ class Character < ApplicationRecord
 
   upsert_keys %i[name realm region]
 
-  validates :api_updated_at, presence: true
+  validates :api_id, presence: true
   validates :class_name, :level, :name, :realm, :region, :score, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
   validates :score, numericality: { only_integer: true }
@@ -50,14 +50,20 @@ class Character < ApplicationRecord
       end
   end
 
+  # @param armory_api_id [Integer] entity ID returned with Armory data
+  # @return [Boolean] whether character should be recreated using new Armory data
+  def should_reset?(armory_api_id)
+    !new_record? && api_id.present? && api_id == armory_api_id
+  end
+
   # @param character [Armory::Character] armory data
   # @param score [Integer] character's gearscore
   # @return [void]
   def update_from_armory(character, score)
     self.score = score
-    self.api_updated_at = character.last_modified
-    self.attributes = %i[avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm]
-      .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
+    self.attributes =
+      %i[api_id avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm]
+        .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
 
     if new_record?
       upsert!

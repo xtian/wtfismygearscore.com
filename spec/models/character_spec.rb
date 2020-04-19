@@ -12,7 +12,7 @@ RSpec.describe Character do
   it { is_expected.to validate_numericality_of(:level).only_integer.is_greater_than(0) }
   it { is_expected.to validate_numericality_of(:score).only_integer }
 
-  %i[api_updated_at avg_ilvl class_name level max_ilvl min_ilvl name realm region score].each do |field|
+  %i[api_id avg_ilvl class_name level max_ilvl min_ilvl name realm region score].each do |field|
     it { is_expected.to validate_presence_of(field) }
   end
 
@@ -130,11 +130,11 @@ RSpec.describe Character do
     let(:character) do
       instance_double(
         "Armory::Character",
+        api_id: subject.api_id,
         avg_ilvl: subject.avg_ilvl + 1,
         class_name: (CLASSES - [subject.class_name]).sample,
         faction: (FACTIONS - [subject.faction]).sample,
         guild_name: "Green Street Elite",
-        last_modified: subject.updated_at - 1.day,
         level: subject.level + 1,
         max_ilvl: subject.max_ilvl + 1,
         min_ilvl: subject.min_ilvl + 1,
@@ -150,13 +150,12 @@ RSpec.describe Character do
     it "stores score and information from Armory::Character" do
       expect(subject.new_record?).to eq(false)
 
-      expect(subject.api_updated_at).to eq(subject.updated_at - 1.day)
       expect(subject.guild_name).to eq("Green Street Elite")
       expect(subject.name).to eq("Dargonaut")
       expect(subject.realm).to eq("Shadowmoon")
       expect(subject.score).to eq(100)
 
-      %i[avg_ilvl class_name faction level max_ilvl min_ilvl].each do |field|
+      %i[api_id avg_ilvl class_name faction level max_ilvl min_ilvl].each do |field|
         expect(subject.public_send(field)).to eq(character.public_send(field))
       end
     end

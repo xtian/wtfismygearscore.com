@@ -23,16 +23,16 @@ RSpec.feature "Character page" do
   scenario "User visits character page" do
     visit character_path("US", "shadowmoon", "dargonaut ")
 
-    expect(page).to have_title("Dargonaut, 100 Hunter — WTF is My Gear Score?")
+    expect(page).to have_title("Dargonaut, 120 Hunter — WTF is My Gear Score?")
 
     expect(character_page.guild_name).to eq("The Gentlemens Club")
     expect(character_page.faction).to eq("alliance")
 
-    expect(character_page.score).to eq("19,891")
-    expect(character_page.min_ilvl).to eq(655)
-    expect(character_page.avg_ilvl).to eq(681)
-    expect(character_page.max_ilvl).to eq(795)
-    expect(character_page.median_difference).to eq("19,891")
+    expect(character_page.score).to eq("8,641")
+    expect(character_page.min_ilvl).to eq(325)
+    expect(character_page.avg_ilvl).to eq(348)
+    expect(character_page.max_ilvl).to eq(370)
+    expect(character_page.median_difference).to eq("8,641")
     expect(character_page.rating).to eq("win")
   end
 

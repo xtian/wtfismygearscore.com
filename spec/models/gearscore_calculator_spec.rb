@@ -6,13 +6,8 @@ require "rails_helper"
 RSpec.describe GearscoreCalculator do
   describe ".calculate" do
     it "returns the correct gearscore for a two-hand user" do
-      character = Armory::Character.new("us", character_response_body)
-      expect(described_class.calculate(character.items)).to eq(19_891)
-    end
-
-    it "returns the correct gearscore for a dual-wielder" do
-      character = Armory::Character.new("us", alternate_character_response_body)
-      expect(described_class.calculate(character.items)).to eq(10_331)
+      character = Armory::Character.new(region: "us", profile_body: profile_response_body, equipment_body: equipment_response_body)
+      expect(described_class.calculate(character.items)).to eq(8641)
     end
   end
 end

@@ -38,12 +38,6 @@ RSpec.describe Armory do
       }.not_to output.to_stderr
     end
 
-    it "raises an error for failed requests" do
-      stub_armory_request(status: 403, body: '{"code":"403", "detail": "Account Inactive"}')
-
-      expect { subject.fetch_character(**args) }.to raise_error(%r{https://.+\n})
-    end
-
     it "raises a ServerError for 500s" do
       stub_armory_request(status: 500)
 
@@ -74,20 +68,14 @@ RSpec.describe Armory do
       expect { subject.fetch_character(**args) }.to raise_error(Armory::ServerError, %r{https://.+})
     end
 
-    it "raises a ServerError for successful requests with no response" do
-      stub_armory_request(body: "{}")
+    it "raises a NotUpdatedError for 403s" do
+      stub_armory_request(status: 403, body: "{}")
 
-      expect { subject.fetch_character(**args) }.to raise_error(Armory::ServerError, %r{https://.+})
-    end
-
-    it "raises a NotFoundError for 400s" do
-      stub_armory_request(status: 400)
-
-      expect { subject.fetch_character(**args) }.to raise_error(Armory::NotFoundError, %r{https://.+})
+      expect { subject.fetch_character(**args) }.to raise_error(Armory::NotUpdatedError, %r{https://.+})
     end
 
     it "raises a NotFoundError for 404s" do
-      stub_armory_request(status: 404, body: '{"code":"nok", "detail": "Character not found."}')
+      stub_armory_request(status: 404, body: "{}")
 
       expect { subject.fetch_character(**args) }.to raise_error(Armory::NotFoundError, %r{https://.+})
     end

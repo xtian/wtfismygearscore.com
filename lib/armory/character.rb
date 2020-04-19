@@ -1,75 +1,46 @@
 # typed: false
 # frozen_string_literal: true
 
+require "armory/item"
+
 class Armory
   # Simple wrapper around Armory character objects
   class Character
-    attr_reader :avg_ilvl, :region
+    attr_reader :api_id, :avg_ilvl, :class_name, :faction, :guild_name, :items, :level, :max_ilvl,
+                :min_ilvl, :name, :realm, :region
+
+    # rubocop:disable Metrics/AbcSize
 
     # @param region [String] Region is not included in response so it must be
     #   provided separately
-    # @param response_body [Hash]
-    def initialize(region, response_body)
+    # @param profile_body [Hash]
+    # @param equipment_body [Hash]
+    def initialize(region:, profile_body:, equipment_body:)
+      @api_id = profile_body.fetch("id")
+      @avg_ilvl = profile_body.fetch("equipped_item_level")
+      @class_name = CLASSES.fetch(profile_body.fetch("character_class").fetch("id") - 1)
+      @faction = profile_body.fetch("faction").fetch("type").downcase
+      @guild_name = profile_body.dig("guild", "name")
+      @level = profile_body.fetch("level")
+      @name = profile_body.fetch("name")
+      @realm = profile_body.fetch("realm").fetch("name")
       @region = region.downcase
-      @avg_ilvl = response_body.fetch("items").delete("averageItemLevelEquipped") { 0 }
 
-      response_body.fetch("items").delete "averageItemLevel"
-      response_body.fetch("items").freeze
-      @body = response_body
+      @items = equipment_body
+        .fetch("equipped_items")
+        .reject { |item| %w[SHIRT TABARD].include?(item.fetch("slot").fetch("type")) }
+        .map { |item| Item.new(item) }
+        .each_with_object({}) { |item, hash| hash[item.slot] = item }
+        .freeze
+
+      ilvls = @items
+        .map { |_slot, item| item.level }
+        .tap { |list| list << 0 if list.empty? }
+
+      @max_ilvl = ilvls.max
+      @min_ilvl = ilvls.min
     end
 
-    # @!method name
-    # @!method realm
-    # @!method level
-    %w[name realm level].each do |method_name|
-      define_method method_name do
-        body.fetch(method_name)
-      end
-    end
-
-    # @return [String]
-    def class_name
-      CLASSES.fetch(body.fetch("class") - 1)
-    end
-
-    # @return [String]
-    def faction
-      FACTIONS.fetch(body.fetch("faction"))
-    end
-
-    # @return [String, nil]
-    def guild_name
-      body.dig("guild", "name")
-    end
-
-    # @return [Hash]
-    def items
-      body.fetch("items")
-    end
-
-    def last_modified
-      @_last_modified ||= Time.at(body.fetch("lastModified") / 1000).utc
-    end
-
-    # @return [Integer]
-    def max_ilvl
-      @_max_ilvl ||= ilvls.max
-    end
-
-    # @return [Integer]
-    def min_ilvl
-      @_min_ilvl ||= ilvls.min
-    end
-
-    private
-
-    attr_reader :body
-
-    def ilvls
-      @_ilvls ||= body.fetch("items")
-        .without("shirt", "tabard")
-        .map { |_k, hash| hash.fetch("itemLevel") }
-        .tap { |ilvls| ilvls << 0 if ilvls.empty? }
-    end
+    # rubocop:enable Metrics/AbcSize
   end
 end
