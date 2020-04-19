@@ -23,7 +23,5 @@ class CollectionPresenter < SimpleDelegator
 
   alias collection __getobj__
 
-  # rubocop:disable Style/AccessModifierDeclarations
   private :collection
-  # rubocop:enable Style/AccessModifierDeclarations
 end
