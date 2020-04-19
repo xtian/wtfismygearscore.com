@@ -1,4 +1,3 @@
-# typed: true
 # frozen_string_literal: true
 
 # Encapsulates logic for fetching sorted, paginated results from

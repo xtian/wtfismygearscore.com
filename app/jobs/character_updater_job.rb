@@ -1,4 +1,3 @@
-# typed: false
 # frozen_string_literal: true
 
 # Wraps {CharacterUpdater} and {CharacterUpdateBroadcaster} in a background job
