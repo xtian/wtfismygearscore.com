@@ -1,4 +1,3 @@
-# typed: false
 # frozen_string_literal: true
 
 class Armory
@@ -7,7 +6,7 @@ class Armory
     attr_reader :level, :quality, :slot
 
     def initialize(item_body)
-      @level = item_body.fetch("level").fetch("value")
+      @level = item_body.fetch("level", {}).fetch("value", 0)
       @quality = QUALITIES.fetch(item_body.fetch("quality").fetch("type"))
       @slot = SLOTS.fetch(item_body.fetch("slot").fetch("type"))
     end
