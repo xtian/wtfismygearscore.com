@@ -7,7 +7,7 @@ require "support/armory_helpers"
 RSpec.describe Armory::Character do
   subject { described_class.new(region: "US", profile_body: profile_response_body, equipment_body: equipment_response_body) }
 
-  let(:naked) { described_class.new(region: "us", profile_body: profile_response_body, equipment_body: { "equipped_items" => [] }) }
+  let(:naked) { described_class.new(region: "us", profile_body: profile_response_body, equipment_body: {}) }
 
   describe "#avg_ilvl" do
     it "returns the character’s average item level" do
