@@ -81,7 +81,10 @@ class Armory
   end
 
   def build_character_url(region, realm, name, endpoint)
-    url = "https://#{region}.api.blizzard.com/profile/wow/character/#{realm}/#{name}".downcase
+    realm = realm.gsub(" ", "-").gsub(/[()-']/, "").downcase
+    name = name.downcase
+
+    url = "https://#{region}.api.blizzard.com/profile/wow/character/#{realm}/#{name}"
     url += "/#{endpoint}" if endpoint
 
     query = "?access_token=#{access_token}&namespace=profile-#{region}&locale=en_US"
