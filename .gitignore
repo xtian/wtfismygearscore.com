@@ -19,3 +19,4 @@
 
 .env
 .travis/deploy.key
+Brewfile.lock.json
