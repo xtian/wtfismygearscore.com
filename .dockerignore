@@ -1,0 +1,13 @@
+# From .gitignore
+/.bundle
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/.yardoc
+.byebug_history
+.env
+.travis/deploy.key
+Brewfile.lock.json
+
+/spec
