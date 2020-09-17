@@ -33,7 +33,7 @@ Lint/StructNewOverride:
   Enabled: true
 
 Metrics/AbcSize:
-  Max: 16
+  Max: 17
 
 Metrics/BlockLength:
   ExcludedMethods:

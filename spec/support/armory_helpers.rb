@@ -37,7 +37,7 @@ module ArmoryHelpers
     }ix
 
     token_response_body = { access_token: access_token, expires_in: 1.day.to_i }
-    stub_request(:get, token_url).to_return(body: token_response_body.to_json)
+    stub_request(:post, token_url).to_return(body: token_response_body.to_json)
   end
 
   # rubocop:disable Metrics/MethodLength, Style/NumericLiterals

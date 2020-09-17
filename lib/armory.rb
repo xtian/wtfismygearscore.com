@@ -56,25 +56,32 @@ class Armory
   end
 
   def fetch_access_token
-    url = "https://us.battle.net/oauth/token"
-    query = "?grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
+    query = "grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
 
-    response = send_request(url + query)
-    raise "#{url}\n#{response.status}" if response.status != 200
+    response = Faraday.post("https://us.battle.net/oauth/token?#{query}") do |req|
+      req.options.open_timeout = timeout
+      req.options.timeout = timeout
+    end
+
+    raise "Request failed (#{response.status}) : #{url}" if response.status != 200
 
     JSON.parse(response.body)
   end
 
   def fetch_character_data(region, realm, name, endpoint = nil)
     url = build_character_url(region, realm, name, endpoint)
-    response = send_request(url)
+
+    response = Faraday.get(url) do |req|
+      req.options.open_timeout = timeout
+      req.options.timeout = timeout
+    end
 
     case response.status
     when 200 then JSON.parse(response.body)
     when 403 then raise NotUpdatedError, url
     when 404 then raise NotFoundError, url
     when 401, 500..504 then raise ServerError, url
-    else raise "#{url}\n#{response.status}"
+    else raise "Request failed (#{response.status}): #{url}"
     end
   rescue Faraday::ConnectionFailed, Faraday::TimeoutError, JSON::ParserError
     raise ServerError, url
@@ -90,13 +97,5 @@ class Armory
     query = "?access_token=#{access_token}&namespace=profile-#{region}&locale=en_US"
 
     Addressable::URI.encode(url + query)
-  end
-
-  def send_request(url)
-    Faraday.get do |req|
-      req.url url
-      req.options.open_timeout = timeout
-      req.options.timeout = timeout
-    end
   end
 end
