@@ -44,9 +44,9 @@ class Character < ApplicationRecord
   #   their level
   def median_difference
     @_median_difference ||= begin
-        median_score = MedianGearscore.find_or_initialize_by(level: level).median_score
-        score - median_score
-      end
+      median_score = MedianGearscore.find_or_initialize_by(level: level).median_score
+      score - median_score
+    end
   end
 
   # @param armory_api_id [Integer] entity ID returned with Armory data

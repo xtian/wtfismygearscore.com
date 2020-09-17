@@ -4,6 +4,7 @@ inherit_gem:
   rubocop-config-rufo: rubocop.yml
 
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.4
   Exclude:
     - "bin/**/*"
@@ -31,9 +32,6 @@ Lint/RaiseException:
 
 Lint/StructNewOverride:
   Enabled: true
-
-Metrics/AbcSize:
-  Max: 17
 
 Metrics/BlockLength:
   ExcludedMethods:
