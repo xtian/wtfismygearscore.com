@@ -44,7 +44,6 @@ group :development, :test do
   gem "rubocop" # Ensures consistent Ruby style
   gem "rubocop-config-rufo", github: "xinminlabs/rubocop-config-rufo", ref: "7bc2d74", require: false # Configures Rubocop to not conflict with Rufo
   gem "rubocop-rspec", require: false # Ensures consistent RSpec style
-  gem "rufo", require: false # Code formatter
   gem "scss_lint", require: false # Ensures consistent SCSS style
 end
 
