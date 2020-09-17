@@ -16,7 +16,7 @@ CLASSES = [
 ].freeze
 
 CLASS_IMAGES = CLASSES.map { |class_name|
-  class_name.parameterize.underscore.camelize(:lower) + ".png"
+  "#{class_name.parameterize.underscore.camelize(:lower)}.png"
 }.freeze
 
 FACTIONS = %w[alliance horde neutral].freeze

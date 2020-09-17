@@ -16,7 +16,7 @@ RSpec.feature "Homepage" do
     visit root_path
 
     expect(page).to have_title("WTF is My Gear Score?")
-    expect(page).to have_css('script[src="https://www.google-analytics.com/analytics.js"]', visible: false, count: 1)
+    expect(page).to have_css('script[src="https://www.google-analytics.com/analytics.js"]', visible: :hidden, count: 1)
 
     expect(home_page.comments.length).to eq(5)
 

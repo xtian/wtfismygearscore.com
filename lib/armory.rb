@@ -47,12 +47,12 @@ class Armory
     @_access_token = nil if access_token_expiry&.past?
 
     @_access_token ||= begin
-        response_body = fetch_access_token
+      response_body = fetch_access_token
 
-        @access_token_expiry = response_body.fetch("expires_in").seconds.from_now - 1.hour.seconds
+      @access_token_expiry = response_body.fetch("expires_in").seconds.from_now - 1.hour.seconds
 
-        response_body.fetch("access_token")
-      end
+      response_body.fetch("access_token")
+    end
   end
 
   def fetch_access_token
@@ -68,6 +68,7 @@ class Armory
     JSON.parse(response.body)
   end
 
+  # rubocop:disable Metrics/AbcSize
   def fetch_character_data(region, realm, name, endpoint = nil)
     url = build_character_url(region, realm, name, endpoint)
 
@@ -86,6 +87,7 @@ class Armory
   rescue Faraday::ConnectionFailed, Faraday::TimeoutError, JSON::ParserError
     raise ServerError, url
   end
+  # rubocop:enable Metrics/AbcSize
 
   def build_character_url(region, realm, name, endpoint)
     realm = realm.gsub(" ", "-").gsub(/[()']/, "").downcase

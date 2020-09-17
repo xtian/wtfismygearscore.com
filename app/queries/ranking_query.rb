@@ -9,7 +9,7 @@ class RankingQuery
   # @option options [Integer] per_page
   # @option options [String, nil] realm
   # @option options [String] region
-  def initialize(page:, per_page:, realm: nil, region:)
+  def initialize(page:, per_page:, region:, realm: nil)
     @page = page
     @per_page = per_page
     @region = region
@@ -50,10 +50,10 @@ class RankingQuery
   # @return [CollectionPresenter<RecentCommentPresenter>]
   def comments
     @_comments ||= begin
-        filter = { region: Character.regions[region] }.compact
-        comments = RecentComment.where(filter).limit(5).order(created_at: :desc)
-        RecentCommentPresenter.present_collection(comments)
-      end
+      filter = { region: Character.regions[region] }.compact
+      comments = RecentComment.where(filter).limit(5).order(created_at: :desc)
+      RecentCommentPresenter.present_collection(comments)
+    end
   end
 
   private
