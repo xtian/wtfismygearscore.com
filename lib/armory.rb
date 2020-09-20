@@ -56,14 +56,15 @@ class Armory
   end
 
   def fetch_access_token
-    query = "grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
+    url = "https://us.battle.net/oauth/token"
+    query = "?grant_type=client_credentials&client_id=#{client_id}&client_secret=#{client_secret}"
 
-    response = Faraday.post("https://us.battle.net/oauth/token?#{query}") do |req|
+    response = Faraday.post(url + query) do |req|
       req.options.open_timeout = timeout
       req.options.timeout = timeout
     end
 
-    raise "Request failed (#{response.status}) : #{url}" if response.status != 200
+    raise "Request failed (#{response.status}): #{url}" if response.status != 200
 
     JSON.parse(response.body)
   end
