@@ -11,11 +11,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  rescue_from ActionController::InvalidAuthenticityToken do
-    render file: Rails.public_path.join("400.html"), status: 400, layout: false
-  end
+  rescue_from ActionController::InvalidAuthenticityToken, with: :bad_request
+  rescue_from Mime::Type::InvalidMimeType, with: :bad_request
 
   private
+
+  def bad_request
+    render file: Rails.public_path.join("400.html"), status: 400, layout: false
+  end
 
   # Renders as a 404 in production
   def not_found
