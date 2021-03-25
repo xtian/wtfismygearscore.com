@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/walski/slack-notifier.git
+  revision: 7bf644e0d568f7d86ccffc6333b843492141d287
+  ref: 7bf644e
+  specs:
+    slack-notifier (2.3.2)
+
+GIT
   remote: https://github.com/xinminlabs/rubocop-config-rufo.git
   revision: 7bc2d7481727b8fadffd8d3378cd02919bce66fb
   ref: 7bc2d74
@@ -315,7 +322,6 @@ GEM
       concurrent-ruby (~> 1.0, >= 1.0.5)
       sidekiq (>= 5.0, < 7.0)
       thor (>= 0.20, < 2.0)
-    slack-notifier (2.3.2)
     spring (2.1.1)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -404,7 +410,7 @@ DEPENDENCIES
   shoulda-matchers
   sidekiq
   sidekiq-unique-jobs
-  slack-notifier
+  slack-notifier!
   spring
   spring-commands-rspec
   spring-watcher-listen
