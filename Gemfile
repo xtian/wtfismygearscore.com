@@ -43,6 +43,7 @@ group :development, :test do
   gem "rspec-rails" # Test framework
   gem "rubocop" # Ensures consistent Ruby style
   gem "rubocop-config-rufo", github: "xinminlabs/rubocop-config-rufo", ref: "7bc2d74", require: false # Configures Rubocop to not conflict with Rufo
+  gem "rubocop-rails" # Ensures consistent Rails style
   gem "rubocop-rspec", require: false # Ensures consistent RSpec style
   gem "scss_lint", require: false # Ensures consistent SCSS style
 end

@@ -62,7 +62,7 @@ class Character < ApplicationRecord
     self.score = score
     self.attributes =
       %i[api_id avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm]
-        .each_with_object({}) { |key, hash| hash[key] = character.public_send(key) }
+        .index_with { |key| character.public_send(key) }
 
     if new_record?
       upsert!

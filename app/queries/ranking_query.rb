@@ -88,7 +88,7 @@ class RankingQuery
   end
 
   def ranked_characters
-    Character.from <<-SQL.strip_heredoc
+    Character.from <<-SQL.squish.strip_heredoc
       (
         SELECT *,
           rank() OVER (#{ranking_partition} ORDER BY score DESC),
@@ -99,6 +99,6 @@ class RankingQuery
   end
 
   def world?
-    @_world ||= !REALM_REGIONS_SET.include?(region.downcase)
+    @_world ||= REALM_REGIONS_SET.exclude?(region.downcase)
   end
 end

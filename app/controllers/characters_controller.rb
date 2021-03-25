@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
   rescue_from "Armory::NotUpdatedError", with: :not_found
 
   rescue_from "Armory::ServerError" do
-    render file: Rails.public_path.join("502.html"), status: 502, layout: false
+    render file: Rails.public_path.join("502.html"), status: :bad_gateway, layout: false
   end
 
   def index
@@ -48,7 +48,7 @@ class CharactersController < ApplicationController
 
   # Returns `true` if `/world` was requested
   def world_page?
-    @_world_page ||= !REALM_REGIONS_SET.include?(downcased_region)
+    @_world_page ||= REALM_REGIONS_SET.exclude?(downcased_region)
   end
 
   helper_method :world_page?

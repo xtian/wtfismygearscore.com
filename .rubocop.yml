@@ -1,4 +1,6 @@
-require: rubocop-rspec
+require:
+  - rubocop-rails
+  - rubocop-rspec
 
 inherit_gem:
   rubocop-config-rufo: rubocop.yml
@@ -11,12 +13,6 @@ AllCops:
     - "db/schema.rb"
     - "vendor/bundle/**/*"
     - Brewfile
-
-Rails:
-  Enabled: true
-
-Capybara/FeatureMethods:
-  Enabled: false
 
 Layout/LineLength:
   Enabled: false
@@ -34,7 +30,7 @@ Lint/StructNewOverride:
   Enabled: true
 
 Metrics/BlockLength:
-  ExcludedMethods:
+  IgnoredMethods:
     - configure
     - describe
     - feature
@@ -49,6 +45,12 @@ Metrics/MethodLength:
 
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: required
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+RSpec/Capybara/FeatureMethods:
+  Enabled: false
 
 RSpec/ExampleLength:
   Max: 10

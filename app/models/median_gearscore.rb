@@ -21,7 +21,7 @@ class MedianGearscore < ApplicationRecord
 
   # http://okbob.blogspot.com/2009/11/aggregate-function-median-in-postgresql.html#c7074964960646383252
   def median_sql
-    <<-SQL.strip_heredoc
+    <<-SQL.squish.strip_heredoc
       SELECT avg(score) AS median_score
       FROM (
         SELECT score, row_number() OVER (PARTITION BY level ORDER BY score DESC),

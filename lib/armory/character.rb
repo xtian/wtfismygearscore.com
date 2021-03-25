@@ -29,7 +29,7 @@ class Armory
         .fetch("equipped_items", [])
         .reject { |item| %w[SHIRT TABARD].include?(item.fetch("slot").fetch("type")) }
         .map { |item| Item.new(item) }
-        .each_with_object({}) { |item, hash| hash[item.slot] = item }
+        .index_by(&:slot)
         .freeze
 
       ilvls = @items
