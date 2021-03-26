@@ -21,8 +21,8 @@ gem "sassc", "~> 2.0.1" # https://github.com/sass/sassc-ruby/issues/160
 gem "sassc-rails" # Use SCSS for stylesheets
 gem "scenic" # Create and manage database views in Rails
 gem "secure_headers" # Applies several headers that are related to security
-gem "sidekiq" # Background job queue built on Redis
-gem "sidekiq-unique-jobs" # Prevents duplicate jobs from being enqueued
+gem "sidekiq", "~> 6.1.2" # Background job queue built on Redis
+gem "sidekiq-unique-jobs", "~> 6.0" # Prevents duplicate jobs from being enqueued
 gem "slack-notifier", github: "walski/slack-notifier", ref: "7bf644e" # Sends Slack webhook notifications
 gem "sprockets", "~> 4.0.0.beta4" # Asset compilation pipeline for CSS, JS, and images
 gem "typhoeus", require: false # HTTP client backend for Faraday
