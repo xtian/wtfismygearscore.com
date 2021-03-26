@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-ruby "2.7.1"
+ruby "3.0.0"
 
-gem "rails", "~> 6.0.0"
+gem "rails", "~> 6.1.0"
 
 gem "active_record_upsert" # AR integration for native PG upsert
 gem "addressable", require: false # Replacement for URI implementation
@@ -23,9 +23,9 @@ gem "scenic" # Create and manage database views in Rails
 gem "secure_headers" # Applies several headers that are related to security
 gem "sidekiq" # Background job queue built on Redis
 gem "sidekiq-unique-jobs" # Prevents duplicate jobs from being enqueued
-gem "slack-notifier" # Sends Slack webhook notifications
+gem "slack-notifier", github: "walski/slack-notifier", ref: "7bf644e" # Sends Slack webhook notifications
 gem "sprockets", "~> 4.0.0.beta4" # Asset compilation pipeline for CSS, JS, and images
-gem "typhoeus", github: "typhoeus", require: false # HTTP client backend for Faraday
+gem "typhoeus", require: false # HTTP client backend for Faraday
 gem "uglifier", ">= 1.3.0" # Use Uglifier as compressor for JavaScript assets
 gem "utf8-cleaner" # Removes invalid UTF-8 characters from the environment
 
@@ -43,6 +43,7 @@ group :development, :test do
   gem "rspec-rails" # Test framework
   gem "rubocop" # Ensures consistent Ruby style
   gem "rubocop-config-rufo", github: "xinminlabs/rubocop-config-rufo", ref: "7bc2d74", require: false # Configures Rubocop to not conflict with Rufo
+  gem "rubocop-rails" # Ensures consistent Rails style
   gem "rubocop-rspec", require: false # Ensures consistent RSpec style
   gem "scss_lint", require: false # Ensures consistent SCSS style
 end

@@ -73,7 +73,7 @@ if Rails.env.development?
 
     # Save a seed file
     yaml = realms.map { |name, translations| { "name" => name, "translations" => translations } }.to_yaml
-    File.write(Rails.root.join("db", "seeds", "realms.yml"), yaml)
+    File.write(Rails.root.join("db/seeds/realms.yml"), yaml)
   end
 
   def fetch_realms(access_token, region, locale, slug = nil)

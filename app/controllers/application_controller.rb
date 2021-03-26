@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   private
 
   def bad_request
-    render file: Rails.public_path.join("400.html"), status: 400, layout: false
+    render file: Rails.public_path.join("400.html"), status: :bad_request, layout: false
   end
 
   # Renders as a 404 in production
