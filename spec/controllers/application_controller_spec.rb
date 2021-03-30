@@ -13,10 +13,6 @@ RSpec.describe ApplicationController do
     def authenticity
       raise ActionController::InvalidAuthenticityToken
     end
-
-    def mime_type
-      raise Mime::Type::InvalidMimeType
-    end
   end
 
 
@@ -30,13 +26,6 @@ RSpec.describe ApplicationController do
     routes.draw { post :authenticity, to: "test#authenticity" }
 
     post :authenticity
-    expect(response.status).to eq(400)
-  end
-
-  it "handles invalid MIME type exceptions" do
-    routes.draw { post :mime_type, to: "test#mime_type" }
-
-    post :mime_type
     expect(response.status).to eq(400)
   end
 end
