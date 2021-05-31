@@ -53,5 +53,14 @@ RSpec.describe RankingQuery do
 
       expect(characters[1].rank).to eq(1)
     end
+
+    it 'filters characters with data from before the 9.0.1 squish' do
+      Fabricate(:character, score: 1000, last_login_at: Time.at(1_602_467_552).utc)
+
+      characters = described_class.call(region: 'world', page: 1, per_page: 5)
+
+      expect(characters.size).to eq(4)
+      expect(characters[0].rank).to eq(1)
+    end
   end
 end

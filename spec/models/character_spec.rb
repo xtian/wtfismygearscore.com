@@ -96,6 +96,12 @@ RSpec.describe Character do
     end
   end
 
+  describe '#last_login_at' do
+    it 'returns a DateTime value' do
+      expect(subject.last_login_at).to be < Time.current
+    end
+  end
+
   describe "#median_difference" do
     it "returns difference between character score and median score for level" do
       (1..3).each do |i|
@@ -134,6 +140,7 @@ RSpec.describe Character do
         class_name: (CLASSES - [subject.class_name]).sample,
         faction: (FACTIONS - [subject.faction]).sample,
         guild_name: "Green Street Elite",
+        last_login_timestamp: subject.updated_at - 1.day,
         level: subject.level + 1,
         max_ilvl: subject.max_ilvl + 1,
         min_ilvl: subject.min_ilvl + 1,
@@ -150,6 +157,7 @@ RSpec.describe Character do
       expect(subject.new_record?).to eq(false)
 
       expect(subject.guild_name).to eq("Green Street Elite")
+      expect(subject.last_login_at).to eq(subject.updated_at - 1.day)
       expect(subject.name).to eq("Dargonaut")
       expect(subject.realm).to eq("Shadowmoon")
       expect(subject.score).to eq(100)
