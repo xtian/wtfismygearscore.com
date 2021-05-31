@@ -94,6 +94,7 @@ class RankingQuery
           rank() OVER (#{ranking_partition} ORDER BY score DESC),
           row_number() OVER (#{ranking_partition} ORDER BY score DESC)
         FROM characters
+        WHERE last_login_at > '2020-10-13'
       ) AS characters
     SQL
   end

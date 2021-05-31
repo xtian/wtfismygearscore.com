@@ -11,6 +11,7 @@ class Character < ApplicationRecord
 
   validates :api_id, presence: true
   validates :class_name, :level, :name, :realm, :region, :score, presence: true
+  validates :last_login_at, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
   validates :score, numericality: { only_integer: true }
 
@@ -60,6 +61,7 @@ class Character < ApplicationRecord
   # @return [void]
   def update_from_armory(character, score)
     self.score = score
+    self.last_login_at = character.last_login_timestamp
     self.attributes =
       %i[api_id avg_ilvl class_name faction guild_name level max_ilvl min_ilvl name realm]
         .index_with { |key| character.public_send(key) }

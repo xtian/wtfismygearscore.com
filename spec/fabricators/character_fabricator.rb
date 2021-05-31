@@ -5,6 +5,7 @@ Fabricator(:character) do
   avg_ilvl { rand(1..700) }
   class_name { CLASSES.sample }
   faction { FACTIONS.sample }
+  last_login_at { Time.current }
   level { rand(1..120) }
   max_ilvl { rand(1..700) }
   min_ilvl { rand(1..700) }
