@@ -55,7 +55,7 @@ RSpec.describe RankingQuery do
     end
 
     it 'filters characters with data from before the 9.0.1 squish' do
-      Fabricate(:character, score: 1000, last_login_at: Time.at(1_602_467_552).utc)
+      Fabricate(:character, score: 1000, last_login_at: Time.at(1_602_585_195).utc)
 
       characters = described_class.call(region: 'world', page: 1, per_page: 5)
 
